@@ -2,7 +2,7 @@
 title: Synergy-v2.0 — Map of Content
 type: folder-index
 status: confirmed
-updated: 2026-05-15
+updated: 2026-05-16
 ---
 
 # Synergy-v2.0 — Map of Content
@@ -13,11 +13,12 @@ updated: 2026-05-15
 
 | Field | Value |
 |---|---|
-| Today | 2026-05-15 |
+| Today | 2026-05-16 |
 | Phase | Pre-event (ideate window) |
-| Days to kickoff | 9 (kickoff 2026-05-24) |
-| Days to submission | 13 (deadline 2026-05-28 23:59 ET) |
+| Days to kickoff | 8 (kickoff 2026-05-24) |
+| Days to submission | 12 (deadline 2026-05-28 23:59 ET) |
 | Idea-lock self-deadline | 2026-05-22 |
+| Mode | **Team** — size + members TBD via `/hackathon:team` |
 | Theme | undecided — 3 candidates (see [Themes](../docs/themes.md)) |
 | Stack preset | undecided (set at `/hackathon:ideate`) |
 | Demo moment | undecided (set at `/hackathon:scope`) |

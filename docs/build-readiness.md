@@ -386,8 +386,8 @@ When invoked during build, Claude:
 
 | Date | Goal | Time | Output |
 |---|---|---|---|
-| May 15 (today) | Lock context: dossier + readiness docs | 4h (done) | `~/.claude/plans/now-i-want-you-elegant-narwhal.md`, this file, [[uniqueness-principles]], [[uniqueness-thinking]] |
-| May 16 | Read IESO 2025 APO + Climate Atlas Toronto | 1h | Mental model of Ontario grid trajectory |
+| May 15 | Lock context: dossier + readiness docs | 4h (done) | `~/.claude/plans/now-i-want-you-elegant-narwhal.md`, this file, [[uniqueness-principles]], [[uniqueness-thinking]] |
+| May 16 (today) | Read IESO 2025 APO + Climate Atlas Toronto + finalize Claude config (audit + team-mode flip) | 1h read + 1h config (done) | Mental model of Ontario grid trajectory; all CLAUDE.md/agent doctrine consistent + pushed to GitHub |
 | May 17 | Validate Next.js + Vercel + Supabase + Mapbox/MapLibre stack | 2h | All deploys green; throwaway project shipped |
 | May 18 | Validate Cursor or Claude Code primary tool | 1h | One throwaway feature shipped using it |
 | May 19 | Pre-fetch seed data (IESO sample, Toronto wards, ON-MARG sample) | 1h | `seed-data/` folder populated |

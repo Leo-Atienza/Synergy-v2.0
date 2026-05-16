@@ -2,12 +2,17 @@
 title: Log — append-only activity trail
 type: folder-index
 status: confirmed
-updated: 2026-05-15
+updated: 2026-05-16
 ---
 
 # Log — append-only activity trail
 
 > Newest entry on top. Format: `YYYY-MM-DD HH:MM ET | action | page | note`. Never delete; mark stale if outdated.
+
+## 2026-05-16
+
+- `2026-05-16 ~14:00 ET | team-mode-flip | .hackathon/event.yaml, CLAUDE.md, docs/uniqueness-principles.md, vault/10-event/uniqueness-thinking.md, vault/20-ideas/README.md, vault/10-event/mentor-questions.md, README.md, vault/index.md, vault/hot.md | User confirmed team entry. Flipped event.yaml mode solo→team (size+members TBD via /hackathon:team). Reframed Uniqueness mode doctrine across CLAUDE.md, uniqueness-principles §8, and vault uniqueness-thinking from "solo builder's structural advantage" to "team's structural risk on uniqueness" (anti-dilution framing — pattern-break is the team's contract with itself). Buildability rubric in 20-ideas now scored after team is locked, not before. Mentor-questions P0 retitled to max-team-size question.`
+- `2026-05-16 ~13:00 ET | claude-config-audit | .claude/agents/{scope-defender,demo-moment-critic}.md, CLAUDE.md, templates/scope.md.tmpl, README.md, vault/10-event/mentor-questions.md, .claude/settings.local.json, vault/50-build-log/decisions.md, .hackathon/pre-mortem.md | Audit verdict: hackathon-config MOSTLY ready, two parity bugs fixed. scope-defender now reads docs/uniqueness-principles.md and downgrades pattern-break-distractors to OUT_OF_SCOPE_CUT regardless of rubric (new verdicts: NO_PATTERN_BREAK + PATTERN-BREAK ALIGNMENT line). demo-moment-critic gains Step 0 validating scope.md has all four required Pattern-break sections (returns SCOPE_INCOMPLETE if missing). CLAUDE.md persistent-memory table grew 6→12 rows surfacing the dossier + uniqueness-principles + build-readiness + themes + timeline + project-local scope template. Created templates/scope.md.tmpl extending the global template with the four sections. Pre-seeded vault/10-event/mentor-questions.md per build-readiness §E.5. Added 7 WebFetch domains to settings.local.json. Created .hackathon/pre-mortem.md template per build-readiness §G.1. Appended retro-queue entry in vault/50-build-log/decisions.md. README rewritten from 2-line stub to orientation. First commit pushed to GitHub origin/main.`
 
 ## 2026-05-15
 

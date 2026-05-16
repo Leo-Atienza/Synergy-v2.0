@@ -2,7 +2,7 @@
 title: Uniqueness thinking — deeper reasoning + archetype library + per-seed breakers
 type: event
 status: draft
-updated: 2026-05-15
+updated: 2026-05-16
 sources: ["[[../../docs/uniqueness-principles]]", "[[../../docs/build-readiness]]", "[[../20-ideas/seed-ideas]]", "[[../20-ideas/seed-a-carbon-intensity-api]]", "[[../20-ideas/seed-b-ontario-enviroscreen]]", "[[../20-ideas/seed-c-outage-equity-index]]"]
 ---
 

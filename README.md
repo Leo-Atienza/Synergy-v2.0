@@ -13,6 +13,37 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 | **Submission deadline** | 2026-05-28 23:59 ET |
 | **Pitch venue** | HELIX Main Stage, 1750 Finch Ave East, Toronto |
 
+## Status (as of 2026-05-16)
+
+| Field | Value |
+|---|---|
+| Phase | Pre-event (ideate window) |
+| Days to kickoff | **8** (kickoff 2026-05-24 00:00 ET) |
+| Days to submission | **12** (deadline 2026-05-28 23:59 ET) |
+| Mode | Team — size + members TBD via `/hackathon:team` |
+| Idea-lock self-deadline | 2026-05-22 |
+| Stack preset | _set at `/hackathon:ideate`_ |
+| Pattern-break archetype | _locked at `/hackathon:scope`_ |
+| Demo moment | _locked at `/hackathon:scope`_ |
+
+### Pre-event progress
+
+- [x] Event metadata locked — [`.hackathon/event.yaml`](.hackathon/event.yaml)
+- [x] Themes captured verbatim + 15-angle library — [`docs/themes.md`](docs/themes.md)
+- [x] Energy domain dossier compiled (1,343 lines, 6 parallel agents) — `~/.claude/plans/now-i-want-you-elegant-narwhal.md`
+- [x] Uniqueness doctrine written (11 archetypes, default-breaker checklist) — [`docs/uniqueness-principles.md`](docs/uniqueness-principles.md)
+- [x] Build-readiness checklist (sections A–J: stack / mock data / demo / submission / sponsors / crisis / decisions / wellbeing / reading) — [`docs/build-readiness.md`](docs/build-readiness.md)
+- [x] Three project-local Claude agents synced to doctrine — [`.claude/agents/`](.claude/agents/)
+- [x] Project-local scope template extending global with four Pattern-break sections — [`templates/scope.md.tmpl`](templates/scope.md.tmpl)
+- [x] Pre-mortem template scaffolded — [`.hackathon/pre-mortem.md`](.hackathon/pre-mortem.md)
+- [x] Vault scaffolded — 8 numbered folders + daily template + decision log + mentor questions seeded
+- [ ] Team locked — run `/hackathon:team` to fill `event.yaml` `team.size` + `team.members`
+- [ ] Stack pre-validated (Next.js + Vercel + Supabase + Mapbox/MapLibre throwaway deploys) — per `docs/build-readiness.md` §A
+- [ ] Seed data pre-fetched — per `docs/build-readiness.md` §B
+- [ ] Idea locked — run `/hackathon:ideate` by 2026-05-22
+- [ ] Pattern-break archetype locked + scope written — `/hackathon:scope` after kickoff May 24
+- [ ] Live URL deployed — `/hackathon:scaffold` by May 25 noon
+
 ## Where things live
 
 | If you want… | Open |
