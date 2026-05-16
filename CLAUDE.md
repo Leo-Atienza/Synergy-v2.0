@@ -54,9 +54,9 @@ If any feature is >30 min over its estimate:
 
 ---
 
-## Uniqueness mode — operational (the second voice in the room)
+## Uniqueness mode — operational (anti-dilution)
 
-> Solo builders lose the natural creative-tension dynamic of a team. **Claude IS the second voice.** This section is operational, not aspirational. See [`docs/uniqueness-principles.md`](docs/uniqueness-principles.md) for the principles and [[Synergy-v2.0 — Hackathon Brain/10-event/uniqueness-thinking]] for the deeper reasoning.
+> Teams have natural creative tension — but they also have *compromise dilution*: weird choices get watered down to satisfy the most risk-averse member, and the project drifts toward a generic SaaS template by minute 30. **Claude's job in team mode is the devil's-advocate that holds the line on the locked Pattern-break against that dilution.** This section is operational, not aspirational. See [`docs/uniqueness-principles.md`](docs/uniqueness-principles.md) for the principles and [[Synergy-v2.0 — Hackathon Brain/10-event/uniqueness-thinking]] for the deeper reasoning.
 
 ### The one rule
 

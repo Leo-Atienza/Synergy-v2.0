@@ -13,9 +13,9 @@ start_iso: "2026-05-24T00:00:00-04:00"  # virtual kickoff — exact time TBC
 deadline_iso: "2026-05-28T23:59:00-04:00"  # submission cutoff per website (photo says May 26 — see open questions)
 
 team:
-  mode: solo                            # solo | team — change at /hackathon:team
-  size: 1
-  members: []                           # [{name, skills: [], availability_hours: 0}]
+  mode: team                            # solo | team — change at /hackathon:team
+  size: 0                               # TBD — fill via /hackathon:team
+  members: []                           # TBD — [{name, skills: [], availability_hours: 0}] — fill via /hackathon:team
 
 judging:
   format: hybrid                        # async submission May 28 + in-person finale May 30

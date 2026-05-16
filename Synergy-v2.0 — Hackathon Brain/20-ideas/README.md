@@ -2,7 +2,7 @@
 title: 20-ideas — idea generation, scoring, chosen idea
 type: folder-index
 status: confirmed
-updated: 2026-05-15
+updated: 2026-05-16
 ---
 
 # 20-ideas — idea generation → scoring → chosen idea
@@ -23,7 +23,7 @@ Use this when scoring — informed by [[../10-event/judge-rubric-thinking|judge-
 |---|---|---|
 | Theme fit | 25% | Does it land cleanly in 1 of the 3 themes? Bonus if Theme 3 (broadest, easiest to pivot). |
 | Demo moment visual | 25% | Can the 10-second demo clip be described as a literal video script? Without verbs like "allows" or "lets users"? |
-| Buildability in 96h | 20% | Solo dev, no team. Realistically achievable end-to-end (data + UI + deploy) in the build window? |
+| Buildability in 96h | 20% | Team build (size + member skills set via `/hackathon:team`). Realistically achievable end-to-end (data + UI + deploy) given parallel track-split? Score after `/hackathon:team` locks capacity, not before. |
 | Canadian data leverage | 15% | Does it use a real Canadian dataset (IESO, ECCC, NRCan, Open Data Toronto)? Better story for judges. |
 | Originality | 15% | Will 10 other teams probably build the same thing? If yes, dock points. |
 

@@ -261,19 +261,19 @@ The pitch hook IS the pattern-break. The closing line CALLS BACK to the pattern-
 
 ---
 
-## 8. The deeper insight — why this matters for a solo builder
+## 8. The deeper insight — why this matters in team mode
 
-Hackathons assume teams of 3-5. Teams have a natural creative-tension dynamic: someone proposes, someone pushes back, someone synthesizes. Solo builders lose this.
+Hackathons assume teams of 3-5. Teams have a natural creative-tension dynamic: someone proposes, someone pushes back, someone synthesizes. That's the upside. The downside: every weird choice has to survive 3-5 internal critics, and teams optimize for not-embarrassing the most risk-averse member — which silently dilutes the pattern-break by minute 30 of the build.
 
-**Without a teammate, Claude IS the second voice in the room.** This means Claude doesn't just execute — it pushes back, proposes weird options, refuses default, holds the line on the locked pattern-break.
+**In team mode, Claude is the devil's-advocate that holds the line on the locked pattern-break.** When a teammate proposes "let's also add X for safety" and the group is about to consensus into a generic SaaS template, Claude pushes back: *"That dilutes the locked archetype — what are we trading away?"* Claude has no social cost to being the unpopular voice; teammates do.
 
 This is encoded in:
 - The project CLAUDE.md "Uniqueness mode" section (operational directives)
-- The `demo-moment-critic` agent's expanded rubric
-- The `scope-defender` agent's expanded checks (now: distracts from pattern-break? cut)
+- The `demo-moment-critic` agent's scope.md structure validation (the four required Pattern-break sections)
+- The `scope-defender` agent's pattern-break alignment check (distracts → CUT regardless of rubric)
 - This file (the doctrinal reference)
 
-The solo builder's structural disadvantage (no team chemistry) becomes a structural advantage (single-narrative pitch, no internal compromise). Uniqueness commitments are easier to keep alone.
+A team's structural risk on uniqueness is consensus-toward-default. The countermeasure is the locked Pattern-break archetype + Claude's hold-the-line role + every teammate having read this doc before scope-lock. **The pattern-break is the team's contract with itself**, not just a creative preference. Once locked, no teammate (and no Claude) gets to dilute it without the 1-in-1-out trade.
 
 ---
 

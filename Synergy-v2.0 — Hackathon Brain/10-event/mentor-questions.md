@@ -2,7 +2,7 @@
 title: Mentor questions backlog
 type: event
 status: draft
-updated: 2026-05-15
+updated: 2026-05-16
 sources: ["[[../../docs/build-readiness.md]] §E.5"]
 ---
 
@@ -66,9 +66,9 @@ These come from [`docs/seneca-hackathon-context.md`](../../docs/seneca-hackathon
 - **Asked:** _pending — wait for kickoff unveil_
 - **Answer:** _pending_
 
-## P0 — Team size limits — solo allowed? Max members?
+## P0 — Maximum team size limit, and any composition rules?
 - **Best answered by:** Event organizer / pinned rules
-- **Why it matters:** Confirms `/hackathon:team` mode = solo is acceptable.
+- **Why it matters:** Confirms our team is within rules; affects `/hackathon:team` track-splitting and whether we can recruit additional members from outside Seneca.
 - **Asked:** _pending_
 - **Answer:** _pending_
 

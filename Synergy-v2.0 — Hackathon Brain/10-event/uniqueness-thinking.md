@@ -37,16 +37,18 @@ Few teams compete on **form**: the artifact's shape itself is novel. A comic ins
 
 The 11 archetypes (in principles doc §2) are mostly form-level moves. They're not "build a better X" — they're "your X is the wrong shape for what you're saying; pick a different shape."
 
-### The solo builder's structural advantage on uniqueness
+### The team's structural risk on uniqueness
 
-Teams of 3-5 produce conservative work because:
+Teams of 3-5 tend toward conservative work because:
 - Every weird choice has to survive 3-5 internal critics
 - The team optimizes for not-embarrassing the most risk-averse member
 - Time spent debating creative direction is time not building
 
-A solo builder makes a single weird choice and ships it. The 4× speed advantage in CREATIVE decision-making partly compensates for the 4× capacity disadvantage in BUILD throughput.
+The team's BUILD-throughput advantage (3-5× capacity) is real, but its CREATIVE-decision velocity drops 3-5× compared to a single mind — and worse, the *direction* of creative drift is predictable: toward the safer, more saturated template. By minute 30 of build, the locked Pattern-break has been quietly polished into a SaaS dashboard with a sidebar nav, because nobody on the team wanted to be the one to push back on the third "small reasonable" change.
 
-The implication: **as a solo builder, you should make MORE unusual creative choices than a team would**, not fewer.
+The implication: **a team needs an explicit anti-dilution mechanism**, or it ends up with a competent execution of a generic idea. The Pattern-break archetype locked at `/hackathon:scope` IS that mechanism. Once locked, no teammate (and no Claude) gets to dilute it without the 1-in-1-out trade. The discipline is harder than for a solo builder, but the BUILD throughput pays for it if the team holds.
+
+Operational read: every teammate should have read this doc + [`../../docs/uniqueness-principles.md`](../../docs/uniqueness-principles.md) before `/hackathon:scope`. The doctrine doesn't work if only one person knows it.
 
 ---
 
