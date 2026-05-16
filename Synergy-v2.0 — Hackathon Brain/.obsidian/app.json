@@ -1,0 +1,10 @@
+{
+  "alwaysUpdateLinks": true,
+  "showInlineTitle": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00-inbox",
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "attachmentFolderPath": "90-raw/attachments",
+  "promptDelete": false
+}

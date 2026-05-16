@@ -1,0 +1,60 @@
+# deps
+node_modules/
+.pnp
+.pnp.js
+
+# env
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.production.local
+
+# build
+.next/
+out/
+dist/
+build/
+.expo/
+.expo-shared/
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Claude project artifacts (keep agents + settings tracked, ignore cache + logs)
+.claude/cache/
+.claude/logs/
+.claude/sessions/
+.claude/handoffs/
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# coverage / test
+coverage/
+.nyc_output/
+
+# turbo / next cache
+.turbo
+.next/cache/
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Obsidian (Synergy-v2.0 — Hackathon Brain/) — keep app config tracked, ignore per-machine workspace + cache
+Synergy-v2.0 — Hackathon Brain/.obsidian/workspace.json
+Synergy-v2.0 — Hackathon Brain/.obsidian/workspace-mobile.json
+Synergy-v2.0 — Hackathon Brain/.obsidian/cache
+Synergy-v2.0 — Hackathon Brain/.obsidian/plugins/*/data.json
+Synergy-v2.0 — Hackathon Brain/.trash/

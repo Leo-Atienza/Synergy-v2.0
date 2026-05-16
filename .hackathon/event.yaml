@@ -1,0 +1,64 @@
+# .hackathon/event.yaml — populated 2026-05-15 from kickoff info session + senecahackathon.com
+#
+# Source of truth for event metadata. /hackathon:* commands read from here.
+# Open questions live in docs/seneca-hackathon-context.md (Open Questions section).
+
+name: "Seneca Energy Hackathon 2026"
+theme: "energy / sustainability — 'The Energy to Innovate'"
+platform: "corporate"                   # Seneca College internal event
+event_url: "https://www.senecahackathon.com/"
+
+duration_hours: 96                      # May 24 kickoff (00:00) → May 28 23:59 submission
+start_iso: "2026-05-24T00:00:00-04:00"  # virtual kickoff — exact time TBC
+deadline_iso: "2026-05-28T23:59:00-04:00"  # submission cutoff per website (photo says May 26 — see open questions)
+
+team:
+  mode: solo                            # solo | team — change at /hackathon:team
+  size: 1
+  members: []                           # [{name, skills: [], availability_hours: 0}]
+
+judging:
+  format: hybrid                        # async submission May 28 + in-person finale May 30
+  rubric:                               # default 4-axis until organizer rubric confirmed
+    technical: 25
+    design: 25
+    originality: 25
+    impact: 25
+  sponsor_prizes: []                    # TBC — sponsor list not yet announced
+  required_tech: []                     # TBC at kickoff (challenge sets unveil 2026-05-24)
+
+submission:
+  form_url: ""                          # TBC — likely Devpost or internal Seneca form
+  required_fields:
+    - description
+    - how_it_works
+    - inspiration
+    - tech_stack
+    - video_url
+    - screenshots
+  max_video_seconds: 180                # default until confirmed
+
+timeline:                               # seed values; /hackathon:init may overwrite
+  ideate_by: "2026-05-22"               # 2 days pre-kickoff to lock theme + angle
+  scope_locked_by: "2026-05-24T18:00:00-04:00"      # by end of kickoff day
+  scaffold_deployed_by: "2026-05-25T12:00:00-04:00" # live URL by Day 1 noon
+  demo_moment_working_by: "2026-05-26T18:00:00-04:00"
+  polish_starts: "2026-05-27T00:00:00-04:00"
+  demo_recorded_by: "2026-05-28T18:00:00-04:00"
+  submission_by: "2026-05-28T23:59:00-04:00"
+  pitch_practiced_by: "2026-05-29T20:00:00-04:00"   # night before finale (only if finalist)
+
+deploy:
+  platform: ""                          # vercel | eas | netlify — set at /hackathon:scaffold
+  live_url: ""                          # captured after /hackathon:scaffold
+  final_commit_sha: ""                  # frozen by /hackathon:demo
+  github_url: ""                        # set after `gh repo create` / first push
+
+stack_preset: ""                        # web-ai | saas | mobile | data-viz | agent (set at /hackathon:ideate)
+
+# ---
+# Phase structure (informational, not consumed by /hackathon:* commands):
+# Phase 1 — Virtual Build:    May 24-28 (kickoff → submission)
+# Phase 2 — In-Person Stage:  May 29-30 (finalist prep + grand finale @ HELIX, Newnham Campus)
+# Contact: hackathon@senecapolytechnic.ca
+# Mentor channels: Discord + Microsoft Teams during Phase 1

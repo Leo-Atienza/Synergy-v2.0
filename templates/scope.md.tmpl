@@ -1,0 +1,111 @@
+# Scope Lock — {{project_name}}
+
+**Status:** LOCKED at {{timestamp}}
+**Amendments:** see `scope-log.md`
+
+---
+
+## Pattern-break archetype
+
+> **Required by `demo-moment-critic`.** One of the 11 archetypes from [`docs/uniqueness-principles.md`](../docs/uniqueness-principles.md) §2:
+> Time-Reveal · Local-Detail · Hardware-Surprise · Audience-Inversion · Format-Inversion · Live-Interactive · Live-Computation · Tension-Reveal · Public-Good Frame · Embodied-Number · Permission-Break
+
+**Locked archetype:** {{archetype_name_from_§2}}
+
+**Why this one:** {{1-2 sentences — what makes it natural for this idea, not bolted on}}
+
+**Optional second archetype** (only if it reinforces, never 3+): {{secondary_or_"none"}}
+
+---
+
+## Demo moment — literal video script
+
+> **Required by `demo-moment-critic`.** Write this as a literal 10-second video script — *Camera shows X. User does Y. Screen reacts with Z.* If you cannot write it without the verbs *"allows"*, *"enables"*, *"lets users"*, or *"users can"*, the demo moment is not concrete enough — go back to ideate.
+
+```
+0:00 — Camera shows: {{what's on screen at second 0}}
+0:02 — User does: {{the single action — click, scroll, speak, type}}
+0:05 — Screen reacts with: {{the visible/audible response — motion, color, sound, generated content}}
+0:08 — End frame: {{the still that lingers in the judge's memory}}
+```
+
+If this clip fails at judging time, the whole project fails. Build this FIRST.
+
+---
+
+## Fallback if the weird version doesn't land
+
+> **Required by `demo-moment-critic`.** Per [`docs/uniqueness-principles.md`](../docs/uniqueness-principles.md) §6, the fallback is **never** the saturated default. It is one notch back from the weirdness — still differentiated, just less risky.
+
+**If the locked archetype reads as confusing/amateur, fall back to:** {{one-notch-back_alternative}}
+
+**What we do NOT fall back to:** {{the saturated default we are explicitly refusing — e.g., "default Tailwind hero gradient + 3-column features" or "AI-powered" framing}}
+
+---
+
+## What was cut to support the pattern-break
+
+> **Required by `demo-moment-critic`.** The pattern-break commitment requires explicit subtraction. List at least one feature/aspiration that was on the shortlist but cut because it would distract from the locked archetype.
+
+- {{cut_1}} — would have pulled toward {{competing_archetype_or_template}}; cut to keep the pattern-break sharp
+- {{cut_2_optional}}
+
+---
+
+## MUST-HAVES (max 5, ranked by demo criticality)
+
+Each feature maps to ≥1 rubric axis (see `~/.claude/skills/hackathon/references/judging-rubrics.md`) AND supports (or is at minimum neutral to) the locked Pattern-break archetype above.
+
+| # | Feature | Rubric axis | Pattern-break role | Est. hours | Status |
+|---|---|---|---|---|---|
+| 1 | {{feature_1}} | {{axis}} | supports / neutral | {{h}} | [ ] |
+| 2 | {{feature_2}} | {{axis}} | supports / neutral | {{h}} | [ ] |
+| 3 | {{feature_3}} | {{axis}} | supports / neutral | {{h}} | [ ] |
+| 4 | {{feature_4}} | {{axis}} | supports / neutral | {{h}} | [ ] |
+| 5 | {{feature_5}} | {{axis}} | supports / neutral | {{h}} | [ ] |
+
+Total estimated hours: {{sum}}
+Event duration: {{event_hours}}h
+Buffer: {{event_hours - sum}}h (must be ≥ 30% of event for polish + demo prep)
+
+---
+
+## NICE-TO-HAVES (only if buffer remains, only if they reinforce the pattern-break)
+
+- {{nice_1}}
+- {{nice_2}}
+
+---
+
+## EXPLICITLY CUT (resist the urge)
+
+These were considered and rejected. Do not build them without a scope amendment.
+
+- {{cut_1}} — reason: {{why}}
+- {{cut_2}} — reason: {{why}}
+
+---
+
+## 60-second pitch draft (written BEFORE code)
+
+**Hook (5s):** {{number_image_sound_or_quote — never "Hi I'm..."}}
+
+**Problem (10s):** {{the_pain_in_one_sentence_with_a_specific_proper_noun_person_or_place}}
+
+**Solution (10s):** {{what_the_project_does_in_plain_english_no_corporate_comms}}
+
+**Live demo (25s):** {{the_demo_moment_script_from_above_expanded — what to click, what to say}}
+
+**Tech highlight (5s):** {{one_impressive_technical_detail — what the AI/data integration actually does, not "AI-powered"}}
+
+**Ask / close (5s):** {{specific_call_to_action_with_email_or_URL — never "thanks for watching"}}
+
+---
+
+## Amendment protocol
+
+- Cannot silently add a feature during `/hackathon:build`
+- To amend: run `/hackathon:scope --amend`, which FORCES a 1-in-1-out trade
+- Amendments must preserve the locked Pattern-break archetype OR explicitly re-lock a new one (in which case `demo-moment-critic` re-validates from scratch)
+- Every amendment appends to `.hackathon/scope-log.md` with timestamp + reason
+- Retro (`/hackathon:retro`) reviews the amendment log for learnings
