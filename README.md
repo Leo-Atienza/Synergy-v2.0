@@ -1,6 +1,6 @@
 # Synergy-v2.0
 
-Solo entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.com/)** — virtual build May 24–28, in-person finale May 29–30 at Newnham Campus.
+Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.com/)** — virtual build May 24–28, in-person finale May 29–30 at Newnham Campus.
 
 > Theme: *The Energy to Innovate* — clean energy, smart grid, community equity (Canadian / Ontario context).
 
