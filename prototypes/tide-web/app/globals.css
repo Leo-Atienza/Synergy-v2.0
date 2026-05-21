@@ -1,0 +1,143 @@
+:root {
+  --bg: #0b1722;
+  --panel: #0f1e2c;
+  --ink: #eaf2f7;
+  --muted: #6f8aa0;
+  --line: #1d2c3a;
+  --teal: #0e7d77; /* clean + cheap */
+  --blue: #1e5f8c; /* mid */
+  --peak: #c84b1f; /* gas peaker — pricey + dirty */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(1200px 600px at 50% -10%, #11283a 0%, var(--bg) 60%);
+}
+
+.card {
+  width: min(580px, 100%);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 6px;
+  font-size: 15px;
+  color: var(--teal);
+}
+
+.live {
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.verb {
+  font-size: clamp(60px, 15vw, 112px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 0.95;
+}
+
+.verb.go {
+  color: var(--teal);
+}
+
+.verb.wait {
+  color: var(--muted);
+}
+
+.sub {
+  margin-top: 10px;
+  font-size: 17px;
+  color: var(--muted);
+}
+
+.sub b {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.strip {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 3px;
+  align-items: end;
+  height: 92px;
+  margin: 30px 0 6px;
+}
+
+.bar {
+  border-radius: 3px 3px 0 0;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.bar.now {
+  opacity: 1;
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.axis {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.scrub {
+  width: 100%;
+  margin-top: 20px;
+  accent-color: var(--teal);
+}
+
+.tally {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 32px;
+}
+
+.tally b {
+  display: block;
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+}
+
+.tally span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.foot {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}

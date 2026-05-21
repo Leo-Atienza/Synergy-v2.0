@@ -1,9 +1,9 @@
 ---
-title: Seed ideas — initial brainstorm (15 candidates)
+title: Seed ideas — initial brainstorm (15 candidates + 3 round-2 + 3 parked)
 type: idea
 status: draft
-updated: 2026-05-15
-sources: ["[[../../docs/themes|themes]]", "[[../../docs/energy-domain|energy-domain]]", "[[seed-a-carbon-intensity-api]]", "[[seed-b-ontario-enviroscreen]]", "[[seed-c-outage-equity-index]]"]
+updated: 2026-05-21
+sources: ["[[../../docs/themes|themes]]", "[[../../docs/energy-domain|energy-domain]]", "[[seed-a-carbon-intensity-api]]", "[[seed-b-ontario-enviroscreen]]", "[[seed-c-outage-equity-index]]", "[[seed-d-tide]]", "[[seed-e-rooftop-roll-call]]", "[[seed-f-backwards-hour]]"]
 ---
 
 # Seed ideas
@@ -169,9 +169,34 @@ Ideas that span 2+ themes — useful as backup if challenge unveil on May 24 ref
 
 ---
 
+## Round 2 — energy-MOVING candidates (added 2026-05-21)
+
+> **The framing insight that produced these.** Re-reading the 15 candidates above with fresh eyes: almost all of them **talk about** energy — dashboards, maps, scores, APIs, calculators, explainers. Very few **move** energy (save kWh, shift load, or specify real generation). The organizers' theme language explicitly invites visualization tools, so "talk-about" isn't disqualified — but in a judging room full of dashboards, a project that books **verifiable $ + carbon savings** (or a buildable generation spec) is the differentiator on the Impact axis. These three live in that white space. Each has a dedicated card.
+
+| # | Idea | Save / Produce | Pattern-break | Card |
+|---|---|---|---|---|
+| 16 | **Tide** — grid-aware smart-plug load shifter | **Save** (shift load to ULO 3.9¢ vs 39.1¢ on-peak; dodge peakers) | Hardware-Surprise + Live-Computation | [[seed-d-tide]] |
+| 17 | **Rooftop Roll Call** — Toronto's Top 100 unbuilt solar roofs | **Produce** (buildable siting spec, named assets) | Permission-Break + Local-Detail | [[seed-e-rooftop-roll-call]] |
+| 18 | **Backwards Hour** — energy saving as a wellness ritual | **Save** (behavioural peak DR) | Format-Inversion + Audience-Inversion | [[seed-f-backwards-hour]] |
+
+- **Lead pick of the three: Tide** — the only seed (incl. all of A–F) that closes a loop from grid data to a physical actuation, with hard verifiable savings (~$17.60 per ~50 kWh EV charge). Hardware on stage = unconfusable demo.
+- Tide + Backwards Hour are two ends of the same peak-hour logic (automate the shift vs. ritualize it) — potentially one product's two modes.
+
+### Parked — round-2 comms-layer ideas (revisit only if challenge rewards awareness/access)
+
+These three surfaced first on 2026-05-21 but were **set aside**: they *communicate about* energy, they don't move kWh (the user's own filter). Preserved because each has a real merit that could matter if the May 24 set rewards accessibility/awareness — WattVoice especially (no-screen accessibility for seniors / ESL / non-smartphone households).
+
+| Idea | One line | Why parked | Revive if… |
+|---|---|---|---|
+| **WattVoice** | Toll-free energy hotline (1-833-ON-GRID): hear the grid mix + your neighbourhood's energy story; IVR + SMS hand-off | Doesn't move kWh | …a sponsor/track rewards accessibility or digital-divide reach (strong Theme 3 + audience-inversion) |
+| **Energy Inheritance** | Type your child's birthday → Ontario's energy decisions across their lifetime + their lifetime bill | Doesn't move kWh | …the set rewards emotional/communication impact over technical depth |
+| **Energy Receipt** | A thermal printer prints Ontario's hourly grid story; stuck to a fridge it becomes a year's wallpaper | Doesn't move kWh | …an in-person finale wants a tactile takeaway prop (pairs as a *companion* to Tide) |
+
+---
+
 ## Process notes
 
-- **Quantity first**, quality at scoring time. We have 15. 5 more by 2026-05-20 is bonus.
+- **Quantity first**, quality at scoring time. We have **18 live candidates** (15 dossier + 3 round-2) + 3 parked. More is bonus.
 - **Don't filter while brainstorming** — write down even silly ones. Often the silly one becomes the seed.
 - **Separate generation from evaluation** — never score in this file. Move to [[scored-ideas]] for that (create at `/hackathon:ideate`).
 - **Use [`energy-domain-researcher`](../../.claude/agents/energy-domain-researcher.md)** when an idea needs a real dataset to be plausible — though [[../../docs/energy-domain]] is now backfilled with most of what you need.

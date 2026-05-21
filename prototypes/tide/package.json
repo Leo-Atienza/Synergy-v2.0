@@ -1,0 +1,22 @@
+{
+  "name": "tide-spike",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Viability spike for Tide — grid-aware load shifting for Ontario. Throwaway prototype to inform idea-lock; NOT the hackathon scaffold.",
+  "scripts": {
+    "sim": "tsx scripts/simulate.ts",
+    "live": "tsx scripts/fetch-live.ts",
+    "plug": "tsx scripts/control-plug.ts",
+    "test": "tsx --test test/optimizer.test.ts test/savings.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "tplink-smarthome-api": "^5.0.0"
+  }
+}
