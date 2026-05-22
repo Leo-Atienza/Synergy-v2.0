@@ -52,7 +52,7 @@ deploy:
   platform: ""                          # vercel | eas | netlify — set at /hackathon:scaffold
   live_url: ""                          # captured after /hackathon:scaffold
   final_commit_sha: ""                  # frozen by /hackathon:demo
-  github_url: ""                        # set after `gh repo create` / first push
+  github_url: "https://github.com/Leo-Atienza/Synergy-v2.0"  # private repo — teammates need a collaborator invite (see ONBOARDING.md)
 
 stack_preset: ""                        # web-ai | saas | mobile | data-viz | agent (set at /hackathon:ideate)
 

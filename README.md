@@ -4,6 +4,8 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 
 > Theme: *The Energy to Innovate* — clean energy, smart grid, community equity (Canadian / Ontario context).
 
+> 👋 **Teammates — start here → [ONBOARDING.md](ONBOARDING.md).** How to accept your invite and read the whole project brain (no coding required). The 5-minute plain-English overview is [`docs/tide-team-brief.pdf`](docs/tide-team-brief.pdf).
+
 | | |
 |---|---|
 | **Repo** | [github.com/Leo-Atienza/Synergy-v2.0](https://github.com/Leo-Atienza/Synergy-v2.0) |
@@ -30,7 +32,7 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 
 - [x] Event metadata locked — [`.hackathon/event.yaml`](.hackathon/event.yaml)
 - [x] Themes captured verbatim + 15-angle library — [`docs/themes.md`](docs/themes.md)
-- [x] Energy domain dossier compiled (1,343 lines, 6 parallel agents) — `~/.claude/plans/now-i-want-you-elegant-narwhal.md`
+- [x] Energy domain dossier compiled (1,343 lines, 6 parallel agents) — [`docs/research-dossier.md`](docs/research-dossier.md)
 - [x] Uniqueness doctrine written (11 archetypes, default-breaker checklist) — [`docs/uniqueness-principles.md`](docs/uniqueness-principles.md)
 - [x] Build-readiness checklist (sections A–J: stack / mock data / demo / submission / sponsors / crisis / decisions / wellbeing / reading) — [`docs/build-readiness.md`](docs/build-readiness.md)
 - [x] Three project-local Claude agents synced to doctrine — [`.claude/agents/`](.claude/agents/)
@@ -56,7 +58,7 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 | Day-by-day with `/hackathon:*` mapping | [`docs/timeline.md`](docs/timeline.md) |
 | Ontario energy datasets / APIs | [`docs/energy-domain.md`](docs/energy-domain.md) |
 | Working brain (Obsidian vault) | [`Synergy-v2.0 — Hackathon Brain/index.md`](Synergy-v2.0%20%E2%80%94%20Hackathon%20Brain/index.md) |
-| Pre-event research dossier (1,343 lines) | `~/.claude/plans/now-i-want-you-elegant-narwhal.md` |
+| Pre-event research dossier (1,343 lines) | [`docs/research-dossier.md`](docs/research-dossier.md) |
 
 ## Project-local Claude config
 

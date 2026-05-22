@@ -333,5 +333,5 @@ Pass 3-4 of 5 → ship. Below that → escalate the archetype or commit harder.
 - [[../20-ideas/seed-a-carbon-intensity-api|Seed A]] — Public-Good Frame natural fit
 - [[../20-ideas/seed-b-ontario-enviroscreen|Seed B]] — Tension-Reveal + Local-Detail
 - [[../20-ideas/seed-c-outage-equity-index|Seed C]] — Time-Reveal built in
-- `~/.claude/plans/now-i-want-you-elegant-narwhal.md` Section 9 — patterns from 30+ past winners
+- `../../docs/research-dossier.md` Section 9 — patterns from 30+ past winners
 - [[judge-rubric-thinking]] — judge psychology canon (this folder)

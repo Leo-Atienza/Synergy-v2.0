@@ -1,6 +1,6 @@
 # Build Readiness — what we lock in before May 24
 
-> Compiled 2026-05-15 after the deep-research dossier (`~/.claude/plans/now-i-want-you-elegant-narwhal.md`). Companion to [`uniqueness-principles.md`](uniqueness-principles.md) (the *what makes it memorable* doc) and [`timeline.md`](timeline.md) (the *when* doc). This file is the *how-we-don't-trip* doc.
+> Compiled 2026-05-15 after the deep-research dossier (`research-dossier.md`). Companion to [`uniqueness-principles.md`](uniqueness-principles.md) (the *what makes it memorable* doc) and [`timeline.md`](timeline.md) (the *when* doc). This file is the *how-we-don't-trip* doc.
 >
 > **This is decision-prompting infrastructure, not a task list.** Every section asks: "what decision does pre-work here unlock during build?" Treat it as a series of prompts you answer before kickoff, not chores you check off.
 
@@ -335,7 +335,7 @@ Time-boxed reads — fit in 6 hours total over the pre-event week:
 | 30 min | [Nick Singh "Win Hackathons" guide](https://www.nicksingh.com/posts/win-hackathons-a-how-to-guide) | Pitch-craft canon |
 | 30 min | [MLH judging plan](https://guide.mlh.io/general-information/judging-and-submissions/judging-plan) | What organizers will tell judges |
 | 20 min | One MLH winner retrospective from dossier Section 9 | Pattern-recognition |
-| 30 min | Read the entire dossier (`~/.claude/plans/now-i-want-you-elegant-narwhal.md`) | Refresh |
+| 30 min | Read the entire dossier (`research-dossier.md`) | Refresh |
 | 15 min | Read [`uniqueness-principles.md`](uniqueness-principles.md) and [[../Synergy-v2.0 — Hackathon Brain/10-event/uniqueness-thinking|uniqueness-thinking]] | The pattern-break system |
 | 10 min | Confirm your top-3 seeds in vault | Final mental rehearsal |
 
@@ -386,7 +386,7 @@ When invoked during build, Claude:
 
 | Date | Goal | Time | Output |
 |---|---|---|---|
-| May 15 | Lock context: dossier + readiness docs | 4h (done) | `~/.claude/plans/now-i-want-you-elegant-narwhal.md`, this file, [[uniqueness-principles]], [[uniqueness-thinking]] |
+| May 15 | Lock context: dossier + readiness docs | 4h (done) | `research-dossier.md`, this file, [[uniqueness-principles]], [[uniqueness-thinking]] |
 | May 16 (today) | Read IESO 2025 APO + Climate Atlas Toronto + finalize Claude config (audit + team-mode flip) | 1h read + 1h config (done) | Mental model of Ontario grid trajectory; all CLAUDE.md/agent doctrine consistent + pushed to GitHub |
 | May 17 | Validate Next.js + Vercel + Supabase + Mapbox/MapLibre stack | 2h | All deploys green; throwaway project shipped |
 | May 18 | Validate Cursor or Claude Code primary tool | 1h | One throwaway feature shipped using it |
@@ -414,5 +414,5 @@ If May 24 challenge sets force a pivot from the 15 seeds → use the same scorin
 - [`themes.md`](themes.md) — verbatim themes + angle libraries
 - [`timeline.md`](timeline.md) — day-by-day with `/hackathon:*` command mapping
 - [`seneca-hackathon-context.md`](seneca-hackathon-context.md) — event facts + open questions
-- `~/.claude/plans/now-i-want-you-elegant-narwhal.md` — the full dossier
+- `research-dossier.md` — the full dossier
 - [[../Synergy-v2.0 — Hackathon Brain/10-event/uniqueness-thinking|uniqueness-thinking]] — deeper reasoning + archetype library

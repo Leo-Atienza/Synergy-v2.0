@@ -2,7 +2,7 @@
 
 > Source: "Energy Hackathon 2026 — Themes" handout, distributed at the pre-event info session on 2026-05-15 (Newnham Campus). Transcribed verbatim from photographs of the printed sheets. Original prose preserved including original grammar (e.g., "communities' experience" in Theme 3, original wording).
 >
-> **Angle libraries backfilled 2026-05-15** from the deep-research dossier (`~/.claude/plans/now-i-want-you-elegant-narwhal.md`). Full cards in `Synergy-v2.0 — Hackathon Brain/20-ideas/seed-ideas.md`. Top-3 seeds (⭐) have dedicated files.
+> **Angle libraries backfilled 2026-05-15** from the deep-research dossier (`research-dossier.md`). Full cards in `Synergy-v2.0 — Hackathon Brain/20-ideas/seed-ideas.md`. Top-3 seeds (⭐) have dedicated files.
 
 ---
 

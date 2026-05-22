@@ -8,7 +8,7 @@ sources: ["[[../README]]", "[[seed-ideas]]", "[[../../docs/energy-domain]]", "[[
 
 # Seed B — OntarioEnviroScreen
 
-> One of three top-3 idea seeds compiled from the 2026-05-15 deep-research dossier (`~/.claude/plans/now-i-want-you-elegant-narwhal.md`). **Pure context — not a commitment.** Final pick happens at `/hackathon:ideate` (target lock 2026-05-22) AFTER kickoff May 24 reveals the actual challenge sets.
+> One of three top-3 idea seeds compiled from the 2026-05-15 deep-research dossier (`../../docs/research-dossier.md`). **Pure context — not a commitment.** Final pick happens at `/hackathon:ideate` (target lock 2026-05-22) AFTER kickoff May 24 reveals the actual challenge sets.
 
 ## Theme alignment
 

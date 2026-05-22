@@ -1,6 +1,6 @@
 # Energy domain notes — Seneca Energy Hackathon 2026
 
-> Backfilled 2026-05-15 from the deep-research dossier (`~/.claude/plans/now-i-want-you-elegant-narwhal.md`). Originally maintained progressively by the `energy-domain-researcher` agent. Cite every entry with a URL. No marketing prose — only datasets, APIs, regulators, and metrics.
+> Backfilled 2026-05-15 from the deep-research dossier (`research-dossier.md`). Originally maintained progressively by the `energy-domain-researcher` agent. Cite every entry with a URL. No marketing prose — only datasets, APIs, regulators, and metrics.
 
 ---
 

@@ -155,7 +155,7 @@ Inherited from `~/Documents/CLAUDE.md`. Consult before non-trivial answers.
 | Project auto-memory | `~/.claude/projects/C--Users-leooa-Documents-personal-projects-Synergy-v2-0/memory/` | **Empty by design** — auto-memory was retired in global ATLAS v8.0.0. Do not write here. The vault below is the project memory layer. |
 | Consolidated brain | `~/Documents/Wiki/wiki/` | Personal facts, engineering patterns, external knowledge. Anchor: `wiki/personal/system-overview.md`. |
 | Project state | `.hackathon/` | Event, scope, timeline, failures, demo artifacts — source of truth mid-event. |
-| Pre-event dossier | `~/.claude/plans/now-i-want-you-elegant-narwhal.md` | 1,343-line research dossier — Ontario energy landscape, past-winner archetypes, sponsor map, MLH judging conventions. Read sections by topic, not full-file. |
+| Pre-event dossier | [`docs/research-dossier.md`](docs/research-dossier.md) | 1,343-line research dossier — Ontario energy landscape, past-winner archetypes, sponsor map, MLH judging conventions. Read sections by topic, not full-file. (In-repo since 2026-05-22 so teammates can read it; originally compiled in `~/.claude/plans/`.) |
 | Uniqueness doctrine | `docs/uniqueness-principles.md` | The 11 pattern-break archetypes + default-breaker checklist. **Required reading** for `scope-defender` and `demo-moment-critic` agents. |
 | Build readiness | `docs/build-readiness.md` | Operational pre-event decisions: stack validation, mock data, demo recording, crisis response, scope-defense canned phrases, sleep protocol. The "how-we-don't-trip" doc. |
 | Themes (verbatim) | `docs/themes.md` | The 3 organizer challenge categories transcribed verbatim + a 15-angle library mapped per theme. Source of `/hackathon:ideate` candidates. |

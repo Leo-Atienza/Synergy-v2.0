@@ -323,5 +323,5 @@ Cross-references:
 - [`build-readiness.md`](build-readiness.md) — operational decision infra
 - [`themes.md`](themes.md) — verbatim themes + angle libraries
 - [[../Synergy-v2.0 — Hackathon Brain/10-event/uniqueness-thinking|uniqueness-thinking]] — deeper reasoning + per-seed archetypes
-- `~/.claude/plans/now-i-want-you-elegant-narwhal.md` Section 9 — patterns from 30+ past winners
-- `~/.claude/plans/now-i-want-you-elegant-narwhal.md` Section 11 — anti-patterns
+- `research-dossier.md` Section 9 — patterns from 30+ past winners
+- `research-dossier.md` Section 11 — anti-patterns

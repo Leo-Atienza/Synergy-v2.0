@@ -34,7 +34,7 @@ updated: 2026-05-21
 - [Build readiness](../docs/build-readiness.md) — operational decision infra for build phase
 - [Uniqueness principles](../docs/uniqueness-principles.md) — the one-strategic-pattern-break system
 - [Event YAML](../.hackathon/event.yaml) — machine-read state
-- [Research dossier](~/.claude/plans/now-i-want-you-elegant-narwhal.md) — comprehensive context (~17.5k words, compiled 2026-05-15)
+- [Research dossier](../docs/research-dossier.md) — comprehensive context (~17.5k words, compiled 2026-05-15)
 
 ## Vault folders (thinking & exploration)
 

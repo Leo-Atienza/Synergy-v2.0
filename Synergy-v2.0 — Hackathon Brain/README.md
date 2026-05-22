@@ -7,7 +7,7 @@ updated: 2026-05-15
 
 # Synergy-v2.0 — working brain
 
-This is the project's note-taking brain. **Open as an Obsidian vault:** File → Open Vault → select this `vault/` folder.
+This is the project's note-taking brain. **Open as an Obsidian vault:** File → Open folder as vault → select the `Synergy-v2.0 — Hackathon Brain/` folder (this folder, *inside* the repo — not the repo root). New teammates: see [`../ONBOARDING.md`](../ONBOARDING.md) for both reading paths.
 
 This is the **thinking** layer. Operational, machine-read facts live in [`../docs/`](../docs/) and [`../.hackathon/`](../.hackathon/) — those are what `/hackathon:*` commands consume. Don't duplicate facts here; reason about them here.
 

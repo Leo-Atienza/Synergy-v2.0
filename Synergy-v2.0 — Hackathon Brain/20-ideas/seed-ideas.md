@@ -10,7 +10,7 @@ sources: ["[[../../docs/themes|themes]]", "[[../../docs/energy-domain|energy-dom
 
 > Pre-`/hackathon:ideate` brainstorm. Goal: 5–10 candidate angles per theme, lightly sketched, NO commitment yet. Score and pick at `/hackathon:ideate` (target lock: 2026-05-22, AFTER kickoff May 24 reveals challenge sets).
 >
-> **15 candidates surfaced from the 2026-05-15 deep-research dossier** (`~/.claude/plans/now-i-want-you-elegant-narwhal.md`). Three are top-3 seeds with their own files: [[seed-a-carbon-intensity-api]], [[seed-b-ontario-enviroscreen]], [[seed-c-outage-equity-index]] (marked ⭐ below).
+> **15 candidates surfaced from the 2026-05-15 deep-research dossier** (`../../docs/research-dossier.md`). Three are top-3 seeds with their own files: [[seed-a-carbon-intensity-api]], [[seed-b-ontario-enviroscreen]], [[seed-c-outage-equity-index]] (marked ⭐ below).
 
 ## Theme 1 — Clean Energy Generation & Integration
 
