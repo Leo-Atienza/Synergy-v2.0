@@ -1,15 +1,18 @@
 import { fetchLatestFuelMix, loadSampleDay } from "../src/ieso.ts";
 import { buildHorizon, chooseWindow } from "../src/optimizer.ts";
 import { KasaPlugDriver } from "../src/plug-kasa.ts";
+import { ShellyPlugDriver } from "../src/plug-shelly.ts";
+import type { PlugDriver } from "../src/plug.ts";
 import type { Load } from "../src/types.ts";
 
-// Drive a REAL TP-Link Kasa plug. The last viability risk: hardware on a real LAN.
-//   npm i tplink-smarthome-api          (already a dep once you've run this)
-//   npm run plug -- 192.168.1.50        (your plug's LAN IP)
+// Drive a REAL plug. The last viability risk: hardware on a real LAN.
+//   npm run plug -- 192.168.8.50            (Shelly — recommended, zero deps, local RPC)
+//   npm run plug -- 192.168.1.50 kasa       (Kasa — needs `npm i tplink-smarthome-api`)
 // It fetches the live grid, computes today's cheapest+cleanest window, and switches
 // the plug for the CURRENT hour. Safe + one-shot — no infinite loop.
 
 const host = process.argv[2] ?? process.env.TIDE_PLUG_IP;
+const driverKind = (process.argv[3] ?? process.env.TIDE_PLUG ?? "shelly").toLowerCase();
 
 const load: Load = {
   name: "demo load",
@@ -21,10 +24,10 @@ const load: Load = {
 
 async function main(): Promise<void> {
   if (!host) {
-    console.error("\n  usage: npm run plug -- <plug-ip>   e.g.  npm run plug -- 192.168.1.50\n");
+    console.error("\n  usage: npm run plug -- <plug-ip> [shelly|kasa]   e.g.  npm run plug -- 192.168.8.50\n");
     process.exit(1);
   }
-  console.log(`\n  T I D E  —  real plug control  ->  ${host}\n`);
+  console.log(`\n  T I D E  —  real plug control  ->  ${driverKind} @ ${host}\n`);
 
   const day = loadSampleDay();
   const horizon = buildHorizon(day, load, "ULO");
@@ -34,12 +37,19 @@ async function main(): Promise<void> {
   console.log(`  live grid : ${live.ok ? `${live.intensity?.toFixed(1)} gCO2/kWh` : live.note}`);
   console.log(`  plan      : run ${String(win.startHour).padStart(2, "0")}:00 for ${load.durationHours}h (cheapest + cleanest)`);
 
-  let plug: KasaPlugDriver;
+  let plug: PlugDriver;
   try {
-    plug = await KasaPlugDriver.connect(host);
+    plug =
+      driverKind === "kasa"
+        ? await KasaPlugDriver.connect(host)
+        : await ShellyPlugDriver.connect(host);
   } catch (err) {
-    console.error(`\n  could not reach a plug at ${host}: ${(err as Error).message}`);
-    console.error(`  (install the driver first:  npm i tplink-smarthome-api )\n`);
+    console.error(`\n  could not reach a ${driverKind} plug at ${host}: ${(err as Error).message}`);
+    console.error(
+      driverKind === "kasa"
+        ? `  (install the driver first:  npm i tplink-smarthome-api )\n`
+        : `  (Shelly: turn Cloud OFF in the plug's web UI and confirm it's on your LAN at ${host})\n`,
+    );
     process.exit(2);
   }
 

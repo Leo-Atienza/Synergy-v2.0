@@ -32,12 +32,13 @@ open web/index.html   # one-screen demo (drag the scrubber; the verb flips)
 
 | File | Role |
 |---|---|
-| `src/rates.ts` | Ontario ULO + TOU schedule, verified Nov 2025–Apr 2026 rates |
-| `src/carbon.ts` | fuel mix → gCO₂/kWh (IPCC AR5 factors) |
+| `src/rates.ts` | Ontario ULO + TOU schedule, verified Nov 2025–Oct 2026 rates (annual cycle) |
+| `src/carbon.ts` | fuel mix → gCO₂/kWh (IPCC AR5 average factors; see marginal note) |
 | `src/ieso.ts` | live IESO fetch (graceful fallback) + cached sample-day loader |
 | `src/optimizer.ts` | **the brain** — pure, tested window selection |
 | `src/plug.ts` | `PlugDriver` interface + `MockPlugDriver` |
-| `src/plug-kasa.ts` | real TP-Link Kasa driver (drop-in; needs `npm i tplink-smarthome-api` + a plug) |
+| `src/plug-shelly.ts` | **recommended** real driver — Shelly Gen2+ local JSON-RPC, zero deps, no cloud |
+| `src/plug-kasa.ts` | TP-Link Kasa driver (KLAP/cloud-auth caveat — see file header; prefer Shelly) |
 | `src/savings.ts` | per-run + annualized savings |
 | `scripts/simulate.ts` | the end-to-end demo run |
 | `scripts/fetch-live.ts` | the live-data probe |
@@ -46,14 +47,22 @@ open web/index.html   # one-screen demo (drag the scrubber; the verb flips)
 
 ## Going real (closing the last risk)
 
+Recommended: a **Shelly Plug US Gen4** (~$25). Gen2+ Shelly speaks a documented local JSON-RPC
+API with **no cloud account** — turn Cloud off in its web UI and control stays on-LAN. Zero deps.
+
 ```bash
-npm i tplink-smarthome-api          # then, with a Kasa plug on your LAN:
+npm run plug -- 192.168.8.50            # Shelly (default) — one-shot grid-aware switch
+npm run plug -- 192.168.1.50 kasa       # Kasa fallback — needs `npm i tplink-smarthome-api`
 ```
 ```ts
-import { KasaPlugDriver } from "./src/plug-kasa.ts";
-const plug = await KasaPlugDriver.connect("192.168.1.50"); // local control, no cloud
+import { ShellyPlugDriver } from "./src/plug-shelly.ts";
+const plug = await ShellyPlugDriver.connect("192.168.8.50"); // local RPC, no cloud
 ```
-Swap `MockPlugDriver` → `KasaPlugDriver` in `simulate.ts` and the same loop drives real hardware.
+Swap `MockPlugDriver` → `ShellyPlugDriver` in `simulate.ts` and the same loop drives real hardware.
+For the stage, run the plug + laptop on your **own travel router with a reserved IP** — venue
+Wi-Fi (client isolation / captive portals) will betray a shared-LAN demo. `MockPlugDriver` stays
+the screen-only fallback if RF fails entirely. (Why not Kasa: TP-Link's KLAP firmware can demand
+cloud creds even for "local" control — see `src/plug-kasa.ts`.)
 
 ## Honest limits
 

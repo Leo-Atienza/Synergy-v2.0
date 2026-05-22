@@ -1,7 +1,10 @@
 import type { RatePlan } from "./types.ts";
 
-// Ontario OEB Regulated Price Plan, effective Nov 1 2025 – Apr 30 2026. Dollars per kWh.
-// Source: OEB RPP bill insert (Nov 2025). Refresh each cycle (May 1 / Nov 1).
+// Ontario OEB Regulated Price Plan. Dollars per kWh. Verified against the OEB 2026-05-22.
+// Prices are now set ANNUALLY: this schedule holds Nov 1 2025 – Oct 31 2026. The May 1 2026
+// switch changed only TOU on-peak TIMING (-> midday, chasing A/C load) and the Tiered threshold
+// (1000 -> 600 kWh/mo). ULO prices AND windows are unchanged year-round. Refresh next Nov 1.
+// Source: https://www.oeb.ca/consumer-information-and-protection/electricity-rates
 export const ULO_RATES = {
   overnight: 0.039, // every day 23:00–07:00
   weekendOffPeak: 0.098, // weekends/holidays 07:00–23:00
@@ -37,6 +40,6 @@ export function touPrice(hour: number, weekday: boolean): Price {
 export function priceAt(hour: number, weekday: boolean, plan: RatePlan): Price {
   const h = ((Math.floor(hour) % 24) + 24) % 24;
   if (plan === "TOU") return touPrice(h, weekday);
-  if (plan === "TIERED") return { dollars: 0.114, period: "tiered" }; // approx Tier 1 flat
+  if (plan === "TIERED") return { dollars: 0.12, period: "tiered" }; // Tier 1 flat (12.0¢; 600 kWh/mo summer, 1000 winter)
   return uloPrice(h, weekday);
 }

@@ -240,3 +240,81 @@ Top stories likely in judge / mentor conversations:
 - **Adam Scott** — Exec Dir, Shift Action; pension/climate risk
 - **Lesley Gallinger** — CEO, IESO
 - **Lynne Anderson** — Chair, OEB
+
+---
+
+## 2026-05-22 freshness update
+
+> Append-only delta gathered by `energy-domain-researcher` on 2026-05-22. Covers (1) the May 15→22 freshness window, (2) confirmed/unknown Seneca event facts, (3) the Tide carbon-honesty / marginal-emissions check. Every line carries a URL. Items already in the dossier (Bruce C May 7 announcement, Pickering refurb, Darlington SMR) are NOT repeated here.
+
+### Marginal vs. average emissions factor — Ontario (the Tide carbon-honesty crux)
+
+The single most decision-relevant finding for Tide. **Cost savings from ULO are guaranteed; carbon savings depend on the marginal generator in the hour you shift FROM.**
+
+- **TAF marginal emissions factor (MEF):** `0.00015 tCO₂e/kWh` = **150 gCO₂e/kWh**, from analysis of 2015 IESO data. Source: The Atmospheric Fund, "ABCs of GHGs" <https://taf.ca/abcs-ghgs-underestimating-emission-reduction-potential-green-energy/> and the full "Ontario Electricity Emissions Factors and Guidelines" 2024 PDF <https://taf.ca/custom/uploads/2024/06/TAF-Ontario-Emissions-Factors-2024.pdf> (8.4 MB; not machine-readable via WebFetch — cite the HTML companion). 2025 edition supersedes; landing page <https://taf.ca/publications/electricity_emissions_factors/>.
+- **Average grid factor for contrast:** `0.00005 tCO₂e/kWh` = **~50 gCO₂e/kWh** (Canada NIR, Ontario). So the **marginal factor is ~3× the average** — using the average understates the carbon value of load-shifting.
+- **Why marginal ≠ average matters for Tide:** TAF states conservation/shifting "at times when natural-gas-fired energy is being used to handle peak loads … will result in more carbon reductions" than during baseload (nuclear+hydro) periods. The carbon benefit of Tide comes from *avoiding the on-peak gas hour*, NOT from the overnight hour being clean. Source: <https://taf.ca/abcs-ghgs-underestimating-emission-reduction-potential-green-energy/>
+- **TAF publishes time-of-use AND seasonal MEFs** (on-peak vs off-peak; summer vs winter). TAF caveat: seasonal MEFs are NOT forecast (too weather-dependent) and **you must not mix factors in one calculation**. Source: <https://taf.ca/publications/electricity_emissions_factors/>
+- **Summer overnight reality (the honest caveat):** Ontario nuclear+hydro baseload "runs 24/7 … often enough to meet low-demand periods such as overnight." BUT during 2025 summer heat waves "natural gas was increasingly relied upon to ensure reliability," and gas use "is expected to remain above typical levels through this decade" because of nuclear refurbishments (Pickering B / Bruce / Darlington offline in waves). So a summer overnight hour is NOT guaranteed gas-free. Sources: <https://www.ontario.ca/page/powering-ontarios-growth>, IESO 2025 Year in Review <https://www.ieso.ca/corporate-ieso/media/year-end-data>, <https://www.ontario.ca/page/ontarios-affordable-energy-future-pressing-case-more-power>
+- **Marginal data caveat for any "carbon API" angle:** Electricity Maps **discontinued its marginal-emissions product in 2025** (verifiability concerns); some US/EU rules now restrict marginal-signal use. Real-time *average* CA-ON intensity is still available. Sources: <https://www.electricitymaps.com/resources/publications/marginal-emissions-introduction>, zone page <https://app.electricitymaps.com/zone/CA-ON>
+- **Reference intensities:** simple-cycle gas ≈ **460 gCO₂/kWh** (TAF). Ontario grid average ≈ 25–50 g/kWh. Source: <https://taf.ca/abcs-ghgs-underestimating-emission-reduction-potential-green-energy/>
+- **Honest one-liner for the pitch:** *"ULO cuts your bill every night (3.9¢ vs 39.1¢/kWh — guaranteed). It cuts carbon when the hour you shift away from is gas-fired — which in Ontario is most on-peak summer afternoons. We use IESO's live fuel mix to show you when shifting is also clean, not just cheap."*
+
+### Datasets & APIs — confirmed/refreshed this week
+
+#### TAF Ontario Electricity Emissions Factors & Guidelines — added 2026-05-22
+- **URL:** <https://taf.ca/publications/electricity_emissions_factors/> (2025 ed. current; 2024 PDF <https://taf.ca/custom/uploads/2024/06/TAF-Ontario-Emissions-Factors-2024.pdf>)
+- **Type:** report (PDF) + methodology
+- **Shape:** marginal & average emissions factors for Ontario electricity, split by time-of-use (on/off-peak) and season (summer/winter); guidance on which factor to use for conservation vs. consumption claims
+- **Access:** free, no signup. PDF is large (8.4 MB) and not WebFetch-readable — download manually or cite the HTML "ABCs of GHGs" companion for the headline numbers.
+- **Hackathon use:** the citable authority that lets Tide make an honest, defensible carbon claim instead of a hand-wavy "overnight = clean" claim a judge could puncture.
+
+#### IESO 2025 Year in Review — added 2026-05-22
+- **URL:** <https://www.ieso.ca/corporate-ieso/media/year-end-data>
+- **Type:** regulator report
+- **Shape:** 2025 capacity mix (nuclear 25%, gas 28%, hydro 24%, wind 14%, solar 7%, bio 1%, imports 1%); **gas ≈ 30% of capacity but only ~10% of generation**; 2025 peak **24,862 MW on June 24** (highest in 12 yrs); **555 MW new capacity added, 451 MW (>80%) from storage** (Oneida, Tilbury, York BESS, Goreway).
+- **Access:** free HTML.
+- **Hackathon use:** fresh 2025 numbers for Tide's "why overnight" slide and to size the gas-on-the-margin argument.
+
+### Common metrics — refreshed values
+
+| Metric | 2026 value (verified this week) | Source |
+|---|---|---|
+| **ULO overnight rate** | **3.9¢/kWh**, 11pm–7am daily | <https://www.oeb.ca/consumer-information-and-protection/electricity-rates> |
+| **ULO on-peak rate** | **39.1¢/kWh** weekday (≈10× the overnight rate) | <https://www.oeb.ca/consumer-information-and-protection/electricity-rates> |
+| **ULO weekend/off-peak (7am–11pm)** | **9.8¢/kWh** (was 7.6¢ in the prior RPP period — corrected 2026-05-22 against OEB primary source; equals TOU off-peak) | <https://www.oeb.ca/consumer-information-and-protection/electricity-rates> |
+| **RPP rates unchanged at summer switch** | Nov 1 2025 rates hold through Oct 31 2026; **no change at the May 1 2026 summer switch** | <https://www.oeb.ca/consumer-information-and-protection/electricity-rates> |
+| **Marginal EF (Ontario)** | **~150 gCO₂e/kWh** (2015 IESO basis) | <https://taf.ca/abcs-ghgs-underestimating-emission-reduction-potential-green-energy/> |
+| **Average EF (Ontario)** | **~50 gCO₂e/kWh** | same |
+| **2026 APO reference demand** | net **152 TWh** (2025 ref yr), growing **~65% to ~250 TWh by 2050**; first edition with high/low scenarios; data centres 8.6% of 2050 demand | <https://www.ieso.ca/Sector-Participants/Planning-and-Forecasting/Annual-Planning-Outlook/2026-APO-Summary> |
+
+### Freshness delta (May 15 → 22) — thin, reported honestly
+
+The May 15→22 window produced **no major new Ontario energy announcement** that a mentor/judge would cite. The big recent items (Bruce C $300M, May 7; IESO 2026 APO; Pickering/Darlington) all predate May 15 and are already in the dossier. What IS active this exact week:
+
+- **IESO stakeholder engagement meetings May 20–22, 2026** — agenda live; ongoing APO / procurement discussions. Source: <https://www.ieso.ca/>
+- **IESO Long Lead-Time (LLT) RFP** — competitive procurement for new-build hydro + long-duration storage (5+ yr lead). Relevant to storage/resilience themes. Source: <https://www.ieso.ca/>
+- **2026 wholesale price pressure** — commercial/industrial wholesale energy costs projected **+71%** in 2026 (on top of ~68% in 2025); a live affordability talking point. Source (third-party forecast, treat as directional): <https://solar-x.ca/blog/ontario-electricity-prices-2026-forecast>
+
+### Seneca Energy Hackathon 2026 — event facts (confirmed vs unknown, as of 2026-05-22)
+
+Sources: <https://www.senecahackathon.com/> and <https://www.senecahackathon.com/about>
+
+**Confirmed:**
+- Dates: **May 24–30, 2026**. Phase 1 (virtual build) May 24–28; Phase 2 (in-person stage) May 29–30; finale May 30 at "Helix," Seneca Polytechnic, 1750 Finch Ave E, Toronto M2J 2X5.
+- Format: hybrid (Discord + Microsoft Teams for virtual; in-person finalist stage).
+- Theme: energy innovation ("The next big energy breakthrough could start with you"). Three challenge tracks per organizer brief: Clean Energy Generation & Integration; Smart Grid, Resilience & Electrification; Community Energy, Equity & Sustainability.
+- Eligibility: **open to every student**, any program/background/experience level.
+- Learning partner: **Octo Learning Inc.** (learnatocto.com), listed under Learning Resources.
+- Contact: hackathon@senecapolytechnic.ca. Past themes: Food (2025), Housing (2024), Smart Cities (2023), Sustainability (2022).
+
+**Still UNKNOWN (not published as of 2026-05-22 — do NOT assume):**
+- Sponsors / sponsor tech or required APIs — **none named** on the site.
+- Prize pool / amounts — not stated.
+- Judging rubric / axes — not stated (the dossier's MLH 4-axis default is an assumption, not confirmed).
+- Team-size rules — not stated.
+- Submission portal — **no Devpost link found** on the official site or via search. (Unrelated "Seneca Hacks"/"Design Hacks" Devpost pages exist but are different events — do not conflate.)
+
+### Angle library — implication for Tide
+
+- The carbon-honesty data above does NOT kill Tide — it sharpens it. Lead the demo with **cost** (guaranteed 3.9¢ vs 39.1¢) and frame **carbon as conditional**, surfaced live from IESO fuel mix. A judge who knows the grid will respect the honesty; a judge who doesn't gets the clean "10× cheaper overnight" hook.
