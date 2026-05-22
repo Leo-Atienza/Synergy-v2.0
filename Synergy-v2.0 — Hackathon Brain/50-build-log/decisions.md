@@ -2,7 +2,7 @@
 title: Decisions — high-leverage choices and reasoning
 type: log
 status: draft
-updated: 2026-05-15
+updated: 2026-05-22
 ---
 
 # Decisions — high-leverage choices and reasoning
@@ -45,7 +45,12 @@ Don't record:
 
 ## Entries
 
-_None yet. First entries expected at `/hackathon:ideate` (idea-lock decision) and `/hackathon:scope` (demo moment + MUST-HAVES decisions)._
+## 2026-05-22 ~10:30 — Tide promoted seed → Candidate (lead); chosen-lock deferred to May 24
+- **Context:** Idea-lock self-deadline (2026-05-22). User asked to promote Tide to Candidate. Scored the 6 carded seeds against the project rubric to formalize the finalist pool. Full scores in [[scored-ideas]].
+- **Options considered:** All 6 carded seeds — A (carbon API), B (EnviroScreen), C (Outage Equity), D (Tide), E (Roll Call), F (Backwards Hour). 12 thin dossier candidates screened out before scoring (no card; mostly "talk about energy, don't move kWh").
+- **Chosen:** All 6 clear ≥75 → finalist candidates. **Tide = lead Candidate (94/100).** Determining reasons: the only seed with a proven runnable viability spike + an already-built `next build`-green demo UI (buildability 19/20), the best-articulated demo moment (hardware + live IESO compute + embodied number, written as a literal video script, 25/25), and max Canadian-data leverage (15/15).
+- **Tradeoffs accepted:** (1) Buildability scored before `/hackathon:team` locks capacity (team size 0) — provisional; re-check once known. (2) Tide concedes Originality (12/15) — grid-aware control already exists (Optiwatt, Home-Assistant DIY); the novelty is the cost+carbon+generic-load+zero-config+receipt fusion, not the relay. (3) Scoring is pre-kickoff; the challenge set isn't revealed yet.
+- **Revisit if:** the May-24 challenge set rewards generation/siting (→ Roll Call rises), equity/resilience (→ Outage Equity / EnviroScreen rise), or behaviour/accessibility over technical depth (→ Backwards Hour rises). Re-rank buildability once team capacity is locked. The **chosen-idea** lock + `event.yaml` `stack_preset` happen then, not now.
 
 ---
 

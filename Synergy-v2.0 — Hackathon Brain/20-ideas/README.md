@@ -12,8 +12,8 @@ This is where `/hackathon:ideate` lives — the workflow for going from "we have
 ## Pages
 
 - [[seed-ideas]] — initial brainstorm (5–10 candidates, lightly described)
-- [[scored-ideas]] — _to be created at_ `/hackathon:ideate` — same ideas with rubric scores
-- [[chosen-idea]] — _to be created at end of_ `/hackathon:ideate` — locked decision + reasoning
+- [[scored-ideas]] — ✅ created 2026-05-22 — 6 carded seeds scored vs the rubric; all ≥75; **Tide leads (94/100)** as the promoted Candidate. Chosen-lock deferred to the May 24 reveal.
+- [[chosen-idea]] — _to be created at end of_ `/hackathon:ideate` (post-May-24) — locked decision + reasoning
 
 ## Idea-scoring rubric (input to `/hackathon:ideate`)
 

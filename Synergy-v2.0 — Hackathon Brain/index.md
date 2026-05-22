@@ -2,7 +2,7 @@
 title: Synergy-v2.0 — Map of Content
 type: folder-index
 status: confirmed
-updated: 2026-05-21
+updated: 2026-05-22
 ---
 
 # Synergy-v2.0 — Map of Content
@@ -13,12 +13,12 @@ updated: 2026-05-21
 
 | Field | Value |
 |---|---|
-| Today | 2026-05-21 |
-| Phase | Pre-event (ideate window) |
-| Days to kickoff | 3 (kickoff 2026-05-24) |
-| Days to submission | 7 (deadline 2026-05-28 23:59 ET) |
-| Idea-lock self-deadline | 2026-05-22 (**tomorrow**) |
-| Candidates | 18 live (15 dossier + 3 round-2: [[20-ideas/seed-d-tide\|Tide]], [[20-ideas/seed-e-rooftop-roll-call\|Roll Call]], [[20-ideas/seed-f-backwards-hour\|Backwards Hour]]) + 3 parked |
+| Today | 2026-05-22 |
+| Phase | Pre-event (ideate window — **6 seeds scored**; Tide promoted to lead Candidate) |
+| Days to kickoff | 2 (kickoff 2026-05-24) |
+| Days to submission | 6 (deadline 2026-05-28 23:59 ET) |
+| Idea-lock self-deadline | 2026-05-22 (**today** — scored to Candidate; chosen-lock held for the May 24 reveal) |
+| Candidates | 18 live + 3 parked → **6 carded seeds scored** ([[20-ideas/scored-ideas\|scored-ideas]]); all clear ≥75. **Lead candidate: [[20-ideas/seed-d-tide\|Tide]]** (94/100) |
 | Mode | **Team** — size + members TBD via `/hackathon:team` |
 | Theme | undecided — 3 candidates (see [Themes](../docs/themes.md)) |
 | Stack preset | undecided (set at `/hackathon:ideate`) |

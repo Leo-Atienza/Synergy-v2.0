@@ -2,12 +2,16 @@
 title: Log — append-only activity trail
 type: folder-index
 status: confirmed
-updated: 2026-05-16
+updated: 2026-05-22
 ---
 
 # Log — append-only activity trail
 
 > Newest entry on top. Format: `YYYY-MM-DD HH:MM ET | action | page | note`. Never delete; mark stale if outdated.
+
+## 2026-05-22
+
+- `2026-05-22 ~10:30 ET | ideate-scoring | vault/20-ideas/scored-ideas.md (created), vault/20-ideas/README.md, vault/index.md, vault/hot.md, vault/50-build-log/decisions.md | Promoted Tide seed→Candidate. Ran the /hackathon:ideate evaluation on the 6 carded seeds (A–F) against the project's weighted /100 rubric (theme 25 / demo-visual 25 / buildability 20 / Canadian-data 15 / originality 15). Results: Tide 94 (lead), Outage Equity 88, Roll Call 87, EnviroScreen 83, Backwards Hour 82, Carbon API 82 — all ≥75 = finalist candidates. Tide's 6-pt lead = best demo-moment (only seed with a proven runnable spike + verified next-build-green demo UI + hardware/live-compute/embodied-number script) + max Canadian data; concedes originality honestly (12/15, concede-then-win). 12 thin dossier candidates screened out at the generation→evaluation gate (mostly "talk about energy, don't move kWh"). Buildability flagged provisional (team size still 0, scored before /hackathon:team). chosen-idea NOT locked + event.yaml stack_preset untouched — explicitly held for the May 24 challenge reveal per each seed's pre-commitment notes. NOT committed to git.`
 
 ## 2026-05-21
 

@@ -2,7 +2,7 @@
 title: Hot — recent vault activity
 type: folder-index
 status: confirmed
-updated: 2026-05-21
+updated: 2026-05-22
 ---
 
 # Hot — recent activity
@@ -11,6 +11,7 @@ updated: 2026-05-21
 
 | Date | Page | Action |
 |---|---|---|
+| 2026-05-22 | [20-ideas/scored-ideas](20-ideas/scored-ideas.md) | created (✅ `/hackathon:ideate` scoring — 6 carded seeds vs project rubric; all ≥75; **Tide promoted to lead Candidate 94/100**; chosen-lock held for May 24 reveal + team capacity) |
 | 2026-05-21 | [20-ideas/seed-d-tide](20-ideas/seed-d-tide.md) | updated (✅ viability PROVEN — runnable spike at `/prototypes/tide/`; live IESO 7/7 fuels, 85% savings, 7/7 tests + typecheck green) |
 | 2026-05-21 | [20-ideas/seed-d-tide](20-ideas/seed-d-tide.md) | created (round-2 LEAD seed #16 — grid-aware smart-plug load shifter; ULO 3.9¢ vs 39.1¢) |
 | 2026-05-21 | [20-ideas/seed-e-rooftop-roll-call](20-ideas/seed-e-rooftop-roll-call.md) | created (round-2 seed #17 — Toronto Top-100 unbuilt solar roofs; the *produce* play) |
