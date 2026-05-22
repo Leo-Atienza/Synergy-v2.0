@@ -7,6 +7,7 @@
   "scripts": {
     "sim": "tsx scripts/simulate.ts",
     "live": "tsx scripts/fetch-live.ts",
+    "plug:test": "tsx scripts/plug-selftest.ts",
     "plug": "tsx scripts/control-plug.ts",
     "test": "tsx --test test/optimizer.test.ts test/savings.test.ts",
     "typecheck": "tsc --noEmit"

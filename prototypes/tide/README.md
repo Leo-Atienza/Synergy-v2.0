@@ -42,6 +42,7 @@ open web/index.html   # one-screen demo (drag the scrubber; the verb flips)
 | `src/savings.ts` | per-run + annualized savings |
 | `scripts/simulate.ts` | the end-to-end demo run |
 | `scripts/fetch-live.ts` | the live-data probe |
+| `scripts/plug-selftest.ts` | first hardware check — ON/OFF/read-back handshake, no grid logic |
 | `web/index.html` | one-screen "WAIT / GO NOW" demo view |
 | `data/sample-day.json` | deterministic Ontario-summer fixture |
 
@@ -51,9 +52,12 @@ Recommended: a **Shelly Plug US Gen4** (~$25). Gen2+ Shelly speaks a documented 
 API with **no cloud account** — turn Cloud off in its web UI and control stays on-LAN. Zero deps.
 
 ```bash
-npm run plug -- 192.168.8.50            # Shelly (default) — one-shot grid-aware switch
+npm run plug:test -- 192.168.8.50       # FIRST when it arrives: pure ON/OFF/read-back, no grid logic
+npm run plug -- 192.168.8.50            # then: Shelly (default) — one-shot grid-aware switch
 npm run plug -- 192.168.1.50 kasa       # Kasa fallback — needs `npm i tplink-smarthome-api`
 ```
+Run `plug:test` first — it isolates "can my laptop switch this plug on its LAN?" from any grid
+logic, so if the lamp blinks ON then OFF you know the RF path is sound before trusting the demo.
 ```ts
 import { ShellyPlugDriver } from "./src/plug-shelly.ts";
 const plug = await ShellyPlugDriver.connect("192.168.8.50"); // local RPC, no cloud
