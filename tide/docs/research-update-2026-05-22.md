@@ -1,6 +1,6 @@
 # Research Update — 2026-05-22 (T-2 days to kickoff)
 
-> **What this is.** A fresh internet-research pass run on 2026-05-22, two days before the Seneca Energy Hackathon 2026 kickoff (May 24). It does **not** re-derive the [2026-05-15 dossier](research-dossier.md) — it targets the *gaps and the freshness delta*, and it stress-tests the leading pick **[[Tide]]** ([seed-d-tide](../Synergy-v2.0%20—%20Hackathon%20Brain/20-ideas/seed-d-tide.md)) against reality. Method: 3 parallel research agents (prior-art, hardware, energy-news/sponsors) + direct primary-source verification of the time-sensitive rate facts. Factual energy-sector items were also appended by the `energy-domain-researcher` to [energy-domain.md → "2026-05-22 freshness update"](energy-domain.md).
+> **What this is.** A fresh internet-research pass run on 2026-05-22, two days before the Seneca Energy Hackathon 2026 kickoff (May 24). It does **not** re-derive the [2026-05-15 dossier](../../docs/research-dossier.md) — it targets the *gaps and the freshness delta*, and it stress-tests the leading pick **[[Tide]]** ([seed-d-tide](../../Synergy-v2.0%20—%20Hackathon%20Brain/20-ideas/seed-d-tide.md)) against reality. Method: 3 parallel research agents (prior-art, hardware, energy-news/sponsors) + direct primary-source verification of the time-sensitive rate facts. Factual energy-sector items were also appended by the `energy-domain-researcher` to [energy-domain.md → "2026-05-22 freshness update"](../../docs/energy-domain.md).
 >
 > **If you read one thing:** §1 (Tide's originality is narrower than the seed claims — and the fix) and §2 (rates verified current — wedge intact).
 
@@ -91,7 +91,7 @@ Nothing landed this week that a judge/mentor would cite. The big items (Bruce C 
 
 ## 6. 🪝 Hedge — if the May 24 reveal pushes toward generation/siting (Rooftop Roll-Call)
 
-If the challenge set rewards "where should we build," the #2 seed [Rooftop Roll-Call](../Synergy-v2.0%20—%20Hackathon%20Brain/20-ideas/seed-e-rooftop-roll-call.md) leads. Prior-art check: **residential rooftop solar-potential mapping is already solved** — **Google Project Sunroof** has covered Canada since 2019, and **MyHEAT** publishes Google-powered solar maps across Canadian cities. So Roll-Call must **not** pitch "we map solar potential" (Google does that). Its surviving, defensible wedge is the part nobody ships: a **named, ranked, public accountability list of the Top-100 unbuilt *commercial flat* roofs** (with owner attribution where public), framed as opportunity. Lead with the named roof, not the methodology.
+If the challenge set rewards "where should we build," the #2 seed [Rooftop Roll-Call](../../Synergy-v2.0%20—%20Hackathon%20Brain/20-ideas/seed-e-rooftop-roll-call.md) leads. Prior-art check: **residential rooftop solar-potential mapping is already solved** — **Google Project Sunroof** has covered Canada since 2019, and **MyHEAT** publishes Google-powered solar maps across Canadian cities. So Roll-Call must **not** pitch "we map solar potential" (Google does that). Its surviving, defensible wedge is the part nobody ships: a **named, ranked, public accountability list of the Top-100 unbuilt *commercial flat* roofs** (with owner attribution where public), framed as opportunity. Lead with the named roof, not the methodology.
 
 ---
 

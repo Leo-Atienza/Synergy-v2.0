@@ -1,6 +1,6 @@
 # How to use Tide
 
-*Set it up once, then forget it. This is the practical companion to [`tide-team-brief.md`](tide-team-brief.md) (which explains **why** Tide exists) and the spike's [`prototypes/tide/README.md`](../prototypes/tide/README.md) (how to **run the code**). This page is how a household actually **uses** it.*
+*Set it up once, then forget it. This is the practical companion to [`tide-team-brief.md`](tide-team-brief.md) (which explains **why** Tide exists) and the spike's [`tide/spike/README.md`](../spike/README.md) (how to **run the code**). This page is how a household actually **uses** it.*
 
 ---
 
@@ -83,10 +83,10 @@ What's still ahead: turning "run a command and edit one setting" into a one-tap 
 
 ## Appendix — running Tide today
 
-For whoever does the technical setup. Full detail in [`prototypes/tide/README.md`](../prototypes/tide/README.md).
+For whoever does the technical setup. Full detail in [`tide/spike/README.md`](../spike/README.md).
 
 ```bash
-cd prototypes/tide
+cd tide/spike
 npm install
 npm run plug:test -- 192.168.1.50    # step 3 above — the plug should blink on, then off
 npm run plug -- 192.168.1.50         # the real thing: read the grid, switch for the right hour
@@ -94,7 +94,7 @@ npm run plug -- 192.168.1.50         # the real thing: read the grid, switch for
 
 Your load (step 4) is set in `scripts/control-plug.ts` — the `load` object's `durationHours` (how long it runs) and `deadlineHour` (when it must be done). In the finished product this becomes a setup screen.
 
-To see it without any hardware: `npm run sim` (a full 24-hour simulation) or open `prototypes/tide/web/index.html` (the WAIT / GO NOW screen).
+To see it without any hardware: `npm run sim` (a full 24-hour simulation) or open `tide/spike/web/index.html` (the WAIT / GO NOW screen).
 
 ---
 

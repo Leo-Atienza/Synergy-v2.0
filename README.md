@@ -4,7 +4,7 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 
 > Theme: *The Energy to Innovate* — clean energy, smart grid, community equity (Canadian / Ontario context).
 
-> 👋 **Teammates — start here → [ONBOARDING.md](ONBOARDING.md).** How to accept your invite and read the whole project brain (no coding required). The 5-minute plain-English overview is [`docs/tide-team-brief.pdf`](docs/tide-team-brief.pdf).
+> 👋 **Teammates — start here → [ONBOARDING.md](ONBOARDING.md).** How to accept your invite and read the whole project brain (no coding required). The 5-minute plain-English overview is [`tide/docs/tide-team-brief.pdf`](tide/docs/tide-team-brief.pdf).
 
 | | |
 |---|---|
@@ -50,6 +50,7 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 
 | If you want… | Open |
 |---|---|
+| **The Tide candidate** — docs, engine spike, demo UI | [`tide/`](tide/) |
 | Event metadata | [`.hackathon/event.yaml`](.hackathon/event.yaml) |
 | Locked scope (after May 24) | [`.hackathon/scope.md`](.hackathon/scope.md) |
 | Themes verbatim + 15-angle library | [`docs/themes.md`](docs/themes.md) |

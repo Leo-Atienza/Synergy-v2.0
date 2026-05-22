@@ -27,6 +27,7 @@ updated: 2026-05-22
 
 ## Operational source-of-truth (canonical, in `../docs/` and `../.hackathon/`)
 
+- [**Tide candidate folder**](../tide/) — docs + engine spike + demo UI for the lead candidate (consolidated into `tide/` on 2026-05-22)
 - [Event facts](../docs/seneca-hackathon-context.md) — name, host, format, logistics, contact, open questions
 - [Themes verbatim](../docs/themes.md) — all 3 challenge categories + angle libraries
 - [Timeline + ATLAS map](../docs/timeline.md) — day-by-day with command mapping

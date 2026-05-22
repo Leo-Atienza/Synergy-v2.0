@@ -2,7 +2,7 @@
 
 *For engineers on the team: how Tide is built, how to run it locally, and how to extend it — **software and hardware both**. The plain-English **why** is in [`tide-team-brief.md`](tide-team-brief.md); the end-user product flow is in [`how-to-use-tide.md`](how-to-use-tide.md). This page is the build.*
 
-> **Status:** these are two **prototypes**, not the official submission scaffold (that gets stood up at `/hackathon:scaffold` after the May 24 kickoff). The engine is proven; the packaging is deliberately throwaway. Read [`prototypes/tide/VIABILITY.md`](../prototypes/tide/VIABILITY.md) for the verdict.
+> **Status:** these are two **prototypes**, not the official submission scaffold (that gets stood up at `/hackathon:scaffold` after the May 24 kickoff). The engine is proven; the packaging is deliberately throwaway. Read [`tide/spike/VIABILITY.md`](../spike/VIABILITY.md) for the verdict.
 
 ---
 
@@ -10,7 +10,7 @@
 
 ```bash
 # 1. the engine + CLI (no browser, no hardware)
-cd prototypes/tide
+cd tide/spike
 npm install
 npm test            # 7 invariant tests on the optimizer + savings math
 npm run sim         # full 24h simulation -> decision -> mock plug -> savings, printed
@@ -37,8 +37,8 @@ The *software* runs the same on Windows, macOS, Linux. The *hardware* is its own
 ## The two codebases — and how they relate
 
 ```
-prototypes/
-├── tide/         the ENGINE + CLI   (Node + tsx, TypeScript, ~520 LOC)
+tide/
+├── spike/        the ENGINE + CLI   (Node + tsx, TypeScript, ~520 LOC)
 │   └── src/      pure decision logic + IO adapters + plug drivers
 └── tide-web/     the DEMO UI        (Next.js 16.2.6 + React 19)
     └── lib/      a COPY of the engine's pure modules (see gotcha #1)
@@ -51,7 +51,7 @@ The spike is the **source of truth** for the logic. `tide-web` carries a hand-co
 
 ---
 
-## Part A — the engine + CLI (`prototypes/tide`)
+## Part A — the engine + CLI (`tide/spike`)
 
 ### Commands
 
@@ -96,7 +96,7 @@ The spike is the **source of truth** for the logic. `tide-web` carries a hand-co
 
 ---
 
-## Part B — the demo UI (`prototypes/tide-web`)
+## Part B — the demo UI (`tide/tide-web`)
 
 Next.js 16.2.6 App Router + React 19. No Tailwind, no UI kit — one screen, hand-written CSS in `app/globals.css`.
 
@@ -160,7 +160,7 @@ Tide is not a dashboard — it's a relay that physically closes on the cheap hou
 ### Test it from Tide
 
 ```bash
-cd prototypes/tide
+cd tide/spike
 npm run plug:test -- <plug-ip>     # pure handshake: ON -> read-back -> hold 2s -> OFF -> read-back
 npm run plug -- <plug-ip>          # then the grid-aware one-shot (Shelly default; append `kasa` for Kasa)
 ```
@@ -193,7 +193,7 @@ The closed loop is *software + a relay* — the relay is the upside, not a singl
 ## Testing & verification
 
 ```bash
-cd prototypes/tide && npm test && npm run typecheck   # engine: 7 tests + strict types
+cd tide/spike && npm test && npm run typecheck   # engine: 7 tests + strict types
 cd ../tide-web && npm run build                        # UI: production build is green
 ```
 
@@ -201,7 +201,7 @@ The engine tests (`test/optimizer.test.ts`, `savings.test.ts`) assert **behaviou
 
 ## Gotchas — read before you change anything
 
-1. **The engine is duplicated.** `prototypes/tide/src/{optimizer,rates,carbon,savings,types}.ts` and `prototypes/tide-web/lib/*` are **parallel copies**. Change the optimizer in one and the other silently drifts. This is a deliberate hackathon shortcut; the real scaffold should make it one shared module. Until then: **change both.**
+1. **The engine is duplicated.** `tide/spike/src/{optimizer,rates,carbon,savings,types}.ts` and `tide/tide-web/lib/*` are **parallel copies**. Change the optimizer in one and the other silently drifts. This is a deliberate hackathon shortcut; the real scaffold should make it one shared module. Until then: **change both.**
 2. **The XML parser is a regex.** `ieso.ts` / `grid.ts` grab the last `<HourlyData>` block with a regex. It works on the real feed today but is brittle to schema drift — production swaps in `fast-xml-parser`.
 3. **Carbon factors are average, not marginal.** Cost savings are *exact*; carbon is *directional*. The honest framing (cost-first, carbon-qualified) is in `carbon.ts`'s header — don't overclaim net-carbon reduction.
 4. **The load is hard-coded.** `page.tsx`'s `LOAD` and the scripts' `load` objects (1.44 kW EV charger, 6h, plugged in 18:00, due 31:00 = 7am) are not user-configurable yet. That's the "tell Tide your load" feature the product still needs.
@@ -213,5 +213,5 @@ The engine tests (`test/optimizer.test.ts`, `savings.test.ts`) assert **behaviou
 
 - [`tide-team-brief.md`](tide-team-brief.md) — why Tide exists, in plain English (share with non-engineers)
 - [`how-to-use-tide.md`](how-to-use-tide.md) — the end-user product flow
-- [`prototypes/tide/README.md`](../prototypes/tide/README.md) — the spike's own run notes
-- [`prototypes/tide/VIABILITY.md`](../prototypes/tide/VIABILITY.md) — what's proven, what's still open
+- [`tide/spike/README.md`](../spike/README.md) — the spike's own run notes
+- [`tide/spike/VIABILITY.md`](../spike/VIABILITY.md) — what's proven, what's still open
