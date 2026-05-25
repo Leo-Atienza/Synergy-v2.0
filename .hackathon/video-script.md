@@ -9,17 +9,17 @@
 ## 0:00–0:20 — COLD OPEN (the number)
 - **On screen:** the device screen at 11:00 — big red "WAIT", "$0.391/kWh · ON-PEAK". No title card, no faces.
 - **VO:** "This is the most expensive electricity in Ontario — 39 cents a kilowatt-hour at dinnertime. The cheapest is 3.9 — ten times less, overnight. Same power. Guess which one a low-income renter is stuck paying."
-- **Cut to:** the Peel map, Brampton **L6T** glowing deep red.
+- **Cut to:** the Peel map, **Malton (L4X)** glowing deepest red — 99/100, Peel's worst burden.
 
 ## 0:20–1:00 — PROBLEM (PS1, made literal)
-- **On screen:** map; pointer hovers L6T; the burden index + renter % visible.
+- **On screen:** map; pointer hovers Malton (L4X); the burden index + renter % visible.
 - **VO:** "Ontario built that 3.9¢ overnight rate to reward flexibility. But a renter usually can't flex — using power at 3 a.m. means being awake at 3 a.m. So most people who switch to it pay *more*. And in sub-metered apartment buildings, renters can't even choose it — by OEB rule, the landlord picks the building's plan. The cheapest rate in the province is a trap for the people who need it most. 1.1 million Ontario households are in energy poverty; the renter rate doubles once you count utilities buried in rent."
 - **On-screen citations:** "OEB price-plan rules · StatCan 2021."
 
 ## 1:00–2:00 — SOLUTION (one use case: map + plug)
 - **VO:** "Tide is two things that are really one. A map that shows a utility *where* the gap is worst across Peel — and which fix each neighbourhood needs. And a $15 plug that is the fix, for the neighbourhoods it can reach."
-- **On screen:** map → click an individually-metered FSA → badge "Tide reaches this neighbourhood"; click L6T → badge "Needs a policy fix (sub-metered)."
-- **VO (over the two clicks):** "Here, individually-metered renters can take the cheap rate — Tide just shifts their load to 3 a.m. automatically. Here, it's mostly sub-metered high-rises — Tide can't help; that's a policy fix. The map tells you which is which."
+- **On screen:** map → click Malton (L4X) → badge "Needs a policy fix (sub-metered)"; then click Brampton (L6V) → badge "Tide reaches this neighbourhood".
+- **VO (over the two clicks):** "Malton is the worst-burden neighbourhood in Peel — but it's mostly sub-metered apartments, where the landlord picks the plan, so Tide can't reach it; that's a policy fix. Brampton's L6V is renters in individually-metered homes — Tide shifts their load to 3 a.m. for them. The map tells you which is which."
 
 ## 2:00–3:30 — DEMO (the moment)
 - **On screen:** device screen + the real lamp (pre-recorded take).
@@ -31,7 +31,7 @@
 
 ## 3:30–4:20 — IMPACT + HONESTY (the moat)
 - **VO:** "Let's be honest about the plug: for a renter it saves maybe $30 to $130 a year. Modest — and real. We're not inflating it. The leverage is the map: it turns a $15 device into targeting intelligence — telling a utility which homes the plug reaches, and which are sub-metered or baseboard-heated and need a different fix entirely."
-- **On screen:** map legend + the three intervention badges (Tide-reachable / policy / retrofit).
+- **On screen:** map legend + the intervention badge on the selected FSA (Tide-reachable vs policy; a retrofit layer for electric-baseboard homes is flagged as next — StatCan doesn't publish heating fuel at FSA level).
 - **VO:** "Every number here is real — StatCan 2021 census, IESO's measured hourly consumption per postal area, OEB rates, the live Ontario grid. No synthetic data."
 
 ## 4:20–4:50 — WHERE IT GOES (sponsor-aligned)

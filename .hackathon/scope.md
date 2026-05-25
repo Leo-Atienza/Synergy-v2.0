@@ -23,20 +23,20 @@
 
 ```
 0:00 — Camera shows: a laptop running Tide. The panel reads "11:00 · $0.391/kWh · ON-PEAK · WAIT" in red.
-         Beside it, a choropleth of Peel; the renter-heaviest FSA (Brampton L6T) glows deep red.
+         Beside it, a choropleth of Peel; the worst-burden FSA — Malton (Mississauga L4X) — glows deepest red.
          [If hardware landed: a dark desk lamp sits next to the laptop.]
 0:02 — User does: drags the hour scrubber from 6pm toward 3am (one continuous motion).
 0:05 — Screen reacts: at the overnight window the panel flips GREEN "03:00 · $0.039/kWh · GO"
          and the device tile flips to ON.  [If hardware: the physical lamp clicks on.]
 0:08 — End frame: caption "3.9¢ — Ontario's cheapest rate is a 3 a.m. trap. Tide springs it for you."
-         The reddest FSA (L6T) stays labeled on the map.
+         The reddest FSA (Malton / L4X) stays labeled on the map.
 ```
 
 The "describe it 2 hours later" test (per critic): *"the one where the rate flips to 3.9¢ at 3 a.m. and the lamp turns on."* Build this FIRST. If it fails at judging time, the whole project fails.
 
 **Two seams closed (critic-mandated):**
 1. **No EV contradiction on camera.** The current screen says "EV charger plugged in at 6pm" — the exact framing we cut. MUST-HAVE #2 rewrites it to a renter load before any recording. The artifact must match the pitch.
-2. **The FSA click disambiguates the two renters.** Clicking L6T must state *which* fix applies ("largely sub-metered → policy fix: the landlord chooses the rate") vs an individually-metered FSA ("Tide-reachable"). This converts the sub-metered-vs-individually-metered seam from a vulnerability into the thesis: the map tells utilities which neighbourhoods the device reaches and which need the policy lever.
+2. **The FSA click disambiguates the two renters.** Clicking the worst FSA — Malton (L4X) — must state *which* fix applies ("largely sub-metered → policy fix: the landlord chooses the rate") vs an individually-metered FSA like Brampton L6V ("Tide-reachable"). This converts the sub-metered-vs-individually-metered seam from a vulnerability into the thesis: the map tells utilities which neighbourhoods the device reaches and which need the policy lever.
 
 ---
 
@@ -100,7 +100,7 @@ Buffer: ~5h solo (~20%) — **below the 30% ideal.** Mitigation: **TEAM mode** s
 
 **Solution (10s):** "Tide automates the shift for renters who *can* choose the rate — a $15 plug that runs the AC or laundry at 3.9¢, no behaviour change. Plus a map that tells utilities which Peel neighbourhoods Tide can reach, and which need the policy fix instead."
 
-**Live demo (25s):** the demo-moment script, expanded — show the 39¢ WAIT, scrub to 3 a.m., the panel flips to 3.9¢ GO and the lamp/tile fires; then click the reddest FSA (L6T) and read its real numbers + which intervention it needs.
+**Live demo (25s):** the demo-moment script, expanded — show the 39¢ WAIT, scrub to 3 a.m., the panel flips to 3.9¢ GO and the lamp/tile fires; then click the reddest FSA — Malton (L4X) — and read its real numbers + which intervention it needs.
 
 **Tech highlight (5s):** "Every number is real — StatCan 2021 census, IESO's measured hourly consumption per postal area, and the live Ontario grid. No synthetic data."
 

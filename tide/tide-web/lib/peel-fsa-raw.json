@@ -1,0 +1,317 @@
+[
+  {
+    "fsa": "L4T",
+    "name": "Mississauga (L4T)",
+    "population": 38182,
+    "medianHouseholdIncome": 84000,
+    "renterPct": 40.1,
+    "electricHeatPct": null,
+    "apartmentPct": 57.5
+  },
+  {
+    "fsa": "L4V",
+    "name": "Mississauga (L4V)",
+    "population": 5,
+    "medianHouseholdIncome": null,
+    "renterPct": null,
+    "electricHeatPct": null,
+    "apartmentPct": null
+  },
+  {
+    "fsa": "L4W",
+    "name": "Mississauga (L4W)",
+    "population": 19744,
+    "medianHouseholdIncome": 105000,
+    "renterPct": 22.0,
+    "electricHeatPct": null,
+    "apartmentPct": 30.6
+  },
+  {
+    "fsa": "L4X",
+    "name": "Mississauga (L4X)",
+    "population": 18719,
+    "medianHouseholdIncome": 81000,
+    "renterPct": 52.9,
+    "electricHeatPct": null,
+    "apartmentPct": 56.0
+  },
+  {
+    "fsa": "L4Y",
+    "name": "Mississauga (L4Y)",
+    "population": 23490,
+    "medianHouseholdIncome": 89000,
+    "renterPct": 32.2,
+    "electricHeatPct": null,
+    "apartmentPct": 44.4
+  },
+  {
+    "fsa": "L4Z",
+    "name": "Mississauga (L4Z)",
+    "population": 37218,
+    "medianHouseholdIncome": 100000,
+    "renterPct": 28.4,
+    "electricHeatPct": null,
+    "apartmentPct": 42.6
+  },
+  {
+    "fsa": "L5A",
+    "name": "Mississauga (L5A)",
+    "population": 47406,
+    "medianHouseholdIncome": 80000,
+    "renterPct": 49.9,
+    "electricHeatPct": null,
+    "apartmentPct": 66.9
+  },
+  {
+    "fsa": "L5B",
+    "name": "Mississauga (L5B)",
+    "population": 67131,
+    "medianHouseholdIncome": 79000,
+    "renterPct": 44.7,
+    "electricHeatPct": null,
+    "apartmentPct": 78.5
+  },
+  {
+    "fsa": "L5C",
+    "name": "Mississauga (L5C)",
+    "population": 29284,
+    "medianHouseholdIncome": 102000,
+    "renterPct": 26.0,
+    "electricHeatPct": null,
+    "apartmentPct": 29.4
+  },
+  {
+    "fsa": "L5E",
+    "name": "Mississauga (L5E)",
+    "population": 12972,
+    "medianHouseholdIncome": 98000,
+    "renterPct": 23.1,
+    "electricHeatPct": null,
+    "apartmentPct": 41.1
+  },
+  {
+    "fsa": "L5G",
+    "name": "Mississauga (L5G)",
+    "population": 20714,
+    "medianHouseholdIncome": 95000,
+    "renterPct": 42.9,
+    "electricHeatPct": null,
+    "apartmentPct": 49.9
+  },
+  {
+    "fsa": "L5H",
+    "name": "Mississauga (L5H)",
+    "population": 17409,
+    "medianHouseholdIncome": 139000,
+    "renterPct": 20.7,
+    "electricHeatPct": null,
+    "apartmentPct": 17.9
+  },
+  {
+    "fsa": "L5J",
+    "name": "Mississauga (L5J)",
+    "population": 28208,
+    "medianHouseholdIncome": 107000,
+    "renterPct": 25.8,
+    "electricHeatPct": null,
+    "apartmentPct": 31.6
+  },
+  {
+    "fsa": "L5K",
+    "name": "Mississauga (L5K)",
+    "population": 13363,
+    "medianHouseholdIncome": 102000,
+    "renterPct": 34.9,
+    "electricHeatPct": null,
+    "apartmentPct": 36.2
+  },
+  {
+    "fsa": "L5L",
+    "name": "Mississauga (L5L)",
+    "population": 43585,
+    "medianHouseholdIncome": 110000,
+    "renterPct": 21.4,
+    "electricHeatPct": null,
+    "apartmentPct": 21.9
+  },
+  {
+    "fsa": "L5M",
+    "name": "Mississauga (L5M)",
+    "population": 106468,
+    "medianHouseholdIncome": 118000,
+    "renterPct": 23.4,
+    "electricHeatPct": null,
+    "apartmentPct": 17.7
+  },
+  {
+    "fsa": "L5N",
+    "name": "Mississauga (L5N)",
+    "population": 83700,
+    "medianHouseholdIncome": 123000,
+    "renterPct": 17.2,
+    "electricHeatPct": null,
+    "apartmentPct": 15.6
+  },
+  {
+    "fsa": "L5R",
+    "name": "Mississauga (L5R)",
+    "population": 37022,
+    "medianHouseholdIncome": 99000,
+    "renterPct": 25.9,
+    "electricHeatPct": null,
+    "apartmentPct": 46.9
+  },
+  {
+    "fsa": "L5S",
+    "name": "Mississauga (L5S)",
+    "population": 27,
+    "medianHouseholdIncome": null,
+    "renterPct": null,
+    "electricHeatPct": null,
+    "apartmentPct": null
+  },
+  {
+    "fsa": "L5T",
+    "name": "Mississauga (L5T)",
+    "population": 19,
+    "medianHouseholdIncome": null,
+    "renterPct": null,
+    "electricHeatPct": null,
+    "apartmentPct": null
+  },
+  {
+    "fsa": "L5V",
+    "name": "Mississauga (L5V)",
+    "population": 49149,
+    "medianHouseholdIncome": 126000,
+    "renterPct": 17.5,
+    "electricHeatPct": null,
+    "apartmentPct": 12.4
+  },
+  {
+    "fsa": "L5W",
+    "name": "Mississauga (L5W)",
+    "population": 24145,
+    "medianHouseholdIncome": 142000,
+    "renterPct": 10.5,
+    "electricHeatPct": null,
+    "apartmentPct": 5.2
+  },
+  {
+    "fsa": "L6P",
+    "name": "Brampton (L6P)",
+    "population": 91155,
+    "medianHouseholdIncome": 134000,
+    "renterPct": 10.9,
+    "electricHeatPct": null,
+    "apartmentPct": 8.2
+  },
+  {
+    "fsa": "L6R",
+    "name": "Brampton (L6R)",
+    "population": 93783,
+    "medianHouseholdIncome": 116000,
+    "renterPct": 14.0,
+    "electricHeatPct": null,
+    "apartmentPct": 12.0
+  },
+  {
+    "fsa": "L6S",
+    "name": "Brampton (L6S)",
+    "population": 54361,
+    "medianHouseholdIncome": 105000,
+    "renterPct": 18.3,
+    "electricHeatPct": null,
+    "apartmentPct": 23.0
+  },
+  {
+    "fsa": "L6T",
+    "name": "Brampton (L6T)",
+    "population": 39614,
+    "medianHouseholdIncome": 83000,
+    "renterPct": 46.2,
+    "electricHeatPct": null,
+    "apartmentPct": 54.8
+  },
+  {
+    "fsa": "L6V",
+    "name": "Brampton (L6V)",
+    "population": 42392,
+    "medianHouseholdIncome": 93000,
+    "renterPct": 31.1,
+    "electricHeatPct": null,
+    "apartmentPct": 32.9
+  },
+  {
+    "fsa": "L6W",
+    "name": "Brampton (L6W)",
+    "population": 23547,
+    "medianHouseholdIncome": 87000,
+    "renterPct": 39.2,
+    "electricHeatPct": null,
+    "apartmentPct": 41.8
+  },
+  {
+    "fsa": "L6X",
+    "name": "Brampton (L6X)",
+    "population": 76113,
+    "medianHouseholdIncome": 116000,
+    "renterPct": 21.0,
+    "electricHeatPct": null,
+    "apartmentPct": 15.3
+  },
+  {
+    "fsa": "L6Y",
+    "name": "Brampton (L6Y)",
+    "population": 97601,
+    "medianHouseholdIncome": 106000,
+    "renterPct": 29.9,
+    "electricHeatPct": null,
+    "apartmentPct": 33.1
+  },
+  {
+    "fsa": "L6Z",
+    "name": "Brampton (L6Z)",
+    "population": 33888,
+    "medianHouseholdIncome": 119000,
+    "renterPct": 12.9,
+    "electricHeatPct": null,
+    "apartmentPct": 12.1
+  },
+  {
+    "fsa": "L7A",
+    "name": "Brampton (L7A)",
+    "population": 104009,
+    "medianHouseholdIncome": 124000,
+    "renterPct": 13.2,
+    "electricHeatPct": null,
+    "apartmentPct": 4.4
+  },
+  {
+    "fsa": "L7C",
+    "name": "Caledon (L7C)",
+    "population": 33846,
+    "medianHouseholdIncome": 134000,
+    "renterPct": 11.6,
+    "electricHeatPct": null,
+    "apartmentPct": 3.2
+  },
+  {
+    "fsa": "L7E",
+    "name": "Caledon (L7E)",
+    "population": 34516,
+    "medianHouseholdIncome": 132000,
+    "renterPct": 9.7,
+    "electricHeatPct": null,
+    "apartmentPct": 6.2
+  },
+  {
+    "fsa": "L7K",
+    "name": "Caledon (L7K)",
+    "population": 8486,
+    "medianHouseholdIncome": 134000,
+    "renterPct": 11.1,
+    "electricHeatPct": null,
+    "apartmentPct": 2.6
+  }
+]

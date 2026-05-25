@@ -98,9 +98,12 @@ export default function TideScreen(props: Props) {
         </div>
 
         <p className="foot">
-          EV charger plugged in at 6pm, due by 7am. Tide waits for the overnight window ($
-          {props.smartDollars.toFixed(2)}) instead of charging on plug-in (${props.baselineDollars.toFixed(2)}).
-          Demo fixture: Ontario summer weekday, ULO plan. Top-right reading is live from IESO.
+          Window AC set to cool overnight instead of running through the 6pm peak — plugged in at 6pm,
+          done by morning. Tide waits for the 3.9¢ window ($
+          {props.smartDollars.toFixed(2)}) over the 39¢ peak (${props.baselineDollars.toFixed(2)}); honest
+          renter savings ≈ $30–130 a cooling season. The leverage is the{" "}
+          <a className="map-link" href="/map">map</a>. Demo fixture: Ontario summer
+          weekday, OEB ULO rates; top-right is live from IESO.
         </p>
       </div>
     </main>

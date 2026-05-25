@@ -8,9 +8,9 @@ import TideScreen from "./tide-screen";
 export const dynamic = "force-dynamic";
 
 const LOAD: Load = {
-  name: "EV charger (Level 1, 1.44 kW)",
-  watts: 1440,
-  durationHours: 6,
+  name: "Window AC (cool overnight, 1.2 kW)",
+  watts: 1200,
+  durationHours: 5,
   earliestHour: 18,
   deadlineHour: 31,
 };
