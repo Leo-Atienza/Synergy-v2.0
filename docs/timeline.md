@@ -1,8 +1,8 @@
 # Seneca Energy Hackathon 2026 — Timeline & ATLAS workflow map
 
-> Source: kickoff slide 05 "TIMELINE" (photographed 2026-05-15) + <https://www.senecahackathon.com/>. Submission-deadline conflict between sources resolved in favor of website (May 28); see [`seneca-hackathon-context.md`](seneca-hackathon-context.md) Open Questions §1.
+> Source: kickoff slide 05 "TIMELINE" (photographed 2026-05-15) + <https://www.senecahackathon.com/>. The two sources disagree on the submission deadline. We went with the website (May 28). See [`seneca-hackathon-context.md`](seneca-hackathon-context.md) Open Questions §1.
 
-Today is **2026-05-15** — 9 days to kickoff, 13 days to submission, 15 days to grand finale.
+Today is **2026-05-15**. That's 9 days to kickoff, 13 days to submission, 15 days to the grand finale.
 
 ---
 
@@ -26,12 +26,12 @@ Today is **2026-05-15** — 9 days to kickoff, 13 days to submission, 15 days to
 
 ## Critical gates (don't slip these)
 
-1. **2026-05-22 — Idea-lock self-deadline.** If `/hackathon:ideate` hasn't converged by Friday May 22, force a decision Saturday morning. Two days pre-kickoff is the minimum for stack research and preliminary scaffolding. Going into kickoff without an idea = losing all of Day 0 to ideation.
-2. **2026-05-24 — Scope must be locked by end of kickoff day.** `.hackathon/scope.md` written, demo moment articulated as a 10-second clip, MUST-HAVES list final. Run `demo-moment-critic` agent before sleeping that night.
-3. **2026-05-25 12:00 ET — Live URL deployed.** Per `event.yaml` `scaffolded_deployed_by`. Empty live URL on submission = automatic disqualification on most hackathon rubrics.
-4. **2026-05-26 18:00 ET — Demo moment working.** The 10-second clip must be reproducible end-to-end on the live URL by Tuesday evening. If not: trigger 30-min stuck rule, mock data, move on.
-5. **2026-05-28 18:00 ET — Demo recorded.** Buffer 6 hours for video re-takes, screenshot polish, README finalization, submission-form fields. Don't push commits after `final_commit_sha` is captured.
-6. **2026-05-28 23:59 ET — Submission cutoff.** `[contradiction unresolved]` Confirm with organizers Day 1 of Phase 1 — see `seneca-hackathon-context.md` Open Questions §1.
+1. **2026-05-22, idea-lock self-deadline.** If `/hackathon:ideate` hasn't landed on one idea by Friday May 22, force the decision Saturday morning. Two days before kickoff is the least time we need for stack research and a first scaffold. Walk into kickoff with no idea and you lose all of Day 0 to picking one.
+2. **2026-05-24, scope locked by end of kickoff day.** Write `.hackathon/scope.md`, state the demo moment as a 10-second clip, and finalize the MUST-HAVES list. Run the `demo-moment-critic` agent before you sleep that night.
+3. **2026-05-25 12:00 ET, live URL deployed.** Per `event.yaml` `scaffolded_deployed_by`. An empty live URL at submission gets you disqualified on most hackathon rubrics.
+4. **2026-05-26 18:00 ET, demo moment working.** You need to reproduce the 10-second clip end-to-end on the live URL by Tuesday evening. If it isn't working, trigger the 30-min stuck rule, mock the data, and move on.
+5. **2026-05-28 18:00 ET, demo recorded.** Leave 6 hours for video re-takes, screenshot polish, README finalization, and submission-form fields. Don't push commits after `final_commit_sha` is captured.
+6. **2026-05-28 23:59 ET, submission cutoff.** `[contradiction unresolved]` Confirm with organizers on Day 1 of Phase 1. See `seneca-hackathon-context.md` Open Questions §1.
 
 ---
 
@@ -39,27 +39,27 @@ Today is **2026-05-15** — 9 days to kickoff, 13 days to submission, 15 days to
 
 If organizers confirm the photo is correct (May 26, not May 28):
 
-- **Phase 1 collapses from 5 days to 3 days.** May 27-28 become judging-only days, not build days.
-- **Polish day disappears.** Go straight from `/hackathon:build` (May 26 morning) to `/hackathon:demo` (May 26 afternoon) to submission (May 26 23:59).
-- **Demo moment must be working by May 25 18:00**, not May 26.
-- **Idea-lock moves up.** New self-deadline: Wednesday May 20. Lose 2 days of pre-kickoff prep.
-- **No buffer day.** First sign of organizer correction → emergency replan, drop one MUST-HAVE per day saved-or-lost.
+- **Phase 1 shrinks from 5 days to 3 days.** May 27-28 turn into judging-only days, not build days.
+- **The polish day is gone.** Go straight from `/hackathon:build` (May 26 morning) to `/hackathon:demo` (May 26 afternoon) to submission (May 26 23:59).
+- **The demo moment has to work by May 25 18:00**, not May 26.
+- **Idea-lock moves up.** New self-deadline: Wednesday May 20. We lose 2 days of pre-kickoff prep.
+- **No buffer day.** The moment organizers correct the date → replan fast, drop one MUST-HAVE for each day you gain or lose.
 
-Reconcile this on Day 1 of Phase 1 (May 24) before writing scope.md.
+Sort this out on Day 1 of Phase 1 (May 24) before you write scope.md.
 
 ---
 
 ## What changes if we DON'T make finalist (most likely outcome)
 
-- May 29 and May 30 become free days. Schedule `/hackathon:retro` for May 30 evening — capture lessons while fresh.
-- No pitch prep needed; skip `/hackathon:pitch`.
+- May 29 and May 30 become free days. Schedule `/hackathon:retro` for May 30 evening so the lessons are still fresh.
+- No pitch prep needed. Skip `/hackathon:pitch`.
 - Treat May 28 23:59 as the final delivery moment. Everything ships then.
 
 ---
 
 ## Reverse-engineered build budget
 
-Working backward from May 28 23:59 ET submission:
+Working backward from the May 28 23:59 ET submission:
 
 | Reserved | Hours | Activity |
 |---|---|---|
@@ -72,6 +72,6 @@ Working backward from May 28 23:59 ET submission:
 | 6h | 18:00–24:00 May 24 | Scope lock + demo-moment-critic pass |
 | (kickoff) | morning May 24 | Reconcile our pre-event angle with revealed challenges |
 
-**Total build window: ~96h** — matches `event.yaml` `duration_hours: 96`. About 30% reserved for non-coding (submission ceremony, polish), 70% for build.
+**Total build window: ~96h.** That matches `event.yaml` `duration_hours: 96`. About 30% goes to non-coding work (submission ceremony, polish) and 70% goes to building.
 
-Update at `/hackathon:scope` once scope MUST-HAVES are sized and the demo-moment storyboard exists.
+Update this at `/hackathon:scope` once you've sized the scope MUST-HAVES and built the demo-moment storyboard.

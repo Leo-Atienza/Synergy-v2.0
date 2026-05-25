@@ -72,20 +72,20 @@ Not all communities' experience energy and climate challenges in the same way. S
 
 ---
 
-## Cross-theme observations (not on the handout — our reading)
+## Cross-theme observations (not on the handout, our reading)
 
-- **Common thread:** all three themes explicitly call out **maps, visuals, digital tools, simple tools** — the organizers are nudging toward data-viz / explainer / planning-tool projects, not full-stack consumer apps. Demo moment should land visually in <10 seconds.
-- **Audience framing:** every theme says "help people understand" or "help decision makers understand" — judges likely score communication clarity as a major axis.
-- **Canadian context:** Theme 1 explicitly mentions Canada; assume judges expect Canadian datasets (Statistics Canada, ECCC, IESO grid data, Open Data Toronto, etc.) over US/global data where both exist.
-- **Equity framing in Theme 3** is the broadest — easiest to pivot scope without breaking theme alignment if challenge unveil on May 24 narrows things further.
-- **Theme 3 "decision makers"** suggests the *user persona* of the demo could be a planner / policymaker, not an end-consumer. That changes UI tone (dashboards over consumer apps).
+- **Common thread:** all three themes call out **maps, visuals, digital tools, and simple tools**. The organizers are pushing us toward data-viz, explainer, or planning-tool projects, not full-stack consumer apps. The demo moment should land visually in under 10 seconds.
+- **Audience:** every theme says "help people understand" or "help decision makers understand." Judges probably score how clearly you communicate as a big part of the grade.
+- **Canadian data:** Theme 1 names Canada. Assume judges want Canadian datasets (Statistics Canada, ECCC, IESO grid data, Open Data Toronto, and so on) over US or global data when both exist.
+- **Equity framing in Theme 3** is the broadest. It is the easiest one to change scope on without breaking theme fit, in case the May 24 challenge reveal narrows things further.
+- **Theme 3 "decision makers"** hints that the demo's user could be a planner or policymaker, not an everyday consumer. That changes the UI tone: dashboards instead of consumer apps.
 
 ## Reference for `/hackathon:ideate`
 
-When scoring 5–10 ideas, weight against:
-1. Which theme it lands in (state explicitly)
-2. Whether the demo moment is visual + <10s (per cross-theme observation #1)
-3. Whether it uses Canadian / Toronto / Ontario data (per #3)
-4. Whether the user persona matches the theme's framing (per #5 for Theme 3)
-5. Whether it picks up an "underserved-communities" or "equity" framing — explicitly rewarded by judges across past energy hackathons (e.g., Incenzo won MIT Energy Hack 2024 1st with this angle)
-6. Whether it has a "Monday-morning use" — judges believe concrete impact, not gigaton-2050 claims
+When scoring 5 to 10 ideas, weigh each one against:
+1. Which theme it fits (say which one)
+2. Whether the demo moment is visual and under 10 seconds (see observation #1 above)
+3. Whether it uses Canadian, Toronto, or Ontario data (see #3)
+4. Whether the user it targets matches the theme (see #5 for Theme 3)
+5. Whether it uses an "underserved communities" or "equity" angle. Judges have rewarded this across past energy hackathons (for example, Incenzo won 1st at MIT Energy Hack 2024 with this angle).
+6. Whether it has a "Monday-morning use." Judges trust concrete impact over far-off "gigaton by 2050" claims.

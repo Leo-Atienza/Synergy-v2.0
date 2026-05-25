@@ -1,8 +1,8 @@
 # Seneca Energy Hackathon 2026 — Comprehensive Research Dossier
 
-> **Context.** This is the deep-research output Leo requested on 2026-05-15 to give Claude (and Leo) complete context for the Seneca Energy Hackathon 2026 (May 24-30). Compiled by 6 parallel research agents covering: Ontario/Canada energy domain, international POCs, past hackathon winners, how-to-win playbook, cross-disciplinary lens, and Ontario physical infrastructure. **Stack-neutral. Pure context, not a project commitment.** Top-3 idea seeds appear in Appendix 2 for transfer into the vault (`Synergy-v2.0 — Hackathon Brain/20-ideas/`) after plan exit. Use this dossier as the authoritative reference during `/hackathon:ideate` on May 22-24 and as live ammo during `/hackathon:build`.
+> **Context.** Leo asked for this research on 2026-05-15 so Claude (and Leo) would have full context for the Seneca Energy Hackathon 2026 (May 24-30). Six parallel research agents built it. They covered: the Ontario and Canada energy world, international proof-of-concepts, past hackathon winners, a how-to-win playbook, ideas from other fields, and Ontario's physical infrastructure. **It does not pick a tech stack. It is context only, not a decision about what to build.** The three best idea seeds are in Appendix 2, ready to move into the vault (`Synergy-v2.0 — Hackathon Brain/20-ideas/`) after the plan ends. Use this file as the main reference during `/hackathon:ideate` on May 22-24, and as ready facts during `/hackathon:build`.
 
-> **How to read.** Sections A-D give you the *world* (Ontario reality + data sources + international tooling). Sections E-F give you the *gap* (what's missing + cross-disciplinary unlocks). Sections G-J give you the *craft* (how to win + how to fail). Section K is *who-might-fund-it*. The appendices are *ideas + glossary + bibliography*. If you only read 3 sections: D (gaps), G (winning patterns), H (playbook).
+> **How to read.** Sections A-D give you the *world*: Ontario's reality, the data sources, and tools built abroad. Sections E-F give you the *gap*: what is missing, plus ideas borrowed from other fields. Sections G-J give you the *craft*: how to win and how to lose. Section K is *who might fund it*. The appendices hold ideas, a glossary, and a bibliography. If you only read three sections, read D (gaps), G (winning patterns), and H (playbook).
 
 ---
 
@@ -14,19 +14,19 @@
 | Tagline | "The Energy to Innovate" |
 | Host | Seneca Polytechnic |
 | Dates | 2026-05-24 → 2026-05-30 |
-| Format | Hybrid — virtual build May 24-28 + in-person finale May 29-30 |
+| Format | Hybrid. Virtual build May 24-28, then in-person finale May 29-30 |
 | Phase 1 venue | Virtual (Discord + Microsoft Teams mentor channels) |
 | Phase 2 venue | HELIX, Newnham Campus (1750 Finch Ave East, Toronto) |
 | Themes | (1) Clean Energy Generation & Integration · (2) Smart Grid, Resilience & Electrification · (3) Community Energy, Equity & Sustainability |
-| Submission deadline | 2026-05-28 23:59 ET (website) — **conflict with photo showing May 26**; confirm Day 1 |
+| Submission deadline | 2026-05-28 23:59 ET (website). **A photo shows May 26 instead**, so confirm on Day 1 |
 | Top finalists revealed | 2026-05-28 |
-| Mode | Solo (1) — toggle at `/hackathon:team` |
+| Mode | Solo (1). Toggle at `/hackathon:team` |
 | Contact | hackathon@senecapolytechnic.ca |
-| Learning resource | learnatocto.com — **= Octo Learning, Inc.** (AI-curated learning platform). NOT Octopus Energy. NOT Ontario Centre of Innovation. |
+| Learning resource | learnatocto.com **= Octo Learning, Inc.** (AI-curated learning platform). NOT Octopus Energy. NOT Ontario Centre of Innovation. |
 
-**Cross-theme organizer signals** (re-read of themes.md): every theme explicitly mentions *maps, visuals, digital tools, simple tools*; every theme mentions *"help people understand"* / *"help decision makers understand"*. Demo moment should be **visual + <10 seconds**. Canadian datasets expected (per Theme 1 explicit mention of Canada). Theme 3's *"decision makers"* framing implies planner/policymaker persona is viable.
+**Cross-theme organizer signals** (from re-reading themes.md): every theme names *maps, visuals, digital tools, simple tools*, and every theme says *"help people understand"* or *"help decision makers understand"*. So the demo moment should be **visual and under 10 seconds**. They expect Canadian datasets (Theme 1 names Canada directly). Theme 3's *"decision makers"* wording means a planner or policymaker user works well.
 
-**Seneca 2023 baseline** (most directly relevant prior event): Theme was Smart Cities. Winner: **Mood Vault** (Foam on Latte, 3-person Seneca team) — patient-therapist mood platform with NLP suicide-ideation detection, 75-language translation, voice transcription. Grand prize $5,000 CAD. Won by combining socially-serious topic + polished UX + safety mechanism narrative — *not* novel tech. **Inference:** Seneca judges reward socially-serious framing + polished delivery + concrete safety/access design choices over technical novelty.
+**Seneca 2023 baseline** (the past event closest to this one): the theme was Smart Cities. The winner was **Mood Vault** (Foam on Latte, a 3-person Seneca team), a patient-therapist mood platform with NLP suicide-ideation detection, 75-language translation, and voice transcription. Grand prize was $5,000 CAD. It won by pairing a serious social topic with polished UX and a clear safety story, *not* by inventing new tech. **What this tells us:** Seneca judges reward a serious social framing, polished delivery, and concrete safety and access choices over technical novelty.
 
 ---
 
@@ -50,67 +50,67 @@ By **installed capacity** (~37,566 MW, IESO 2025 APO):
 - Solar ~7% (~2,800 MW; ~1,478 MW distributed)
 - Bioenergy + storage ~1%
 
-**Takeaway:** Nuclear runs flat-out (~90%+ capacity factor) — it's the baseload spine. Gas is a peaker fleet (~10% of energy from ~28% of capacity) and the live political battlefield. Wind + solar are still small. ~75-90% of generation is low-carbon — Ontario's grid is already among the cleanest in North America.
+**Takeaway:** Nuclear runs flat out (about 90%+ capacity factor) and carries the steady baseload. Gas runs only at peaks (about 10% of the energy from about 28% of the capacity), and it is the live political fight. Wind and solar are still small. About 75-90% of generation is low-carbon, so Ontario's grid is already among the cleanest in North America.
 
 ### 2.2 Generation assets — the big ones
 
 **Nuclear (13,000+ MW)**
-- **Bruce Nuclear (Kincardine)** — 8 reactors, 6,400 MW net, often cited as world's largest operating plant. Mid-MCR refurbishment (Major Component Replacement) running 2023→2033. Unit 6 done (2023); Unit 3 construction phase complete Feb 2026; Units 4, 5, 7, 8 still queued. Bruce Power's Project 2030 targets ~7,000 MW. **Bruce C**: $300M predevelopment agreement signed May 2026 — option to add up to 4,800 MW of new nuclear, first new large nuclear build in Ontario in 30 years.
-- **Pickering Nuclear** — Units 1 & 4 retired Oct/Dec 2024. **Pickering B refurbishment (Units 5-8) approved Nov 2025 — $26.8B budget, ~30,500 jobs, ~30-year life extension, back online mid-2030s.** Lead EPC: AtkinsRéalis Candu Energy + Aecon JV.
-- **Darlington Nuclear (Clarington)** — **Refurbishment of 4 CANDUs complete Feb 2026, $150M under budget, 4 months early.** Unit 4 returned to 100% Feb 2026.
-- **Darlington New Nuclear (BWRX-300 SMR)** — GE Vernova-Hitachi 300 MW boiling-water small modular reactors. CNSC Licence to Construct April 2025. Construction started May 2025. Foundation module set May 1, 2026 (953 tonnes, 37 m diameter). **First unit grid-connection target end of 2030. First grid-scale SMR in G7.** 4 units planned; total project ~$21B.
+- **Bruce Nuclear (Kincardine)**: 8 reactors, 6,400 MW net, often called the world's largest operating plant. It is mid-way through a Major Component Replacement (MCR) refurbishment running 2023 to 2033. Unit 6 is done (2023). Unit 3's construction phase finished Feb 2026. Units 4, 5, 7, 8 are still queued. Bruce Power's Project 2030 aims for about 7,000 MW. **Bruce C**: a $300M predevelopment agreement was signed May 2026. It is an option to add up to 4,800 MW of new nuclear, the first new large nuclear build in Ontario in 30 years.
+- **Pickering Nuclear**: Units 1 and 4 retired Oct/Dec 2024. **The Pickering B refurbishment (Units 5-8) was approved Nov 2025: $26.8B budget, about 30,500 jobs, about a 30-year life extension, back online mid-2030s.** Lead EPC is the AtkinsRéalis Candu Energy and Aecon JV.
+- **Darlington Nuclear (Clarington)**: **the refurbishment of 4 CANDUs finished Feb 2026, $150M under budget and 4 months early.** Unit 4 returned to 100% Feb 2026.
+- **Darlington New Nuclear (BWRX-300 SMR)**: GE Vernova-Hitachi 300 MW boiling-water small modular reactors. CNSC granted the Licence to Construct April 2025. Construction started May 2025. The foundation module was set May 1, 2026 (953 tonnes, 37 m diameter). **The first unit aims to connect to the grid by end of 2030. It is the first grid-scale SMR in the G7.** 4 units are planned, with a total project cost around $21B.
 
 **Hydroelectric (~9,000 MW)**
-- **Niagara complex** ~2,400 MW: Sir Adam Beck I (548 MW, 1922), Sir Adam Beck II (1,499 MW, 1954), Sir Adam Beck Pump Generating Station (174 MW — Canada's only pumped storage). OPG investing $1B in 15-year refurb starting 2025.
-- **R.H. Saunders (St. Lawrence)** — 1,045 MW (1958), 16-year overhaul launched 2024. Half of binational Moses-Saunders Dam shared with NYPA.
-- **Lower Mattagami complex (NE Ontario)** — 924 MW; **25% owned by Moose Cree First Nation** under Amisk-oo-skow Agreement.
+- **Niagara complex**, about 2,400 MW: Sir Adam Beck I (548 MW, 1922), Sir Adam Beck II (1,499 MW, 1954), and the Sir Adam Beck Pump Generating Station (174 MW, Canada's only pumped storage). OPG is investing $1B in a 15-year refurb starting 2025.
+- **R.H. Saunders (St. Lawrence)**: 1,045 MW (1958), a 16-year overhaul started in 2024. It is half of the binational Moses-Saunders Dam, shared with NYPA.
+- **Lower Mattagami complex (NE Ontario)**: 924 MW. **25% owned by Moose Cree First Nation** under the Amisk-oo-skow Agreement.
 
 **Wind (~4,200 MW)**
-- **Henvey Inlet Wind** (Georgian Bay, 2019) — **300 MW**, Ontario's largest; Canada's largest First Nation wind partnership (Henvey Inlet FN's Nigig Power Corp + Pattern Energy).
-- **K2 Wind** (Huron, 2015) — 270 MW.
-- **Niagara Region Wind Farm** (2016) — 230 MW, Boralex.
-- **Bow Lake** (Algoma) — Batchewana First Nation partnership.
+- **Henvey Inlet Wind** (Georgian Bay, 2019): **300 MW**, Ontario's largest, and Canada's largest First Nation wind partnership (Henvey Inlet FN's Nigig Power Corp with Pattern Energy).
+- **K2 Wind** (Huron, 2015): 270 MW.
+- **Niagara Region Wind Farm** (2016): 230 MW, Boralex.
+- **Bow Lake** (Algoma): a Batchewana First Nation partnership.
 
 **Solar (~2,800 MW)**
-- **Sarnia PV** (2010) — 97 MWp, once world's largest. ~120 GWh/yr.
-- **Grand Renewable Energy Park (Haldimand)** — 100 MW, 447,622 panels, Six Nations partnership.
+- **Sarnia PV** (2010): 97 MWp, once the world's largest. About 120 GWh/yr.
+- **Grand Renewable Energy Park (Haldimand)**: 100 MW, 447,622 panels, a Six Nations partnership.
 
 **Natural gas (~10,500 MW, mostly peakers)**
-- Goreway (915 MW, Brampton, Capital Power), Halton Hills (683 MW, TransAlta/Atura), Portlands Energy Centre (550 MW, Toronto, Atura), Brighton Beach (570 MW, Windsor), Lambton, Napanee, Lennox, Greenfield, St. Clair. Fleet capacity factor ~25-40%.
+- Goreway (915 MW, Brampton, Capital Power), Halton Hills (683 MW, TransAlta/Atura), Portlands Energy Centre (550 MW, Toronto, Atura), Brighton Beach (570 MW, Windsor), Lambton, Napanee, Lennox, Greenfield, St. Clair. The fleet runs at about a 25-40% capacity factor.
 
 **Biomass**
-- **Atikokan GS** — 211 MW, 100% biomass since 2014, North America's largest. Contract extended 5 years.
+- **Atikokan GS**: 211 MW, 100% biomass since 2014, North America's largest. Its contract was extended 5 years.
 
 **Battery storage**
-- **Oneida Energy Storage (Haldimand)** — **250 MW / 1,000 MWh — Canada's largest BESS**, commercial ops May 2025. Northland Power + Six Nations of the Grand River + NRStor + Aecon + Mississaugas of the Credit. Came in ~$100M under $800M budget.
-- **LT1 RFP** (2024): 1,784 MW awarded to 10 storage projects + 411 MW gas (~$672/MW-business-day avg).
+- **Oneida Energy Storage (Haldimand)**: **250 MW / 1,000 MWh, Canada's largest BESS**, in commercial operation May 2025. Built by Northland Power, Six Nations of the Grand River, NRStor, Aecon, and the Mississaugas of the Credit. It came in about $100M under the $800M budget.
+- **LT1 RFP** (2024): 1,784 MW awarded to 10 storage projects, plus 411 MW gas (about $672/MW-business-day average).
 - **LT2 RFP** energy stream (2025): 1,115 MW contracted across 13 proponents.
 
 ### 2.3 Transmission
 
-**Hydro One Networks owns ~98%** of Ontario's transmission grid.
+**Hydro One Networks owns about 98%** of Ontario's transmission grid.
 
 Major 500 kV corridors:
-- **Bruce-to-Milton** (2012, $635M+, ~180 km, 3,000+ MW) — carries Bruce nuclear to GTA via Milton SS.
-- **Bruce-to-Longwood** — Bruce → Longwood TS near London.
-- **Hanmer-to-Mississagi** (planned, ~$1B+, ~200 km, in-service late 2029) — opens Sudbury/Algoma corridor for steel-industry electrification.
+- **Bruce-to-Milton** (2012, $635M+, about 180 km, 3,000+ MW): carries Bruce nuclear to the GTA through Milton SS.
+- **Bruce-to-Longwood**: Bruce → Longwood TS near London.
+- **Hanmer-to-Mississagi** (planned, about $1B+, around 200 km, in service late 2029): opens the Sudbury/Algoma corridor so the steel industry can electrify.
 
 Active reinforcements:
-- **Waasigan (NW Ontario)** — $1.2B, 230 kV, Lakehead → Mackenzie, Phase 1 end-2025. **50% equity owned by 9 First Nations.**
-- **Chatham-to-Lakeshore** — $237M, 230 kV, energized Dec 2024 one year ahead of schedule. **50% First Nations equity.**
+- **Waasigan (NW Ontario)**: $1.2B, 230 kV, Lakehead → Mackenzie, Phase 1 by end of 2025. **9 First Nations own 50% of the equity.**
+- **Chatham-to-Lakeshore**: $237M, 230 kV, energized Dec 2024, one year ahead of schedule. **50% First Nations equity.**
 
-Interties (with 5 jurisdictions, >20 TWh/yr aggregate):
-- Quebec (~2,775 MW + 2023 600 MW swap; Ontario imports hydro summer, exports winter)
+Interties (links to 5 jurisdictions, more than 20 TWh/yr total):
+- Quebec (about 2,775 MW plus a 2023 600 MW swap; Ontario imports hydro in summer and exports in winter)
 - Manitoba (Eastern Manitoba Tie)
 - New York (St. Lawrence; Niagara)
 - Michigan (B30L Lambton-Bunce Creek)
 - Minnesota (small)
 
-Known constraints: Bruce-to-Toronto SPS (special protection scheme), Sudbury/Algoma surplus, GTA West congestion.
+Known constraints: the Bruce-to-Toronto SPS (special protection scheme), surplus in Sudbury/Algoma, and congestion in the GTA West.
 
 ### 2.4 Distribution — the LDC landscape
 
-**54-61 LDCs (OEB regulated).** Big seven:
+Ontario has **54 to 61 LDCs, all OEB-regulated.** The big seven:
 
 | LDC | Customers | Territory |
 |---|---|---|
@@ -122,47 +122,47 @@ Known constraints: Bruce-to-Toronto SPS (special protection scheme), Sudbury/Alg
 | London Hydro | ~160,000 | London |
 | ENWIN | ~89,000 | Windsor |
 
-**Smart meters universal since 2010** (first NA jurisdiction). **Green Button** initiative (download-my-data, connect-my-data) is widely deployed. **Toronto Hydro's 2025-29 rate plan** is $5.1B (approved Nov 2024).
+**Smart meters have been everywhere since 2010** (the first jurisdiction in North America to do this). The **Green Button** program (download-my-data and connect-my-data) is widely used. **Toronto Hydro's 2025-29 rate plan** is $5.1B (approved Nov 2024).
 
-**Toronto Hydro Load Capacity Map launched March 2025** — interactive grid-headroom map by area, alongside Alectra + Hydro One. Goldmine for siting projects.
+**Toronto Hydro launched a Load Capacity Map in March 2025**, an interactive map showing how much spare grid room each area has, alongside Alectra and Hydro One. It is a goldmine for picking project sites.
 
 ### 2.5 Market structure
 
-- **HOEP** (Hourly Ontario Energy Price) = wholesale spot.
-- **Global Adjustment (GA)** = reconciliation charge covering nuclear regulated payments + hydro contracts + FIT contracts + conservation programs. **2024 GA ≈ $8.0B.** GA usually dwarfs HOEP on bills.
-- **Class A / B** under Industrial Conservation Initiative (ICI) — large customers pay GA by share of top-5 system peaks, incentivizing "GA-busting" peak-shaving.
-- **Capacity Auction** annual since 2020; 2024 results: 2,122 MW summer 2025 ($332.39/MW-day), 1,525 MW winter ($725.31/MW-day or $139/MW-day depending on source — see [enpowered.com/demand-response-2026](https://enpowered.com/demand-response-2026/)).
-- **DR-Auction** value soared in 2026 to **$171,319/MW-yr (+163% YoY)**.
-- **Residential rate plans:** TOU (3 periods, 2010+), Tiered (1,000 kWh winter / 600 summer cap), **ULO (Ultra-Low Overnight, 2023+)** for EV charging.
-- **Market Renewal Program launched May 1, 2025** — moved to **Single Schedule Market with nodal pricing across ~973 nodes**. Biggest market change since 2002.
+- **HOEP** (Hourly Ontario Energy Price) is the wholesale spot price.
+- **Global Adjustment (GA)** is a reconciliation charge that covers nuclear regulated payments, hydro contracts, FIT contracts, and conservation programs. **2024 GA was about $8.0B.** GA is usually far bigger than HOEP on bills.
+- **Class A / B** under the Industrial Conservation Initiative (ICI): large customers pay GA based on their share of the top-5 system peaks, which pushes them to "GA-bust" by shaving load during peaks.
+- **Capacity Auction**, held every year since 2020. 2024 results: 2,122 MW for summer 2025 ($332.39/MW-day), and 1,525 MW for winter ($725.31/MW-day, or $139/MW-day depending on the source. See [enpowered.com/demand-response-2026](https://enpowered.com/demand-response-2026/)).
+- **DR-Auction** value jumped in 2026 to **$171,319/MW-yr (+163% year over year)**.
+- **Residential rate plans:** TOU (3 periods, 2010+), Tiered (1,000 kWh winter / 600 summer cap), and **ULO (Ultra-Low Overnight, 2023+)** for EV charging.
+- **The Market Renewal Program launched May 1, 2025.** It moved Ontario to a **Single Schedule Market with nodal pricing across about 973 nodes**. This is the biggest market change since 2002.
 
 ### 2.6 Off-grid & Indigenous-led infrastructure
 
-- **Wataynikaneyap Power** — completed May 2024, commissioned Dec 11, 2024. **1,800 km, $2B transmission line connecting 17 remote First Nation communities**; 51% First Nation-owned (24 First Nations). Largest Indigenous-led transmission project in Canada. Eliminates ~6.6 Mt GHG/yr.
-- ~450+ Indigenous-led/partnered renewable projects across Ontario (CER). Federal **Indigenous-led Clean Energy Project Tax Credit** in Budget 2024.
+- **Wataynikaneyap Power**: completed May 2024, commissioned Dec 11, 2024. **A 1,800 km, $2B transmission line connecting 17 remote First Nation communities.** It is 51% First Nation-owned (24 First Nations) and the largest Indigenous-led transmission project in Canada. It cuts about 6.6 Mt GHG/yr.
+- About 450+ renewable projects across Ontario are Indigenous-led or have an Indigenous partner (CER). The federal **Indigenous-led Clean Energy Project Tax Credit** came in Budget 2024.
 
 ### 2.7 Heat infrastructure
 
-- **Toronto Deep Lake Water Cooling (Enwave)** — draws 4°C water from Lake Ontario at 83m depth. **Now serves ~180 buildings / 40M ft² of downtown Toronto.** 4th intake pipe commissioned 2024 (+60% capacity). World's largest lake-source cooling system.
-- **U of T District Energy** (since 1912), **York Keele**, **Markham District Energy**.
-- District heating remains rare overall — Enbridge Gas serves 75-80% of Ontario households (3.7M households for natural gas heat).
+- **Toronto Deep Lake Water Cooling (Enwave)**: draws 4°C water from Lake Ontario at 83m depth. **It now serves about 180 buildings, 40M ft² of downtown Toronto.** A 4th intake pipe was commissioned in 2024 (+60% capacity). It is the world's largest lake-source cooling system.
+- **U of T District Energy** (since 1912), **York Keele**, and **Markham District Energy**.
+- District heating is still rare overall. Enbridge Gas serves 75-80% of Ontario households (3.7M households on natural gas heat).
 
 ### 2.8 EV infrastructure (end-2025)
 
-- **8,804 DC fast-charging ports nationally** (+28% YoY). Ontario hosts the plurality.
-- Networks: **FLO** (1,023 DCFC ports), **Petro-Canada Electric Highway** (95 DCFC, contracting), **Tesla Supercharger** (largest by port count), **Ivy Charging Network** (OPG+Hydro One JV — 150+ DCFC at ~60 stations), ChargePoint, Tesla, EVGO.
-- **EV fleet:** ~400,000 Ontario EVs in 2025 → **11.5M by 2050 (IESO)**.
-- **iZEV federal rebate paused Jan 2025; replaced Feb 2026 by EVAP** ($2.3B over 5 yrs, $5,000/EV, $2,500/PHEV).
-- **PM Carney repealed the ZEV sales mandate in 2026**, replaced with emission standards for MY2027-2032.
-- **Ontario has no provincial EV purchase rebate** — key reason for lagging ZEV market share. Ontario does run **EV ChargeON** for public/condo charging.
-- V2G pilots: **Peak Power's Peak Drive** (downtown Toronto, 21 bi-directional LEAF chargers, ~$8,000 CAD/vehicle/yr revenue potential through GA peak discharge). Hydro One + Peak Power V2H pilot via IESO Grid Innovation Fund.
+- **8,804 DC fast-charging ports across Canada** (+28% year over year). Ontario holds the largest share.
+- Networks: **FLO** (1,023 DCFC ports), **Petro-Canada Electric Highway** (95 DCFC, shrinking), **Tesla Supercharger** (the largest by port count), **Ivy Charging Network** (an OPG and Hydro One JV, 150+ DCFC at about 60 stations), ChargePoint, Tesla, EVGO.
+- **EV fleet:** about 400,000 Ontario EVs in 2025, rising to **11.5M by 2050 (IESO)**.
+- **The federal iZEV rebate paused Jan 2025 and was replaced Feb 2026 by EVAP** ($2.3B over 5 years, $5,000/EV, $2,500/PHEV).
+- **PM Carney repealed the ZEV sales mandate in 2026** and replaced it with emission standards for MY2027-2032.
+- **Ontario has no provincial EV purchase rebate.** That is a key reason its ZEV market share lags. Ontario does run **EV ChargeON** for public and condo charging.
+- V2G pilots: **Peak Power's Peak Drive** (downtown Toronto, 21 bi-directional LEAF chargers, up to about $8,000 CAD per vehicle per year by discharging during GA peaks). Hydro One and Peak Power also run a V2H pilot through the IESO Grid Innovation Fund.
 
 ### 2.9 The IESO 2025 APO numbers everyone quotes
 
-- Net annual energy demand: **154 TWh (2025) → 245-263 TWh (2050)**, +59-75% (different APO years cite both numbers).
-- Ontario shifts from summer-peaking to **dual-peaking by the 2030s**.
-- **Data centres**: 2.5 TWh (2026) → **14 TWh (2050)**. ≥16 large DCs (100-1,000 MW each) by 2035, = 13% of new demand and 4% of total Ontario demand by 2035.
-- Pathways to Decarbonization 2050 net-zero scenario needs **+17,800 MW nuclear, +17,600 MW wind, +650 MW hydro, +69,000 MW non-emitting supply + 5,000 MW demand reduction**. Lifetime cost ~$400B; annual system cost ~$60B.
+- Net annual energy demand: **154 TWh (2025), rising to 245-263 TWh (2050)**, a 59-75% increase (different APO years cite both numbers).
+- Ontario shifts from peaking only in summer to **peaking in both summer and winter by the 2030s**.
+- **Data centres**: 2.5 TWh (2026), rising to **14 TWh (2050)**. At least 16 large data centres (100-1,000 MW each) by 2035, which is 13% of new demand and 4% of total Ontario demand by 2035.
+- The Pathways to Decarbonization 2050 net-zero scenario needs **+17,800 MW nuclear, +17,600 MW wind, +650 MW hydro, +69,000 MW non-emitting supply, and 5,000 MW of demand reduction**. Lifetime cost is about $400B, and annual system cost is about $60B.
 
 ### 2.10 Quick-grab numbers cheat sheet
 
@@ -185,7 +185,7 @@ Known constraints: Bruce-to-Toronto SPS (special protection scheme), Sudbury/Alg
 | 2024 Global Adjustment | ~$8.0B |
 | Nov 2025 RPP rate hike | ~29-30% (largest since 2019) |
 | Nov 2025 OER | 23.5% (raised from 13.1%) |
-| Market Renewal launch | May 1, 2025 — nodal pricing across 973 nodes |
+| Market Renewal launch | May 1, 2025 (nodal pricing across 973 nodes) |
 | May 2022 derecho | 1.1M+ customers out, 12 deaths, ~$1B damage |
 | March 2025 ice storm | 1M+ outages, 2,700+ poles broken, worst since 1998 |
 
@@ -213,56 +213,56 @@ Public data hub: [ieso.ca/power-data](https://www.ieso.ca/power-data) | Bulk fil
 | Peak Tracker (next 24h forecasted peaks) | /peaktracker/ | HTML | Continuous |
 | HOEP archive | /HourlyEnergyPrice/ | CSV | Daily (archive 2002–May 2025) |
 
-**Third-party wrappers (use these to skip XML pain):**
-- **GridStatus** — Python SDK over IESO XML, normalized API. [gridstatus.io/live/ieso](https://www.gridstatus.io/live/ieso) · [opensource.gridstatus.io](https://opensource.gridstatus.io/en/latest/autoapi/gridstatus/ieso/index.html) · [docs.gridstatus.io/data-guides/market-guides/independent-electricity-system-operator-ieso](https://docs.gridstatus.io/data-guides/market-guides/independent-electricity-system-operator-ieso)
-- **Gridwatch Ontario** — JSON facade. [gridwatch.ca](https://gridwatch.ca/) · [live.gridwatch.ca](https://live.gridwatch.ca/)
+**Third-party wrappers (use these to skip the XML pain):**
+- **GridStatus**: a Python SDK over the IESO XML, with a clean API. [gridstatus.io/live/ieso](https://www.gridstatus.io/live/ieso) · [opensource.gridstatus.io](https://opensource.gridstatus.io/en/latest/autoapi/gridstatus/ieso/index.html) · [docs.gridstatus.io/data-guides/market-guides/independent-electricity-system-operator-ieso](https://docs.gridstatus.io/data-guides/market-guides/independent-electricity-system-operator-ieso)
+- **Gridwatch Ontario**: a JSON front-end. [gridwatch.ca](https://gridwatch.ca/) · [live.gridwatch.ca](https://live.gridwatch.ca/)
 
 ### 3.2 OEB — Ontario Energy Board
 
 Open data: [oeb.ca/ontarios-energy-sector/open-data](https://www.oeb.ca/ontarios-energy-sector/open-data) (last refresh Sept 5, 2025 with 2024 data).
 
-Products: **Yearbooks** of Electricity & Natural Gas Distributors, **Electricity Distribution Rates** (2006+), **Distributor Service Areas** (GIS), **Performance Scorecards** (annual), **Complaints** (2013+), **Service Quality** (annual), **System Reliability Indicators** (2015+ — SAIDI/SAIFI/CAIDI), **Major Event Response Reports** (2017+). Toronto Hydro 2024 scorecard PDF available.
+Products: **Yearbooks** of Electricity & Natural Gas Distributors, **Electricity Distribution Rates** (2006+), **Distributor Service Areas** (GIS), **Performance Scorecards** (annual), **Complaints** (2013+), **Service Quality** (annual), **System Reliability Indicators** (2015+, the SAIDI/SAIFI/CAIDI metrics), and **Major Event Response Reports** (2017+). The Toronto Hydro 2024 scorecard PDF is available.
 
 ### 3.3 Statistics Canada
 
 [www150.statcan.gc.ca/n1/en/subjects/energy](https://www150.statcan.gc.ca/n1/en/subjects/energy)
 
 Key tables you'll use:
-- **25-10-0015-01** — Electric power generation, monthly by producer class and type
-- **25-10-0016-01** — Electric power consumption (monthly)
-- **25-10-0055-01** — Natural gas supply and disposition
+- **25-10-0015-01**: Electric power generation, monthly by producer class and type
+- **25-10-0016-01**: Electric power consumption (monthly)
+- **25-10-0055-01**: Natural gas supply and disposition
 
-**WDS REST API** — no key required. JSON. User guide: [statcan.gc.ca/en/developers/wds/user-guide](https://www.statcan.gc.ca/en/developers/wds/user-guide). Methods include `getDataFromCubePidCoordAndLatestNPeriods`, `getFullTableDownloadCSV`.
+**WDS REST API**: no key required, returns JSON. User guide: [statcan.gc.ca/en/developers/wds/user-guide](https://www.statcan.gc.ca/en/developers/wds/user-guide). Methods include `getDataFromCubePidCoordAndLatestNPeriods` and `getFullTableDownloadCSV`.
 
-**Canadian Centre for Energy Information** (StatCan+CER+NRCan+ECCC joint): [energy-information.canada.ca](https://energy-information.canada.ca/)
+**Canadian Centre for Energy Information** (a joint effort of StatCan, CER, NRCan, and ECCC): [energy-information.canada.ca](https://energy-information.canada.ca/)
 
 ### 3.4 ECCC — Environment and Climate Change Canada
 
-- **Historical Climate Data**: [climate.weather.gc.ca](https://climate.weather.gc.ca/) — per-station CSV/XML.
+- **Historical Climate Data**: [climate.weather.gc.ca](https://climate.weather.gc.ca/), CSV or XML per station.
 - **MSC Datamart bulk**: [eccc-msc.github.io/open-data/msc-data/climate_obs](https://eccc-msc.github.io/open-data/msc-data/climate_obs/readme_climateobs-datamart_en/)
 - **Climate Services bulk**: [climate-change.canada.ca/climate-data](https://climate-change.canada.ca/climate-data/)
 - **R wrapper `weathercan`**: [github.com/ropensci/weathercan](https://github.com/ropensci/weathercan)
 
 ### 3.5 NRCan — Natural Resources Canada
 
-- **PV Potential & Solar Resource Maps**: [natural-resources.canada.ca/energy-sources/renewable-energy/photovoltaic-potential-solar-resource-maps-canada](https://natural-resources.canada.ca/energy-sources/renewable-energy/photovoltaic-potential-solar-resource-maps-canada) — FGDB+CSV, municipal-level kWh/kW-yr.
-- **CERP — Clean Energy Resources & Projects atlas**: [atlas.gc.ca/cerp-rpep/en/](https://atlas.gc.ca/cerp-rpep/en/)
-- **Canadian Wind Energy Atlas**: 30/50/80m mean wind speed.
+- **PV Potential & Solar Resource Maps**: [natural-resources.canada.ca/energy-sources/renewable-energy/photovoltaic-potential-solar-resource-maps-canada](https://natural-resources.canada.ca/energy-sources/renewable-energy/photovoltaic-potential-solar-resource-maps-canada), FGDB and CSV, kWh/kW-yr at the municipal level.
+- **CERP, the Clean Energy Resources & Projects atlas**: [atlas.gc.ca/cerp-rpep/en/](https://atlas.gc.ca/cerp-rpep/en/)
+- **Canadian Wind Energy Atlas**: mean wind speed at 30, 50, and 80 m.
 - **Remote Communities Energy Database**: [atlas.gc.ca/rced-bdece/en/index.html](https://atlas.gc.ca/rced-bdece/en/index.html)
 - **Comprehensive Energy Use Database (NEUD)**: [oee.nrcan.gc.ca/corporate/statistics/neud](https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/menus/trends/comprehensive_tables/list.cfm)
 
 ### 3.6 City / municipal open data
 
 - **Open Data Toronto**: [open.toronto.ca](https://open.toronto.ca/) (CKAN API). Renewable Energy Installations dataset, Cool Spaces, ward boundaries.
-- **Ontario Open Data — Energy**: [data.ontario.ca/organization/energy](https://data.ontario.ca/organization/energy). Includes Ontario Energy Report Supporting Data, Renewable Energy Projects (Sept 2010-Sept 2021).
-- **Toronto large-building EWRB dataset** (Energy & Water Reporting By-law, ≥50,000 sq ft): [open.canada.ca/data/en/dataset/0eab2faf-6186-4a5b-8de1-b15872943c24](https://open.canada.ca/data/en/dataset/0eab2faf-6186-4a5b-8de1-b15872943c24)
+- **Ontario Open Data, Energy section**: [data.ontario.ca/organization/energy](https://data.ontario.ca/organization/energy). Includes Ontario Energy Report Supporting Data and Renewable Energy Projects (Sept 2010 to Sept 2021).
+- **Toronto large-building EWRB dataset** (Energy & Water Reporting By-law, 50,000 sq ft and up): [open.canada.ca/data/en/dataset/0eab2faf-6186-4a5b-8de1-b15872943c24](https://open.canada.ca/data/en/dataset/0eab2faf-6186-4a5b-8de1-b15872943c24)
 
 ### 3.7 LDC operational data
 
 - **Toronto Hydro outage map**: [outagemap.torontohydro.com](https://outagemap.torontohydro.com/)
 - **Hydro One Storm Centre**: [stormcentre.hydroone.com](https://stormcentre.hydroone.com/)
 - **Toronto Hydro Load Capacity Map** (March 2025+): [torontohydro.com/contractors-and-developers/load-capacity-map](https://www.torontohydro.com/contractors-and-developers/load-capacity-map)
-- Alectra + Hydro One launched parallel capacity maps. Coverage: [electricautonomy.ca/charging/utilities/2025-03-19/grid-capacity-maps-canada-ontario](https://electricautonomy.ca/charging/utilities/2025-03-19/grid-capacity-maps-canada-ontario/)
+- Alectra and Hydro One launched their own capacity maps. Coverage: [electricautonomy.ca/charging/utilities/2025-03-19/grid-capacity-maps-canada-ontario](https://electricautonomy.ca/charging/utilities/2025-03-19/grid-capacity-maps-canada-ontario/)
 
 ### 3.8 Federal GHG inventory + ENERGY STAR
 
@@ -273,14 +273,14 @@ Key tables you'll use:
 
 ### 3.9 Energy poverty + equity data
 
-- **Energy Poverty and Equity Explorer** (Efficiency Canada + Community Data Program): [energypoverty.communitydata.ca](https://energypoverty.communitydata.ca/) — census-tract level energy burden, income, heating type, building age. *(Note: cert expiry warning at time of fetch.)*
+- **Energy Poverty and Equity Explorer** (Efficiency Canada with the Community Data Program): [energypoverty.communitydata.ca](https://energypoverty.communitydata.ca/), showing energy burden, income, heating type, and building age at the census-tract level. *(Note: the site gave a certificate-expiry warning when fetched.)*
 - **Toronto Social Atlas**: [toronto.ca/city-government/data-research-maps/neighbourhoods-communities/toronto-social-atlas](https://www.toronto.ca/city-government/data-research-maps/neighbourhoods-communities/toronto-social-atlas/)
 - **School of Cities — Wealth & poverty concentration in Toronto**: [schoolofcities.github.io/neighbourhood-income-toronto-2020](https://schoolofcities.github.io/neighbourhood-income-toronto-2020/)
 - **Toronto Public Health Heat Vulnerability Index** + U of T School of Cities heat-vulnerability map.
 
 ### 3.10 Climate projections for Ontario
 
-- **Climate Atlas of Canada — Toronto**: [climateatlas.ca/sites/default/files/cityreports/Toronto-EN.pdf](https://climateatlas.ca/sites/default/files/cityreports/Toronto-EN.pdf) — projects **+30°C days nearly 2 months/yr by end of century under RCP8.5**.
+- **Climate Atlas of Canada, Toronto**: [climateatlas.ca/sites/default/files/cityreports/Toronto-EN.pdf](https://climateatlas.ca/sites/default/files/cityreports/Toronto-EN.pdf), which projects **+30°C days nearly 2 months/yr by the end of the century under RCP8.5**.
 - **Ontario Climate Change Projections (York Lamps)**: [lamps.math.yorku.ca/OntarioClimate](https://lamps.math.yorku.ca/OntarioClimate/)
 - **ECCC CMIP6 downscaled grids**: [climate-change.canada.ca/climate-data](https://climate-change.canada.ca/climate-data/)
 
@@ -290,37 +290,37 @@ Key tables you'll use:
 
 ### 4.1 The 11 stories that will be talked about at kickoff
 
-1. **Pickering refurbishment greenlit Nov 2025** — $26.8B, 37,000 jobs. [news.ontario.ca/en/release/1006772](https://news.ontario.ca/en/release/1006772/ontario-greenlights-pickering-nuclear-generating-station-refurbishment-to-create-nearly-37000-jobs)
-2. **Darlington SMR construction begins May 2025**, first module set May 2026. **First grid-scale SMR in G7.** [opg.com/projects-services/projects/nuclear/smr/darlington-smr](https://www.opg.com/projects-services/projects/nuclear/smr/darlington-smr/)
-3. **Ontario's Integrated Energy Plan "Energy for Generations"** (June 2025) — first-ever consolidated 25-year plan; LT2 procures 6,000 MW capacity + 14 TWh energy; designates natural gas as ongoing policy pillar. [blakes.com IEP summary](https://www.blakes.com/insights/ontario-releases-energy-for-generations-the-province-s-inaugural-integrated-energy-plan/)
+1. **Pickering refurbishment greenlit Nov 2025**: $26.8B, 37,000 jobs. [news.ontario.ca/en/release/1006772](https://news.ontario.ca/en/release/1006772/ontario-greenlights-pickering-nuclear-generating-station-refurbishment-to-create-nearly-37000-jobs)
+2. **Darlington SMR construction begins May 2025**, first module set May 2026. **The first grid-scale SMR in the G7.** [opg.com/projects-services/projects/nuclear/smr/darlington-smr](https://www.opg.com/projects-services/projects/nuclear/smr/darlington-smr/)
+3. **Ontario's Integrated Energy Plan "Energy for Generations"** (June 2025): the first-ever combined 25-year plan. LT2 procures 6,000 MW of capacity and 14 TWh of energy, and it names natural gas as an ongoing policy pillar. [blakes.com IEP summary](https://www.blakes.com/insights/ontario-releases-energy-for-generations-the-province-s-inaugural-integrated-energy-plan/)
 4. **IESO 2025 APO: 75% demand growth to 2050** [ieso.ca news](https://www.ieso.ca/Corporate-IESO/Media/News-Releases/2024/10/Electricity-Demand-in-Ontario-to-Grow-by-75-per-cent-by-2050)
-5. **Bruce C $300M predevelopment agreement** May 2026 — first new large nuclear in 30 yrs; up to 4,800 MW. [power-eng.com](https://www.power-eng.com/nuclear/ontario-advances-bruce-c-nuclear-project-with-300m-pre-development-agreement/)
-6. **November 2025 RPP rate hike — ~29-30%** (biggest since 2019); OER boosted to 23.5% [solar-x.ca rates 2026](https://solar-x.ca/blog/ontario-hydro-rates-2026)
-7. **iZEV paused → EVAP launches Feb 2026** ($2.3B). **Carney repealed ZEV sales mandate** [cbc.ca Carney EV](https://www.cbc.ca/news/politics/carney-dropping-ev-mandate-introducing-new-emissions-standards-9.7075302)
-8. **March 30, 2025 ice storm** — Hydro One's worst since 1998. 2,700+ poles broken. 1M+ outages.
-9. **Natural gas moratorium debate** — IESO Phase-Out Study says feasible to 2050 but expensive; LT1 still contracted 411 MW new gas. [ieso.ca natural-gas-phase-out-study](https://ieso.ca/en/Learn/The-Evolving-Grid/Natural-Gas-Phase-Out-Study)
-10. **2024 Ontario Building Code effective Jan 1, 2025** — 1,730 amendments, new Part 12 (GHG emissions). Efficiency Canada flagged "no path to net-zero codes by 2030." [efficiencycanada.org missed opportunity](https://www.efficiencycanada.org/proposed-changes-to-ontarios-building-code-a-missed-opportunity-to-that-will-set-the-province-backwards/)
-11. **December 2025 capacity auction** — DR value soared to $171,319/MW-yr, +163% YoY. [enpowered.com](https://enpowered.com/demand-response-2026/)
+5. **Bruce C $300M predevelopment agreement** May 2026: the first new large nuclear in 30 years, up to 4,800 MW. [power-eng.com](https://www.power-eng.com/nuclear/ontario-advances-bruce-c-nuclear-project-with-300m-pre-development-agreement/)
+6. **November 2025 RPP rate hike of about 29-30%** (the biggest since 2019), with OER boosted to 23.5% [solar-x.ca rates 2026](https://solar-x.ca/blog/ontario-hydro-rates-2026)
+7. **iZEV paused, EVAP launches Feb 2026** ($2.3B). **Carney repealed the ZEV sales mandate** [cbc.ca Carney EV](https://www.cbc.ca/news/politics/carney-dropping-ev-mandate-introducing-new-emissions-standards-9.7075302)
+8. **March 30, 2025 ice storm**: Hydro One's worst since 1998. 2,700+ poles broken. 1M+ outages.
+9. **Natural gas moratorium debate**: the IESO Phase-Out Study says a phase-out is doable by 2050 but expensive, and LT1 still contracted 411 MW of new gas. [ieso.ca natural-gas-phase-out-study](https://ieso.ca/en/Learn/The-Evolving-Grid/Natural-Gas-Phase-Out-Study)
+10. **2024 Ontario Building Code in effect Jan 1, 2025**: 1,730 amendments and a new Part 12 (GHG emissions). Efficiency Canada warned there is "no path to net-zero codes by 2030." [efficiencycanada.org missed opportunity](https://www.efficiencycanada.org/proposed-changes-to-ontarios-building-code-a-missed-opportunity-to-that-will-set-the-province-backwards/)
+11. **December 2025 capacity auction**: DR value jumped to $171,319/MW-yr, +163% year over year. [enpowered.com](https://enpowered.com/demand-response-2026/)
 
 ### 4.2 The big debates
 
-**Nuclear-first vs. renewables-first.** Bruce/OPG/IESO/Ontario Energy Association push +17,800 MW nuclear by 2050 (Pathways). Pembina/Climate Institute/OCAA/Pollution Probe/OSEA argue renewables+storage+Quebec imports decarbonize faster + cheaper. Pickering's $26.8B opportunity cost is the flashpoint.
+**Nuclear-first vs. renewables-first.** Bruce, OPG, IESO, and the Ontario Energy Association push for +17,800 MW of nuclear by 2050 (Pathways). Pembina, the Climate Institute, OCAA, Pollution Probe, and OSEA argue that renewables, storage, and Quebec imports cut carbon faster and cheaper. Pickering's $26.8B opportunity cost is the flashpoint.
 
-**Gas plant phaseout.** 32+ municipalities (~60% of Ontario population) have passed phase-out motions. IESO says 2030 phaseout causes blackouts + $100/month rate hike. LT1 still procured new gas. Critics call it lock-in.
+**Gas plant phaseout.** More than 32 municipalities (about 60% of Ontario's population) have passed phase-out motions. The IESO says a 2030 phase-out would cause blackouts and a $100/month rate hike. LT1 still procured new gas. Critics call that lock-in.
 
-**"Will we have enough power?"** IESO 2024/2025 APO forecasts 75% demand growth — drives the procurement push. Skeptics (Winfield, Scott) recall the 2010s oversupply.
+**Will Ontario have enough power?** The IESO 2024/2025 APO forecasts 75% demand growth, which drives the push to procure more supply. Skeptics like Winfield and Scott remember the oversupply of the 2010s.
 
-**Affordability.** Nov 2025 rate hike + OER subsidy spotlight: OER is now a $5B+/yr general-revenue subsidy critics call regressive.
+**Affordability.** The Nov 2025 rate hike put the OER subsidy in the spotlight. OER is now a subsidy of over $5B/yr paid from general revenue, which critics call regressive.
 
-**Climate resilience.** May 2022 derecho + March 2025 ice storm exposed grid fragility. Vegetation management, hardening, undergrounding pilots all on the table. Climate-resilience now featured in OEB rate applications.
+**Climate resilience.** The May 2022 derecho and March 2025 ice storm exposed how fragile the grid is. Vegetation management, hardening, and undergrounding pilots are all on the table. Climate resilience now shows up in OEB rate applications.
 
 ### 4.3 Voices to know
 
 | Person/org | Role |
 |---|---|
-| **Jack Gibbons** | Chair, Ontario Clean Air Alliance — leads gas phase-out coalition |
-| **Mark Winfield** | Prof, York Faculty of Environmental & Urban Change — nuclear skeptic |
-| **Adam Scott** | Exec Dir, Shift Action — pension fund / climate risk |
+| **Jack Gibbons** | Chair, Ontario Clean Air Alliance. Leads the gas phase-out coalition |
+| **Mark Winfield** | Prof, York Faculty of Environmental & Urban Change. Nuclear skeptic |
+| **Adam Scott** | Exec Dir, Shift Action. Pension fund and climate risk |
 | **Lesley Gallinger** | CEO, IESO |
 | **Lynne Anderson** | Chair, OEB |
 | **Six Nations of the Grand River Development Corporation** | Anchor Indigenous energy investor — Oneida, Grand Renewable, Niagara Region Wind |
@@ -332,19 +332,19 @@ Key tables you'll use:
 
 ### 5.1 What models project
 
-- **Temperature**: +5°C annual mean over Great Lakes Basin by 2080s; Toronto specifically +2.3°C by 2050 under RCP 8.5.
-- **Precipitation**: +22% annual by 2080s; regime shifts to heavier individual events.
-- **+30°C days**: 64/yr historical → nearly 2 months/yr by 2100 under RCP 8.5 (Climate Atlas).
-- **Heat waves expected to triple by 2060** under high emissions.
-- **Lake-effect snow** counterintuitively increases short-term (warmer lakes → more evaporation → longer ice-free season) before decreasing.
-- **Urban heat island**: **Toronto has the highest nighttime UHI of any major Canadian city, +4.36°C.** Each 2-3°C UHI ≈ 4-7% more heat mortality.
+- **Temperature**: +5°C annual mean over the Great Lakes Basin by the 2080s. Toronto specifically warms +2.3°C by 2050 under RCP 8.5.
+- **Precipitation**: +22% annual by the 2080s, shifting toward heavier single events.
+- **+30°C days**: 64/yr historically, rising to nearly 2 months/yr by 2100 under RCP 8.5 (Climate Atlas).
+- **Heat waves are expected to triple by 2060** under high emissions.
+- **Lake-effect snow** rises in the short term (warmer lakes mean more evaporation and a longer ice-free season) before it drops.
+- **Urban heat island**: **Toronto has the highest nighttime UHI of any major Canadian city, +4.36°C.** Each 2-3°C of UHI means about 4-7% more heat deaths.
 
 ### 5.2 Recent extreme events
 
-- **May 21, 2022 derecho** — 190 km/h winds, traveled >1,000 km in 9 hrs. **1.1M+ customers out, 12 deaths, ~$1B damage.** One of Canada's costliest disasters.
-- **April 5, 2023 ice storm** — 1M+ out in QC + ON.
-- **March 28-30, 2025 ice storm** — Hydro One's worst weather event since 1998. **2,700+ poles broken**, 1M+ Ontario homes/businesses out. Peterborough/Georgian Bay/Orillia/Fenelon Falls hardest hit.
-- **July 16, 2024 Toronto flood** — 97.8 mm in 3 hrs at Pearson, $940M+ insured damage. Clausius-Clapeyron says ~7% more moisture per 1°C warming.
+- **May 21, 2022 derecho**: 190 km/h winds that traveled more than 1,000 km in 9 hours. **1.1M+ customers out, 12 deaths, about $1B damage.** One of Canada's costliest disasters.
+- **April 5, 2023 ice storm**: 1M+ out in QC and ON.
+- **March 28-30, 2025 ice storm**: Hydro One's worst weather event since 1998. **2,700+ poles broken**, and 1M+ Ontario homes and businesses out. Peterborough, Georgian Bay, Orillia, and Fenelon Falls were hit hardest.
+- **July 16, 2024 Toronto flood**: 97.8 mm in 3 hours at Pearson, with $940M+ in insured damage. The Clausius-Clapeyron relation says warmer air holds about 7% more moisture per 1°C of warming.
 
 ### 5.3 Vulnerability mapping
 
@@ -352,7 +352,7 @@ Toronto Public Health's **Heat Vulnerability Index** combines:
 - Age (under 5, over 65)
 - Income
 - Building type (high-rise without AC)
-- Tree canopy (**neighborhoods with <5% canopy = 5× more heat-related ambulance calls**)
+- Tree canopy (**neighborhoods with under 5% canopy get 5x more heat-related ambulance calls**)
 - Language barrier
 - Chronic illness
 
@@ -360,101 +360,101 @@ Mapped also by U of T School of Cities: [schoolofcities.github.io/heat-vulnerabi
 
 ### 5.4 Energy poverty in Ontario
 
-- **822,000 Canadian households (5.6%)** energy poor (2021 Census, 6%-threshold).
-- Range: **6%-19% of Canadian households** depending on threshold (LIHC vs 2× median vs 6%).
-- Atlantic provinces highest (10.7-13.7%); Ontario ~7% baseline (likely higher post-2025 rate hikes).
-- **Bottom-quintile household energy burden ~6-8% of income** vs <3% top quintile.
-- **TEA notes high energy costs are the second-biggest reason for economic eviction in Ontario, after unaffordable rent.**
+- **822,000 Canadian households (5.6%)** are energy poor (2021 Census, 6% threshold).
+- The range is **6% to 19% of Canadian households**, depending on the threshold used (LIHC vs 2x median vs 6%).
+- The Atlantic provinces are highest (10.7-13.7%). Ontario sits at about 7% baseline, and probably higher after the 2025 rate hikes.
+- **The bottom income quintile spends about 6-8% of income on energy**, versus under 3% for the top quintile.
+- **TEA notes that high energy costs are the second-biggest reason for economic eviction in Ontario, after unaffordable rent.**
 
 Programs:
-- **LEAP** — up to $650 one-time electric (+$130 if electric heat) + $650 gas
-- **Energy Affordability Program (EAP)** — free retrofits for income-eligible
-- **OESP** — monthly on-bill credit by household size + income
-- **OER** — 23.5% bill rebate (raised Nov 2025)
+- **LEAP**: up to $650 one-time for electric (plus $130 if electric heat) and $650 for gas
+- **Energy Affordability Program (EAP)**: free retrofits for income-eligible households
+- **OESP**: a monthly on-bill credit set by household size and income
+- **OER**: a 23.5% bill rebate (raised Nov 2025)
 
 ### 5.5 Indigenous + racialized equity
 
-- **62% of poor persons in Toronto are racialized.** 20.8% of racialized Canadians are low-income vs 12.2% non-racialized.
-- **17.4% of recent immigrants** in poverty (2019).
-- Renters can't control heating, windows, appliances → split-incentive trap.
+- **62% of poor people in Toronto are racialized.** 20.8% of racialized Canadians are low-income, versus 12.2% of non-racialized Canadians.
+- **17.4% of recent immigrants** were in poverty (2019).
+- Renters can't control their heating, windows, or appliances, which creates the split-incentive trap.
 
 ---
 
 ## 6. INTERNATIONAL POCS & REFERENCE ARCHITECTURES
 
-> Comprehensive catalog of what's been built elsewhere. Each is a "we did X but for Ontario" angle.
+> A full catalog of what's been built elsewhere. Each one is a "we did X, but for Ontario" angle.
 
 ### 6.1 United Kingdom (the deepest stack)
 
-- **Octopus Energy Agile tariff + Kraken platform + public REST API** — [octopus.energy/smart/agile](https://octopus.energy/smart/agile/) · [developer.octopus.energy/rest/reference](https://developer.octopus.energy/rest/reference/) · half-hourly variable tariffs, sometimes negative.
-- **NESO Carbon Intensity API** — [api.carbonintensity.org.uk](https://api.carbonintensity.org.uk/) · [dashboard.neso.energy](https://dashboard.neso.energy/) — free, public, 30-min CI forecasts 2 days ahead by GB region. EDF/Oxford/WWF/Met Office partnership.
-- **Open Climate Fix** — [openclimatefix.org](https://www.openclimatefix.org/) · [github.com/openclimatefix](https://github.com/openclimatefix) — open-source AI solar/wind forecasting; transformer model now in production at NESO, **halved errors, saved ~£30M/yr** in imbalance costs.
+- **Octopus Energy Agile tariff, Kraken platform, and public REST API**: [octopus.energy/smart/agile](https://octopus.energy/smart/agile/) · [developer.octopus.energy/rest/reference](https://developer.octopus.energy/rest/reference/) · half-hourly variable tariffs that sometimes go negative.
+- **NESO Carbon Intensity API**: [api.carbonintensity.org.uk](https://api.carbonintensity.org.uk/) · [dashboard.neso.energy](https://dashboard.neso.energy/). Free and public, with 30-min carbon-intensity forecasts 2 days ahead by GB region. A partnership of EDF, Oxford, WWF, and the Met Office.
+- **Open Climate Fix**: [openclimatefix.org](https://www.openclimatefix.org/) · [github.com/openclimatefix](https://github.com/openclimatefix). Open-source AI solar and wind forecasting. Its transformer model now runs in production at NESO, where it **halved errors and saved about £30M/yr** in imbalance costs.
 - **UK live grid dashboards**: [energydashboard.co.uk/live](https://www.energydashboard.co.uk/live) · [ukgridlive.co.uk](https://www.ukgridlive.co.uk/) · [grid-status.com](https://grid-status.com/about)
 
 ### 6.2 Germany
 
-- **Sonnen sonnenVPP** — Europe's largest VPP, ~25,000 household batteries → 250 MWh VPP, growing toward 1 GWh. Certified for primary control reserve. [sonnengroup.com/press/europes-largest-vpp](https://sonnengroup.com/press/europes-largest-vpp/)
-- **Tibber** (DE/NO/SE/NL) — mobile-first dynamic-tariff retailer; ~20% consumption reduction; from 2025 German law requires all suppliers to offer dynamic tariffs. [tibber.com](https://tibber.com/en)
-- **Bürgerwerke / Bürgerenergie** — 50,000+ citizen shareholders, 113 local energy communities, 1,400+ decentralized power plants, 914 cooperatives founded since 2006. [cleanenergywire.org Energiewende factsheet](https://www.cleanenergywire.org/factsheets/citizens-participation-energiewende)
-- **Energy-Charts (Fraunhofer ISE)** — [energy-charts.info](https://www.energy-charts.info/) — open interactive maps of every German power plant.
-- **repowermap.org** — citizen-driven map of every solar/wind/heat-pump installation.
+- **Sonnen sonnenVPP**: Europe's largest VPP, about 25,000 household batteries that add up to a 250 MWh VPP, growing toward 1 GWh. It is certified for primary control reserve. [sonnengroup.com/press/europes-largest-vpp](https://sonnengroup.com/press/europes-largest-vpp/)
+- **Tibber** (DE/NO/SE/NL): a mobile-first dynamic-tariff retailer, with about a 20% cut in consumption. As of 2025, German law requires all suppliers to offer dynamic tariffs. [tibber.com](https://tibber.com/en)
+- **Bürgerwerke / Bürgerenergie**: 50,000+ citizen shareholders, 113 local energy communities, 1,400+ small power plants, and 914 cooperatives founded since 2006. [cleanenergywire.org Energiewende factsheet](https://www.cleanenergywire.org/factsheets/citizens-participation-energiewende)
+- **Energy-Charts (Fraunhofer ISE)**: [energy-charts.info](https://www.energy-charts.info/), open interactive maps of every German power plant.
+- **repowermap.org**: a citizen-built map of every solar, wind, and heat-pump installation.
 
 ### 6.3 Denmark / Nordics
 
-- **Energinet Energi Data Service** — [energidataservice.dk](https://www.energidataservice.dk/) — TSO publishes hourly residential consumption (anonymized to municipality+heating-category) + production + prices + balancing, all via free open API on CKAN. **The platinum standard of TSO transparency.**
-- **Denmark Energy Islands** — artificial island in North Sea for 3-10 GW offshore wind. [ens.dk](https://ens.dk/en/energy-sources/offshore-wind-power/denmarks-energy-islands)
-- **Enova (Norway)** — state climate-tech funder; bundles every climate incentive in one portal. [enova.no](https://www.enova.no/)
-- **Greenely (Sweden)** — free smart-meter app, 115k+ homes. [greenely.com](https://greenely.com/en/free-app/)
+- **Energinet Energi Data Service**: [energidataservice.dk](https://www.energidataservice.dk/). The TSO publishes hourly residential consumption (anonymized to municipality and heating category), plus production, prices, and balancing, all through a free open API on CKAN. **The best example of TSO transparency anywhere.**
+- **Denmark Energy Islands**: an artificial island in the North Sea for 3-10 GW of offshore wind. [ens.dk](https://ens.dk/en/energy-sources/offshore-wind-power/denmarks-energy-islands)
+- **Enova (Norway)**: a state climate-tech funder that bundles every climate incentive in one portal. [enova.no](https://www.enova.no/)
+- **Greenely (Sweden)**: a free smart-meter app, 115k+ homes. [greenely.com](https://greenely.com/en/free-app/)
 
 ### 6.4 California / USA
 
-- **OhmConnect → Renew Home** (with Google Nest) — gamified residential DR, 115k+ CA users, **target 50 GW residential VPP by 2030.** [ohmconnect.com](https://www.ohmconnect.com/) · [utilitydive Nest+OhmConnect](https://www.utilitydive.com/news/google-nest-renew-ohmconnect-combine-vpp/715616/)
-- **CAISO Today's Outlook** — [caiso.com/todays-outlook](https://www.caiso.com/todays-outlook) — 5-min live load+supply+price+emissions. Origin of the "duck curve."
-- **GridStatus.io** — [gridstatus.io](https://www.gridstatus.io/) — indie dashboard aggregating all 7 US ISOs + IESO into one normalized API+UI. Built solo by Max Beer.
-- **WattTime** — [watttime.org](https://watttime.org/) — free-tier API for **marginal** CO2 per kWh, 5-min granularity, powers >1B IoT devices.
-- **NREL ResStock/ComStock** — [energy.gov/eere/buildings/resstock](https://www.energy.gov/eere/buildings/resstock) — 900k building energy models with 15-min granularity. Open-source. **No Canada equivalent.**
-- **PowerFlex** — behind-the-meter commercial VPP software.
-- **Atmos Financial** — climate fintech bank; deposits fund solar/EV/heat-pump loans.
+- **OhmConnect, now Renew Home** (with Google Nest): gamified residential DR, 115k+ California users, and a **target of a 50 GW residential VPP by 2030.** [ohmconnect.com](https://www.ohmconnect.com/) · [utilitydive Nest+OhmConnect](https://www.utilitydive.com/news/google-nest-renew-ohmconnect-combine-vpp/715616/)
+- **CAISO Today's Outlook**: [caiso.com/todays-outlook](https://www.caiso.com/todays-outlook), live 5-min load, supply, price, and emissions. This is where the "duck curve" came from.
+- **GridStatus.io**: [gridstatus.io](https://www.gridstatus.io/), an indie dashboard that pulls all 7 US ISOs plus IESO into one clean API and UI. Built solo by Max Beer.
+- **WattTime**: [watttime.org](https://watttime.org/), a free-tier API for **marginal** CO2 per kWh at 5-min granularity, used by more than 1B IoT devices.
+- **NREL ResStock/ComStock**: [energy.gov/eere/buildings/resstock](https://www.energy.gov/eere/buildings/resstock), 900k building energy models at 15-min granularity, open-source. **Canada has no equivalent.**
+- **PowerFlex**: behind-the-meter commercial VPP software.
+- **Atmos Financial**: a climate fintech bank where deposits fund solar, EV, and heat-pump loans.
 - **Electrify America heatmaps**.
 
 ### 6.5 Australia
 
-- **OpenNEM / Open Electricity** — [openelectricity.org.au](https://openelectricity.org.au/) · [github.com/opennem](https://github.com/opennem) — **MIT-licensed open-source dashboard.** **The single most copy-pasteable hackathon project — fork it, swap to IESO data.**
-- **Tesla SA VPP** — 50k Powerwalls + 5kW rooftop solar networked. AGL acquired and now operates Australia's largest VPP.
-- **AEMO Data Portal** — rooftop solar tracker (42.5 GW projected by 2036), VPP demonstrations.
+- **OpenNEM / Open Electricity**: [openelectricity.org.au](https://openelectricity.org.au/) · [github.com/opennem](https://github.com/opennem). **An MIT-licensed open-source dashboard.** **The single most copy-pasteable hackathon project: fork it and swap in IESO data.**
+- **Tesla SA VPP**: 50k Powerwalls networked with 5kW rooftop solar. AGL bought it and now runs Australia's largest VPP.
+- **AEMO Data Portal**: a rooftop solar tracker (42.5 GW projected by 2036) and VPP demonstrations.
 
 ### 6.6 NYC / US cities
 
-- **NYC Local Law 97** — mandatory GHG caps on every building >25,000 sqft. [nyc.gov LL97 page](https://www.nyc.gov/site/buildings/codes/ll97-greenhouse-gas-emissions-reductions.page) · [LL97/LL33 map](https://www.nyc.gov/assets/sustainablebuildings/html/LL97-n-LL33-map.html)
-- **NYC Energy Map (CUSP/NYU)** — 20k+ buildings, EUI + water + ENERGY STAR score by address. [energy.cusp.nyu.edu](https://energy.cusp.nyu.edu/)
-- **NYC Accelerator Building Energy Snapshot** — enter address, see compliance + penalties + savings. [accelerator.nyc/building-energy-snapshot](https://accelerator.nyc/building-energy-snapshot)
-- **Sealed** — pay-for-performance retrofits. [sealed.com](https://sealed.com/)
+- **NYC Local Law 97**: mandatory GHG caps on every building over 25,000 sqft. [nyc.gov LL97 page](https://www.nyc.gov/site/buildings/codes/ll97-greenhouse-gas-emissions-reductions.page) · [LL97/LL33 map](https://www.nyc.gov/assets/sustainablebuildings/html/LL97-n-LL33-map.html)
+- **NYC Energy Map (CUSP/NYU)**: 20k+ buildings, with EUI, water, and ENERGY STAR score by address. [energy.cusp.nyu.edu](https://energy.cusp.nyu.edu/)
+- **NYC Accelerator Building Energy Snapshot**: enter an address and see compliance, penalties, and savings. [accelerator.nyc/building-energy-snapshot](https://accelerator.nyc/building-energy-snapshot)
+- **Sealed**: pay-for-performance retrofits. [sealed.com](https://sealed.com/)
 
 ### 6.7 Africa / Global South
 
-- **M-KOPA Solar** (Kenya/Uganda/etc.) — PAYG solar home systems via M-Pesa; >2M homes electrified. [m-kopa.com](https://m-kopa.com/)
-- **SteamaCo** (Kenya) — cloud-based remote metering + mobile-money for village mini-grids. **Northern Ontario has 25+ diesel-dependent communities that could use this model.**
-- **Husk Power Systems** — 200+ solar hybrid mini-grids.
+- **M-KOPA Solar** (Kenya, Uganda, and more): pay-as-you-go solar home systems paid through M-Pesa, with more than 2M homes electrified. [m-kopa.com](https://m-kopa.com/)
+- **SteamaCo** (Kenya): cloud-based remote metering plus mobile money for village mini-grids. **Northern Ontario has 25+ diesel-dependent communities that could use this model.**
+- **Husk Power Systems**: 200+ solar hybrid mini-grids.
 
 ### 6.8 Equity/climate-justice tooling
 
-- **EPA EJScreen** — federal environmental-justice mapping tool. **Recently delisted in 2025 — a Canadian replica could be valuable.** [envirodatagov.org EJScreen removal](https://envirodatagov.org/epa-removes-ejscreen-from-its-website/)
-- **CalEnviroScreen** — California's 20+ env+demographic indicators per census tract; drives cap-and-trade revenue allocation under SB 535. **The model for "OntarioEnviroScreen."** [oehha.ca.gov/calenviroscreen](https://oehha.ca.gov/calenviroscreen)
-- **ACEEE State + City Clean Energy Scorecard** — annual rankings on energy efficiency policy + equity. [aceee.org/state-policy/scorecard](https://www.aceee.org/state-policy/scorecard)
-- **Boston Climate Ready** — heat vulnerability mapping at the city level.
+- **EPA EJScreen**: a federal environmental-justice mapping tool. **It was delisted in 2025, so a Canadian copy could be valuable.** [envirodatagov.org EJScreen removal](https://envirodatagov.org/epa-removes-ejscreen-from-its-website/)
+- **CalEnviroScreen**: California's 20+ environmental and demographic indicators per census tract, which decide how cap-and-trade revenue is spent under SB 535. **The model for "OntarioEnviroScreen."** [oehha.ca.gov/calenviroscreen](https://oehha.ca.gov/calenviroscreen)
+- **ACEEE State + City Clean Energy Scorecard**: annual rankings on energy-efficiency policy and equity. [aceee.org/state-policy/scorecard](https://www.aceee.org/state-policy/scorecard)
+- **Boston Climate Ready**: heat-vulnerability mapping at the city level.
 
 ### 6.9 Carbon accounting APIs
 
-- **Climatiq** — Stripe-for-carbon, global emissions factor API. [climatiq.io](https://www.climatiq.io/)
-- **Watershed**, **Persefoni**, **Sweep**, **Plan A** — enterprise carbon accounting.
-- **Electricity Maps** — [electricitymaps.com](https://www.electricitymaps.com/) · [github.com/electricitymaps/electricitymaps-contrib](https://github.com/electricitymaps/electricitymaps-contrib) — live global CI in 190+ countries; Google uses it to time-shift compute. Ontario is included but at province-level only.
+- **Climatiq**: a Stripe-for-carbon, a global emissions-factor API. [climatiq.io](https://www.climatiq.io/)
+- **Watershed**, **Persefoni**, **Sweep**, **Plan A**: enterprise carbon accounting.
+- **Electricity Maps**: [electricitymaps.com](https://www.electricitymaps.com/) · [github.com/electricitymaps/electricitymaps-contrib](https://github.com/electricitymaps/electricitymaps-contrib). Live carbon intensity in 190+ countries, which Google uses to time-shift its compute. Ontario is included, but only at the province level.
 
 ### 6.10 Carbon transparency / monitoring
 
-- **Climate TRACE** — satellite+AI emissions DB for >70k facilities globally. Found oil+gas emissions are 2× self-reported. [climatetrace.org](https://climatetrace.org/)
-- **Tomorrow.io** — weather + climate risk.
-- **Resource Watch (WRI)** — 200+ datasets.
-- **Berkeley Earth** — open temperature/climate back to 1750.
+- **Climate TRACE**: a satellite-and-AI emissions database for more than 70k facilities worldwide. It found oil and gas emissions are 2x what companies self-report. [climatetrace.org](https://climatetrace.org/)
+- **Tomorrow.io**: weather and climate risk.
+- **Resource Watch (WRI)**: 200+ datasets.
+- **Berkeley Earth**: open temperature and climate data back to 1750.
 
 ---
 
@@ -462,18 +462,18 @@ Programs:
 
 ### 7.1 Concrete strengths (use these to anchor pitches)
 
-1. **75-90% low-carbon electricity** — among cleanest in North America (vs Alberta ~10%, Saskatchewan ~20%).
-2. **Smart meters universal since 2010** — first NA jurisdiction.
-3. **TOU pricing universal** (2011+) + **ULO** for EV charging (2023+).
-4. **IESO real-time data published** at 5-min granularity. Strong open-data culture.
-5. **SaveONenergy** — $10.9B over 12 years (announced 2025), largest energy efficiency investment in Canadian history.
-6. **CANDU nuclear fleet** — domestic tech (AECL), online refueling. Bruce is the 2nd-largest operating nuclear station in the world.
-7. **Niagara hydro** — 2,400+ MW since 1922.
-8. **Indigenous co-ownership programs** — ALGP, 450+ projects with Indigenous partnership, Oneida BESS (Canada's largest), Wataynikaneyap.
-9. **Toronto Net-Zero by 2040** — earliest large-city NA target.
-10. **Energy Affordability Program** — fully funded retrofits for income-eligible (national rarity).
-11. **Toronto Hydro/Alectra/Hydro One Load Capacity Maps** — launched March 2025.
-12. **TGS Tier 1** mandatory in Toronto; Tier 4 = Passive House-equivalent by 2030.
+1. **75-90% low-carbon electricity**, among the cleanest in North America (versus about 10% in Alberta and about 20% in Saskatchewan).
+2. **Smart meters everywhere since 2010**, the first jurisdiction in North America to do this.
+3. **TOU pricing everywhere** (2011+) plus **ULO** for EV charging (2023+).
+4. **IESO publishes real-time data** at 5-min granularity. A strong open-data culture.
+5. **SaveONenergy**: $10.9B over 12 years (announced 2025), the largest energy-efficiency investment in Canadian history.
+6. **CANDU nuclear fleet**: a domestic technology (AECL) with online refueling. Bruce is the 2nd-largest operating nuclear station in the world.
+7. **Niagara hydro**: 2,400+ MW since 1922.
+8. **Indigenous co-ownership programs**: ALGP, 450+ projects with an Indigenous partner, the Oneida BESS (Canada's largest), and Wataynikaneyap.
+9. **Toronto Net-Zero by 2040**: the earliest large-city target in North America.
+10. **Energy Affordability Program**: fully funded retrofits for income-eligible households, which is rare nationally.
+11. **Toronto Hydro, Alectra, and Hydro One Load Capacity Maps**: launched March 2025.
+12. **TGS Tier 1** is mandatory in Toronto, and Tier 4 equals Passive House by 2030.
 
 ### 7.2 Gaps — what Ontario lacks vs. peers
 
@@ -490,16 +490,16 @@ Programs:
 
 ### 7.3 Hackathon-specific tool gaps (where journalists/advocates say "I wish there were a tool that...")
 
-1. **Real-time hyperlocal carbon intensity for Ontario** — UK has one, Electricity Maps does province-level only. Ontario does have meaningful intra-day variation (variable wind + imports from QC hydro / NY gas).
-2. **Heat vulnerability + cooling-centre routing map** — Wellesley Institute's *Left in the Heat* (2024) explicitly flagged Heat Relief Network is patchy + inaccessible.
-3. **Real-time outage equity map** — Toronto Hydro + Hydro One publish outage maps but don't overlay socioeconomic vulnerability or medical-device-dependency.
-4. **EV-readiness by neighborhood** — Toronto-St. Paul's: 8.8% EV registration; Scarborough East/N: <1%. No combined ward-level map.
-5. **School/public-building emissions report cards** — O.Reg 25/23 requires school boards to publish annual energy data. **Data exists but in scattered PDFs.** Nobody has aggregated for parents/voters.
-6. **Building emissions disclosure for existing homes** — Ontario killed mandatory Home Energy Rating at sale in the 2010s. UK's EPC + BC's Energy Step Code show how this works.
-7. **Indigenous-led project visibility dashboard** — Indigenous Clean Energy publishes a directory but it's static. No live map of 450+ Ontario projects.
-8. **Heat-asthma-emissions integrated dashboard** — Smog formation rises 5% per °C. AQHI is real-time. Hospital admissions data public (with lag). Peaker-plant runtime + asthma forecast unexplored.
-9. **TOU coach / ULO eligibility checker** — Despite 15 yrs of TOU, residents don't fully use it.
-10. **Carbon intensity of imports** — Ontario imports significant power from QC (clean) and MI/NY (often gas). Live import-adjusted Ontario CI is novel.
+1. **Real-time hyperlocal carbon intensity for Ontario.** The UK has one. Electricity Maps does province-level only. Ontario has real intra-day swings (variable wind plus imports of QC hydro and NY gas).
+2. **Heat vulnerability plus cooling-centre routing map.** The Wellesley Institute's *Left in the Heat* (2024) said directly that the Heat Relief Network is patchy and hard to reach.
+3. **Real-time outage equity map.** Toronto Hydro and Hydro One publish outage maps, but they don't overlay socioeconomic vulnerability or who depends on medical devices.
+4. **EV-readiness by neighborhood.** Toronto-St. Paul's has 8.8% EV registration; Scarborough East and North have under 1%. There is no combined ward-level map.
+5. **School and public-building emissions report cards.** O.Reg 25/23 requires school boards to publish annual energy data. **The data exists, but it is scattered across PDFs.** Nobody has pulled it together for parents and voters.
+6. **Building emissions disclosure for existing homes.** Ontario killed the mandatory Home Energy Rating at sale in the 2010s. The UK's EPC and BC's Energy Step Code show how this works.
+7. **Indigenous-led project visibility dashboard.** Indigenous Clean Energy publishes a directory, but it is static. There is no live map of the 450+ Ontario projects.
+8. **Heat-asthma-emissions integrated dashboard.** Smog formation rises 5% per °C. AQHI is real-time. Hospital admissions data is public (with a lag). Pairing peaker-plant runtime with an asthma forecast is unexplored.
+9. **TOU coach and ULO eligibility checker.** After 15 years of TOU, residents still don't use it fully.
+10. **Carbon intensity of imports.** Ontario imports a lot of power from QC (clean) and MI/NY (often gas). A live import-adjusted Ontario carbon intensity is new.
 
 ---
 
@@ -507,25 +507,25 @@ Programs:
 
 ### 8.1 Power systems engineering
 
-Ontario's #1 problem isn't generation — it's **transmission and ramping flexibility** during the refurbishment trough. The Bruce zone is already export-constrained; the Hanmer-Mississagi 500 kV line (planned 2027-2029) is critical. CANDU baseload gives Ontario unusual synchronous inertia (unlike UK/CA), but SMRs replacing CANDU + gas-peaker retirements will change that picture.
+Ontario's biggest problem is not generation. It is **transmission and the ability to ramp fast** during the refurbishment trough. The Bruce zone is already export-constrained, so the Hanmer-Mississagi 500 kV line (planned 2027-2029) is critical. CANDU baseload gives Ontario unusual synchronous inertia (unlike the UK and California), but SMRs replacing CANDU and gas-peaker retirements will change that.
 
-Ontario has **no statewide DERMS** and **no Rule 21 equivalent**. The IESO's Enabling Resources program is closest but lacks behind-the-meter telemetry.
+Ontario has **no province-wide DERMS** and **no Rule 21 equivalent**. The IESO's Enabling Resources program is the closest thing, but it lacks behind-the-meter telemetry.
 
 ### 8.2 Climate science
 
-Toronto warms ~2.3°C by 2050 (RCP 8.5). +30°C days nearly 2 months/yr by 2100. Heatwaves triple by 2060. Lake-effect snow shifts. **Toronto UHI is highest in Canada at +4.36°C nighttime.** Each 2-3°C UHI = 4-7% extra heat mortality.
+Toronto warms about 2.3°C by 2050 (RCP 8.5). +30°C days reach nearly 2 months/yr by 2100. Heatwaves triple by 2060. Lake-effect snow shifts. **Toronto's UHI is the highest in Canada at +4.36°C at night.** Each 2-3°C of UHI means 4-7% more heat deaths.
 
-Derecho corridor is shifting north. Ice-storm corridor (TO-Kingston-Ottawa) shrinks in extent but intensifies. July 2024 flood ($940M) is the Clausius-Clapeyron archetype.
+The derecho corridor is shifting north. The ice-storm corridor (Toronto-Kingston-Ottawa) covers less ground but hits harder. The July 2024 flood ($940M) is the classic Clausius-Clapeyron case.
 
-Vulnerable populations: under 5, over 65, low-income high-rise without AC, low tree canopy (<5% = 5× ambulance calls), language barrier, chronic illness.
+Vulnerable populations: under 5, over 65, low-income high-rise residents without AC, areas with low tree canopy (under 5% means 5x the ambulance calls), language barrier, and chronic illness.
 
 ### 8.3 Urban planning / policy
 
-- **TransformTO** (Toronto) — net-zero by 2040, one of NA's most aggressive city targets.
-- **Toronto BEPS** for existing buildings — still in consultation hell as of May 2026.
-- **Ontario provincial climate plan** — Ford gov repealed cap-and-trade 2018; "Made-in-Ontario Environment Plan" lacks teeth.
-- **Federal Net-Zero Act** (2021) — Auditor General Nov 2025: Canada is "off track." Fuel charge eliminated April 2025; backstop now solely OBPS.
-- **NYC Climate Justice Working Group** (2019 CLCPA) mandates 35-40% of climate spending to "disadvantaged communities" using 45 indicators. **Toronto/Ontario have no statutory equivalent.**
+- **TransformTO** (Toronto): net-zero by 2040, one of North America's most aggressive city targets.
+- **Toronto BEPS** for existing buildings: still stuck in consultation as of May 2026.
+- **Ontario provincial climate plan**: the Ford government repealed cap-and-trade in 2018, and the "Made-in-Ontario Environment Plan" has little force.
+- **Federal Net-Zero Act** (2021): the Auditor General said in Nov 2025 that Canada is "off track." The fuel charge was eliminated in April 2025, so the backstop is now only OBPS.
+- **NYC Climate Justice Working Group** (2019 CLCPA): requires 35-40% of climate spending to go to "disadvantaged communities," using 45 indicators. **Toronto and Ontario have no equivalent in law.**
 
 ### 8.4 Behavioral econ / nudge theory
 
