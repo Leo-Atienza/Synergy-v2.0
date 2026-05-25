@@ -65,6 +65,7 @@ Then open the `Synergy-v2.0 — Hackathon Brain/` subfolder as a vault in Obsidi
 | Hard event facts (rules, themes, timeline, deadlines) | [`docs/`](docs/) — `seneca-hackathon-context.md`, `themes.md`, `timeline.md` |
 | The deep research dossier (Ontario energy, past winners, sponsors) | [`docs/research-dossier.md`](docs/research-dossier.md) |
 | Why we make "weird on purpose" design calls | [`docs/uniqueness-principles.md`](docs/uniqueness-principles.md) |
+| Fresh idea candidates for all 9 challenge sets (post–May-24 kickoff) | [`docs/post-kickoff-ideas.md`](docs/post-kickoff-ideas.md) |
 | Machine-read event state | [`.hackathon/event.yaml`](.hackathon/event.yaml) |
 
 ## Where to start reading (any path)
