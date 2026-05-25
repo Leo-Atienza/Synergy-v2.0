@@ -102,7 +102,7 @@ export default function TideScreen(props: Props) {
           done by morning. Tide waits for the 3.9¢ window ($
           {props.smartDollars.toFixed(2)}) over the 39¢ peak (${props.baselineDollars.toFixed(2)}); honest
           renter savings ≈ $30–130 a cooling season. The leverage is the{" "}
-          <a className="map-link" href="/map">map</a>. Demo fixture: Ontario summer
+          <a className="map-link" href="/">map</a>. Demo fixture: Ontario summer
           weekday, OEB ULO rates; top-right is live from IESO.
         </p>
       </div>

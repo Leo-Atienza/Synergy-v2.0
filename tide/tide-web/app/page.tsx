@@ -1,44 +1,13 @@
-import { getDay, getLiveIntensity } from "@/lib/grid";
-import { buildHorizon, chooseWindow, baselineNow } from "@/lib/optimizer";
-import { perRun } from "@/lib/savings";
-import type { Load } from "@/lib/types";
-import TideScreen from "./tide-screen";
+import type { Metadata } from "next";
+import MapScreen from "./map/map-screen";
 
-// Render per request so the live grid reading is always fresh (and the build needs no network).
-export const dynamic = "force-dynamic";
-
-const LOAD: Load = {
-  name: "Window AC (cool overnight, 1.2 kW)",
-  watts: 1200,
-  durationHours: 5,
-  earliestHour: 18,
-  deadlineHour: 31,
+export const metadata: Metadata = {
+  title: "Tide — Peel energy-burden map",
+  description:
+    "Where Ontario's overnight-rate gap hurts renters most across Peel — and which fix each neighbourhood actually needs.",
 };
 
-export default async function Page() {
-  const day = getDay();
-  const horizon = buildHorizon(day, LOAD, "ULO");
-  const smart = chooseWindow(horizon, LOAD, 0);
-  const naive = baselineNow(horizon, LOAD);
-  const saving = perRun(smart, naive);
-  const live = await getLiveIntensity();
-
-  const hours = day.hours.map((h) => ({
-    hour: h.hour,
-    price: h.priceULO,
-    intensity: Math.round(h.intensity),
-  }));
-
-  return (
-    <TideScreen
-      hours={hours}
-      startAbsHour={smart.startAbsHour}
-      durationHours={Math.ceil(LOAD.durationHours)}
-      nightSavedDollars={saving.dollarsSaved}
-      nightSavedKg={saving.kgCO2Saved}
-      baselineDollars={naive.costDollars}
-      smartDollars={smart.costDollars}
-      liveIntensity={live}
-    />
-  );
+// Map-led: the landing page is the energy-burden map. The device demo lives at /device.
+export default function Home() {
+  return <MapScreen />;
 }

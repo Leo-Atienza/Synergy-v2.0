@@ -47,7 +47,7 @@ export default function MapScreen() {
     <main className="map-page">
       <div className="map-head">
         <span className="brand">TIDE</span>
-        <a className="map-link" href="/">
+        <a className="map-link" href="/device">
           see the fix on a real plug →
         </a>
       </div>
