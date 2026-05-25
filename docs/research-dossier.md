@@ -211,7 +211,7 @@ Public data hub: [ieso.ca/power-data](https://www.ieso.ca/power-data) | Bulk fil
 | Intertie Schedule and Flow (14 interconnections) | /IntertieScheduleFlow/ | XML | 90-day |
 | Adequacy Report (today + 34 days) | /Adequacy3/ | XML | Daily |
 | Peak Tracker (next 24h forecasted peaks) | /peaktracker/ | HTML | Continuous |
-| HOEP archive | /HourlyEnergyPrice/ | CSV | Daily (archive 2002–May 2025) |
+| HOEP archive | /HourlyEnergyPrice/ | CSV | Daily (archive 2002 to May 2025) |
 
 **Third-party wrappers (use these to skip the XML pain):**
 - **GridStatus**: a Python SDK over the IESO XML, with a clean API. [gridstatus.io/live/ieso](https://www.gridstatus.io/live/ieso) · [opensource.gridstatus.io](https://opensource.gridstatus.io/en/latest/autoapi/gridstatus/ieso/index.html) · [docs.gridstatus.io/data-guides/market-guides/independent-electricity-system-operator-ieso](https://docs.gridstatus.io/data-guides/market-guides/independent-electricity-system-operator-ieso)
@@ -275,7 +275,7 @@ Key tables you'll use:
 
 - **Energy Poverty and Equity Explorer** (Efficiency Canada with the Community Data Program): [energypoverty.communitydata.ca](https://energypoverty.communitydata.ca/), showing energy burden, income, heating type, and building age at the census-tract level. *(Note: the site gave a certificate-expiry warning when fetched.)*
 - **Toronto Social Atlas**: [toronto.ca/city-government/data-research-maps/neighbourhoods-communities/toronto-social-atlas](https://www.toronto.ca/city-government/data-research-maps/neighbourhoods-communities/toronto-social-atlas/)
-- **School of Cities — Wealth & poverty concentration in Toronto**: [schoolofcities.github.io/neighbourhood-income-toronto-2020](https://schoolofcities.github.io/neighbourhood-income-toronto-2020/)
+- **School of Cities, Wealth & poverty concentration in Toronto**: [schoolofcities.github.io/neighbourhood-income-toronto-2020](https://schoolofcities.github.io/neighbourhood-income-toronto-2020/)
 - **Toronto Public Health Heat Vulnerability Index** + U of T School of Cities heat-vulnerability map.
 
 ### 3.10 Climate projections for Ontario
@@ -323,7 +323,7 @@ Key tables you'll use:
 | **Adam Scott** | Exec Dir, Shift Action. Pension fund and climate risk |
 | **Lesley Gallinger** | CEO, IESO |
 | **Lynne Anderson** | Chair, OEB |
-| **Six Nations of the Grand River Development Corporation** | Anchor Indigenous energy investor — Oneida, Grand Renewable, Niagara Region Wind |
+| **Six Nations of the Grand River Development Corporation** | Anchor Indigenous energy investor: Oneida, Grand Renewable, Niagara Region Wind |
 | Pembina Institute, Canadian Climate Institute, Pollution Probe, OEA, OSEA, Clean Prosperity, TAF, Efficiency Canada | Active orgs |
 
 ---
@@ -537,11 +537,11 @@ Vulnerable populations: under 5, over 65, low-income high-rise residents without
 
 ### 8.5 Data science / ML state of the art
 
-- **Load forecasting**: shifted from LSTM/GRU to **Transformers and hybrids** — iTransformer, PatchTST, Temporal Fusion Transformer (TFT); **xLSTM** (Beck 2024); foundation models (TimesFM, Chronos, Moirai).
-- **NILM benchmarks**: REDD (MIT), UK-DALE (Imperial), REFIT, **AMPds (UBC — Canadian)**, WHITED, BLUED. BERT4NILM + attention beats older CNN-seq2seq.
+- **Load forecasting**: shifted from LSTM/GRU to **Transformers and hybrids**: iTransformer, PatchTST, Temporal Fusion Transformer (TFT); **xLSTM** (Beck 2024); foundation models (TimesFM, Chronos, Moirai).
+- **NILM benchmarks**: REDD (MIT), UK-DALE (Imperial), REFIT, **AMPds (UBC, Canadian)**, WHITED, BLUED. BERT4NILM + attention beats older CNN-seq2seq.
 - **Solar/wind forecasting**: Open Climate Fix's Quartz Solar (transformer + satellite imagery) **halved NESO errors, saved ~£30M/yr**.
 - **Anomaly detection**: GNNs on distribution topology + weather. PNNL's GridAPPS-D.
-- **CV for solar siting**: **DeepSolar (Stanford)** — Inception V3 on satellite, identified 1.47M US installations. **Project Sunroof** has limited Canadian coverage. **DeepRoof (UMass)** — 91.1% TPR using cheap satellite tiles.
+- **CV for solar siting**: **DeepSolar (Stanford)** ran Inception V3 on satellite imagery and identified 1.47M US installations. **Project Sunroof** has limited Canadian coverage. **DeepRoof (UMass)** hit 91.1% TPR using cheap satellite tiles.
 
 ### 8.6 Design / data-viz
 
@@ -562,7 +562,7 @@ Vulnerable populations: under 5, over 65, low-income high-rise residents without
 ### 8.8 Other-field contributions
 
 - **Biologist**: Ontario peatlands store **1.3B tonnes carbon** (~40 yrs of Canada's car emissions). **Hudson Bay Lowlands = world's 2nd-largest peat carbon store.** Wetlands sequester 11× rate of grasslands, 125× rate of forests. Boreal forest shifting from sink to potential source.
-- **Architect**: Toronto Green Standard v4 — Tier 4 = Passive House by 2030. **EnerPHit** retrofit standard. **Tower Renewal** (1960s-80s high-rises) is Toronto's single biggest emissions reduction target.
+- **Architect**: Toronto Green Standard v4. Tier 4 = Passive House by 2030. **EnerPHit** retrofit standard. **Tower Renewal** (1960s-80s high-rises) is Toronto's single biggest emissions reduction target.
 - **Public health**: Each 1°C = 5% more smog. **Asthma is #1 pediatric hospital admission in Canada.** Portlands Energy Centre + Greenfield gas peakers are adjacent to dense low-income neighborhoods.
 - **Economist**: Federal OBPS at $80/t CO2e in 2025 → $170/t by 2030. Fuel charge eliminated April 2025; price signal muted at consumer level.
 - **Software engineer (default lens)**: APIs/dashboards, geospatial (PostGIS/deck.gl/MapLibre), ML pipelines, mobile + push for time-shifting nudges. **The wedge for solo software builder is pairing dashboard with equity/health/behavioral lens that other devs won't think of.**
@@ -574,7 +574,7 @@ Vulnerable populations: under 5, over 65, low-income high-rise residents without
 ### 9.1 Most directly relevant baseline — Seneca 2023
 
 - **Theme**: Smart Cities (not Energy; different).
-- **Winner**: **Mood Vault** (Foam on Latte — Samina Rahman Purba, Batuhan Ipci, Hien Nguyen). 3 full-stack devs. **$5,000 CAD grand prize.**
+- **Winner**: **Mood Vault** (Foam on Latte: Samina Rahman Purba, Batuhan Ipci, Hien Nguyen). 3 full-stack devs. **$5,000 CAD grand prize.**
 - **Project**: Patient-therapist platform: daily mood journaling → NLP summaries for therapist; **suicidal-ideation detection alerts therapist**; 75-language translation; voice transcription.
 - **Why it won**: NOT novel tech (CRUD + NLP API). Won by picking a heavy topic (suicide-ideation), wrapping in polished UX, citing concrete safety/access mechanisms.
 - **Format**: Registration → virtual qualifier round (solution-proposal, 1-2 days) → virtual finale day 1 → hybrid finale day 2. **Propose-then-build, not continuous 36-hr.**
@@ -583,16 +583,16 @@ Vulnerable populations: under 5, over 65, low-income high-rise residents without
 ### 9.2 DOE EnergyTech University Prize — gold standard
 
 - **2024 1st ($50k)**: **Rise Reforming** (U Chicago).
-- **2024 3rd ($10k)**: **Ion Clean PV** (Hawaii Pacific) — waterless electrostatic PV-panel cleaning.
-- **2025 1st ($50k)**: **Seal the Deal** (Georgia Southern) — novel seal for supercritical CO2 turbomachinery.
-- **2025 bonus**: **GasS Station** (Duke) — geothermal hubs for data centers. *Topical "AI/data-center power" angle judges loved.*
+- **2024 3rd ($10k)**: **Ion Clean PV** (Hawaii Pacific): waterless electrostatic PV-panel cleaning.
+- **2025 1st ($50k)**: **Seal the Deal** (Georgia Southern): novel seal for supercritical CO2 turbomachinery.
+- **2025 bonus**: **GasS Station** (Duke): geothermal hubs for data centers. *Topical "AI/data-center power" angle judges loved.*
 
-EnergyTech UP winners are commercialization pitches not 36-hr code-jams. **Don't model your demo on these — but they signal the credibility-list of problems**: grid interconnection, EV battery health, subsurface optimization, agrivoltaics, heat recovery, microreactor seals, data-center power.
+EnergyTech UP winners are commercialization pitches, not 36-hr code-jams. **Don't model your demo on these. They signal the list of credible problems**: grid interconnection, EV battery health, subsurface optimization, agrivoltaics, heat recovery, microreactor seals, data-center power.
 
 ### 9.3 American-Made Challenges — bigger prizes
 
-- **Solar Prize Round 7 (2024)**: **Fram Energy (Newburgh NY)** — split-incentive solar platform for landlords-and-renters. $500k cash + $75k lab vouchers. **Pure business-model innovation, no fancy tech.**
-- **Gritt Robotics (Belmont CA)** — robotics + AI for utility-scale solar construction.
+- **Solar Prize Round 7 (2024)**: **Fram Energy (Newburgh NY)**, a split-incentive solar platform for landlords-and-renters. $500k cash + $75k lab vouchers. **Pure business-model innovation, no fancy tech.**
+- **Gritt Robotics (Belmont CA)**: robotics + AI for utility-scale solar construction.
 
 **Lesson**: novel deployment of known tech wins big.
 
@@ -603,18 +603,18 @@ EnergyTech UP winners are commercialization pitches not 36-hr code-jams. **Don't
 
 ### 9.5 MIT Energy & Climate Hackathon 2024
 
-- **1st**: **Incenzo** (4 people) — uses **Palmetto digital-twin API** to tailor emissions-reduction policy data for *underserved communities*. **API wrapper + equity angle.** Classic "remix + reframe" win.
+- **1st**: **Incenzo** (4 people) uses the **Palmetto digital-twin API** to tailor emissions-reduction policy data for *underserved communities*. **API wrapper + equity angle.** Classic "remix + reframe" win.
 
 ### 9.6 Hack for Earth at COP28 (1,200 teams from 112 countries)
 
-- **Energy Challenge winner**: **Renewable Energy Placement Optimizer** — AI/ML tool for optimal solar/wind siting. **Most direct analog for a Synergy-v2.0-style winner.**
+- **Energy Challenge winner**: **Renewable Energy Placement Optimizer**, an AI/ML tool for optimal solar/wind siting. **Most direct analog for a Synergy-v2.0-style winner.**
 
 ### 9.7 GridShift (Silicon Valley Clean Energy, 2020) — the smart-grid hackathon canon
 
-- **1st ($10k): Grove** — smart automated scheduling of flexible loads.
-- **2nd ($4k): Green Routes** — EV charging finder optimizing **carbon, cost, OR convenience**.
-- **People's Choice ($2k): WattsDown** — color-changing smart bulb at home; alerts to high prices or planned outages. **Most "demoable" of the three** — judges remember the lightbulb.
-- Board chair quote: *"resiliency, equity and access"* — judge buzzwords for grid hackathons.
+- **1st ($10k): Grove**: smart automated scheduling of flexible loads.
+- **2nd ($4k): Green Routes**: EV charging finder optimizing **carbon, cost, OR convenience**.
+- **People's Choice ($2k): WattsDown**: color-changing smart bulb at home; alerts to high prices or planned outages. **Most "demoable" of the three.** Judges remember the lightbulb.
+- Board chair quote: *"resiliency, equity and access"* (judge buzzwords for grid hackathons).
 
 ### 9.8 UC Berkeley AI Hackathon 2024 (1,200+ devs)
 
