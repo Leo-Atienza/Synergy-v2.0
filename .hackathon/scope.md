@@ -1,60 +1,70 @@
-# Scope Lock — Valley
+# Scope Lock — Sanctuary
 
-**Status:** LOCKED at 2026-05-25T12:30:00-04:00
+**Status:** AMENDED and LOCKED at 2026-05-25T13:55:00-04:00
 **Amendments:** see `scope-log.md`
-**Challenge:** Seneca Energy Hackathon 2026 · Theme 3 · Problem Statement 1 (energy burden — "incentives target property owners, not renters")
-**Deadline:** 2026-05-26T23:59:00-04:00 (qualifier video) · **Deliverable:** a 5-min YouTube video demoing the prototype, NOT a deployed app
+**Challenge:** Seneca Energy Hackathon 2026 · Theme 3 · Problem Statement 2 (climate resilience, vulnerable populations, and shelter access)
+**Deadline:** 2026-05-26T23:59:00-04:00 (qualifier video) · **Deliverable:** a 5-min YouTube video demoing the StoryMap/Web Map artifact, NOT a deployed app
 
 ---
 
 ## Pattern-break archetype
 
-> One of the 11 archetypes from [`docs/uniqueness-principles.md`](../docs/uniqueness-principles.md) §2. Validated by `demo-moment-critic` 2026-05-25 (verdict: BORDERLINE → LANDS once the two seams below are closed).
+> One of the 11 archetypes from [`docs/uniqueness-principles.md`](../docs/uniqueness-principles.md) §2. Stress-tested by `demo-moment-critic` 2026-05-25 (verdict: BORDERLINE → LANDS once the proper-noun hero building and honesty labels are locked).
 
-**Locked archetype:** **Tension-Reveal**
+**Locked archetype:** **Public-Good Frame**
 
-**Why this one:** The thesis is genuinely counterintuitive and nobody else in a ~30-team field will surface it — Ontario's *cheapest* electricity rate (ULO, 3.9¢/kWh overnight) is, for a low-income renter, either a **locked door** or a **trap**. Sub-metered apartment tenants can't choose ULO at all — the landlord picks the building's plan (OEB rule, verbatim; see [`docs/energy-domain.md`](../docs/energy-domain.md) "ULO adopter demographics… 2026-05-25"). And renters who *can* choose it usually pay *more*, because capturing 3.9¢ means using power at 3 a.m. — which an inflexible low-income household can't. The rate built to reward flexibility quietly penalizes those who can't flex. The **map** reveals *where* in Peel that gap is worst; the **device** is the automated fix that springs the trap — the "targeted policy ensuring equitable access" the regressive-pricing literature (arXiv 2509.01499) explicitly calls for. The reveal IS the project.
+**Reinforcing archetype:** **Local-Detail**
 
-**Optional second archetype (reinforcing):** **Hardware-Surprise** — a roughly $25 plug fires a physical desk lamp at 3.9¢ on camera, in a field of pure-software projects. It *discharges* the tension (the trap, sprung) rather than competing with it; the caption keeps the lamp reading as argument, not gadget. **NOTE — hardware not yet in hand (being bought).** This is the hero *upgrade*, not the floor: the demo must land on the screen alone (see Fallback). If the plug arrives and verifies in time, the lamp becomes the hero shot.
+**Why this one:** Most heat-risk tools route vulnerable people to official cooling spaces. Sanctuary flips the decision: **which trusted buildings should become the next resilience hubs?** The remembered idea is not "a dashboard for heat." It is "harden these five named Peel buildings first." The public-good frame keeps the project municipal and utility-facing; the local-detail frame makes it memorable with proper nouns, addresses, and one real hero building.
+
+**Hero building:** **Malton Community Centre and Library, 3540 Morning Star Drive, Mississauga.** It geocodes into Peel HVI quintile 5 (`Index_Qnt=5`, PHDZ `M-04`) via the public HVI feature service. Gore Meadows was demoted after verification because it sits in HVI quintile 2.
 
 ---
 
 ## Demo moment — literal video script
 
 ```
-0:00 — Camera shows: a laptop running Valley. The panel reads "11:00 · $0.391/kWh · ON-PEAK · WAIT" in red.
-         Beside it, a choropleth of Peel; the worst-burden FSA — Malton (Mississauga L4X) — glows deepest red.
-         [If hardware landed: a dark desk lamp sits next to the laptop.]
-0:02 — User does: drags the hour scrubber from 6pm toward 3am (one continuous motion).
-0:05 — Screen reacts: at the overnight window the panel flips GREEN "03:00 · $0.039/kWh · GO"
-         and the device tile flips to ON.  [If hardware: the physical lamp clicks on.]
-0:08 — End frame: caption "3.9¢ — Ontario's cheapest rate is a 3 a.m. trap. Valley springs it for you."
-         The reddest FSA (Malton / L4X) stays labeled on the map.
+0:00 — Camera shows: Peel Heat Vulnerability Index. One Brampton/Malton pocket burns dark red.
+         Caption: "Heat risk is not evenly distributed. Shelter access is not either."
+0:02 — User clicks a real named candidate hub: "Malton Community Centre and Library,
+         3540 Morning Star Drive, Mississauga."
+0:05 — Panel snaps open:
+         "Candidate hub, not currently equipped"
+         "Reachable population: modelled 500 m estimate"
+         "Solar/battery: planning estimate, requires site audit"
+         plus HVI level, roof/hardening class, and why this ranks high.
+0:08 — Top five candidate hubs light up in rank order.
+         Caption: "If Peel can harden only five buildings first, Sanctuary ranks these five."
 ```
 
-The "describe it 2 hours later" test (per critic): *"the one where the rate flips to 3.9¢ at 3 a.m. and the lamp turns on."* Build this FIRST. If it fails at judging time, the whole project fails.
+The "describe it 2 hours later" test: *"the one that picks the five trusted Peel buildings to harden before the next heat wave."* Build this FIRST. If it looks like a generic GIS dashboard, the whole project fails.
 
-**Two seams closed (critic-mandated):**
-1. **No EV contradiction on camera.** The current screen says "EV charger plugged in at 6pm" — the exact framing we cut. MUST-HAVE #2 rewrites it to a renter load before any recording. The artifact must match the pitch.
-2. **The FSA click disambiguates the two renters.** Clicking the worst FSA — Malton (L4X) — must state *which* fix applies ("largely sub-metered → policy fix: the landlord chooses the rate") vs an individually-metered FSA like Brampton L6V ("Valley can help here"). This converts the sub-metered-vs-individually-metered seam from a vulnerability into the thesis: the map tells utilities which neighbourhoods the device reaches and which need the policy lever.
+**Three seams to close before recording:**
+1. **The hero click must be a proper noun.** No generic "community building" point. Use a real name and address.
+2. **Honesty labels must appear in the panel.** `candidate hub, not currently equipped`; `modelled 500 m estimate`; `planning estimate, requires site audit`.
+3. **The reveal must be a decision.** Top-five dots must animate as a ranked answer to "which buildings first?", not decorative glowing markers.
 
 ---
 
 ## Fallback if the weird version doesn't land
 
-**Baseline (since hardware isn't yet in hand):** the **screen-only WAIT→GO reveal** — the on-screen device tile flipping to ON at 3.9¢ is the moment, no physical lamp required. This is the floor the demo is built on; the lamp is the upgrade.
+**Baseline:** ArcGIS StoryMap + Web Map recording with the hero click and ranked-five reveal.
 
-**If the live IESO grid read fails on camera:** use the committed sample-day data ([`lib/sample-day.ts`](../valley/tide-web/lib/sample-day.ts)) — same reveal, labelled "demo fixture, Ontario summer weekday."
+**If ArcGIS interaction is slow on camera:** use preloaded screenshots of the HVI map, hero panel, and ranked-five map. The video deliverable still works.
 
-**What we do NOT fall back to:** a static dashboard screenshot; an "AI-powered energy assistant" framing; the EV-charging savings story. Degrade the *liveness*, never the thesis.
+**If the HVI layer cannot be embedded cleanly:** use a screenshot from the public Peel HVI dashboard and manually placed candidate points, labelled as a demo fixture.
+
+**What we do NOT fall back to:** a generic dashboard tour; a full custom app rebuild; unlabelled solar/battery numbers; "AI-powered" language; claiming any named building is already a resilience hub.
 
 ---
 
 ## What was cut to support the pattern-break
 
-- **The EV-charging savings headline (~$1,760/yr)** — pulls toward the affluent-homeowner story and is dishonest for renters. Cut to keep the renter-equity reveal sharp. **This is not just a pitch edit — it requires rewriting the on-screen copy** ([`tide-screen.tsx`](../valley/tide-web/app/tide-screen.tsx) foot text + tally) from "EV charger plugged in at 6pm" to a renter-shiftable load. Named explicitly as MUST-HAVE #2 so it cannot slip under the crunch.
-- **DA-level (~1,600-polygon) map** — pulls toward a generic GIS-tiling exercise; cut to keep ~40 FSA polygons and one clean reveal. (FSA is also the only level with real *measured* IESO consumption.)
-- **The VPP / grid-aggregation vision** — pulls toward an enterprise-SaaS pitch; demoted to a single closing "where this goes / Alectra GridExchange" line.
+- **Valley ULO plug + renter energy-burden map** — cut entirely. Sanctuary is a project replacement, not a feature addition.
+- **Hardware surprise** — cut. The visual proof is a ranked public-good siting decision, not a device firing.
+- **Full command-center / VPP operations layer** — demoted to future context. The prototype ranks candidate hubs; it does not dispatch microgrids.
+- **Precise per-building kW/kWh claims** — cut. Use hardening classes and planning-estimate labels.
+- **Scoring every possible building in Peel** — cut. Hand-verify 8 to 10 candidates and make the top five defensible.
 
 ---
 
@@ -62,49 +72,51 @@ The "describe it 2 hours later" test (per critic): *"the one where the rate flip
 
 | # | Feature | Rubric axis | Pattern-break role | Est. hours | Status |
 |---|---|---|---|---|---|
-| 1 | **Energy Poverty Map of Peel (FSA)** — choropleth of ~40 FSAs by burden score (renter % × energy burden × electric-heat, from StatCan 2021 census) + click→FSA detail panel with the **intervention-routing note** (Valley-reachable vs policy vs retrofit). IESO measured FSA consumption calibrates the $ figure. | Impact / Innovation / Technical | supports | 10 | [ ] |
-| 2 | **Truth the demo screen (EV → renter)** — rewrite `tide-screen.tsx` foot copy + tally headline to a renter load (window-AC pre-cool), honest ~$30–130/yr range, not the EV number. Optimizer logic unchanged; only the load label + dollar figure. | Impact / Presentation | supports | 0.5 | [ ] |
-| 3 | **Device demo** — screen WAIT→GO baseline (engine already built + tested) **+** buy Shelly Plug US Gen4, wire local JSON-RPC, pre-record a clean real-lamp-fire take as the hero upgrade. | Technical / Presentation | supports | 3 | [ ] |
-| 4 | **5-min qualifier video** — arc: trap → map → fix (lamp/tile) → honesty (two-renter split) → close (Alectra GridExchange). Includes one explicit **collaboration line** (who built what) to earn the Collaboration axis. | Presentation / Collaboration | supports | 4 | [ ] |
-| 5 | **Real-data provenance** — footer "StatCan 2021 · IESO measured hourly · OEB ULO · live Ontario grid" + a 2-line methods note. The anti-"AI slop" defense. | Technical / Impact | supports | 1.5 | [ ] |
+| 1 | **Candidate hub data spine** — 8 to 10 hand-verified Peel buildings with name, address, type, source URL, HVI bucket, 500 m catchment estimate, roof/hardening class, verification status, and `candidate hub` labels. | Technical / Impact | supports | 3 | [ ] |
+| 2 | **ArcGIS Web Map / StoryMap** — Peel HVI layer + candidate points + 500 m buffers + selected-building panel + ranked top-five view. ArcGIS first; screenshots if interaction is slow. | Technical / Design / Sponsor fit | supports | 4 | [ ] |
+| 3 | **Ranked decision reveal** — first click on a named hero building, honesty-labelled panel, then #1–#5 candidate hubs animate as "harden these first." | Presentation / Originality / Impact | is the break | 2 | [ ] |
+| 4 | **5-min qualifier video** — arc: heat risk → shelter gap → trusted building → ranking logic → honesty → Alectra/Esri fit. Includes one collaboration line. | Presentation / Collaboration | supports | 3 | [ ] |
+| 5 | **Methods + judge Q&A** — visible "real vs estimated" box, source list, scoring note, and answers for solar sizing / participation / faith-building framing. | Technical / Impact | supports | 1.5 | [ ] |
 
-Total estimated hours: **19** (single-track)
-Event duration: ~24h effective (now → May 26 23:59, minus sleep/setup)
-Buffer: ~5h solo (~20%) — **below the 30% ideal.** Mitigation: **TEAM mode** splits this across 3 parallel tracks — **map** (#1), **device** (#2+#3), **video+narrative** (#4+#5) — → ~8–10h critical-path wall-clock, comfortably inside 1.5 days. The map (#1) is the swing item; if it blows the 30-min×N rule, fall back to a static-colored FSA map with real hardcoded numbers.
+Total estimated hours: **13.5** (single-track)
+Event duration: ~34h effective (now → May 26 23:59, minus sleep/setup)
+Buffer: workable if the build stays ArcGIS-first. If the map track slips by 30 minutes twice, use static screenshots and the ranked CSV instead of trying to fix ArcGIS live interaction.
 
 ---
 
 ## NICE-TO-HAVES (only if buffer remains, only if they reinforce the pattern-break)
 
-- Computed **"Valley-addressable %"** per FSA (individually-metered renters w/ AC) vs "needs-policy %" (sub-metered) vs "needs-retrofit %" (baseboard / no-AC) — hardens the disambiguation with real numbers.
-- **Animated peak-shift** across the map (reuse the `tide-screen` scrub/`windowHours` pattern at FSA scale).
-- **Esri/ArcGIS map swap** (sponsor points) — only if the lightweight GeoJSON map ships early.
+- ArcGIS Network Analyst walksheds instead of 500 m buffers.
+- Ontario Marginalization Index overlay if it drops in cleanly.
+- A before/after slide showing official cooling spaces only, then trusted community buildings added.
+- Tiny "future operating model" panel for solar + battery + Alectra DER hardening, explicitly labelled future/site-audit required.
 
 ---
 
 ## EXPLICITLY CUT (resist the urge)
 
-- **DA-level granularity** — reason: ~1,600 polygons need tiling/perf work + dilute the one reveal; FSA is the only level with real measured IESO consumption anyway.
-- **VPP / grid-aggregation feature** — reason: grid-meaningful scale = 50–100k loads; a thesis, not a demo. Closing line only.
-- **EV savings number** — reason: dishonest for the renter population PS1 cares about; gets punctured by a domain-literate Alectra judge.
-- **User accounts / persistence / API routes** — reason: a 5-min video demo needs none of it.
-- **Any city beyond Peel** — reason: Peel = Alectra territory = sponsor-aligned scope.
+- **Valley app work** — reason: active submission is now Sanctuary.
+- **Custom Next.js rebuild of Sanctuary** — reason: ArcGIS StoryMap is faster and sponsor-aligned.
+- **Full Peel automated scoring of every building** — reason: too much data-cleaning risk; hand-verify 8 to 10.
+- **Precise solar/battery engineering** — reason: not defensible without site audits.
+- **Emergency dispatch / live operations dashboard** — reason: turns a strong siting tool into fake enterprise software.
+- **Stock photos of solar panels or generic disaster imagery** — reason: local map and proper nouns are the surface uniqueness.
 
 ---
 
-## 60-second pitch draft (written BEFORE code)
+## 60-second pitch draft (written BEFORE build)
 
-**Hook (5s):** "Ontario's cheapest electricity costs 3.9 cents. The most expensive costs 39 — ten times more. Guess which one a low-income renter is stuck paying."
+**Hook (5s):** "During a heat wave, the safest building is not always the nearest building. It is the one people already trust, inside the heat-risk zone."
 
-**Problem (10s):** "Ontario built the 3.9¢ overnight rate to reward flexibility. But a low-income renter usually can't flex — power at 3 a.m. means being awake at 3 a.m. — so most who switch pay *more*. And in sub-metered buildings, renters can't even choose it: the landlord picks the plan." *(OEB rule.)*
+**Problem (10s):** "Peel already maps heat vulnerability. But official cooling spaces are only part of the network. A library two bus rides away, or a centre people do not know, will not protect an older adult when the power is out."
 
-**Solution (10s):** "Valley automates the shift for renters who *can* choose the rate — a roughly $25 plug that runs the AC or laundry at 3.9¢, no behaviour change. Plus a map that tells utilities which Peel neighbourhoods Valley can reach, and which need the policy fix instead."
+**Solution (10s):** "Sanctuary ranks trusted community buildings — libraries, recreation centres, gurdwaras, mosques, mandirs, churches — as candidate solar-and-battery resilience hubs."
 
-**Live demo (25s):** the demo-moment script, expanded — show the 39¢ WAIT, scrub to 3 a.m., the panel flips to 3.9¢ GO and the lamp/tile fires; then click the reddest FSA — Malton (L4X) — and read its real numbers + which intervention it needs.
+**Live demo (25s):** "Here is the high-risk pocket. I click Malton Community Centre and Library. The panel is honest: candidate hub, not currently equipped; reachable population is a modelled 500 m estimate; solar and battery are planning estimates. Then Sanctuary ranks the five buildings Peel should harden first."
 
-**Tech highlight (5s):** "Every number is real — StatCan 2021 census, IESO's measured hourly consumption per postal area, and the live Ontario grid. No synthetic data."
+**Tech highlight (5s):** "The spine is real public data: Peel Heat Vulnerability Index, public building and facility data, hand-verified addresses, and a transparent weighted score."
 
-**Ask / close (5s):** "Alectra runs a flexibility marketplace called GridExchange. Valley is the renter-side device that could feed that kind of market."
+**Ask / close (5s):** "For Alectra and municipal partners: harden these five first, then repeat across the service territory."
 
 ---
 
@@ -112,6 +124,6 @@ Buffer: ~5h solo (~20%) — **below the 30% ideal.** Mitigation: **TEAM mode** s
 
 - Cannot silently add a feature during `/hackathon:build`.
 - To amend: run `/hackathon:scope --amend`, which FORCES a 1-in-1-out trade.
-- Amendments must preserve the locked **Tension-Reveal** archetype OR explicitly re-lock a new one (then `demo-moment-critic` re-validates from scratch).
+- Amendments must preserve the locked **Public-Good Frame + Local-Detail** archetype OR explicitly re-lock a new one (then `demo-moment-critic` re-validates from scratch).
 - Every amendment appends to `.hackathon/scope-log.md` with timestamp + reason.
 - `/hackathon:retro` reviews the amendment log for learnings.

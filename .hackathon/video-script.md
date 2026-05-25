@@ -1,52 +1,53 @@
-# 5-minute qualifier video — shot list (Valley)
+# 5-minute qualifier video — shot list (Sanctuary)
 
-> Deliverable due May 26 23:59. 5-min target, 6-min hard max, YouTube. Demo on camera — NOT a live app.
-> Arc + timings from the Opening Day deck. Every on-screen number must be sourced (anti-"AI slop").
-> Record the lamp-fire as a clean pre-take; there is zero live-network risk in a recorded video.
+> Deliverable due May 26 23:59. 5-min target, 6-min hard max, YouTube. Demo on camera — NOT a deployed app.
+> Arc + timings from the Opening Day deck. Every on-screen number must be sourced or labelled as estimated.
+> Record the ArcGIS interaction as a clean pre-take; if it lags, use screenshots with the same sequence.
 
 ---
 
-## 0:00–0:20 — COLD OPEN (the number)
-- **On screen:** the device screen at 11:00 — "THE DISCOUNT LOCKOUT", big red "WAIT", "$0.391/kWh · ON-PEAK". No title card, no faces.
-- **VO:** "This is the most expensive electricity in Ontario — 39 cents a kilowatt-hour at dinnertime. The cheapest is 3.9 — ten times less, overnight. Same power. Guess which one a low-income renter is stuck paying."
-- **Cut to:** the Peel map, **Malton (L4X)** glowing deepest red — 99/100, Peel's worst burden.
+## 0:00–0:20 — COLD OPEN (the decision)
+- **On screen:** Peel Heat Vulnerability Index. No title card, no faces. One high-risk pocket glows dark red.
+- **VO:** "During a heat wave, the safest building is not always the nearest building. It is the one people already trust, inside the heat-risk zone."
+- **Caption:** "Heat risk is not evenly distributed. Shelter access is not either."
 
-## 0:20–1:00 — PROBLEM (PS1, made literal)
-- **On screen:** map; pointer hovers Malton (L4X); the burden index + renter % visible.
-- **VO:** "Ontario built that 3.9¢ overnight rate to reward flexibility. But a renter usually can't flex — using power at 3 a.m. means being awake at 3 a.m. So most people who switch to it pay *more*. And in sub-metered apartment buildings, renters can't even choose it — by OEB rule, the landlord picks the building's plan. The cheapest rate in the province is a trap for the people who need it most. 1.1 million Ontario households are in energy poverty; the renter rate doubles once you count utilities buried in rent."
-- **On-screen citations:** "OEB price-plan rules · StatCan 2021."
+## 0:20–1:00 — PROBLEM (PS2, made literal)
+- **On screen:** HVI map, then official/public facilities layer.
+- **VO:** "Peel already maps heat vulnerability. But official cooling spaces are only part of the network. A library two bus rides away, or a centre people do not know, will not protect an older adult when the power is out. The planning question is blunt: if Peel can harden only five buildings before the next heat wave, which five should come first?"
+- **On-screen citations:** "Peel Heat Vulnerability Index · public facility data."
 
-## 1:00–2:00 — SOLUTION (one use case: map + plug)
-- **VO:** "Valley is two things that are really one. A map that shows a utility *where* the discount lockout is worst across Peel — and which fix each neighbourhood needs. And a roughly $25 plug that is the fix, for the neighbourhoods it can reach."
-- **On screen:** map → click Malton (L4X) → badge "Discount locked: policy fix"; then click Brampton (L6V) → badge "Valley can help here".
-- **VO (over the two clicks):** "Malton is the worst-burden neighbourhood in Peel — but it's mostly sub-metered apartments, where the landlord picks the plan, so Valley can't reach it with a plug; that's a policy fix. Brampton's L6V is renters in individually-metered homes — Valley shifts their load to 3 a.m. for them. The map tells you which is which."
+## 1:00–1:50 — SOLUTION (trusted buildings as infrastructure)
+- **VO:** "Sanctuary ranks trusted community buildings — libraries, recreation centres, gurdwaras, mosques, mandirs, churches — as candidate solar-and-battery resilience hubs."
+- **On screen:** trusted-building layer fades in over the HVI map.
+- **VO:** "This is not saying these buildings are ready today. It is a prioritization map: where would hardening protect the most vulnerable residents nearby?"
 
-## 2:00–3:30 — DEMO (the moment)
-- **On screen:** device screen + the real lamp (pre-recorded take).
-- **VO:** "Watch. Right now it's peak — 39 cents — so Valley says wait."
-- **Action:** drag the scrubber 6pm → 3am.
-- **On screen:** panel flips green "03:00 · $0.039/kWh · GO"; **the lamp clicks on.**
-- **VO:** "3 a.m., 3.9 cents, and the AC runs — without the renter lifting a finger or losing a wink. The rate that punishes the inflexible, captured automatically."
-- **Fallback if no hardware:** the on-screen device tile flips to ON; same beat, no bulb.
+## 1:50–3:10 — DEMO (the moment)
+- **On screen:** click the hero building: **Malton Community Centre and Library, 3540 Morning Star Drive, Mississauga**.
+- **Panel labels, visible:** "Candidate hub, not currently equipped"; "Reachable population: modelled 500 m estimate"; "Solar/battery: planning estimate, requires site audit."
+- **VO:** "Here is the first click. Malton Community Centre and Library is a real building at 3540 Morning Star Drive, inside a top-quintile heat-vulnerability tract. Sanctuary shows the nearby heat vulnerability, a modelled 500 metre catchment, and a rough hardening class. The point is not false precision. The point is deciding where to investigate first."
+- **Action:** top five candidate hubs light up in rank order.
+- **VO:** "Now the decision: if Peel can harden five buildings first, Sanctuary ranks these five."
 
-## 3:30–4:20 — IMPACT + HONESTY (the moat)
-- **VO:** "Let's be honest about the plug: for a renter it saves maybe $30 to $130 a year. Modest — and real. We're not inflating it. The leverage is the map: it turns a roughly $25 device into targeting intelligence — telling a utility which homes the plug reaches, and which are sub-metered or baseboard-heated and need a different fix entirely."
-- **On screen:** map legend + the intervention badge on the selected FSA (Valley-reachable vs policy; a retrofit layer for electric-baseboard homes is flagged as next — StatCan doesn't publish heating fuel at FSA level).
-- **VO:** "Every number here is real — StatCan 2021 census, IESO's measured hourly consumption per postal area, OEB rates, the live Ontario grid. No synthetic data."
+## 3:10–4:05 — HOW THE SCORE WORKS
+- **On screen:** simple score card: heat vulnerability, reachable vulnerable population, trust/community role, rooftop hardening potential, facility suitability.
+- **VO:** "The score is intentionally simple: heat risk, people nearby, trust and community role, rough roof potential, and facility suitability. A judge can understand it in twenty seconds, and a planner can challenge any input."
+- **On screen:** top five table with one-line "why" for each candidate.
 
-## 4:20–4:50 — WHERE IT GOES (sponsor-aligned)
-- **VO:** "At scale this isn't just savings. Alectra — Peel's utility — runs a flexibility marketplace called GridExchange. About a thousand of these plugs is a megawatt of dispatchable load, worth roughly $170,000 a year. Valley is the renter-side device that could feed that kind of market — and the map that finds the renters."
+## 4:05–4:40 — HONESTY + SOURCES
+- **VO:** "Here is what is real: the Peel HVI layer, building names and addresses, public facility data, and the transparent score. Here is what is estimated: reachable population from the buffer, roof class, and solar or battery potential. Those require site audits before any capital decision."
+- **On screen:** "Real / Estimated / Requires site verification" box.
 
-## 4:50–5:00 — CLOSE + COLLABORATION
-- **VO:** "Built by [NAME] (map + data), [NAME] (device + hardware), and [NAME] (story) over one weekend on real public data. Valley — make the best rate usable for the people it currently punishes."
-- **On screen:** the lamp glowing, caption "3.9¢ — the rate they couldn't use. Now they can."
+## 4:40–5:00 — WHERE IT GOES + COLLABORATION
+- **VO:** "For Alectra and municipal partners, Sanctuary turns community trust into an energy-resilience planning layer: harden these five first, then repeat across the service territory. Built by [NAME] on GIS/data, [NAME] on StoryMap/design, and [NAME] on research/pitch over one weekend."
+- **On screen:** final ranked-five map and caption: "Harden these five first."
 
 ---
 
 ## Recording checklist
-- [ ] Pre-record the lamp-fire take (once Shelly arrives) — multiple clean takes.
-- [ ] Screen-capture the map at 60fps for the two-FSA click sequence.
-- [ ] Screen-capture the device scrub 6pm→3am flip.
-- [ ] Confirm every on-screen number matches a source in `docs/peel-fsa-data-note.md` + `docs/energy-domain.md`.
+- [x] Confirm the hero building is in/near a high-HVI reveal before recording — Malton Community Centre and Library geocodes into HVI quintile 5.
+- [ ] Screen-capture the StoryMap/Web Map hero click.
+- [ ] Capture screenshot fallback for HVI map, hero panel, ranked-five table, and honesty box.
+- [ ] Confirm every named building has a source URL and verification status in `sanctuary/data/candidate-hubs.csv`.
+- [ ] Confirm every estimated number is labelled in the panel or methods note.
 - [ ] Name all three teammates on screen (Collaboration axis = 20%).
 - [ ] Export ≤ 6:00, upload unlisted YouTube, paste link in submission + freeze git tag `v1-submission`.

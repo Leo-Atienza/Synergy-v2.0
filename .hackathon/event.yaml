@@ -27,7 +27,7 @@ judging:
     collaboration_teamwork: 20
   sponsor_prizes:                       # CONFIRMED at kickoff (Opening Day deck)
     - "Esri Canada - GIS / ArcGIS, heavily mentored (our map = sponsor-track fit)"
-    - "Alectra GRE&T Centre - Peel + GGH grid innovation; runs GridExchange transactive-energy marketplace (Tide's VPP angle)"
+    - "Alectra GRE&T Centre - Peel + GGH grid innovation; community resilience, DER hardening, and candidate hub planning"
   required_tech: []                     # none mandated; real-data required - "AI slop in any form will disqualify" (deck)
 
 submission:
@@ -42,10 +42,10 @@ submission:
   max_video_seconds: 300                # 5-min target; 360s (6 min) hard max - CONFIRMED at kickoff. Deliverable = YouTube video, not a deployed app.
 
 timeline:                               # RE-BASED 2026-05-25 to the confirmed May 26 23:59 qualifier deadline
-  ideate_by: "2026-05-22"               # done - Theme 3 . PS1 + Tide locked
-  scope_locked_by: "2026-05-25T12:00:00-04:00"      # locking this session
-  map_built_by: "2026-05-26T12:00:00-04:00"         # the only real new work - Energy Poverty Map of Peel (FSA level)
-  demo_moment_working_by: "2026-05-26T16:00:00-04:00" # plug fires real lamp at 3.9c on camera
+  ideate_by: "2026-05-22"               # done; amended 2026-05-25 to Sanctuary, Theme 3 PS2
+  scope_locked_by: "2026-05-25T13:55:00-04:00"      # Sanctuary scope amendment locked
+  map_built_by: "2026-05-26T12:00:00-04:00"         # ArcGIS HVI + candidate hubs + ranked top five
+  demo_moment_working_by: "2026-05-26T16:00:00-04:00" # hero building click + honesty panel + ranked-five reveal
   demo_recorded_by: "2026-05-26T21:00:00-04:00"     # 5-min video - leave buffer before cutoff
   submission_by: "2026-05-26T23:59:00-04:00"        # HARD deadline (qualifier video)
   pitch_practiced_by: "2026-05-29T20:00:00-04:00"   # night before finale (only if finalist)

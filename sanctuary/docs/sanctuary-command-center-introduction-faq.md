@@ -1,6 +1,6 @@
 # Sanctuary: The Digital Command Center for Community Resilience
 
-> **Backup status:** Sanctuary is a backup candidate. Valley remains the active scoped submission unless `.hackathon/scope.md` is amended.
+> **Active status:** Sanctuary became the active scoped submission after the 2026-05-25 amendment. Valley is cut from the active build.
 >
 > **Citation note:** bracketed citations like `[1]` are placeholders from the working draft. Replace them with final source links before using this in a submitted README or video script.
 

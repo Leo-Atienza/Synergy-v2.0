@@ -3,7 +3,7 @@
 > **Audience:** teammates (stress-test this), judges, sponsors.
 > **Name:** Valley (chosen 2026-05-25). The on-screen brand still reads TIDE in the UI + video captions; swap before recording (File B §6).
 > **Status:** draft for team stress-test, 2026-05-25. Every number is sourced (see "The numbers"). Anything unsourced is flagged.
-> **Challenge:** Seneca Energy Hackathon 2026 · Theme 3 · Problem Statement 1 (energy burden — "incentives target property owners, not renters").
+> **Challenge:** Seneca Energy Hackathon 2026 · Theme 3 · Problem Statement 1 (energy burden, "incentives target property owners, not renters").
 
 > **Quick glossary** (so everyone reads this the same way):
 > - **ULO** is "Ultra-Low Overnight," one of Ontario's electricity price plans. Cheap overnight (3.9¢/kWh), expensive at dinnertime (39.1¢).
@@ -56,7 +56,7 @@ Finds the cheapest hours that still finish by the deadline   →   ~3 a.m. (3.9�
 At 3 a.m.:  plug turns ON  →  appliance runs  →  plug turns OFF before morning
       │
       ▼
-Renter wakes to a cooled room and a 3.9¢ bill — having done nothing
+Renter wakes to a cooled room and a 3.9¢ bill, having done nothing
 ```
 
 *The plug itself is "dumb." It's just a switch with a power meter (a ~$25 Shelly, controlled over home Wi-Fi, no cloud account). All the intelligence is Valley deciding **when**. In the demo, an on-screen hour slider lets you watch that decision: drag to dinnertime and it says WAIT; drag to 3 a.m. and it flips to GO.*
@@ -173,8 +173,8 @@ The screen-only version works today. The physical lamp is a bonus, never a depen
 ---
 
 ## Stress-test this (team: push back before we lock)
-1. **Sponsors:** Are Esri Canada + Alectra *confirmed* sponsors? `event.yaml` says "confirmed at kickoff"; our pre-event dossier doesn't list them. **Someone verify against the kickoff deck / official site (5 min)** — our map (Esri) and flexibility (Alectra) framing hinges on it.
+1. **Sponsors:** Are Esri Canada + Alectra *confirmed* sponsors? `event.yaml` says "confirmed at kickoff"; our pre-event dossier doesn't list them. **Someone verify against the kickoff deck / official site (5 min).** Our map (Esri) and flexibility (Alectra) framing hinges on it.
 2. **"AI slop disqualifies":** Is this an actual organizer rule or our own discipline? Affects how hard we lean on "every number is real."
 3. **The retrofit story:** heating-fuel data isn't published at the neighbourhood level, so the map really shows **two** fixes (plug vs policy), not three. Present two honestly, or hardcode 1–2 retrofit neighbourhoods with a caveat?
-4. **Name:** locked to **Valley** ("valley filling" = the grid term for shifting load into the overnight demand trough). Other finalists if anyone objects: Filament, Small Hours, Latch, Tender.
-5. **Is the plug worth it at all,** or is the screen + map story stronger and simpler? The hardware is our biggest differentiator *and* the only thing that can fail on camera.
+4. **Name:** locked to **Valley** ("valley filling" is the grid term for shifting load into the overnight demand trough). Other finalists if anyone objects: Filament, Small Hours, Latch, Tender.
+5. **Is the plug worth it at all,** or is the screen plus map story stronger and simpler? The hardware is our biggest differentiator *and* the only thing that can fail on camera.

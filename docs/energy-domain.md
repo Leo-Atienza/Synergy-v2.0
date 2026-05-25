@@ -24,7 +24,7 @@ Public hub: <https://www.ieso.ca/power-data>. Bulk file directory: <https://repo
 | Intertie Schedule and Flow (14 interconnections) | https://reports-public.ieso.ca/public/IntertieScheduleFlow/ | XML | 90-day window |
 | Adequacy Report (today + 34 days) | https://reports-public.ieso.ca/public/Adequacy3/ | XML | 90-day window |
 | Peak Tracker (next 24h forecasted peaks) | https://www.ieso.ca/peaktracker/ | HTML | Continuous |
-| HOEP (legacy archive) | https://reports-public.ieso.ca/public/HourlyEnergyPrice/ | CSV | Daily, archive 2002–May 2025 |
+| HOEP (legacy archive) | https://reports-public.ieso.ca/public/HourlyEnergyPrice/ | CSV | Daily, archive 2002 to May 2025 |
 | 2025 APO PDF | https://www.ieso.ca/-/media/Files/IESO/Document-Library/planning-forecasts/apo/2025/2025-Annual-Planning-Outlook.pdf | PDF | Annual |
 | Pathways to Decarbonization | https://www.ieso.ca/-/media/Files/IESO/Document-Library/gas-phase-out/Pathways-to-Decarbonization.ashx | PDF | Static (Dec 2022) |
 | Natural Gas Phase-Out Study | https://ieso.ca/en/Learn/The-Evolving-Grid/Natural-Gas-Phase-Out-Study | HTML | Static |
@@ -39,7 +39,7 @@ Public hub: <https://www.ieso.ca/power-data>. Bulk file directory: <https://repo
 
 Open data: <https://www.oeb.ca/ontarios-energy-sector/open-data> (last refreshed Sep 5, 2025 with 2024 data).
 
-Products: Yearbooks of Electricity & Natural Gas Distributors, Electricity Distribution Rates (2006+), Distributor Service Areas (GIS), Performance Scorecards (annual), Complaints (2013+), Service Quality (annual), System Reliability Indicators (2015+ — SAIDI/SAIFI/CAIDI), Major Event Response Reports (2017+). Toronto Hydro 2024 scorecard: <https://www.oeb.ca/documents/scorecard/2024/Scorecard%20-%20Toronto%20Hydro-Electric%20System%20Limited.pdf>.
+Products: Yearbooks of Electricity & Natural Gas Distributors, Electricity Distribution Rates (2006+), Distributor Service Areas (GIS), Performance Scorecards (annual), Complaints (2013+), Service Quality (annual), System Reliability Indicators (2015+, the SAIDI/SAIFI/CAIDI metrics), Major Event Response Reports (2017+). Toronto Hydro 2024 scorecard: <https://www.oeb.ca/documents/scorecard/2024/Scorecard%20-%20Toronto%20Hydro-Electric%20System%20Limited.pdf>.
 
 ### Statistics Canada
 
@@ -100,7 +100,7 @@ StatCan + CER + NRCan + ECCC partnership: <https://energy-information.canada.ca/
 - **School of Cities — Wealth & poverty concentration in Toronto**: <https://schoolofcities.github.io/neighbourhood-income-toronto-2020/>
 - **School of Cities — Heat Vulnerability Toronto**: <https://schoolofcities.github.io/heat-vulnerability-toronto/>
 - **Toronto Public Health Heat Vulnerability Index** (TPH publishes maps + methodology)
-- **Ontario Marginalization Index (ON-MARG)** — Public Health Ontario
+- **Ontario Marginalization Index (ON-MARG)**, from Public Health Ontario
 
 ### Climate projections for Ontario
 
@@ -133,7 +133,7 @@ StatCan + CER + NRCan + ECCC partnership: <https://energy-information.canada.ca/
 | **Pembina Institute** | Calgary-based, Ontario program active; Optimizing Ontario report (Oct 2024) | <https://www.pembina.org/> |
 | **Canadian Climate Institute** | Independent climate-policy research | <https://climateinstitute.ca/> |
 | **Indigenous Clean Energy** | Indigenous-led clean-energy hub; directory of 200+ major projects | <https://indigenouscleanenergy.com/> |
-| **Six Nations of the Grand River Development Corporation (SNGRDC)** | Anchor Indigenous energy investor — Oneida BESS, Grand Renewable, Niagara Region Wind partnerships | (search SNGRDC) |
+| **Six Nations of the Grand River Development Corporation (SNGRDC)** | Anchor Indigenous energy investor (Oneida BESS, Grand Renewable, Niagara Region Wind partnerships) | (search SNGRDC) |
 | **Wataynikaneyap Power** | 1,800 km transmission line connecting 17 First Nations; 51% First Nation-owned (24 First Nations) | <https://www.wataypower.ca/> |
 
 ### Ontario Crown / utility entities

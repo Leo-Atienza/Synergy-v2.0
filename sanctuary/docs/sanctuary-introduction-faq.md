@@ -1,6 +1,6 @@
 # Sanctuary - Simple Introduction and FAQ
 
-> **Backup status:** Sanctuary is a strong Theme 3 candidate, but it is not the locked build. Valley remains the active submission unless scope is amended.
+> **Active status:** Sanctuary became the locked Theme 3 build after the 2026-05-25 scope amendment. Valley is cut from the active submission.
 
 ## 1. What It Is
 

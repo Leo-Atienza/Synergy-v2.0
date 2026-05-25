@@ -1,4 +1,4 @@
-# Scope log — Valley
+# Scope log — Sanctuary activation
 
 > Append-only record of the initial lock + every `/hackathon:scope --amend` trade. Reviewed at `/hackathon:retro`.
 
@@ -18,3 +18,13 @@
 - Judge-facing name/copy aligned to Valley and "Discount Lockout."
 - Plug price corrected from older $15 fallback language to roughly $25 Shelly language.
 - Scope unchanged: same Theme 3 · PS1, same Tension-Reveal, same map-led WAIT→GO demo.
+
+2026-05-25T13:55:00-04:00 — AMENDMENT: REPLACE VALLEY WITH SANCTUARY
+- Decision: Sanctuary becomes the active scoped submission. Valley is cut, not run in parallel.
+- ADD: Sanctuary — ArcGIS StoryMap/Web Map ranking trusted Peel community buildings as candidate solar-and-battery resilience hubs.
+- CUT: Valley ULO plug + Peel FSA energy-burden map + device/lamp demo.
+- Challenge: Theme 3 · PS2 (climate resilience, vulnerable populations, shelter access).
+- Product: StoryMap + Web Map/Dashboard + 8 to 10 hand-verified candidate buildings + 5-min qualifier video.
+- Locked archetype: Public-Good Frame (primary) + Local-Detail (reinforcing).
+- Demo moment: HVI hot spot → click real named building → honesty-labelled candidate hub panel → top five hardening priorities light up.
+- Trade rationale: Sanctuary has a verified public Peel HVI ArcGIS data spine, stronger Esri fit, and avoids splitting limited build time across two incompatible submissions.

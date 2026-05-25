@@ -1,7 +1,7 @@
 # Developer Build Plan - Sanctuary
 
-> **Status:** backup-only candidate packet. Do not spend implementation time on this while Valley is the active scoped submission.
-> **If activated:** this is a StoryMap/Dashboard build, not a full custom app.
+> **Status:** active after the 2026-05-25 scope amendment. Valley is cut from the active scoped submission.
+> **Build shape:** this is a StoryMap/Dashboard build, not a full custom app.
 
 ## 0. Current State
 
@@ -9,8 +9,8 @@
 |---|---|
 | Seed card | Written and scored as a strong Theme 3 candidate. |
 | Core data spine | Verified: Peel Heat Vulnerability Index is a public ArcGIS item. |
-| Scope lock | Not active. Valley is active. |
-| Code | None. |
+| Scope lock | Active. See `.hackathon/scope.md`. |
+| Code | None required; StoryMap/Web Map + CSV/data docs. |
 | Recommended artifact | ArcGIS StoryMap + one Web Map / Dashboard. |
 | Main risk | Overclaiming modelled solar/battery/current-building-readiness data. |
 

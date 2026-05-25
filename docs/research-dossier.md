@@ -618,32 +618,32 @@ EnergyTech UP winners are commercialization pitches, not 36-hr code-jams. **Don'
 
 ### 9.8 UC Berkeley AI Hackathon 2024 (1,200+ devs)
 
-- **Climate Tech 2nd: Batteries by LLM** — fine-tuned Llama-2-7B on Intel Tiber to convert natural-language electrolyte descriptions → first-principles modeling input files. **LLM-as-research-accelerator pattern.**
+- **Climate Tech 2nd: Batteries by LLM**: fine-tuned Llama-2-7B on Intel Tiber to convert natural-language electrolyte descriptions → first-principles modeling input files. **LLM-as-research-accelerator pattern.**
 
 ### 9.9 MLH Avanade Best Sustainability Top 10
 
 24-48 hour student hacks. **7 of 10 winners were 2-4 people.**
 
-1. Ecobot — YOLOv4 ocean plastic detection (4 ppl)
-2. Sowing is Growing — seed-sharing (2 ppl)
-3. CarbonAtlDel — restaurant emissions vs ingredient prices (2 ppl)
-4. Crops+ — kNN crop recommendation from soil (3 ppl)
-5. Plantagotchi — Raspberry Pi automated plant watering (3 ppl) **Hardware = demo magic.**
-6. GasUp — carpool cost splitting (4 ppl)
-7. Your Biggest Fan — windmill placement optimizer (2 ppl)
-8. Spot The Spot — parking detection (5 ppl)
-9. pRice — used-goods marketplace (3 ppl)
-10. Carbon Media / C4 — PPE waste calculator (4 ppl)
+1. Ecobot: YOLOv4 ocean plastic detection (4 ppl)
+2. Sowing is Growing: seed-sharing (2 ppl)
+3. CarbonAtlDel: restaurant emissions vs ingredient prices (2 ppl)
+4. Crops+: kNN crop recommendation from soil (3 ppl)
+5. Plantagotchi: Raspberry Pi automated plant watering (3 ppl) **Hardware = demo magic.**
+6. GasUp: carpool cost splitting (4 ppl)
+7. Your Biggest Fan: windmill placement optimizer (2 ppl)
+8. Spot The Spot: parking detection (5 ppl)
+9. pRice: used-goods marketplace (3 ppl)
+10. Carbon Media / C4: PPE waste calculator (4 ppl)
 
 ### 9.10 PennApps + Stanford TreeHacks
 
-- **PennApps XXVI Bloomberg Sustainability 1st: CarbonChain** — fragmented opaque carbon-credit markets. *"Billions pledged, money doesn't reach projects"* framing.
-- **TreeHacks 2025 Best Use of FlutterFlow: EcoBite** — photo → wasted-weight food estimator.
-- **TreeHacks 2023 Sustainability + Meta Best Innovation: SohamGovande overfishing dashboard** — **novel: few-shot synthetic image augmentation using fine-tuned Stable Diffusion.** [github.com/SohamGovande/treehacks-2023](https://github.com/SohamGovande/treehacks-2023) — prototype of "novel ML method applied to climate domain" winning.
+- **PennApps XXVI Bloomberg Sustainability 1st: CarbonChain**: tackles fragmented, opaque carbon-credit markets. *"Billions pledged, money doesn't reach projects"* framing.
+- **TreeHacks 2025 Best Use of FlutterFlow: EcoBite**: photo → wasted-weight food estimator.
+- **TreeHacks 2023 Sustainability + Meta Best Innovation: SohamGovande overfishing dashboard**. **Novel: few-shot synthetic image augmentation using fine-tuned Stable Diffusion.** [github.com/SohamGovande/treehacks-2023](https://github.com/SohamGovande/treehacks-2023). A prototype of "novel ML method applied to climate domain" winning.
 
 ### 9.11 Other notable
 
-- **Taiwan Generative AI Hackathon 2024**: **"Playing a Part in AI"** — AI Agent runs energy-conservation meetings using **Claude 3 Sonnet via Amazon Bedrock + AWS Lambda + DynamoDB.** **Most explicit Claude-powered energy assistant winner.**
+- **Taiwan Generative AI Hackathon 2024**: **"Playing a Part in AI"**, an AI Agent that runs energy-conservation meetings using **Claude 3 Sonnet via Amazon Bedrock + AWS Lambda + DynamoDB.** **Most explicit Claude-powered energy assistant winner.**
 - **CU Boulder Sustainability 2024**: Good Watt (energy monitor, 7 ppl hardware), SAGA (sustainable shopping, 2 ppl), Peak Energy (gamified home energy, 3 ppl).
 - **Hack the North 2024**: general-purpose, no specific energy winner surfaced.
 
@@ -655,7 +655,7 @@ EnergyTech UP winners are commercialization pitches, not 36-hr code-jams. **Don'
 3. **AI agent / chatbot for energy-specific workflow** (Claude + real workflow = Taiwan winner)
 4. **API-wrapper with equity angle** (Incenzo MIT 1st)
 5. **ML novelty applied to climate domain** (TreeHacks Stable Diffusion, Batteries-by-LLM, Cloudcasting)
-6. **Tension/balance projects** (good A vs good B — AviWind)
+6. **Tension/balance projects** (good A vs good B, like AviWind)
 7. **Hardware-as-demo-moment** (Plantagotchi, WattsDown, Mallard)
 
 **Team sizes that won**:
@@ -692,16 +692,16 @@ EnergyTech UP winners are commercialization pitches, not 36-hr code-jams. **Don'
 
 ### 10.1 The one insight that reframes everything
 
-> *"Judges see your project for 3-5 minutes. A mediocre project with an amazing pitch beats an amazing project with a mediocre pitch."* — Ainna
+> *"Judges see your project for 3-5 minutes. A mediocre project with an amazing pitch beats an amazing project with a mediocre pitch."* (Ainna)
 
 Judges decide in minutes, not hours. They won't read your code. They won't run your repo. They'll watch 30-60 projects in one afternoon. **You are not building a product. You are building 90 seconds of demo + 90 seconds of story.**
 
 ### 10.2 MLH 4-axis judging criteria (what Seneca likely uses)
 
-1. **Technology** — Did the tech make you go "wow"?
-2. **Design** — Did the team put thought into UX?
-3. **Completion** — Does it work? Did they achieve what they wanted?
-4. **Concept** — Originality and creativity.
+1. **Technology**: Did the tech make you go "wow"?
+2. **Design**: Did the team put thought into UX?
+3. **Completion**: Does it work? Did they achieve what they wanted?
+4. **Concept**: Originality and creativity.
 
 Seneca default rubric (per `event.yaml`): **technical 25 / design 25 / originality 25 / impact 25.** Confirm at kickoff.
 
@@ -742,7 +742,7 @@ For **60s**: Hook 5s → Problem 10s → Demo 35s → Vision close 10s.
 
 Wedge = narrow now, big in pitch. Examples:
 - **Bad**: "An app that helps everyone use renewable energy" (vague, infinite scope).
-- **Good**: "A 30-second tool that tells Toronto condo residents how much they'd save by switching to off-peak EV charging — using live IESO grid data." (Specific user, one number, one data source, one screen, ships in 96h, feels like a wedge into a $B market.)
+- **Good**: "A 30-second tool that tells Toronto condo residents how much they'd save by switching to off-peak EV charging, using live IESO grid data." (Specific user, one number, one data source, one screen, ships in 96h, feels like a wedge into a $B market.)
 
 History: **GroupMe** built a working group SMS prototype in 18 hours, lost the hackathon, sold to Skype for $80M 14 months later. **A narrow real usable product beats a flashy idea.**
 
@@ -759,21 +759,21 @@ History: **GroupMe** built a working group SMS prototype in 18 hours, lost the h
 ### 10.8 Solo-builder strategies
 
 **Structural disadvantages**:
-- Can't build as much as a team of 4 — cut scope to 30%.
-- You're pitcher + dev + designer — practice pitch out loud while you build.
-- No one catches bugs at 3am — commit, push, test deployed URL after every feature.
+- Can't build as much as a team of 4. Cut scope to 30%.
+- You're pitcher + dev + designer, so practice pitch out loud while you build.
+- No one catches bugs at 3am, so commit, push, and test the deployed URL after every feature.
 
 **Structural advantages**:
 - No team chemistry risk.
-- Single-narrative pitch — story consistent.
+- Single-narrative pitch keeps the story consistent.
 - AI tools close the gap. *"AI has made building easier, so winning now depends on problem selection and pitch quality."*
 
 **Solo tactics**:
-- Lean entirely on familiar stack (Next.js + Vercel + Supabase + Tailwind — or whatever you know).
+- Lean entirely on familiar stack (Next.js + Vercel + Supabase + Tailwind, or whatever you know).
 - Mock aggressively. Hard-code data, mock integrations.
 - Practice pitch in the shower from Day 2.
 - Day 4 is for pitch and video, not features. Lock the codebase 24h before submission.
-- **Talk to mentors.** Solo builders skip them out of pride/shyness — don't.
+- **Talk to mentors.** Solo builders skip them out of pride or shyness. Don't.
 
 ### 10.9 Scope discipline tools
 
@@ -826,7 +826,7 @@ History: **GroupMe** built a working group SMS prototype in 18 hours, lost the h
 - SLEEP 7h.
 
 **Day 3 (May 26): Polish the demo path (~12h)**
-- Make demo path bulletproof — same path, same data, every time.
+- Make demo path bulletproof: same path, same data, every time.
 - Visual polish: loading states, micro-animations, empty states with CTAs.
 - Architecture diagram + 5 screenshots.
 - Record first demo video draft; watch back; re-record.
@@ -836,7 +836,7 @@ History: **GroupMe** built a working group SMS prototype in 18 hours, lost the h
 **Day 4 (May 27-28): Submit + Pitch (~8h, then STOP)**
 - FEATURE FREEZE. Test deployed URL one final time.
 - Re-record final demo video if needed.
-- Devpost (or Seneca form) submission — fill EVERY field.
+- Devpost (or Seneca form) submission: fill EVERY field.
 - Pre-write Q&A: 10 likely judge questions with answers.
 - Practice 60s + 3-min pitch 5× out loud (TIMED).
 - Submit 2+ hrs before deadline.
@@ -853,14 +853,14 @@ History: **GroupMe** built a working group SMS prototype in 18 hours, lost the h
 
 ### 10.12 Submission checklist (Devpost or equivalent)
 
-- [ ] **Project name** — memorable, ideally 1-2 words
-- [ ] **Tagline** — one sentence, judge sees before clicking
-- [ ] **Cover image** — high-contrast hero of UI, not logo
-- [ ] **Demo video** — <3 min, public/unlisted YouTube. *Mark "Not for Kids."*
-- [ ] **GitHub repo** — public, README at root
-- [ ] **Live URL** — tested in incognito + on phone
-- [ ] **Screenshots** — 3-5 polished
-- [ ] **Built With** — list stack honestly, **including AI tools**
+- [ ] **Project name**: memorable, ideally 1-2 words
+- [ ] **Tagline**: one sentence, judge sees before clicking
+- [ ] **Cover image**: high-contrast hero of UI, not logo
+- [ ] **Demo video**: <3 min, public/unlisted YouTube. *Mark "Not for Kids."*
+- [ ] **GitHub repo**: public, README at root
+- [ ] **Live URL**: tested in incognito + on phone
+- [ ] **Screenshots**: 3-5 polished
+- [ ] **Built With**: list stack honestly, **including AI tools**
 - [ ] Default Devpost sections filled: Inspiration → What it does → How we built it → Challenges → Accomplishments → Learned → What's next
 
 ### 10.13 README structure that maps to judging axes
@@ -899,7 +899,7 @@ History: **GroupMe** built a working group SMS prototype in 18 hours, lost the h
 [3 commands max]
 ```
 
-> *"If the hackathon gives you five judging criteria, make it super easy for them to judge by addressing every point individually and being super explicit."* — code42cate
+> *"If the hackathon gives you five judging criteria, make it super easy for them to judge by addressing every point individually and being super explicit."* (code42cate)
 
 ### 10.14 The Q&A defense (pre-write 10 pairs)
 
@@ -933,7 +933,7 @@ History: **GroupMe** built a working group SMS prototype in 18 hours, lost the h
 2. **Tech-stack name-dropping in first 60s.**
 3. **5+ feature demo.** Each additional feature halves memorability.
 4. **Live API calls to brittle services in demo.** Mock the call. Disclose in README.
-5. **Apologizing.** "Sorry, this doesn't quite work yet..." — never.
+5. **Apologizing.** "Sorry, this doesn't quite work yet..." Never.
 6. **Reading slides.** Speak aloud always.
 7. **Wearing event hoodie.** Judges have seen 50 today.
 8. **No closing line.** Pitch trails off. Write a closer. Land it.
@@ -993,7 +993,7 @@ Most-probable sponsor candidates for an Ontario energy hackathon at Seneca:
 | **Low-but-possible** | MaRS Discovery District, Communitech, Plug & Play | Innovation hubs co-sponsor student events |
 | **Low** | Schneider Electric Canada, ev.energy, Peak Power | Smaller-but-aligned firms |
 
-**Action**: Email hackathon@senecapolytechnic.ca pre-event to ask for confirmed sponsor list. Check website mid-May 23 for updates. LinkedIn-message any sponsor mentor during/after Phase 1 — sponsor connection is often the real ROI of any hackathon.
+**Action**: Email hackathon@senecapolytechnic.ca pre-event to ask for confirmed sponsor list. Check website mid-May 23 for updates. LinkedIn-message any sponsor mentor during or after Phase 1. The sponsor connection is often the real ROI of any hackathon.
 
 ---
 
@@ -1012,13 +1012,13 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 ### Seed #2 — api.carbonintensity.ca
 - **Theme**: 1+2
 - **What**: Build the Ontario equivalent of UK's NESO Carbon Intensity API. Combines IESO Real-time Gen by Fuel + intertie flows (Quebec hydro vs NY gas) → 30-min consumption-based gCO2eq/kWh + 24-48h forecast (simple Prophet/transformer). Embeddable widget for any site.
-- **Demo moment**: live widget on stage showing "right now your electricity is 38 g/kWh — plug in your EV at 2 AM for 19 g/kWh"; embed live in a sample blog post.
+- **Demo moment**: live widget on stage showing "right now your electricity is 38 g/kWh. Plug in your EV at 2 AM for 19 g/kWh"; embed live in a sample blog post.
 - **Data sources**: IESO Real-time Totals + Gen Output by Fuel + Intertie Schedule. Average-emissions factors from ECCC NIR fuel-mix data.
 - **Why it could win**: public-good narrative; API + widget composability; UK-Ontario gap is genuine; pre-commitment to open-source = judge bait.
 - **Risk**: forecast quality unimportant for demo but stakeholders care.
 
 ### Seed #3 — Toronto Building Disclosure Map
-- **Theme**: 3 (Equity) — but also 1+2 angle
+- **Theme**: 3 (Equity), with a 1+2 angle too
 - **What**: Aggregate Ontario's large-building EWRB dataset (50,000+ sq ft buildings reporting energy/water/GHG) into a single searchable, comparable map. Per building: address, EUI (kWh/m²), GHG intensity, year, type. Compare to NYC LL97 map.
 - **Demo moment**: type "1750 Finch Ave East" (Seneca's address) → see Seneca's building's energy use, rank vs peers, projected savings if heat-pump-retrofitted.
 - **Data sources**: open.canada.ca large-buildings dataset; Toronto Open Data EWRB; ENERGY STAR PM technical reference for median benchmarks.
@@ -1031,12 +1031,12 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 - **Demo moment**: zoom into south Etobicoke (Portlands gas peaker neighborhood) → score 92/100 (high-impact); zoom into Forest Hill → score 12/100; explain the policy implication.
 - **Data sources**: Energy Poverty Explorer (Efficiency Canada), StatCan census tracts, AQHI, peaker-plant locations from IESO transmission-connected gen list.
 - **Why it could win**: directly hits Theme 3's framing; equity-justice axis judges score high; an opportunity-shaped gap (EJScreen delisted, no Canadian equivalent).
-- **Risk**: methodology has to be defensible — pick weights carefully, document them.
+- **Risk**: the methodology has to be defensible. Pick weights carefully and document them.
 
 ### Seed #5 — Outage Equity Index (real-time)
 - **Theme**: 2+3
 - **What**: Scrape Toronto Hydro + Hydro One outage maps every 10 min, overlay with (a) Ontario Marginalization Index, (b) over-65 population, (c) high-rise building tenants (electric elevator dependency).
-- **Demo moment**: replay May 2022 derecho or March 2025 ice storm with equity overlay — "this outage is currently affecting 3,200 seniors in tower buildings."
+- **Demo moment**: replay May 2022 derecho or March 2025 ice storm with equity overlay, then show "this outage is currently affecting 3,200 seniors in tower buildings."
 - **Data sources**: Toronto Hydro outage map scrape, Hydro One Storm Centre, ON-MARG index, Toronto Open Data ward demographics.
 - **Why it could win**: live + emotionally resonant; combines two genuinely-existing datasets in a new way; civic-tech narrative.
 - **Risk**: scraping outage maps risks rate-limiting or change-of-format.
@@ -1053,7 +1053,7 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 - **Theme**: 3 + civic
 - **What**: Aggregate Ontario Regulation 25/23 broader-public-sector annual energy reports (school boards publish PDFs) into one dashboard. Per school: kWh/m², GHG/student, rank vs board/province; letter grade.
 - **Demo moment**: type "Newnham Campus" → see Seneca's grade, top + bottom schools; parent-friendly narrative.
-- **Data sources**: O.Reg 25/23 school-board PDFs (need to scrape/OCR — feasible at small N), StatCan demographics, ENERGY STAR median benchmarks.
+- **Data sources**: O.Reg 25/23 school-board PDFs (need to scrape/OCR, feasible at small N), StatCan demographics, ENERGY STAR median benchmarks.
 - **Why it could win**: tangible local hit; constituency (parents) politicians listen to; data exists but isn't aggregated.
 - **Risk**: PDF parsing tedium; gap between provinces in how data is reported.
 
@@ -1063,7 +1063,7 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 - **Demo moment**: Toronto → Sudbury route. Show "this route saves 8 kg CO2 vs naive routing" with map highlighting why (Quebec-intertie window in late afternoon, etc.).
 - **Data sources**: IESO Gen Output by Fuel Hourly, charger locations (Ivy + FLO + Petro-Canada + ChargePoint via APIs), Mapbox/OSRM for routing.
 - **Why it could win**: telegenic mobile demo; specific user with growing audience; combines existing data novelly.
-- **Risk**: charger network APIs are partial — may need to scrape or mock.
+- **Risk**: charger network APIs are partial. May need to scrape or mock.
 
 ### Seed #9 — Northern Ontario Diesel-to-Solar Calculator (Indigenous lens)
 - **Theme**: 3
@@ -1071,12 +1071,12 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 - **Demo moment**: zoom on a specific Northern community pre-Wataynikaneyap → see lifetime diesel cost + emissions saved; toggle "solar-hybrid scenario" → see what it would cost + GHG saved.
 - **Data sources**: NRCan Remote Communities Energy Database (open CSV), NRCan PV potential rasters, Wataynikaneyap published data, ECCC weather.
 - **Why it could win**: reconciliation-meets-climate narrative; specific named communities; underexplored space in Ontario hackathons.
-- **Risk**: requires sensitive framing — partner-with rather than speak-for.
+- **Risk**: requires sensitive framing. Partner with communities rather than speak for them.
 
 ### Seed #10 — Demand-Response Game Layer (consumer-facing OhmConnect for Ontario)
 - **Theme**: 2
 - **What**: Gamified demand-response app. Connects (mocked) Hydro One Green Button data. Awards points + leaderboard for shifting load to ULO periods. Earnings paid as bill credits.
-- **Demo moment**: simulate a typical evening — see your "score" rise as you push dishwasher to 11pm; leaderboard fills with classmates' avatars.
+- **Demo moment**: simulate a typical evening. Watch your "score" rise as you push the dishwasher to 11pm; the leaderboard fills with classmates' avatars.
 - **Data sources**: Green Button schema + mock data; IESO Gen Output by Fuel Hourly for context; ULO rate periods.
 - **Why it could win**: gamification = demo gold; addresses an actual Ontario gap (no OhmConnect equivalent); consumer-friendly demo.
 - **Risk**: needs to feel different from generic "tracker apps."
@@ -1087,7 +1087,7 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 - **Demo moment**: type your own address; in 5 seconds see archetype, emissions, retrofit payback, *and* renter-specific guidance.
 - **Data sources**: Toronto Open Data MLAR/assessment, NRCan PV potential, satellite imagery (Bing/Mapbox tiles), Enbridge HRS rebate tables.
 - **Why it could win**: architecture + economics + equity wedge; renters often left out of green tools = differentiator.
-- **Risk**: MLS/assessment data not all openly accessible — may need to mock.
+- **Risk**: MLS/assessment data is not all openly accessible. May need to mock.
 
 ### Seed #12 — Ontario Polluter Dashboard
 - **Theme**: 3
@@ -1098,46 +1098,46 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 - **Risk**: depends on Climate TRACE coverage of Ontario being accurate.
 
 ### Seed #13 — WhatPoweredYourPhone.ca
-- **Theme**: 1 — consumer-facing wedge
-- **What**: Browser + mobile app: when you charge your phone, log the time and your location. Show — based on IESO grid mix at that time — what fuel charged it. Cumulative "your year in electrons."
+- **Theme**: 1 (consumer-facing wedge)
+- **What**: Browser + mobile app: when you charge your phone, log the time and your location. Show (based on the IESO grid mix at that time) what fuel charged it. Cumulative "your year in electrons."
 - **Demo moment**: pre-loaded user data shows a year of charging; reveal "your phone was 78% nuclear, 19% hydro, 3% gas." Share-card image.
 - **Data sources**: IESO Gen Output by Fuel Hourly (historical) + Real-time Totals.
 - **Why it could win**: consumer + personal + viral; shareable image = social spread; clean narrative around Ontario's clean grid.
-- **Risk**: feels too cute / not policy-meaningful — frame as gateway to deeper engagement.
+- **Risk**: feels too cute or not policy-meaningful. Frame it as a gateway to deeper engagement.
 
 ### Seed #14 — Toronto Tower Renewal Energy Estimator
 - **Theme**: 1+3
 - **What**: Map every Toronto pre-1980 high-rise (~1,200 candidates per Tower Renewal Initiative). Per building: estimate current emissions, savings from envelope retrofit + heat pump + balcony PV. Combine TGS Tier 4 trajectory.
-- **Demo moment**: aerial view of St. Jamestown → click one tower → see "this 1968 tower emits 4,200 t CO2/yr — retrofit + heat pump = 87% reduction, $4M capex over 30 yrs, $X municipal incentives available."
+- **Demo moment**: aerial view of St. Jamestown → click one tower → see "this 1968 tower emits 4,200 t CO2/yr. Retrofit + heat pump = 87% reduction, $4M capex over 30 yrs, $X municipal incentives available."
 - **Data sources**: Toronto Open Data building inventory, Tower Renewal datasets, ENERGY STAR PM medians, NRCan PV potential, City of Toronto rebates.
 - **Why it could win**: targets Toronto's *single biggest* emissions opportunity; concrete with sensible numbers.
-- **Risk**: needs careful framing — don't paint over real tower-renewal-and-displacement equity issues.
+- **Risk**: needs careful framing. Don't paint over the real tower-renewal and displacement equity issues.
 
 ### Seed #15 — Peatland Carbon Dashboard (Hudson Bay Lowlands)
-- **Theme**: 1 — climate science wildcard
+- **Theme**: 1 (climate science wildcard)
 - **What**: Public viz of Ontario's peatland carbon storage (~1.3 Bt). Per region: stored carbon, drought-risk index, fire risk, current emissions vs net sink status.
 - **Demo moment**: Ontario at provincial scale; HBL highlighted; compare its stored carbon to annual Canadian vehicle emissions ("40 years").
 - **Data sources**: ECCC carbon stock maps, NRCan peatland datasets, CWFIS fire data.
 - **Why it could win**: reframes the conversation (nature as infrastructure); judges may not have seen this angle.
-- **Risk**: less obviously "Energy" — pitch carefully as energy/climate intersection.
+- **Risk**: less obviously "Energy". Pitch it carefully as an energy/climate intersection.
 
 ---
 
 ## 15. APPENDIX 2 — TOP-3 IDEA SEEDS FOR THE VAULT
 
-> **To be transferred (after plan exit) to `Synergy-v2.0 — Hackathon Brain/20-ideas/`.** Each is a starting point — not a commitment. Final pick happens at `/hackathon:ideate` post May 24 once the actual challenge sets are revealed.
+> **To be transferred (after plan exit) to `Synergy-v2.0 — Hackathon Brain/20-ideas/`.** Each is a starting point, not a commitment. Final pick happens at `/hackathon:ideate` post May 24 once the actual challenge sets are revealed.
 
 ### Top-3 Seed A — **api.carbonintensity.ca** (the public-good API + widget play)
 
 - **Theme**: 1+2 (Generation + Smart Grid)
 - **Wedge**: Build the Ontario equivalent of UK's NESO Carbon Intensity API. Public REST endpoint serving consumption-adjusted gCO2eq/kWh in 30-min increments, plus a 60-line embeddable widget any Ontario blog/site could drop in.
-- **10-sec demo moment**: Live widget on screen showing "right now your electricity is 38 g/kWh — plug in your EV at 2 AM for 19 g/kWh." Cut to: embed the widget in a sample blog post, refresh, it works.
+- **10-sec demo moment**: Live widget on screen showing "right now your electricity is 38 g/kWh. Plug in your EV at 2 AM for 19 g/kWh." Cut to: embed the widget in a sample blog post, refresh, it works.
 - **Data sources**: IESO Real-time Totals + Gen Output by Fuel + Intertie Schedule + Flow; ECCC NIR fuel-mix emissions factors. Optionally: simple Prophet/transformer 24h forecast.
 - **Why it wins (mapped to 4-axis rubric)**:
   - **Technical**: real-time data pipeline + emissions math + forecast model + public API + embeddable widget = full stack of skill on display.
   - **Design**: clean API docs + widget = double exposure of design thinking.
   - **Originality**: filling a gap UK has + others don't; new artifact (API as public good) not a single-purpose app.
-  - **Impact**: "Monday morning use" — any Ontario consumer-energy app, any climate-conscious dev, any utility could embed this.
+  - **Impact**: "Monday morning use." Any Ontario consumer-energy app, any climate-conscious dev, any utility could embed this.
 - **Risks**: forecast quality unimportant for demo but may invite Q&A; need to nail the emissions methodology (cite UK NESO approach for credibility).
 - **Stack flexibility**: web (Next.js + Vercel + serverless functions), Python (FastAPI + Vercel), or any combination. Truly stack-agnostic.
 - **Differentiation note**: include a public roadmap + open-source license. Judges reward "public good" framing on energy themes.
@@ -1152,25 +1152,25 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
   - **Technical**: geospatial pipeline + multi-source data fusion + scoring model = real engineering.
   - **Design**: a map with a clear narrative beats anything. Cividis colormap + Toronto outline + interactive scoring is judge-gold.
   - **Originality**: Canada has no equivalent; EJScreen delisted under Trump 2025; opportunity to be **the keeper of the equity data for NA**.
-  - **Impact**: directly maps to Theme 3's *"help decision makers understand where support or investment can make the biggest difference"* — judges' own words.
-- **Risks**: methodology defensibility — pick weights carefully, document them. Don't speak for communities — frame as "decision-support" not "the answer."
+  - **Impact**: directly maps to Theme 3's *"help decision makers understand where support or investment can make the biggest difference"* (judges' own words).
+- **Risks**: methodology defensibility. Pick weights carefully and document them. Don't speak for communities. Frame it as "decision-support," not "the answer."
 - **Stack flexibility**: any web stack works (Next.js + Mapbox/MapLibre, or Python + Streamlit + deck.gl). Heavier on the geospatial side.
-- **Differentiation note**: include both pollution AND energy burden in the same score — most equity-screen tools have one or the other, not both. This is the wedge.
+- **Differentiation note**: include both pollution AND energy burden in the same score. Most equity-screen tools have one or the other, not both. This is the wedge.
 
 ### Top-3 Seed C — **Outage Equity Index** (the live emotional resonance play)
 
 - **Theme**: 2+3 (Smart Grid Resilience + Community Equity)
 - **Wedge**: Real-time scraper of Toronto Hydro + Hydro One outage maps, overlaying with (a) Ontario Marginalization Index, (b) over-65 population, (c) high-rise/elevator-dependent buildings. Surfaces who is bearing the burden of each outage in real time.
-- **10-sec demo moment**: Replay May 21, 2022 derecho or March 30, 2025 ice storm with the equity overlay. Watch as the storm sweeps Eastern Ontario; counter ticks up: "currently affecting 3,200 seniors in tower buildings without power for elevators — 14 hours elapsed."
+- **10-sec demo moment**: Replay May 21, 2022 derecho or March 30, 2025 ice storm with the equity overlay. Watch as the storm sweeps Eastern Ontario; counter ticks up: "currently affecting 3,200 seniors in tower buildings without power for elevators. 14 hours elapsed."
 - **Data sources**: Toronto Hydro outage map scrape (10-min interval), Hydro One Storm Centre scrape, ON-MARG index, Toronto Open Data ward demographics + high-rise inventory.
 - **Why it wins**:
   - **Technical**: real-time scraping + data fusion + replay engine = visible engineering effort.
   - **Design**: live map with humans (not just dots) → emotional resonance.
-  - **Originality**: outage data + equity data BOTH exist publicly; the overlay is novel. Mar 2025 ice storm reframed grid-resilience as an equity issue — this is the tool that journalists wished they had.
+  - **Originality**: outage data + equity data BOTH exist publicly; the overlay is novel. Mar 2025 ice storm reframed grid-resilience as an equity issue. This is the tool that journalists wished they had.
   - **Impact**: instantly understandable to anyone who lost power in 2022 / 2025; framed for utility planners + emergency management; concrete recommendation engine ("prioritize restoration for these 12 buildings with 200+ over-65 residents").
-- **Risks**: scrapers can break on layout changes; need a fallback to historical CSV exports. Sensitive framing — present as informing equitable restoration policy not as performative tragedy.
+- **Risks**: scrapers can break on layout changes; need a fallback to historical CSV exports. Sensitive framing. Present it as informing equitable restoration policy, not as performative tragedy.
 - **Stack flexibility**: any web framework; would benefit from Mapbox/MapLibre + WebSockets for live updates; lightweight Python scraper backend.
-- **Differentiation note**: the demo moment is the *time-replay* — judges can SEE the storm advance. Most "equity dashboards" are static maps. The replay is what makes this telegenic.
+- **Differentiation note**: the demo moment is the *time-replay*. Judges can SEE the storm advance. Most "equity dashboards" are static maps. The replay is what makes this telegenic.
 
 ---
 
@@ -1186,7 +1186,7 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 | **CER** | Canada Energy Regulator (federal) |
 | **CNSC** | Canadian Nuclear Safety Commission |
 | **Demand Response (DR)** | Customers reduce/shift load on grid operator signal |
-| **DER** | Distributed Energy Resource — rooftop solar, small storage, EVs, DR |
+| **DER** | Distributed Energy Resource: rooftop solar, small storage, EVs, DR |
 | **DERMS** | DER Management System |
 | **EAP** | Energy Affordability Program (IESO/Save on Energy) |
 | **EFPH** | Equivalent Full Power Hours (nuclear lifetime measure) |
@@ -1299,14 +1299,14 @@ Each seed includes: theme alignment · wedge / demo moment · data sources · wh
 
 ## 18. VERIFICATION & USE — HOW TO TEST THIS DOSSIER
 
-> Since this is a research artifact not an implementation, "verification" = confirming the facts and the dossier's usefulness:
+> Since this is a research artifact, not an implementation, "verification" = confirming the facts and the dossier's usefulness:
 
 1. **Spot-check 5 URLs at random** from Section 3 / Section 6 to confirm they resolve.
-2. **Cross-reference the Seneca 2023 winner** at https://2023.senecahackathon.com/ — confirm Mood Vault / Foam on Latte details match.
-3. **Confirm learnatocto.com identity** by visiting the site — should show "Octo Learning, Inc." not Octopus or OCI.
+2. **Cross-reference the Seneca 2023 winner** at https://2023.senecahackathon.com/. Confirm Mood Vault / Foam on Latte details match.
+3. **Confirm learnatocto.com identity** by visiting the site. It should show "Octo Learning, Inc.," not Octopus or OCI.
 4. **Verify IESO data freshness** by fetching one CSV from reports-public.ieso.ca and confirming it loads (e.g., Real-time Totals or Gen Output by Fuel Hourly).
-5. **Test against `/hackathon:ideate` use case** — when ideate runs on May 22, the angle libraries in `docs/themes.md` should be backfilled from Appendix 1's 15 seeds.
-6. **Test against `/hackathon:scope` use case** — when scope locks on May 24, the demo-moment criteria (Section 10.5) + judge psychology (Section 10.7) should inform the demo-moment-critic evaluation.
+5. **Test against `/hackathon:ideate` use case**: when ideate runs on May 22, the angle libraries in `docs/themes.md` should be backfilled from Appendix 1's 15 seeds.
+6. **Test against `/hackathon:scope` use case**: when scope locks on May 24, the demo-moment criteria (Section 10.5) + judge psychology (Section 10.7) should inform the demo-moment-critic evaluation.
 7. **After plan exit, copy Appendix 2 (top-3 seeds)** to `Synergy-v2.0 — Hackathon Brain/20-ideas/seed-a-carbon-intensity-api.md`, `seed-b-ontario-enviroscreen.md`, `seed-c-outage-equity-index.md` for vault retention.
 8. **Consider copying Section 3 (data sources)** to `docs/energy-domain.md` to backfill that file's "Datasets & APIs" + "Regulators & bodies" + "Common metrics" sections (currently placeholders).
 
@@ -1330,14 +1330,14 @@ These are recommendations, not commitments. The user is staying open until May 2
 5. **Pre-event reading list** for May 16-23 self-prep:
    - [ ] IESO 2025 APO PDF (45 min)
    - [ ] Climate Atlas of Canada Toronto report (15 min)
-   - [ ] CalEnviroScreen methodology (30 min) — model for Seed B
-   - [ ] UK NESO Carbon Intensity API docs (15 min) — model for Seed A
-   - [ ] OpenNEM repo README (15 min) — model for Seed #1
-   - [ ] Mood Vault Devpost / coverage (10 min) — Seneca 2023 baseline
+   - [ ] CalEnviroScreen methodology (30 min), model for Seed B
+   - [ ] UK NESO Carbon Intensity API docs (15 min), model for Seed A
+   - [ ] OpenNEM repo README (15 min), model for Seed #1
+   - [ ] Mood Vault Devpost / coverage (10 min), the Seneca 2023 baseline
    - [ ] One MLH winner retrospective from Section 9 (15 min)
 6. **Practice with AI tools on a throwaway project** (per Section 10.11 Day -3 to 0).
 7. **Schedule sleep 8h/night** through May 23.
 
 ---
 
-*End of dossier. Total ~17,500 words across 6 parallel research streams. Compiled 2026-05-15 by Claude (Opus 4.7) via 6 parallel general-purpose research agents — see ~/.claude/projects/.../tasks/ for raw outputs if needed.*
+*End of dossier. Total ~17,500 words across 6 parallel research streams. Compiled 2026-05-15 by Claude (Opus 4.7) via 6 parallel general-purpose research agents. See ~/.claude/projects/.../tasks/ for raw outputs if needed.*

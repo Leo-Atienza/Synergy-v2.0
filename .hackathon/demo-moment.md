@@ -1,33 +1,39 @@
-# Demo moment — Valley
+# Demo moment — Sanctuary
 
-**One sentence:** *The hour scrubs to 3 a.m., Ontario's rate flips from 39¢ to 3.9¢, and the plug fires the lamp — the Discount Lockout broken automatically for a renter who couldn't stay up to claim it.*
+**One sentence:** *A Peel heat-risk pocket glows red, Sanctuary clicks a real trusted building, and the map ranks the five candidate hubs to harden first before the next heat wave.*
 
-**Archetype:** Tension-Reveal (primary) + Hardware-Surprise (reinforcing, contingent on hardware).
+**Archetype:** Public-Good Frame (primary) + Local-Detail (reinforcing).
 
 ## Literal 10-second script
 
 ```
-0:00 — Laptop: "11:00 · $0.391/kWh · ON-PEAK · WAIT" (red). Beside it, a choropleth of Peel,
-         Malton (Mississauga L4X) glowing deepest red — 99/100, Peel's worst burden.  [If hardware: a dark desk lamp beside the laptop.]
-0:02 — Presenter drags the hour scrubber 6pm → 3am, one motion.
-0:05 — Panel flips GREEN "03:00 · $0.039/kWh · GO"; device tile → ON.  [If hardware: lamp clicks on.]
-0:08 — Caption: "3.9¢ — Ontario's cheapest rate is a 3 a.m. trap. Valley springs it for you."
-         L4X (Malton) stays labeled on the map.
+0:00 — Peel Heat Vulnerability Index fills the screen. One Brampton/Malton pocket glows dark red.
+         Caption: "Heat risk is not evenly distributed. Shelter access is not either."
+0:02 — Presenter clicks the hero building:
+         "Malton Community Centre and Library, 3540 Morning Star Drive, Mississauga"
+         HVI quintile 5, PHDZ M-04.
+0:05 — The side panel opens with three honesty labels:
+         "Candidate hub, not currently equipped"
+         "Reachable population: modelled 500 m estimate"
+         "Solar/battery: planning estimate, requires site audit"
+         plus HVI level, roof/hardening class, and why it ranks high.
+0:08 — Five candidate hubs light up in rank order.
+         Caption: "If Peel can harden only five buildings first, Sanctuary ranks these five."
 ```
 
-## Why it lands (per `demo-moment-critic`, 2026-05-25)
+## Why it lands
 
-- **Motion-driven + observable** — the judge watches the flip happen, not a description of it.
-- **Memorable** — passes the "describe it 2 hours later" test: *"the one where the real lamp turned on at 3 a.m."*
-- **The caption does the argument** — keeps the lamp reading as *proof the trap was sprung*, not a cute gadget.
-- **Honest by construction** — the dollar figures on screen are the renter-real ~$30–130/yr range, not the EV number.
+- **It answers a decision, not a vibe** — "which five buildings first?" is a Monday-morning question for a planner.
+- **It uses proper nouns** — judges remember Malton, Morning Star Drive, Mississauga, and Peel more than "a community hub."
+- **It is honest on screen** — every risky estimate is labelled where the judge sees it.
+- **It fits the sponsors** — ArcGIS does the spatial reveal; Alectra gets a community-energy resilience use case in its territory.
 
-## The floor vs the upgrade (hardware risk)
+## The floor vs the upgrade
 
-- **Floor (must always work):** the screen-only WAIT→GO flip + the device tile → ON. Zero hardware. This is recordable today.
-- **Upgrade (hero shot):** the physical lamp firing — only if the Shelly Plug US Gen4 is bought and the local JSON-RPC control verifies before the deadline. Pre-record a clean take; there's no live-network risk in a YouTube video.
+- **Floor (must always work):** static or preloaded ArcGIS screenshots showing HVI, hero click, panel, and ranked five.
+- **Upgrade:** live StoryMap/Web Map interaction with the same sequence, recorded cleanly.
 
-## The one question to pre-answer (hostile Q&A)
+## The one question to pre-answer
 
-*"Does this actually reach poor renters, or just affluent EV owners?"*
-→ "The device honestly reaches one slice — individually-metered renters with a shiftable load — and saves them ~$30–130/yr, modestly but truthfully. The leverage is the map: it tells the utility which neighbourhoods the plug reaches, and which are sub-metered or baseboard-heated and need a *policy* fix instead. Matching the fix to the household is the product." (Backed by `docs/energy-domain.md` §3–§6, 2026-05-24/25.)
+*"Are these buildings already resilience hubs?"*
+→ "No. Sanctuary ranks **candidate hubs** for investment. Building names, addresses, and the heat-risk layer are real. Reachable population and solar/battery potential are planning estimates, labelled as such, and would require site verification before any capital decision."

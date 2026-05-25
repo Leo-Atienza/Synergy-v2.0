@@ -1,0 +1,326 @@
+{
+  "type": "FeatureCollection",
+  "name": "sanctuary_candidate_hubs",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.63854,
+          43.72354
+        ]
+      },
+      "properties": {
+        "rank_seed": "1",
+        "name": "Malton Community Centre and Library",
+        "address": "3540 Morning Star Drive, Mississauga, ON L4T 1Y2",
+        "type": "community_centre_library",
+        "municipality": "Mississauga",
+        "source_url": "https://www.mississauga.ca/recreation-and-sports/locations/malton-community-centre/",
+        "hvi_quintile": "5",
+        "exposure_quintile": "4",
+        "sensitivity_quintile": "2",
+        "adaptive_capacity_quintile": "5",
+        "ctuid": "5350530.01",
+        "phdz": "M-04",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "large",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "high",
+        "trust_role": "civic_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "Evidence-backed hero candidate; HVI 5 and connected to Malton Library."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.65122,
+          43.70874
+        ]
+      },
+      "properties": {
+        "rank_seed": "2",
+        "name": "Sri Guru Singh Sabha Malton",
+        "address": "7280 Airport Road, Mississauga, ON L4T 2H3",
+        "type": "place_of_worship",
+        "municipality": "Mississauga",
+        "source_url": "https://www.srigurusinghsabhamalton.com/",
+        "hvi_quintile": "5",
+        "exposure_quintile": "5",
+        "sensitivity_quintile": "4",
+        "adaptive_capacity_quintile": "5",
+        "ctuid": "5350528.62",
+        "phdz": "M-04",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "medium",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "medium",
+        "trust_role": "faith_community_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "Top-quintile faith/community candidate in Malton."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.73595,
+          43.65288
+        ]
+      },
+      "properties": {
+        "rank_seed": "3",
+        "name": "Susan Fennell Sportsplex",
+        "address": "500 Ray Lawson Boulevard, Brampton, ON L6Y 5B3",
+        "type": "community_centre",
+        "municipality": "Brampton",
+        "source_url": "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/pages/susan-fennell-sportsplex.aspx",
+        "hvi_quintile": "5",
+        "exposure_quintile": "3",
+        "sensitivity_quintile": "2",
+        "adaptive_capacity_quintile": "5",
+        "ctuid": "5350528.21",
+        "phdz": "B-16",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "large",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "high",
+        "trust_role": "civic_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "HVI 5 civic facility; formerly South Fletcher's Sportsplex."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.64445,
+          43.70641
+        ]
+      },
+      "properties": {
+        "rank_seed": "4",
+        "name": "Anjuman-E-Anwarul Islam of Malton",
+        "address": "7097 Airport Road, Mississauga, ON L4T 2G7",
+        "type": "place_of_worship",
+        "municipality": "Mississauga",
+        "source_url": "https://maltonmasjid.ad-din.site/",
+        "hvi_quintile": "4",
+        "exposure_quintile": "3",
+        "sensitivity_quintile": "1",
+        "adaptive_capacity_quintile": "5",
+        "ctuid": "5350529.01",
+        "phdz": "M-04",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "medium",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "medium",
+        "trust_role": "faith_community_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "Malton Masjid candidate; HVI 4 with adaptive-capacity quintile 5."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.65962,
+          43.77016
+        ]
+      },
+      "properties": {
+        "rank_seed": "5",
+        "name": "Bharat Mata Mandir",
+        "address": "8887 The Gore Road, Brampton, ON L6P 2K9",
+        "type": "place_of_worship",
+        "municipality": "Brampton",
+        "source_url": "https://miracletechnologies.ca/bharatmatamandir/",
+        "hvi_quintile": "3",
+        "exposure_quintile": "5",
+        "sensitivity_quintile": "1",
+        "adaptive_capacity_quintile": "3",
+        "ctuid": "5350576.65",
+        "phdz": "B-13",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "medium",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "medium",
+        "trust_role": "faith_community_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "Exposure quintile 5; keep as candidate but do not over-rank without catchment."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.74263,
+          43.74913
+        ]
+      },
+      "properties": {
+        "rank_seed": "6",
+        "name": "Chinguacousy Wellness Centre",
+        "address": "995 Peter Robertson Boulevard, Brampton, ON L6R 2E9",
+        "type": "community_centre",
+        "municipality": "Brampton",
+        "source_url": "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/pages/chinguacousy-wellness.aspx",
+        "hvi_quintile": "3",
+        "exposure_quintile": "5",
+        "sensitivity_quintile": "2",
+        "adaptive_capacity_quintile": "2",
+        "ctuid": "5350576.20",
+        "phdz": "B-04",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "large",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "high",
+        "trust_role": "civic_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "Large civic facility; exposure quintile 5."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.66808,
+          43.7776
+        ]
+      },
+      "properties": {
+        "rank_seed": "7",
+        "name": "Hindu Sabha Temple",
+        "address": "9225 The Gore Road, Brampton, ON L6P 0B6",
+        "type": "place_of_worship",
+        "municipality": "Brampton",
+        "source_url": "https://hindusabhatemple.com/contacts",
+        "hvi_quintile": "2",
+        "exposure_quintile": "5",
+        "sensitivity_quintile": "2",
+        "adaptive_capacity_quintile": "1",
+        "ctuid": "5350576.62",
+        "phdz": "B-13",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "large",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "medium",
+        "trust_role": "faith_community_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "The Gore Road faith/community cluster candidate; HVI 2 so not hero."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.69453,
+          43.79421
+        ]
+      },
+      "properties": {
+        "rank_seed": "8",
+        "name": "Gore Meadows Community Centre and Library",
+        "address": "10150 The Gore Road, Brampton, ON L6P 0A6",
+        "type": "community_centre_library",
+        "municipality": "Brampton",
+        "source_url": "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/Pages/Gore-Meadows.aspx",
+        "hvi_quintile": "2",
+        "exposure_quintile": "2",
+        "sensitivity_quintile": "5",
+        "adaptive_capacity_quintile": "2",
+        "ctuid": "5350576.73",
+        "phdz": "B-05",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "large",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "high",
+        "trust_role": "civic_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "Real facility but HVI 2; demoted from provisional hero."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.68906,
+          43.79079
+        ]
+      },
+      "properties": {
+        "rank_seed": "9",
+        "name": "Guru Nanak Darbar Gurdwara",
+        "address": "9954 The Gore Road, Brampton, ON L6P 0A7",
+        "type": "place_of_worship",
+        "municipality": "Brampton",
+        "source_url": "https://nanakdarbar.com/",
+        "hvi_quintile": "1",
+        "exposure_quintile": "3",
+        "sensitivity_quintile": "2",
+        "adaptive_capacity_quintile": "1",
+        "ctuid": "5350576.63",
+        "phdz": "B-12",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "large",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "medium",
+        "trust_role": "faith_community_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "Near Gore Meadows corridor; HVI 1 so not top-five unless catchment adds a reason."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.82458,
+          43.69693
+        ]
+      },
+      "properties": {
+        "rank_seed": "10",
+        "name": "Cassie Campbell Community Centre",
+        "address": "1050 Sandalwood Parkway West, Brampton, ON L7A 0K9",
+        "type": "community_centre",
+        "municipality": "Brampton",
+        "source_url": "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/pages/cassie-campbell.aspx",
+        "hvi_quintile": "1",
+        "exposure_quintile": "5",
+        "sensitivity_quintile": "1",
+        "adaptive_capacity_quintile": "2",
+        "ctuid": "5350576.53",
+        "phdz": "B-01B",
+        "catchment_method": "modelled_500m",
+        "reachable_population_est": "pending",
+        "roof_area_class": "large",
+        "solar_potential_est": "planning_estimate",
+        "facility_suitability": "high",
+        "trust_role": "civic_anchor",
+        "verification_status": "address_and_hvi_verified_catchment_pending",
+        "notes": "Large civic facility but HVI 1; keep as contrast candidate."
+      }
+    }
+  ]
+}
