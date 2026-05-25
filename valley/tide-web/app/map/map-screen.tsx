@@ -42,21 +42,27 @@ export default function MapScreen() {
   }, [geo]);
 
   const stat = selected ? PEEL_BY_FSA[selected] : undefined;
+  const interventionAnswer =
+    stat?.intervention === "policy"
+      ? "No plug fix. Change the rule."
+      : stat?.intervention === "retrofit"
+        ? "Not first. Upgrade the building."
+        : "Yes. Automate the shift.";
 
   return (
     <main className="map-page">
       <div className="map-head">
-        <span className="brand">TIDE</span>
+        <span className="brand">VALLEY</span>
         <a className="map-link" href="/device">
-          see the fix on a real plug →
+          see WAIT become GO →
         </a>
       </div>
 
-      <h1 className="map-title">Peel’s energy-burden map</h1>
+      <h1 className="map-title">The Discount Lockout Map</h1>
       <p className="map-strap">
-        Ontario’s cheapest rate (3.9¢ overnight) is a 3&nbsp;a.m. trap for renters who can’t shift their use — and a
-        locked door for those whose landlord picks the building’s plan. Here’s where the burden lands hardest across
-        Mississauga, Brampton &amp; Caledon, and which fix each neighbourhood actually needs.
+        39.1¢ at dinner. 3.9¢ at 3&nbsp;a.m. Valley asks the question a fair rate plan skips:
+        who can actually reach the discount? Click a Peel neighbourhood to see whether automation can help,
+        or whether the household is locked out by the building.
       </p>
 
       <div className="map-grid">
@@ -114,6 +120,10 @@ export default function MapScreen() {
                 <span className="score-suffix">/100</span>
               </div>
               <div className="score-cap">energy-burden index (relative within Peel)</div>
+              <div className={`answer ${stat.intervention}`}>
+                <span>Can Valley help here?</span>
+                <b>{interventionAnswer}</b>
+              </div>
               {stat.population != null && (
                 <div className="stat-row">
                   <span>Population (2021)</span>
@@ -179,8 +189,8 @@ export default function MapScreen() {
         Data: Statistics Canada 2021 Census (98-401-X) — household income, tenure, primary heating fuel and dwelling
         type, by forward sortation area · IESO measured hourly consumption by FSA · OEB Regulated Price Plan (ULO)
         rates. The burden index is a relative composite of renter share, (inverse) median income and electric-heat
-        exposure across Peel FSAs — not an absolute dollar figure. Intervention routing is a transparent heuristic
-        (apartment share proxies sub-metering; electric-heat share proxies un-shiftable load).
+        exposure across Peel FSAs — not an absolute dollar figure. Intervention routing is a transparent triage:
+        high apartment share signals the Discount Lockout, while individually metered renter stock is Valley-reachable.
       </p>
     </main>
   );

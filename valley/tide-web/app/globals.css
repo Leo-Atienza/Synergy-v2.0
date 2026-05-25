@@ -55,6 +55,56 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+.kicker {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.price-lockout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.price-chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: clamp(18px, 5vw, 32px);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -1px;
+  line-height: 1;
+  padding: 8px 12px 10px;
+}
+
+.price-chip.peak {
+  color: #f09a72;
+  border-color: rgba(200, 75, 31, 0.5);
+  background: rgba(200, 75, 31, 0.12);
+}
+
+.price-chip.cheap {
+  color: #4dd3c8;
+  border-color: rgba(14, 125, 119, 0.55);
+  background: rgba(14, 125, 119, 0.12);
+}
+
+.price-chip.active {
+  box-shadow: 0 0 0 3px rgba(234, 242, 247, 0.14);
+  color: var(--ink);
+}
+
+.price-arrow {
+  color: var(--muted);
+  font-size: 18px;
+}
+
 .verb {
   font-size: clamp(60px, 15vw, 112px);
   font-weight: 800;
@@ -254,6 +304,40 @@ body {
   color: var(--muted);
   font-size: 12px;
   margin-bottom: 14px;
+}
+
+.answer {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+}
+
+.answer span {
+  color: var(--muted);
+  display: block;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.answer b {
+  display: block;
+  font-size: 16px;
+}
+
+.answer.tide-reachable {
+  border-color: rgba(14, 125, 119, 0.5);
+  background: rgba(14, 125, 119, 0.1);
+}
+
+.answer.policy {
+  border-color: rgba(200, 75, 31, 0.5);
+  background: rgba(200, 75, 31, 0.1);
+}
+
+.answer.retrofit {
+  border-color: rgba(201, 162, 39, 0.45);
+  background: rgba(201, 162, 39, 0.1);
 }
 
 .stat-row {

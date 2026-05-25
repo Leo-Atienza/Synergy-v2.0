@@ -2,7 +2,7 @@
 
 Everything we know about this project — the idea, the research, the demo plan, the numbers — lives in this one repo. This page gets you from "I got an invite" to "I can read all of it" in a few minutes. **No coding required for the reading path.**
 
-New here? The 5-minute version of the whole project is **[`tide/docs/tide-team-brief.pdf`](tide/docs/tide-team-brief.pdf)** (plain English, no tech background needed). Read that first; come back here when you want the full brain.
+New here? The 5-minute version of the whole project is **[`valley/docs/tide-team-brief.pdf`](valley/docs/tide-team-brief.pdf)** (plain English, no tech background needed). Read that first; come back here when you want the full brain.
 
 ---
 
@@ -24,7 +24,7 @@ Once you can see the repo at <https://github.com/Leo-Atienza/Synergy-v2.0>, pick
 No tools to install. Everything renders right on github.com.
 
 1. Open the repo: <https://github.com/Leo-Atienza/Synergy-v2.0>
-2. Read the brief: click into [`tide/docs/tide-team-brief.pdf`](tide/docs/tide-team-brief.pdf) (GitHub previews PDFs in-page).
+2. Read the brief: click into [`valley/docs/tide-team-brief.pdf`](valley/docs/tide-team-brief.pdf) (GitHub previews PDFs in-page).
 3. Open the brain: click the folder **`Synergy-v2.0 — Hackathon Brain/`**, then read in this order:
    - `README.md` — what the brain is and how it's organized
    - `index.md` — the live map of everything (the "you are here")
@@ -59,8 +59,8 @@ Then open the `Synergy-v2.0 — Hackathon Brain/` subfolder as a vault in Obsidi
 
 | You want… | Open |
 |---|---|
-| Everything about the Tide candidate (docs + code) | [`tide/`](tide/) — start at its README |
-| The whole idea in 5 minutes (plain English) | [`tide/docs/tide-team-brief.pdf`](tide/docs/tide-team-brief.pdf) |
+| Everything about the Tide candidate (docs + code) | [`valley/`](valley/) — start at its README |
+| The whole idea in 5 minutes (plain English) | [`valley/docs/tide-team-brief.pdf`](valley/docs/tide-team-brief.pdf) |
 | The thinking brain (ideas, research, design, daily log) | `Synergy-v2.0 — Hackathon Brain/` → start at `index.md` |
 | Hard event facts (rules, themes, timeline, deadlines) | [`docs/`](docs/) — `seneca-hackathon-context.md`, `themes.md`, `timeline.md` |
 | The deep research dossier (Ontario energy, past winners, sponsors) | [`docs/research-dossier.md`](docs/research-dossier.md) |
@@ -70,7 +70,7 @@ Then open the `Synergy-v2.0 — Hackathon Brain/` subfolder as a vault in Obsidi
 
 ## Where to start reading (any path)
 
-1. **[`tide/docs/tide-team-brief.pdf`](tide/docs/tide-team-brief.pdf)** — the project in plain English.
+1. **[`valley/docs/tide-team-brief.pdf`](valley/docs/tide-team-brief.pdf)** — the project in plain English.
 2. **`Synergy-v2.0 — Hackathon Brain/index.md`** — the map of the brain.
 3. **`Synergy-v2.0 — Hackathon Brain/hot.md`** — what's active this week.
 

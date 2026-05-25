@@ -1,6 +1,6 @@
-# Demo moment — Tide
+# Demo moment — Valley
 
-**One sentence:** *The hour scrubs to 3 a.m., Ontario's rate flips from 39¢ to 3.9¢, and the plug fires the lamp — the cheapest rate, captured automatically for a renter who couldn't stay up to claim it.*
+**One sentence:** *The hour scrubs to 3 a.m., Ontario's rate flips from 39¢ to 3.9¢, and the plug fires the lamp — the Discount Lockout broken automatically for a renter who couldn't stay up to claim it.*
 
 **Archetype:** Tension-Reveal (primary) + Hardware-Surprise (reinforcing, contingent on hardware).
 
@@ -11,7 +11,7 @@
          Malton (Mississauga L4X) glowing deepest red — 99/100, Peel's worst burden.  [If hardware: a dark desk lamp beside the laptop.]
 0:02 — Presenter drags the hour scrubber 6pm → 3am, one motion.
 0:05 — Panel flips GREEN "03:00 · $0.039/kWh · GO"; device tile → ON.  [If hardware: lamp clicks on.]
-0:08 — Caption: "3.9¢ — Ontario's cheapest rate is a 3 a.m. trap. Tide springs it for you."
+0:08 — Caption: "3.9¢ — Ontario's cheapest rate is a 3 a.m. trap. Valley springs it for you."
          L4X (Malton) stays labeled on the map.
 ```
 

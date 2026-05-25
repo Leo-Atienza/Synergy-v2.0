@@ -29,9 +29,9 @@ export interface FsaStat extends FsaRaw {
 export const BURDEN_COLORS = ["#155e57", "#1f8a6e", "#c9a227", "#d06a25", "#c84b1f"];
 
 export const INTERVENTION_LABEL: Record<Intervention, string> = {
-  "tide-reachable": "Tide reaches this neighbourhood",
-  policy: "Needs a policy fix (sub-metered)",
-  retrofit: "Needs a retrofit (electric heat)",
+  "tide-reachable": "Valley can help here",
+  policy: "Discount locked: policy fix",
+  retrofit: "Retrofit first",
 };
 
 export function burdenColor(bucket: number | null): string {
@@ -67,18 +67,18 @@ function route(r: FsaRaw): { intervention: Intervention; note: string } {
   if (r.apartmentPct != null && r.apartmentPct >= 40) {
     return {
       intervention: "policy",
-      note: `${r.apartmentPct.toFixed(0)}% of homes here are apartments — much of that stock is sub-metered, where the landlord (not the tenant) picks the rate plan. ULO is a locked door: the fix is policy, not a plug.`,
+      note: `${r.apartmentPct.toFixed(0)}% of homes here are apartments — much of that stock is sub-metered, where the landlord (not the tenant) picks the rate plan. This is the Discount Lockout: the fix is policy, not a plug.`,
     };
   }
   if (r.electricHeatPct != null && r.electricHeatPct >= 25) {
     return {
       intervention: "retrofit",
-      note: `${r.electricHeatPct.toFixed(0)}% heat with electricity — largely baseboard, which can't shift off the evening peak. The fix is an efficiency retrofit, not load-shifting.`,
+      note: `${r.electricHeatPct.toFixed(0)}% heat with electricity — largely baseboard, which can't shift off the evening peak. Start with an efficiency retrofit; load-shifting comes after the building can flex.`,
     };
   }
   return {
     intervention: "tide-reachable",
-    note: `${renter.toFixed(0)}% renters, mostly individually metered — they can elect ULO but get punished by it without behaviour change. Tide reaches this stock: it shifts the load to 3.9¢ for them automatically.`,
+    note: `${renter.toFixed(0)}% renters, mostly individually metered — they can choose ULO but get punished by it without behaviour change. Valley reaches this stock: it shifts the load to 3.9¢ automatically.`,
   };
 }
 

@@ -9,9 +9,9 @@ import TideScreen from "../tide-screen";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Tide — only ever pay 3.9¢",
+  title: "Valley — WAIT becomes GO at 3.9¢",
   description:
-    "A $15 plug that shifts a renter's load to Ontario's 3.9¢ overnight window automatically — no behaviour change.",
+    "A roughly $25 plug that shifts a renter's load to Ontario's 3.9¢ overnight window automatically — no behaviour change.",
 };
 
 const LOAD: Load = {

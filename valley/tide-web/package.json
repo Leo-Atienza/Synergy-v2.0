@@ -2,7 +2,7 @@
   "name": "tide-web",
   "version": "0.0.1",
   "private": true,
-  "description": "Tide demo UI — one-screen WAIT/GO grid-aware load shifter (Next.js). Prototype, not the official scaffold.",
+  "description": "Valley demo UI — Discount Lockout map plus one-screen WAIT/GO load shifter (Next.js). Prototype, not the official scaffold.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

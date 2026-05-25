@@ -1,4 +1,4 @@
-# 5-minute qualifier video — shot list (Tide)
+# 5-minute qualifier video — shot list (Valley)
 
 > Deliverable due May 26 23:59. 5-min target, 6-min hard max, YouTube. Demo on camera — NOT a live app.
 > Arc + timings from the Opening Day deck. Every on-screen number must be sourced (anti-"AI slop").
@@ -7,7 +7,7 @@
 ---
 
 ## 0:00–0:20 — COLD OPEN (the number)
-- **On screen:** the device screen at 11:00 — big red "WAIT", "$0.391/kWh · ON-PEAK". No title card, no faces.
+- **On screen:** the device screen at 11:00 — "THE DISCOUNT LOCKOUT", big red "WAIT", "$0.391/kWh · ON-PEAK". No title card, no faces.
 - **VO:** "This is the most expensive electricity in Ontario — 39 cents a kilowatt-hour at dinnertime. The cheapest is 3.9 — ten times less, overnight. Same power. Guess which one a low-income renter is stuck paying."
 - **Cut to:** the Peel map, **Malton (L4X)** glowing deepest red — 99/100, Peel's worst burden.
 
@@ -17,28 +17,28 @@
 - **On-screen citations:** "OEB price-plan rules · StatCan 2021."
 
 ## 1:00–2:00 — SOLUTION (one use case: map + plug)
-- **VO:** "Tide is two things that are really one. A map that shows a utility *where* the gap is worst across Peel — and which fix each neighbourhood needs. And a $15 plug that is the fix, for the neighbourhoods it can reach."
-- **On screen:** map → click Malton (L4X) → badge "Needs a policy fix (sub-metered)"; then click Brampton (L6V) → badge "Tide reaches this neighbourhood".
-- **VO (over the two clicks):** "Malton is the worst-burden neighbourhood in Peel — but it's mostly sub-metered apartments, where the landlord picks the plan, so Tide can't reach it; that's a policy fix. Brampton's L6V is renters in individually-metered homes — Tide shifts their load to 3 a.m. for them. The map tells you which is which."
+- **VO:** "Valley is two things that are really one. A map that shows a utility *where* the discount lockout is worst across Peel — and which fix each neighbourhood needs. And a roughly $25 plug that is the fix, for the neighbourhoods it can reach."
+- **On screen:** map → click Malton (L4X) → badge "Discount locked: policy fix"; then click Brampton (L6V) → badge "Valley can help here".
+- **VO (over the two clicks):** "Malton is the worst-burden neighbourhood in Peel — but it's mostly sub-metered apartments, where the landlord picks the plan, so Valley can't reach it with a plug; that's a policy fix. Brampton's L6V is renters in individually-metered homes — Valley shifts their load to 3 a.m. for them. The map tells you which is which."
 
 ## 2:00–3:30 — DEMO (the moment)
 - **On screen:** device screen + the real lamp (pre-recorded take).
-- **VO:** "Watch. Right now it's peak — 39 cents — so Tide says wait."
+- **VO:** "Watch. Right now it's peak — 39 cents — so Valley says wait."
 - **Action:** drag the scrubber 6pm → 3am.
 - **On screen:** panel flips green "03:00 · $0.039/kWh · GO"; **the lamp clicks on.**
 - **VO:** "3 a.m., 3.9 cents, and the AC runs — without the renter lifting a finger or losing a wink. The rate that punishes the inflexible, captured automatically."
 - **Fallback if no hardware:** the on-screen device tile flips to ON; same beat, no bulb.
 
 ## 3:30–4:20 — IMPACT + HONESTY (the moat)
-- **VO:** "Let's be honest about the plug: for a renter it saves maybe $30 to $130 a year. Modest — and real. We're not inflating it. The leverage is the map: it turns a $15 device into targeting intelligence — telling a utility which homes the plug reaches, and which are sub-metered or baseboard-heated and need a different fix entirely."
-- **On screen:** map legend + the intervention badge on the selected FSA (Tide-reachable vs policy; a retrofit layer for electric-baseboard homes is flagged as next — StatCan doesn't publish heating fuel at FSA level).
+- **VO:** "Let's be honest about the plug: for a renter it saves maybe $30 to $130 a year. Modest — and real. We're not inflating it. The leverage is the map: it turns a roughly $25 device into targeting intelligence — telling a utility which homes the plug reaches, and which are sub-metered or baseboard-heated and need a different fix entirely."
+- **On screen:** map legend + the intervention badge on the selected FSA (Valley-reachable vs policy; a retrofit layer for electric-baseboard homes is flagged as next — StatCan doesn't publish heating fuel at FSA level).
 - **VO:** "Every number here is real — StatCan 2021 census, IESO's measured hourly consumption per postal area, OEB rates, the live Ontario grid. No synthetic data."
 
 ## 4:20–4:50 — WHERE IT GOES (sponsor-aligned)
-- **VO:** "At scale this isn't just savings. Alectra — Peel's utility — runs a flexibility marketplace called GridExchange. About a thousand of these plugs is a megawatt of dispatchable load, worth roughly $170,000 a year. Tide is the renter-side device that feeds it — and the map that finds the renters."
+- **VO:** "At scale this isn't just savings. Alectra — Peel's utility — runs a flexibility marketplace called GridExchange. About a thousand of these plugs is a megawatt of dispatchable load, worth roughly $170,000 a year. Valley is the renter-side device that could feed that kind of market — and the map that finds the renters."
 
 ## 4:50–5:00 — CLOSE + COLLABORATION
-- **VO:** "Built by [NAME] (map + data), [NAME] (device + hardware), and [NAME] (story) over one weekend on real public data. Tide — make the best rate safe for the people it currently punishes."
+- **VO:** "Built by [NAME] (map + data), [NAME] (device + hardware), and [NAME] (story) over one weekend on real public data. Valley — make the best rate usable for the people it currently punishes."
 - **On screen:** the lamp glowing, caption "3.9¢ — the rate they couldn't use. Now they can."
 
 ---

@@ -43,13 +43,20 @@ export default function TideScreen(props: Props) {
     <main className="wrap">
       <div className="card">
         <header className="head">
-          <span className="brand">TIDE</span>
+          <span className="brand">VALLEY</span>
           <span className="live">
             {props.liveIntensity != null
               ? `Ontario grid now · ${props.liveIntensity} gCO₂/kWh`
               : "live grid · unavailable"}
           </span>
         </header>
+
+        <p className="kicker">The Discount Lockout</p>
+        <div className="price-lockout" aria-label="Ontario ULO price gap">
+          <span className={`price-chip peak ${go ? "" : "active"}`}>39.1¢ dinner</span>
+          <span className="price-arrow">→</span>
+          <span className={`price-chip cheap ${go ? "active" : ""}`}>3.9¢ overnight</span>
+        </div>
 
         <div className={`verb ${go ? "go" : "wait"}`}>{go ? "GO NOW" : "WAIT"}</div>
 
@@ -99,9 +106,9 @@ export default function TideScreen(props: Props) {
 
         <p className="foot">
           Window AC set to cool overnight instead of running through the 6pm peak — plugged in at 6pm,
-          done by morning. Tide waits for the 3.9¢ window ($
+          done by morning. Valley waits for the 3.9¢ window ($
           {props.smartDollars.toFixed(2)}) over the 39¢ peak (${props.baselineDollars.toFixed(2)}); honest
-          renter savings ≈ $30–130 a cooling season. The leverage is the{" "}
+          renter savings ≈ $30–130 a cooling season. The bigger value is the{" "}
           <a className="map-link" href="/">map</a>. Demo fixture: Ontario summer
           weekday, OEB ULO rates; top-right is live from IESO.
         </p>

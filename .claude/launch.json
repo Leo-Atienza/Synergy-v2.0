@@ -3,14 +3,14 @@
   "configurations": [
     {
       "name": "tide-web",
-      "cwd": "tide/tide-web",
+      "cwd": "valley/tide-web",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
     },
     {
       "name": "tide-html",
-      "cwd": "tide/spike/web",
+      "cwd": "valley/spike/web",
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "5500"],
       "port": 5500

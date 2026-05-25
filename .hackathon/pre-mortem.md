@@ -1,10 +1,10 @@
-# Pre-mortem — Tide
+# Pre-mortem — Valley
 
 > Per [`docs/build-readiness.md`](../docs/build-readiness.md) §G.1. Imagine the project failing in concrete ways and pre-write the response BEFORE it happens. By judging time, the canned answer is muscle memory.
 
 **Status:** FILLED
 **Updated:** 2026-05-25
-**Chosen idea:** Tide — $15 automated plug + Energy Poverty Map of Peel (Theme 3 · PS1)
+**Chosen idea:** Valley — roughly $25 automated plug + Energy Poverty Map of Peel (Theme 3 · PS1)
 **Locked archetype:** Tension-Reveal (primary) + Hardware-Surprise (reinforcing, contingent on hardware)
 
 ---
@@ -37,12 +37,12 @@
 
 ### NF-2 — Conflicts with sponsor track (reads anti-utility)
 - **Why it could happen:** Alectra is a utility; critiquing regressive ULO pricing could sound like an attack.
-- **Pre-mitigation:** frame as decision-support FOR the utility — Tide feeds Alectra's GridExchange flexibility marketplace; the map is built on Esri-style GIS. Several sponsor-aligned reads.
+- **Pre-mitigation:** frame as decision-support FOR the utility — Valley could feed the kind of flexibility marketplace Alectra has piloted; the map is built on Esri-style GIS. Several sponsor-aligned reads.
 - **Live response:** "This is the renter-side device + targeting layer that feeds Alectra's GridExchange — we're solving their last-mile flexibility problem, not criticising the rate."
 
 ### NF-3 — Equity framing comes across performative
 - **Why it could happen:** "for renters" with no renter input.
-- **Pre-mitigation:** the honesty layer — the map names who Tide CANNOT help (sub-metered, baseboard, no-AC) and routes them to policy/retrofit; every number cited (StatCan / IESO / OEB); honest ~$30–130/season, never the EV number.
+- **Pre-mitigation:** the honesty layer — the map names who Valley CANNOT help (sub-metered, baseboard, no-AC) and routes them to policy/retrofit; every number cited (StatCan / IESO / OEB); honest ~$30–130/season, never the EV number.
 - **Live response:** "We're explicit about the limits — the device reaches one slice of renters; the map's whole job is to route everyone else to the right fix."
 
 ---

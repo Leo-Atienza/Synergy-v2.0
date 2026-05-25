@@ -1,10 +1,10 @@
 # File B — Developer Build Plan (Valley)
 
-> **Audience:** the builders. **Name:** Valley (chosen 2026-05-25). The on-screen brand still reads TIDE in code + video captions — swap before recording (see §6 rename surface).
+> **Audience:** the builders. **Name:** Valley (chosen 2026-05-25). Judge-facing code + video captions now use Valley / Discount Lockout; internal component names may still say Tide.
 > **Status:** 2026-05-25. **Deliverable:** a 5-min YouTube video by **May 26 23:59 ET** (NOT a deployed app).
 > **Team:** 3 people. **Track ownership:**
 > - **Leo — Software (solo):** the Next.js web app, map, device screen, data, provenance. *No hardware.*
-> - **Teammate H — Hardware:** buy + configure the plug, the control script, record the lamp.
+> - **Teammate H — Hardware:** buy + configure the plug, run the existing `plug:test`/`plug` scripts, record the lamp.
 > - **Teammate V — Video/Narrative:** shot list, screen captures, edit, upload.
 
 ---
@@ -15,14 +15,14 @@
 
 | Component | File | State |
 |---|---|---|
-| Energy-burden map of Peel (choropleth + click + detail panel + intervention badge + legend + footer) | [`app/map/map-screen.tsx`](../tide/tide-web/app/map/map-screen.tsx) | ✅ **Built** |
-| Device WAIT→GO screen (scrubber reveal, renter copy) | [`app/tide-screen.tsx`](../tide/tide-web/app/tide-screen.tsx) | ✅ **Built** (EV→renter rewrite done) |
-| Map-led landing | [`app/page.tsx`](../tide/tide-web/app/page.tsx) | ✅ Built |
-| Burden index + intervention routing | [`lib/peel-data.ts`](../tide/tide-web/lib/peel-data.ts) | ⚠️ Built — **retrofit branch can't fire** (see §6) |
-| Optimizer + savings (tested) | [`lib/optimizer.ts`](../tide/tide-web/lib/optimizer.ts), spike | ✅ Built + tested |
-| Live IESO grid pull (+ fallback) | [`lib/grid.ts`](../tide/tide-web/lib/grid.ts) | ✅ Built, degrades gracefully |
+| Energy-burden map of Peel (choropleth + click + detail panel + intervention badge + legend + footer) | [`app/map/map-screen.tsx`](../tide-web/app/map/map-screen.tsx) | ✅ **Built** |
+| Device WAIT→GO screen (scrubber reveal, renter copy) | [`app/tide-screen.tsx`](../tide-web/app/tide-screen.tsx) | ✅ **Built** (EV→renter rewrite done) |
+| Map-led landing | [`app/page.tsx`](../tide-web/app/page.tsx) | ✅ Built |
+| Burden index + intervention routing | [`lib/peel-data.ts`](../tide-web/lib/peel-data.ts) | ⚠️ Built — **retrofit branch can't fire** (see §6) |
+| Optimizer + savings (tested) | [`lib/optimizer.ts`](../tide-web/lib/optimizer.ts), spike | ✅ Built + tested |
+| Live IESO grid pull (+ fallback) | [`lib/grid.ts`](../tide-web/lib/grid.ts) | ✅ Built, degrades gracefully |
 | Real data (35 FSAs, pop ✓1.45M, rates ✓) | `public/peel-fsa.geojson`, `lib/peel-fsa-raw.json` | ✅ Committed |
-| **Hardware control driver** | `spike/src/plug.ts` | ❌ **Mock only** — no Shelly/Kasa driver exists |
+| **Hardware control + drivers** | `spike/src/plug-shelly.ts` + `scripts/{control-plug,plug-selftest}.ts` | ✅ **Built + ready** — real Shelly + Kasa drivers, the live decide→actuate loop, and a hardware self-test all exist; only the physical plug is unbought |
 | Physical plug | — | ❌ **Not bought** |
 | 5-min video | — | ❌ Not recorded |
 
@@ -47,7 +47,7 @@ Plain walkthrough mapping the idea to the actual code (File A has the non-techni
 3. `map-screen.tsx` — fetches `public/peel-fsa.geojson` (polygon geometry), draws the choropleth with **d3-geo**, colours each FSA by burden bucket, and on click shows the detail panel + intervention badge.
 
 **The hardware** (Teammate H — separate from the app)
-- The optimizer's "is it GO right now?" decision is the same logic that fires the plug in production. The `PlugDriver` interface (`spike/src/plug.ts`) is `on() / off() / isOn()`; the real Shelly driver (to write) hits the local HTTP RPC (§3.1).
+- The optimizer's "is it GO right now?" decision is the same logic that fires the plug. The `PlugDriver` interface (`spike/src/plug.ts`) is `on() / off() / isOn()`, and the **real Shelly driver already exists** (`spike/src/plug-shelly.ts`): `scripts/control-plug.ts` runs the live decide→actuate loop and `scripts/plug-selftest.ts` verifies the LAN path (§3).
 - **For the video, the app and the plug are independent** — the screen flip and the lamp are recorded separately and intercut, so the app never has to talk to the plug. This is why Leo's software track stays hardware-free.
 
 **One-line data flow:**
@@ -59,16 +59,16 @@ Plain walkthrough mapping the idea to the actual code (File A has the non-techni
 
 **Keep the current stack. Do not re-architect.**
 
-- **Next.js 16 + React 19 + TypeScript + d3-geo** ([package.json](../tide/tide-web/package.json)). Rationale: the deliverable is a *video*, so the app's only job is to render a crisp, screen-capturable interactive map + reveal. **d3-geo draws the choropleth from a committed GeoJSON with no map-tile provider and no network dependency** → works offline → demo-safe (kills the "wifi died on camera" risk). React state drives the scrubber. Switching stacks throws away ~70% working code for zero judge-visible gain.
+- **Next.js 16 + React 19 + TypeScript + d3-geo** ([package.json](../tide-web/package.json)). Rationale: the deliverable is a *video*, so the app's only job is to render a crisp, screen-capturable interactive map + reveal. **d3-geo draws the choropleth from a committed GeoJSON with no map-tile provider and no network dependency** → works offline → demo-safe (kills the "wifi died on camera" risk). React state drives the scrubber. Switching stacks throws away ~70% working code for zero judge-visible gain.
 - **No database, no auth, no API routes.** A 5-min video needs none. Adding them is pure risk.
 - **Live data is read-only and fail-safe.** `grid.ts` pulls IESO live but returns `null` on any failure and the UI degrades to "live grid · unavailable" over a committed deterministic fixture (`lib/sample-day.ts`). Correct design — leave it.
-- **Hardware is a separate ~20-line Node script, NOT part of the web app.** The web app shows the on-screen device tile; the physical plug is actuated independently and intercut in the edit. This keeps Leo's software track 100% hardware-free (as requested) and means **the video does not depend on the app talking to the plug.**
+- **Hardware is separate from the web app** — the spike already carries the driver + control loop (`spike/src/plug-shelly.ts`, `scripts/control-plug.ts`). The web app shows the on-screen device tile; the physical plug is actuated independently and intercut in the edit. This keeps Leo's software track 100% hardware-free and means **the video does not depend on the app talking to the plug.**
 
 ---
 
 ## 2. Leo's software track — hour-by-hour (floor-first)
 
-> Total ~5–6h of focused work, mostly polish. Run `cd tide/tide-web && npm install && npm run dev` first; confirm the map + `/device` render.
+> Total ~5–6h of focused work, mostly polish. Run `cd valley/tide-web && npm install && npm run dev` first; confirm the map + `/device` render.
 
 **Stage 0 — Sanity (0.5h). [no dependencies]**
 - Boot the app, confirm map + device screen render with real data. Screenshot the floor. If this works, the demo cannot fully fail.
@@ -116,9 +116,18 @@ Plain walkthrough mapping the idea to the actual code (File A has the non-techni
 1. Plug in; join your phone to the Shelly AP; via the Shelly app/web UI connect it to a **2.4 GHz** home network (it's 2.4-only).
 2. **Turn Cloud OFF** in Settings (this keeps control on-LAN, no account). Note the plug's **LAN IP** (reserve it in your router by MAC if possible).
 3. Verify control from a laptop on the same network — paste into a browser: `http://<plug-ip>/rpc/Switch.Set?id=0&on=true` (lamp on), `...&on=false` (off).
-4. Run the control script (§3.1), wire the lamp, record **multiple clean takes** of the lamp clicking ON.
+4. Run the self-test (§3.1) — `npm run plug:test -- <ip>` — then wire the lamp and record **multiple clean takes** of it clicking ON.
 
-### 3.1 Control script (drop-in, ~20 lines)
+### 3.1 Control — already written, just run it
+
+**Don't write a driver — it exists.** `spike/src/plug-shelly.ts` is the production driver (connect + on/off + read-back + 2 s timeout). Run the existing CLI from `valley/spike`:
+
+```bash
+npm run plug:test -- <plug-ip>   # ON → verify → OFF → verify — run FIRST when the plug arrives
+npm run plug -- <plug-ip>        # the live decide→actuate one-shot for the current hour
+```
+
+For reference, the core of that existing driver is just:
 ```ts
 // plug-shelly.ts — Shelly Gen2+/Gen4 local RPC. No cloud, no auth (if unset).
 const IP = process.env.PLUG_IP ?? "192.168.1.50"; // your reserved LAN IP
@@ -138,13 +147,13 @@ async function isOn(): Promise<boolean> {
   console.log("lamp ON, verified:", await isOn());
 })();
 ```
-Run: `PLUG_IP=<ip> npx tsx plug-shelly.ts`. (Mirrors the `PlugDriver` interface already in `spike/src/plug.ts`.)
+That is essentially what `spike/src/plug-shelly.ts` already implements — plain HTTP, zero dependencies. Use the npm scripts above rather than this snippet.
 
 ---
 
 ## 4. Teammate V — Video/Narrative track
 
-- Follow the shot list in [`.hackathon/video-script.md`](../.hackathon/video-script.md) (arc: trap → map → fix → honesty → close).
+- Follow the shot list in [`.hackathon/video-script.md`](../../.hackathon/video-script.md) (arc: trap → map → fix → honesty → close).
 - Screen-capture at 60fps: the **two-FSA click** (L4X policy vs L6V tide-reachable) and the **scrubber 6 p.m.→3 a.m. flip**.
 - Intercut the pre-recorded **lamp-fire** take *if* hardware landed; otherwise the on-screen tile flip is the beat.
 - **Name all three teammates on screen** — Collaboration is a full 20% axis.
@@ -168,21 +177,21 @@ Run: `PLUG_IP=<ip> npx tsx plug-shelly.ts`. (Mirrors the `PlugDriver` interface 
 
 ## 6. Concrete realignment to-dos (code-level)
 
-1. **Retrofit branch** — [`peel-data.ts:73`](../tide/tide-web/lib/peel-data.ts) routes on `electricHeatPct >= 25`, but that field is **null for all 35 FSAs** (StatCan doesn't publish heating fuel at FSA level — [`peel-fsa-data-note.md`](peel-fsa-data-note.md)). So routing is really **two-way (policy vs tide-reachable)**. **Pick one:**
+1. **Retrofit branch** — [`peel-data.ts:73`](../tide-web/lib/peel-data.ts) routes on `electricHeatPct >= 25`, but that field is **null for all 35 FSAs** (StatCan doesn't publish heating fuel at FSA level — [`peel-fsa-data-note.md`](../../docs/peel-fsa-data-note.md)). So routing is really **two-way (policy vs tide-reachable)**. **Pick one:**
    - (a) Relabel the legend/copy as two interventions; keep retrofit as a "next, when data permits" note (the map footer already half-says this). *Simplest + honest.*
    - (b) Hardcode 1–2 known electric-baseboard FSAs with a visible "estimated" caveat. *More complete, mild risk.*
 2. **Sponsor framing** — soften any "feeds Alectra's GridExchange" to "the kind of flexibility market this feeds" until R6 is verified.
 3. **DR figure citation** — `docs/energy-domain.md` mislabels the ~$171k/MW-yr source. Fix before it goes on screen.
 4. **Provenance footer** — confirm it's on every frame Teammate V captures.
-5. **Rename surface (Tide → Valley) — judge-visible spots to swap BEFORE recording:**
-   - [`app/tide-screen.tsx`](../tide/tide-web/app/tide-screen.tsx) + [`app/map/map-screen.tsx`](../tide/tide-web/app/map/map-screen.tsx): `<span className="brand">TIDE</span>` → `VALLEY`.
-   - [`app/page.tsx`](../tide/tide-web/app/page.tsx) + [`app/device/page.tsx`](../tide/tide-web/app/device/page.tsx): both metadata titles (`"Tide — Peel energy-burden map"` and `"Tide — only ever pay 3.9¢"`) → Valley.
-   - [`lib/peel-data.ts`](../tide/tide-web/lib/peel-data.ts): the `INTERVENTION_LABEL` value `"Tide reaches this neighbourhood"` → `"Valley reaches…"`. (The internal key `"tide-reachable"` can stay — not judge-visible.)
-   - [`.hackathon/video-script.md`](../.hackathon/video-script.md) + [`.hackathon/demo-moment.md`](../.hackathon/demo-moment.md): every on-screen caption that says "Tide" (e.g., "Tide springs it for you").
-   - **Do NOT rename the `tide/` folder** — pure churn, breaks links, invisible to judges.
+5. **Brand swap (Tide → Valley).** The `tide/`→`valley/` folder rename is DONE, and the judge-visible brand text has been swapped for recording:
+   - [`app/tide-screen.tsx`](../tide-web/app/tide-screen.tsx) + [`app/map/map-screen.tsx`](../tide-web/app/map/map-screen.tsx): `<span className="brand">VALLEY</span>`.
+   - [`app/page.tsx`](../tide-web/app/page.tsx) + [`app/device/page.tsx`](../tide-web/app/device/page.tsx): metadata titles now use Valley.
+   - [`lib/peel-data.ts`](../tide-web/lib/peel-data.ts): the `INTERVENTION_LABEL` value now says `"Valley can help here"`. (The internal key `"tide-reachable"` can stay — not judge-visible.)
+   - [`.hackathon/video-script.md`](../../.hackathon/video-script.md) + [`.hackathon/demo-moment.md`](../../.hackathon/demo-moment.md): captions now use Valley and "Discount Lockout."
+   - **Folder rename: done** — `tide/` is now `valley/` (web + spike + docs); all repo links updated.
    - ~10 string edits total; fold into Stage 2 polish (Leo's track).
 
-6. **Reconcile the plug price** — [`app/device/page.tsx`](../tide/tide-web/app/device/page.tsx) metadata says a **"$15"** plug, but the recommended hardware is the Shelly Plug US Gen4 at **~$25–35 CAD** ("$15" was the older Kasa fallback). Pick one number for the video — suggest **"about $25"** — and make File A, the on-screen copy, and the script agree.
+6. **Reconcile the plug price** — judge-facing copy now uses **roughly $25** / **~$25–35 CAD** for the Shelly Plug US Gen4. "$15" remains only as an older Kasa fallback where explicitly labelled.
 
 ---
 
