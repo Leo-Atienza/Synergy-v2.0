@@ -30,6 +30,31 @@
 
 ---
 
+## How the system works (end to end)
+
+Plain walkthrough mapping the idea to the actual code (File A has the non-technical version). The app has **two screens**; the **hardware is separate**.
+
+**Screen A — the device / WAIT→GO reveal** (`app/device/page.tsx` → `app/tide-screen.tsx`)
+1. `app/device/page.tsx` defines the load — *Window AC, 1.2 kW, 5 h, allowed to run any time between 6 p.m. and 7 a.m.* — then on each request:
+   - `getDay()` (`lib/grid.ts`) builds the committed demo day: hourly fuel mix → carbon intensity (`lib/carbon.ts`) + ULO/TOU prices (`lib/rates.ts`), all from `lib/sample-day.ts`.
+   - `buildHorizon()` + `chooseWindow()` (`lib/optimizer.ts`) slide the 5-hour run across 6 p.m.–7 a.m. and return the **cheapest contiguous block** — the overnight 3.9¢ window. `baselineNow()` is the "just run it now at 6 p.m." comparison; `perRun()` (`lib/savings.ts`) is the $ + CO₂ difference shown in the tally.
+   - `getLiveIntensity()` pulls Ontario's live grid mix from IESO for the "grid now" badge (returns `null` and degrades to "unavailable" if the feed fails — it can't break the demo).
+2. `tide-screen.tsx` renders the 24-hour price/intensity strip + an hour slider. If the scrubbed hour is inside the chosen window → **GO** (green); otherwise → **WAIT** (red). Dragging 6 p.m. → 3 a.m. *is* the on-camera reveal.
+
+**Screen B — the energy-burden map** (`app/page.tsx` → `app/map/map-screen.tsx`)
+1. `lib/peel-fsa-raw.json` — real StatCan 2021 attributes per FSA (income, renter %, apartment %, population).
+2. `lib/peel-data.ts` — computes the **0–100 burden score** (weighted blend, normalized within Peel) and the **intervention routing** (apartments ≥ 40% → policy; electric-heat ≥ 25% → retrofit [never fires — see §6]; else Valley-reachable); exports `PEEL_FSA` / `PEEL_BY_FSA`.
+3. `map-screen.tsx` — fetches `public/peel-fsa.geojson` (polygon geometry), draws the choropleth with **d3-geo**, colours each FSA by burden bucket, and on click shows the detail panel + intervention badge.
+
+**The hardware** (Teammate H — separate from the app)
+- The optimizer's "is it GO right now?" decision is the same logic that fires the plug in production. The `PlugDriver` interface (`spike/src/plug.ts`) is `on() / off() / isOn()`; the real Shelly driver (to write) hits the local HTTP RPC (§3.1).
+- **For the video, the app and the plug are independent** — the screen flip and the lamp are recorded separately and intercut, so the app never has to talk to the plug. This is why Leo's software track stays hardware-free.
+
+**One-line data flow:**
+`StatCan + IESO + OEB data → lib/ (rates · carbon · optimizer · peel-data) → React screens (device WAIT/GO + map) → [optional] Shelly plug fires the real lamp`
+
+---
+
 ## 1. Architecture & stack decisions (with rationale)
 
 **Keep the current stack. Do not re-architect.**
@@ -151,11 +176,13 @@ Run: `PLUG_IP=<ip> npx tsx plug-shelly.ts`. (Mirrors the `PlugDriver` interface 
 4. **Provenance footer** — confirm it's on every frame Teammate V captures.
 5. **Rename surface (Tide → Valley) — judge-visible spots to swap BEFORE recording:**
    - [`app/tide-screen.tsx`](../tide/tide-web/app/tide-screen.tsx) + [`app/map/map-screen.tsx`](../tide/tide-web/app/map/map-screen.tsx): `<span className="brand">TIDE</span>` → `VALLEY`.
-   - [`app/page.tsx`](../tide/tide-web/app/page.tsx): metadata title `"Tide — Peel energy-burden map"` → `"Valley — …"`.
+   - [`app/page.tsx`](../tide/tide-web/app/page.tsx) + [`app/device/page.tsx`](../tide/tide-web/app/device/page.tsx): both metadata titles (`"Tide — Peel energy-burden map"` and `"Tide — only ever pay 3.9¢"`) → Valley.
    - [`lib/peel-data.ts`](../tide/tide-web/lib/peel-data.ts): the `INTERVENTION_LABEL` value `"Tide reaches this neighbourhood"` → `"Valley reaches…"`. (The internal key `"tide-reachable"` can stay — not judge-visible.)
    - [`.hackathon/video-script.md`](../.hackathon/video-script.md) + [`.hackathon/demo-moment.md`](../.hackathon/demo-moment.md): every on-screen caption that says "Tide" (e.g., "Tide springs it for you").
    - **Do NOT rename the `tide/` folder** — pure churn, breaks links, invisible to judges.
    - ~10 string edits total; fold into Stage 2 polish (Leo's track).
+
+6. **Reconcile the plug price** — [`app/device/page.tsx`](../tide/tide-web/app/device/page.tsx) metadata says a **"$15"** plug, but the recommended hardware is the Shelly Plug US Gen4 at **~$25–35 CAD** ("$15" was the older Kasa fallback). Pick one number for the video — suggest **"about $25"** — and make File A, the on-screen copy, and the script agree.
 
 ---
 
