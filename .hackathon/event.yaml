@@ -8,9 +8,9 @@ theme: "energy / sustainability — 'The Energy to Innovate'"
 platform: "corporate"                   # Seneca College internal event
 event_url: "https://www.senecahackathon.com/"
 
-duration_hours: 96                      # May 24 kickoff (00:00) → May 28 23:59 submission
-start_iso: "2026-05-24T00:00:00-04:00"  # virtual kickoff — exact time TBC
-deadline_iso: "2026-05-28T23:59:00-04:00"  # submission cutoff per website (photo says May 26 — see open questions)
+duration_hours: 72                      # May 24 kickoff (00:00) → May 26 23:59 qualifier-video deadline
+start_iso: "2026-05-24T00:00:00-04:00"  # virtual kickoff
+deadline_iso: "2026-05-26T23:59:00-04:00"  # qualifier video due — CONFIRMED at kickoff (Opening Day deck slide 9). Supersedes the pre-event "May 28 per website" guess. Build to the earlier deadline regardless — missing it = 0 score.
 
 team:
   mode: team                            # solo | team — change at /hackathon:team
@@ -18,14 +18,17 @@ team:
   members: []                           # TBD — [{name, skills: [], availability_hours: 0}] — fill via /hackathon:team
 
 judging:
-  format: hybrid                        # async submission May 28 + in-person finale May 30
-  rubric:                               # default 4-axis until organizer rubric confirmed
-    technical: 25
-    design: 25
-    originality: 25
-    impact: 25
-  sponsor_prizes: []                    # TBC — sponsor list not yet announced
-  required_tech: []                     # TBC at kickoff (challenge sets unveil 2026-05-24)
+  format: hybrid                        # qualifier video due May 26 -> finalists revealed May 28 -> in-person finale May 30
+  rubric:                               # CONFIRMED 5-axis (Opening Day deck slide 27); weights assumed equal pending confirmation
+    innovation_creativity: 20
+    impact_relevance: 20
+    technical_execution: 20
+    presentation_communication: 20
+    collaboration_teamwork: 20
+  sponsor_prizes:                       # CONFIRMED at kickoff (Opening Day deck)
+    - "Esri Canada - GIS / ArcGIS, heavily mentored (our map = sponsor-track fit)"
+    - "Alectra GRE&T Centre - Peel + GGH grid innovation; runs GridExchange transactive-energy marketplace (Tide's VPP angle)"
+  required_tech: []                     # none mandated; real-data required - "AI slop in any form will disqualify" (deck)
 
 submission:
   form_url: ""                          # TBC — likely Devpost or internal Seneca form
@@ -36,16 +39,15 @@ submission:
     - tech_stack
     - video_url
     - screenshots
-  max_video_seconds: 180                # default until confirmed
+  max_video_seconds: 300                # 5-min target; 360s (6 min) hard max - CONFIRMED at kickoff. Deliverable = YouTube video, not a deployed app.
 
-timeline:                               # seed values; /hackathon:init may overwrite
-  ideate_by: "2026-05-22"               # 2 days pre-kickoff to lock theme + angle
-  scope_locked_by: "2026-05-24T18:00:00-04:00"      # by end of kickoff day
-  scaffold_deployed_by: "2026-05-25T12:00:00-04:00" # live URL by Day 1 noon
-  demo_moment_working_by: "2026-05-26T18:00:00-04:00"
-  polish_starts: "2026-05-27T00:00:00-04:00"
-  demo_recorded_by: "2026-05-28T18:00:00-04:00"
-  submission_by: "2026-05-28T23:59:00-04:00"
+timeline:                               # RE-BASED 2026-05-25 to the confirmed May 26 23:59 qualifier deadline
+  ideate_by: "2026-05-22"               # done - Theme 3 . PS1 + Tide locked
+  scope_locked_by: "2026-05-25T12:00:00-04:00"      # locking this session
+  map_built_by: "2026-05-26T12:00:00-04:00"         # the only real new work - Energy Poverty Map of Peel (FSA level)
+  demo_moment_working_by: "2026-05-26T16:00:00-04:00" # plug fires real lamp at 3.9c on camera
+  demo_recorded_by: "2026-05-26T21:00:00-04:00"     # 5-min video - leave buffer before cutoff
+  submission_by: "2026-05-26T23:59:00-04:00"        # HARD deadline (qualifier video)
   pitch_practiced_by: "2026-05-29T20:00:00-04:00"   # night before finale (only if finalist)
 
 deploy:

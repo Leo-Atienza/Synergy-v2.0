@@ -43,18 +43,18 @@
 
 - **Format:** Hybrid `[confirmed]` — async submission May 28 + live finale May 30
 - **Top finalists revealed:** 2026-05-28 `[confirmed: photo]` — same day as submission deadline
-- **Rubric axes & weights:** `[tbc]` — defaulting to universal 4-axis (technical / design / originality / impact, 25% each) until organizers confirm
+- **Rubric axes:** `[confirmed: kickoff deck slide 27]` — 5-axis: Innovation & Creativity · Impact & Relevance · Technical Execution · Presentation & Communication · Collaboration & Teamwork (weights not shown; assume equal)
 - **Sponsor prize tracks:** `[tbc]`
 
 ## Submission
 
 - **Portal:** `[tbc]` — likely Devpost or internal Seneca form
-- **Deadline:** 2026-05-28, end-of-day local time (Toronto, ET / UTC-04:00) `[contradiction]`
-  - Website: Phase 1 runs May 24–28, submissions Thursday May 28
-  - Photo from kickoff slides: Day 2 Mentoring & Final Submission Deadline on **May 26**
-  - **Decision:** trust website; build to May 28 deadline; flag for organizer confirmation Day 1
+- **Deadline:** 2026-05-26, 23:59 local time (Toronto, ET / UTC-04:00) `[confirmed: kickoff]`
+  - Website (pre-event): Phase 1 "May 24–28" implied a Thursday May 28 submission — a guess from the marketing page
+  - **Opening Day deck (slide 9), seen at kickoff May 24:** qualifier video due **May 26, 11:59 PM** → top finalists revealed May 28 → in-person finale May 30
+  - **RESOLVED 2026-05-25:** trust the kickoff deck over the pre-event website → build to **May 26**. Asymmetric risk: building to the earlier of two conflicting deadlines costs nothing if wrong; building to the later one misses the cutoff = 0 score.
 - **Required fields (assumed):** description, how it works, inspiration, tech stack, video, screenshots
-- **Video format / max length:** `[tbc]` — defaulted to 180s in event.yaml
+- **Video format / max length:** `[confirmed: kickoff]` — YouTube video, 5-min target / 6-min (360s) hard max. This is the primary deliverable (demo on camera), not a deployed app.
 
 ## Contact
 
@@ -76,7 +76,7 @@ These need organizer confirmation before locking scope. Ask on Discord/Teams as 
 
 | # | Question | Why it matters | Source of conflict / gap |
 |---|---|---|---|
-| 1 | Submission deadline: May 26 or May 28? | Determines build window (~48h vs ~96h). Currently building to May 28. | Photo (slide 05) says May 26; website says May 28 |
+| 1 | ~~Submission deadline: May 26 or May 28?~~ **RESOLVED → May 26 23:59** (kickoff deck slide 9) | Determines build window — now ~1.5 days | Pre-event website said May 28; kickoff deck confirmed May 26 |
 | 2 | What are the required APIs / sponsor tech / datasets? | Disqualifies if missed. Affects stack choice at `/hackathon:ideate`. | Challenge sets unveil at kickoff May 24 |
 | 3 | Team size limits (max members? solo allowed?) | Decides `/hackathon:team` mode | Not stated |
 | 4 | Prize pool & sponsor list | Informs which sponsor tracks to target | Not stated |

@@ -45,6 +45,21 @@ Don't record:
 
 ## Entries
 
+## 2026-05-25 — Confirmed event facts (Opening Day slides) + promoted Sanctuary & Thaw (Theme 3) to Candidate
+- **Context:** Read the authoritative "Opening Day Slides" PDF + the Esri tech-session deck + Alectra, and ran verification-first deep-research dives on two Theme-3 ideas (Sanctuary, Thaw). User asked to promote both to candidates and back every decision with data.
+- **Confirmed event facts (supersede earlier assumptions):**
+  - **Rubric = 5 axes** — Innovation & Creativity · Impact & Relevance · Technical Execution · Presentation & Communication · Collaboration & Teamwork. Weights not published. (Was: assumed 4-axis technical/design/originality/impact.)
+  - **Deadline contested:** Opening Day slides say **May 26, 11:59 PM** (stated twice); senecahackathon.com implies May 27-28. **Build toward May 26**, confirm on Discord. `event.yaml` updated to May 26 (conservative).
+  - **Deliverable = a 5-minute (max 6) YouTube video + artifacts** (design docs, code, wireframes, GIS maps / dashboards / StoryMaps). A live deployed app is NOT required. *"A submission consisting of AI slop in any form will disqualify."* Don't artificially speed up the video.
+  - **Sponsors = Esri + Alectra** (industry). **SSF = Seneca Student Federation** (student union, not an industry sponsor). Partners: Octo, Toronto Tech Week, ComUnity, GDG. Esri Canada runs the GIS mentoring + free Seneca ArcGIS org (`senecatechnology.maps.arcgis.com`); sessions cover Living Atlas / StoryMaps / app-templates / "vibe coding". Alectra GRE&T grid-edge leads (Keith Hemingway, Daniel Carr) give the May-26 domain sessions; pre-read `alectra.com/innovation-projects`.
+  - **Implication:** Theme-3 winners = Esri ArcGIS StoryMaps/Dashboards, in Alectra's Peel/GGH territory, on real public data, scoped to ONE narrow use case.
+- **Promotions (this session's deep research, verification-first):**
+  - **[[../20-ideas/seed-g-sanctuary|G · Sanctuary]] — 90/100 — STRONG GO, lead Theme-3 pick.** Claude directly verified the Peel Heat Vulnerability Index is a PUBLIC ArcGIS layer (Peel Public Health) — resolves the main data risk. Novel, scalable (config), Esri+Alectra bullseye. Caveat: per-building solar/backup layers are modelled — label them.
+  - **[[../20-ideas/seed-h-thaw|H · Thaw]] — 79/100 — promoted but WOUNDED.** Kill-shot verified: no public granular Peel outage history, and the multi-day storms hit Hydro One's rural territory, not Alectra's urban Peel. Survives only as a labelled MODELLED restoration scenario; originality overlaps [[../20-ideas/seed-c-outage-equity-index]]. Rank below Sanctuary.
+- **Calibration note:** the six earlier seed scores (Tide 94, etc.) predate the sponsor/rubric/deliverable reveal and undercount GIS-native Theme-3 ideas. Re-score the pool against the 5 confirmed axes before the chosen-idea lock.
+- **Chosen idea: still NOT locked** (per user — exploring, not committing yet). Current lean: Sanctuary. Lock happens at `/hackathon:scope`.
+- **Not committed to git.**
+
 ## 2026-05-22 ~10:30 — Tide promoted seed → Candidate (lead); chosen-lock deferred to May 24
 - **Context:** Idea-lock self-deadline (2026-05-22). User asked to promote Tide to Candidate. Scored the 6 carded seeds against the project rubric to formalize the finalist pool. Full scores in [[scored-ideas]].
 - **Options considered:** All 6 carded seeds — A (carbon API), B (EnviroScreen), C (Outage Equity), D (Tide), E (Roll Call), F (Backwards Hour). 12 thin dossier candidates screened out before scoring (no card; mostly "talk about energy, don't move kWh").

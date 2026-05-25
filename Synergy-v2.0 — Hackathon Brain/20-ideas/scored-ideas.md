@@ -81,6 +81,21 @@ Not full-scored: each is a thin one-liner in [[seed-ideas]] without a card, and 
 - **Tide is promoted to lead candidate (94/100)** — its lead is decided by the proven viability spike + built demo UI (buildability) and the scripted hardware/live-compute/embodied-number demo moment, with max Canadian-data leverage. It honestly concedes the originality axis.
 - Tide + Backwards Hour remain two modes of one peak-hour logic; keep F as Tide's companion/fallback, not a rival.
 
+## Round-3 candidates — Sanctuary & Thaw (added 2026-05-25)
+
+> Surfaced 2026-05-25 from deep-research agents + a verification-first deep dive, **after** the May-24 kickoff revealed the real sponsors (Esri + Alectra), the deliverable (5-min video + GIS artifacts), and the 5-axis rubric. Scored on the same /100 project rubric for comparability — but see the calibration caveat.
+
+| Seed | Theme /25 | Demo /25 | Build /20 | Cdn-data /15 | Orig /15 | **Total** | Verdict |
+|---|---|---|---|---|---|---|---|
+| **[[seed-g-sanctuary\|G · Sanctuary]]** | 24 | 23 | 16 | 14 | 13 | **90** | ✅ **finalist — lead Theme-3 pick** |
+| [[seed-h-thaw\|H · Thaw]] | 22 | 20 | 16 | 11 | 10 | **79** | ✅ finalist (wounded — pivot only) |
+
+**G · Sanctuary — 90.** Real, public, Esri-native data spine (Claude verified the Peel Heat Vulnerability Index is a public ArcGIS layer — `access: public`, Peel Public Health); novel for Ontario (multi-faith community buildings as resilience hubs — no equivalent found); dual sponsor bullseye (Esri spatial-insight + Alectra microgrids/community-energy); StoryMap-feasible in the tight window. Docked only on the modelled solar/backup-power layers (label them) + no prototype yet.
+
+**H · Thaw — 79.** Clears the ≥75 bar but wounded: the **defining outage layer cannot be real** (no public granular Peel outage history; the multi-day storms — 2022 derecho, 2025 ice storm — hit Hydro One's rural territory, not Alectra's urban Peel), so it survives only as a labelled MODELLED restoration scenario — docking Canadian-data (11) and Originality (10, overlaps [[seed-c-outage-equity-index]]). Promote, but rank below Sanctuary.
+
+**Calibration caveat (important).** The six earlier seeds (Tide 94, etc.) were scored **pre-kickoff**, against *assumed* themes and the *assumed* 4-axis rubric, **without** knowing the sponsors, the GIS/video deliverable, or the May-26 deadline. The confirmed event rewards **Esri ArcGIS StoryMaps in Alectra's Peel/GGH territory on real public data** — a profile Sanctuary fits better than most pre-kickoff seeds (incl. Tide, a Theme-2 hardware+app). So Sanctuary's 90 is arguably *more win-aligned for Theme 3* than the raw number suggests; re-score the whole pool against the 5 confirmed axes before the chosen-idea lock.
+
 ## What is NOT decided here
 
 The **chosen idea** (the single locked project) is intentionally **not** locked, because:

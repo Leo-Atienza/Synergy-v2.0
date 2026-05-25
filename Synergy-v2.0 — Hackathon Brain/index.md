@@ -2,7 +2,7 @@
 title: Synergy-v2.0 — Map of Content
 type: folder-index
 status: confirmed
-updated: 2026-05-22
+updated: 2026-05-25
 ---
 
 # Synergy-v2.0 — Map of Content
@@ -13,15 +13,15 @@ updated: 2026-05-22
 
 | Field | Value |
 |---|---|
-| Today | 2026-05-22 |
-| Phase | Pre-event (ideate window — **6 seeds scored**; Tide promoted to lead Candidate) |
-| Days to kickoff | 2 (kickoff 2026-05-24) |
-| Days to submission | 6 (deadline 2026-05-28 23:59 ET) |
-| Idea-lock self-deadline | 2026-05-22 (**today** — scored to Candidate; chosen-lock held for the May 24 reveal) |
-| Candidates | 18 live + 3 parked → **6 carded seeds scored** ([[20-ideas/scored-ideas\|scored-ideas]]); all clear ≥75. **Lead candidate: [[20-ideas/seed-d-tide\|Tide]]** (94/100) |
+| Today | 2026-05-25 |
+| Phase | Build window — kickoff done; sponsors **Esri + Alectra** confirmed; deliverable = 5-min video + GIS artifacts |
+| Days to submission | **~1 — qualifier video due May 26 23:59 ET** (confirmed: Opening Day deck slide 9) |
+| Rubric | **5 axes** (confirmed): Innovation · Impact · Technical · Presentation · Collaboration — *"AI slop disqualifies"* |
+| Sponsors | **Esri** (ArcGIS; free Seneca org + Esri-Canada mentors) · **Alectra** (Peel/GGH; GRE&T grid-edge). SSF = student federation. |
+| Candidates | 8 carded seeds scored ([[20-ideas/scored-ideas\|scored-ideas]]). Pre-kickoff lead **[[20-ideas/seed-d-tide\|Tide]]** (94, Theme 2). Round-3 Theme-3: **[[20-ideas/seed-g-sanctuary\|Sanctuary]]** (90 — lead Theme-3 pick) · [[20-ideas/seed-h-thaw\|Thaw]] (79, wounded). Re-score vs 5 axes before lock. |
 | Mode | **Team** — size + members TBD via `/hackathon:team` |
-| Theme | undecided — 3 candidates (see [Themes](../docs/themes.md)) |
-| Stack preset | undecided (set at `/hackathon:ideate`) |
+| Theme | **leaning Theme 3** (Community Energy, Equity & Sustainability) |
+| Stack preset | likely **Esri ArcGIS StoryMap/Dashboard** for Theme 3 (confirm at `/hackathon:scope`) |
 | Demo moment | undecided (set at `/hackathon:scope`) |
 | Live URL | none (set at `/hackathon:scaffold`) |
 

@@ -34,4 +34,4 @@ Run [`/handoff`](https://docs.anthropic.com/en/docs/claude-code) at the end of a
 
 ## Entries
 
-_None yet._
+- [2026-05-25 — Tide + Energy Poverty Map decision](2026-05-25-handoff-tide-decision.md) — Theme 3·PS1 picked; map-led framing; data + impact confirmed; scope not yet locked.
