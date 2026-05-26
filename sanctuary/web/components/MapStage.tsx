@@ -51,7 +51,7 @@ export function MapStage({
     <svg
       viewBox={`0 0 ${W} ${H}`}
       className="map-svg"
-      role="img"
+      role="group"
       aria-label="Map of Peel Region with ten candidate resilience hubs ranked by heat vulnerability; Malton Community Centre and Library ranks first."
     >
       <defs>

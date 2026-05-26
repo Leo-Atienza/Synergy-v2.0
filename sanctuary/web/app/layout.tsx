@@ -15,6 +15,9 @@ const mono = localFont({
   variable: "--font-mono",
   display: "swap",
   weight: "100 800",
+  // Not preloaded: let the LCP-critical display font (Fraunces) win initial
+  // bandwidth. Mono swaps in a beat later; data is still readable in fallback mono.
+  preload: false,
 });
 
 const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
