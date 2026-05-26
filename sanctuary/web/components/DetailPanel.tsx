@@ -2,7 +2,7 @@
 
 import type { Hub } from "@/lib/hubs";
 import { HVI_LABEL } from "@/lib/hubs";
-import { m, DUR, EASE_CALM } from "@/lib/motion";
+import { m } from "@/lib/motion";
 import { EvidenceTag } from "@/components/EvidenceTag";
 import { CountUp } from "@/components/CountUp";
 import { ArrowUpRight } from "@/components/icons";
@@ -35,19 +35,14 @@ export function DetailPanel({ hub, reduced }: { hub: Hub; reduced: boolean }) {
       </div>
 
       <div className="breakdown">
-        {hub.breakdown.map((r, i) => (
+        {hub.breakdown.map((r) => (
           <div className="bd-row" key={r.label}>
             <div className="bd-top">
               <span className="bd-label">{r.label}</span>
               <span className="bd-weight tnum">{r.weightPct}%</span>
             </div>
             <div className="bd-bar">
-              <m.div
-                className="bd-fill"
-                initial={{ scaleX: reduced ? r.fraction : 0 }}
-                animate={{ scaleX: r.fraction }}
-                transition={{ duration: reduced ? 0 : DUR.panel, ease: EASE_CALM, delay: reduced ? 0 : 0.12 + i * 0.05 }}
-              />
+              <m.div className="bd-fill" initial={false} animate={{ scaleX: r.fraction }} style={{ transformOrigin: "left center" }} />
             </div>
             <div className="bd-bottom">
               <span className="bd-bucket">{r.bucket}</span>

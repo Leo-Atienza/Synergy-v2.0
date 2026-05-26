@@ -63,14 +63,14 @@ export function MapStage({
         </radialGradient>
       </defs>
 
-      <m.g animate={zoom} transition={reduced ? { duration: 0 } : { duration: 0.9, ease: EASE_CALM }}>
+      <m.g initial={false} animate={zoom} transition={reduced ? { duration: 0 } : { duration: 0.9, ease: EASE_CALM }}>
         {/* Base geography */}
         {base.features.map((f, i) => (
           <path key={i} d={pathGen(f as never) ?? ""} className="fsa" />
         ))}
 
         {/* Heat-risk glow over the top-quintile pockets */}
-        <m.g initial={{ opacity: 0 }} animate={{ opacity: heat }} transition={t0 ?? { duration: 0.7, ease: EASE_CALM }} style={{ pointerEvents: "none" }}>
+        <m.g initial={false} animate={{ opacity: heat }} transition={t0 ?? { duration: 0.7, ease: EASE_CALM }} style={{ pointerEvents: "none" }}>
           {hubs
             .filter((h) => h.hvi >= 4)
             .map((h) => {
@@ -81,7 +81,7 @@ export function MapStage({
         </m.g>
 
         {/* Sparse official anchors — shown only in the GAP step */}
-        <m.g initial={{ opacity: 0 }} animate={{ opacity: official }} transition={t0 ?? { duration: 0.5, ease: EASE_CALM }} style={{ pointerEvents: "none" }}>
+        <m.g initial={false} animate={{ opacity: official }} transition={t0 ?? { duration: 0.5, ease: EASE_CALM }} style={{ pointerEvents: "none" }}>
           {officialPins.map((h) => {
             const pt = proj([h.lon, h.lat]);
             if (!pt) return null;
@@ -106,7 +106,7 @@ export function MapStage({
               cy={pt[1]}
               r={catchmentRadius(proj, h.lon, h.lat)}
               className={`catchment ${sel ? "catchment-sel" : ""}`}
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: sel ? Math.max(rings, 0.7) : rings }}
               transition={t0 ?? { duration: 0.5, ease: EASE_CALM }}
             />
@@ -137,7 +137,7 @@ export function MapStage({
                 }
               }}
               style={{ transformBox: "fill-box", transformOrigin: "center" }}
-              initial={reduced ? false : { opacity: 0, scale: 0.6 }}
+              initial={false}
               animate={{ opacity, scale }}
               transition={
                 reduced
