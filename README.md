@@ -4,7 +4,7 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 
 > Theme: *The Energy to Innovate* — clean energy, smart grid, community equity (Canadian / Ontario context).
 
-> 👋 **Teammates — start here → [ONBOARDING.md](ONBOARDING.md).** How to accept your invite and read the whole project brain (no coding required). The active working packet is [`sanctuary/`](sanctuary/).
+> 👋 **Teammates — start here → [ONBOARDING.md](ONBOARDING.md).** How to accept your invite and read the project (no coding required). The project is [`sanctuary/`](sanctuary/).
 
 | | |
 |---|---|
@@ -47,19 +47,24 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 
 ## Where things live
 
+**The project is [`sanctuary/`](sanctuary/).** Everything else is reference, state, or history.
+
 | If you want… | Open |
 |---|---|
-| **The active Sanctuary submission** — data, StoryMap script, methods, judge Q&A | [`sanctuary/`](sanctuary/) |
-| **The cut Valley candidate** — docs, engine spike, demo UI | [`valley/`](valley/) |
+| **The project — Sanctuary** (data, StoryMap script, methods, judge Q&A) | [`sanctuary/`](sanctuary/) — start at its README |
+| The plain-English intro + FAQ | [`sanctuary/docs/sanctuary-introduction-faq.md`](sanctuary/docs/sanctuary-introduction-faq.md) |
+| The runnable web map (Next.js) | [`sanctuary/web/`](sanctuary/web/) |
+| The candidate-building data + scoring | [`sanctuary/data/`](sanctuary/data/) |
+| The locked scope + 10-second demo moment | [`.hackathon/scope.md`](.hackathon/scope.md) |
 | Event metadata | [`.hackathon/event.yaml`](.hackathon/event.yaml) |
-| Locked scope (after May 24) | [`.hackathon/scope.md`](.hackathon/scope.md) |
 | Themes verbatim + 15-angle library | [`docs/themes.md`](docs/themes.md) |
-| Pre-event readiness checklist | [`docs/build-readiness.md`](docs/build-readiness.md) |
 | The pattern-break doctrine | [`docs/uniqueness-principles.md`](docs/uniqueness-principles.md) |
 | Day-by-day with `/hackathon:*` mapping | [`docs/timeline.md`](docs/timeline.md) |
 | Ontario energy datasets / APIs | [`docs/energy-domain.md`](docs/energy-domain.md) |
-| Working brain (Obsidian vault) | [`Synergy-v2.0 — Hackathon Brain/index.md`](Synergy-v2.0%20%E2%80%94%20Hackathon%20Brain/index.md) |
 | Pre-event research dossier (1,343 lines) | [`docs/research-dossier.md`](docs/research-dossier.md) |
+| Pre-event readiness checklist | [`docs/build-readiness.md`](docs/build-readiness.md) |
+| The thinking vault (ideas, research, daily log, handoffs) | `Synergy-v2.0 — Hackathon Brain/` → start at `index.md` |
+| **Cut earlier idea** (Valley/Tide) — kept as a fallback, *not* what we're building | [`archive/`](archive/) |
 
 ## Project-local Claude config
 
@@ -69,4 +74,6 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 
 ## Stack
 
-_Not yet scaffolded — happens at `/hackathon:scaffold` after `/hackathon:ideate` picks a preset._
+- **Primary deliverable:** an ArcGIS StoryMap + Web Map (Esri sponsor fit) — the 5-minute qualifier video demos this, not a deployed app. See [`sanctuary/docs/storymap-and-data-guide.md`](sanctuary/docs/storymap-and-data-guide.md).
+- **Supporting web map:** a Next.js app in [`sanctuary/web/`](sanctuary/web/) (`npm install && npm run dev` inside that folder) rendering the Peel HVI + candidate hubs.
+- **Data spine:** hand-verified candidate buildings in [`sanctuary/data/`](sanctuary/data/) (CSV + GeoJSON), sourced per [`docs/peel-fsa-data-note.md`](docs/peel-fsa-data-note.md).

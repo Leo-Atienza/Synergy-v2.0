@@ -14,20 +14,22 @@ updated: 2026-05-25
 | Field | Value |
 |---|---|
 | Today | 2026-05-25 |
-| Phase | Build window — kickoff done; sponsors **Esri + Alectra** confirmed; deliverable = 5-min video + GIS artifacts |
+| **Locked submission** | **Sanctuary** — ranks trusted Peel buildings as candidate resilience hubs. Folder: [`../sanctuary/`](../sanctuary/). Locked 2026-05-25 ([[20-ideas/seed-g-sanctuary\|seed card]]). |
+| Phase | Build / qualifier-video prep |
 | Days to submission | **~1 — qualifier video due May 26 23:59 ET** (confirmed: Opening Day deck slide 9) |
 | Rubric | **5 axes** (confirmed): Innovation · Impact · Technical · Presentation · Collaboration — *"AI slop disqualifies"* |
 | Sponsors | **Esri** (ArcGIS; free Seneca org + Esri-Canada mentors) · **Alectra** (Peel/GGH; GRE&T grid-edge). SSF = student federation. |
-| Candidates | 8 carded seeds scored ([[20-ideas/scored-ideas\|scored-ideas]]). Pre-kickoff lead **[[20-ideas/seed-d-tide\|Tide]]** (94, Theme 2). Round-3 Theme-3: **[[20-ideas/seed-g-sanctuary\|Sanctuary]]** (90 — lead Theme-3 pick) · [[20-ideas/seed-h-thaw\|Thaw]] (79, wounded). Re-score vs 5 axes before lock. |
+| Candidates (history) | 8 carded seeds scored ([[20-ideas/scored-ideas\|scored-ideas]]). Pre-kickoff lead was **[[20-ideas/seed-d-tide\|Tide]]** (94, Theme 2) — **cut and archived** to [`../archive/valley/`](../archive/valley/). Theme-3 **[[20-ideas/seed-g-sanctuary\|Sanctuary]]** (90) won the lock; [[20-ideas/seed-h-thaw\|Thaw]] (79) parked. |
 | Mode | **Team** — size + members TBD via `/hackathon:team` |
-| Theme | **leaning Theme 3** (Community Energy, Equity & Sustainability) |
-| Stack preset | likely **Esri ArcGIS StoryMap/Dashboard** for Theme 3 (confirm at `/hackathon:scope`) |
-| Demo moment | undecided (set at `/hackathon:scope`) |
-| Live URL | none (set at `/hackathon:scaffold`) |
+| Theme | **Theme 3** (Community Energy, Equity & Sustainability) · Problem Statement 2 |
+| Stack | **Esri ArcGIS StoryMap + Web Map** (primary deliverable) + supporting Next.js map in [`../sanctuary/web/`](../sanctuary/web/) |
+| Demo moment | **Locked** — HVI hot spot → named candidate hub (Malton Community Centre & Library) → honesty-labelled panel → ranked top five. Full script: [`../.hackathon/scope.md`](../.hackathon/scope.md). |
+| Live URL | none (deliverable is the video, not a deployed app) |
 
 ## Operational source-of-truth (canonical, in `../docs/` and `../.hackathon/`)
 
-- [**Tide candidate folder**](../tide/) — docs + engine spike + demo UI for the lead candidate (consolidated into `tide/` on 2026-05-22)
+- [**Sanctuary project folder**](../sanctuary/) — the active submission: data, StoryMap script, web map, methods, judge Q&A
+- [Cut Valley candidate (archived)](../archive/valley/) — the earlier Tide/Valley lead, kept as a fallback only
 - [Event facts](../docs/seneca-hackathon-context.md) — name, host, format, logistics, contact, open questions
 - [Themes verbatim](../docs/themes.md) — all 3 challenge categories + angle libraries
 - [Timeline + ATLAS map](../docs/timeline.md) — day-by-day with command mapping

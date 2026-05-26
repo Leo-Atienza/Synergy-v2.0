@@ -1,5 +1,7 @@
 # Valley
 
+> **⛔ ARCHIVED — cut candidate, not the active submission.** Valley was the earlier lead; it was cut on 2026-05-25 when **Sanctuary** became the locked submission. The active project is [`../../sanctuary/`](../../sanctuary/). Valley is kept here as a working fallback only. See [`../README.md`](../README.md).
+
 Grid-aware load shifting for Ontario renters. A ~$25 smart plug + software that runs a small appliance at the **3.9¢ overnight** hour instead of the **39.1¢ dinnertime** peak, plus a Peel energy-burden map that shows who the plug can help and who needs a policy fix.
 
 This folder is everything Valley. Some older files and code still say **Tide**; that was the earlier name.

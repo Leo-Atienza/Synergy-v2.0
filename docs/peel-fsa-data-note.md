@@ -9,7 +9,9 @@ Statistics Canada released all of this data under the **Statistics Canada Open L
 
 ---
 
-## File 1 — Geometry: `valley/tide-web/public/peel-fsa.geojson`
+## File 1 — Geometry: `sanctuary/web/public/peel-fsa.geojson`
+
+> Active copy lives in the Sanctuary app at `sanctuary/web/public/peel-fsa.geojson`. It originated in the now-archived Valley build (`archive/valley/tide-web/public/peel-fsa.geojson`).
 
 | Field | Value |
 |---|---|
@@ -33,7 +35,7 @@ We did not need the GitHub mirror fallback. The StatCan shapefile downloaded and
 
 ---
 
-## File 2 — Attributes: `valley/tide-web/lib/peel-fsa-raw.json`
+## File 2 — Attributes: `archive/valley/tide-web/lib/peel-fsa-raw.json`
 
 | Field | Value |
 |---|---|
