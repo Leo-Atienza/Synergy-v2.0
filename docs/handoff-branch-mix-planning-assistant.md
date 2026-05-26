@@ -11,6 +11,18 @@ Live and verified at **https://sanctuary-phi.vercel.app** and
 **https://project-sanctuary-seneca.vercel.app**. Nothing is broken. The items below are
 non-blocking follow-ups — do them in any order.
 
+## Progress update (2026-05-26, same session — the two easy items got done)
+
+Open items **#1 and #2 below are now DONE**:
+- **#1 ✅** `CLAUDE.md` deploy line fixed (commit `72765a1`) — now states the manual
+  `vercel deploy --prod --yes` workflow + the env-var-redeploy caveat; no false "auto-deploy".
+- **#2 ✅** Checklist UI verified on the dev server: selecting Malton → clicking the button
+  loads the static checklist (5 checks, source-basis tags, verified/modelled/pending labels,
+  `GEMINI-ASSISTED` + `NOT ENGINEERING ADVICE` badges), button flips to "Checklist loaded from
+  static review", **zero console errors**, offline/demo-safe. (Screenshot taken; not committed.)
+
+**Remaining for the next session: #3 (decide the unused live route) and #4 (ArcGIS video).**
+
 ## What shipped this session
 
 1. `feat/sanctuary-build` (4 commits, `8ffff00`..`7a88308`) fast-forwarded into `main`:
