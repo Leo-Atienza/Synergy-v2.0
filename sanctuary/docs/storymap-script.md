@@ -4,6 +4,10 @@
 
 Open on the Peel Heat Vulnerability Index.
 
+Use the current Sanctuary Web Map as the working artifact:
+
+`https://senecatechnology.maps.arcgis.com/apps/mapviewer/index.html?webmap=17951a55fae44a83a330101433dda67a`
+
 Copy:
 
 > Heat risk in Peel is not evenly distributed. The red areas combine hotter surroundings, higher sensitivity, and lower adaptive capacity.
@@ -11,7 +15,8 @@ Copy:
 Visual:
 
 - Full Peel HVI map.
-- One Brampton or Malton high-risk area labelled.
+- HVI indicators available for narration: overall HVI, Exposure, Sensitivity, Adaptive Capacity.
+- One Malton high-risk area labelled.
 
 ## Section 2 — Shelter Access Is Also Uneven
 
@@ -24,6 +29,7 @@ Copy:
 Visual:
 
 - Public/civic facilities layer.
+- If available, use official cooling/public facilities as the "current network" layer.
 - Short caption: "The network exists. It is incomplete."
 
 ## Section 3 — Trusted Buildings Are Infrastructure
@@ -37,6 +43,7 @@ Copy:
 Visual:
 
 - Libraries, recreation centres, gurdwaras, mosques, mandirs, churches.
+- Use the Web Map's Welcome Spaces / Places of Worship layer as the trust-network context.
 - Avoid stock photos. Use labels and map points.
 
 ## Section 4 — Hero Click
@@ -67,6 +74,7 @@ Panel fields:
 - reachable population estimate;
 - roof/hardening class;
 - why it ranks high.
+- source URL.
 
 ## Section 5 — Ranked Five
 
@@ -85,6 +93,12 @@ Table:
 | 3 | Susan Fennell Sportsplex | HVI 5, large Brampton civic facility. |
 | 4 | Anjuman-E-Anwarul Islam of Malton | HVI 4, adaptive-capacity quintile 5, trusted community site. |
 | 5 | Bharat Mata Mandir | Exposure quintile 5, faith/community site; keep labelled as candidate pending catchment check. |
+
+Visual:
+
+- Make ranked pins #1 to #5 visually distinct.
+- Keep the ranked table visible long enough to read names, not just numbers.
+- If ArcGIS popup styling cannot be changed in time, use the Next.js showcase map for this exact ranked reveal.
 
 ## Section 6 — Real vs Estimated
 
@@ -112,7 +126,20 @@ Requires site verification:
 - willingness to participate;
 - engineering feasibility.
 
-## Section 7 — The Ask
+## Section 7 — Future Scalability
+
+Copy:
+
+> First, Sanctuary earns trust as a siting layer. Then it can add feasibility, funding, and operations.
+
+Future layers:
+
+- feasibility: owner/operator, accessibility, cooling capacity, roof and electrical readiness;
+- funding: grants, CEITC/CTITC eligibility, rough capital cost ranges;
+- operations: hub status, supplies, staffing, outage readiness;
+- energy: eventual microgrid/VPP telemetry only after real systems exist.
+
+## Section 8 — The Ask
 
 Copy:
 

@@ -51,6 +51,8 @@ On 2026-05-25, the seed candidate addresses were geocoded with the ArcGIS World 
 
 This pass changed the hero from Gore Meadows to **Malton Community Centre and Library** because Malton Community Centre geocoded into HVI quintile 5, while Gore Meadows geocoded into HVI quintile 2.
 
+**Re-verified 2026-05-26 (live, anonymous).** All 10 candidates were re-queried against the public service `services6.arcgis.com/ONZht79c8QWuX759/.../Extreme_Heat_Vulnerability_Index/FeatureServer/0` (layer `hvi_ct2021`, no token required). **Every value in `candidate-hubs.csv` — `hvi_quintile`, all three sub-quintiles, `ctuid`, `phdz`, `municipality` — reproduced exactly.** Malton confirmed `Index_Qnt=5`, PHDZ M-04, CT 5350530.01; Gore Meadows confirmed `Index_Qnt=2`. Note: the adaptive-capacity field's service alias is literally "Adaptivity Capacity (Quintile)" (Peel's typo), field name `Adaptivity_Qnt`. For raw-JSON proof, the query URLs return JSON in a browser with no sign-in. Full record: [`../../docs/showcase-research-2026-05-26.md`](../../docs/showcase-research-2026-05-26.md) Part B.
+
 ## HVI Field + Palette Reference
 
 Pulled from the public Peel HVI Web Map config (item `d1adca8a3b1e403483e608040734c07a`) on 2026-05-25. The Web Map's four layers ("Heat Vulnerability Index", "Exposure", "Sensitivity", "Adaptive Capacity") are the **same** feature service styled four ways — all point to `Extreme_Heat_Vulnerability_Index/FeatureServer/0` (public, census-tract polygons, 2021 boundaries, classified by quintile).

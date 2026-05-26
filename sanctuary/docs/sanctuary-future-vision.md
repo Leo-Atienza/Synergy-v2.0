@@ -24,7 +24,7 @@ Sanctuary cross-references HVI with the Ontario Marginalization Index (ON-Marg) 
 
 ### 2. A Tiered Network of Trust
 
-Building on municipal frameworks like the Brampton Lighthouse Project, which identified 79 local places of worship as effective emergency rendezvous points `[3]`, Sanctuary organizes community infrastructure into a manageable tiered network:
+Building on municipal frameworks like the Brampton Lighthouse Project — which enrolls local faith buildings as emergency reception sites (Brampton has roughly **79 registered places of worship** citywide; **39 are signed Lighthouse partners**, up from about 20) ([Canada in a Changing Climate](https://changingclimate.ca/map/brampton-lighthouse-project/)) — Sanctuary organizes community infrastructure into a manageable tiered network. Lighthouse sites are *unpowered* refuge points; Sanctuary hardens them with solar and storage so they keep power and cooling **when the grid fails**:
 
 - **Tier 1 Primary Hubs:** Secular, municipally supported anchors such as public libraries and recreation centers `[5]`.
 - **Tier 2 Secondary Hubs:** High-trust, neighborhood-embedded sites such as mosques, gurdwaras, churches, mandirs, and NGO facilities `[1]`.
@@ -44,7 +44,7 @@ For the hackathon, this energy panel should be framed as a **modelled planning l
 
 Sanctuary treats financing as part of the resilience plan, not an afterthought. The physical retrofitting of community spaces may be supported by federal clean-energy funding mechanisms.
 
-The Clean Technology Investment Tax Credit (CTITC) provides up to a 30% refundable credit for eligible clean-energy property `[source needed]`. The Clean Electricity Investment Tax Credit (CEITC) offers a 15% refundable tax credit that can be accessible to tax-exempt entities, including municipalities, charities, and Indigenous-owned corporations `[source needed]`.
+The key nuance — and the financing layer's actual logic — is **which credit a community building can claim**. The Clean Technology Investment Tax Credit (CTITC) provides up to a 30% refundable credit for eligible clean-energy property, but it is claimable **only by taxable Canadian corporations** — tax-exempt entities are excluded ([CRA — Clean Technology ITC](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-technology-itc.html)). The Clean Electricity Investment Tax Credit (CEITC) offers a **15% refundable** credit and is the **one clean-economy ITC accessible to tax-exempt entities** — municipalities, charities, Crown utilities, and Indigenous-owned corporations ([CRA — Clean Electricity ITC](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-electricity-investment-tax-credit.html); enacted via Bill C-15, Royal Assent 2026-03-26). So a gurdwara, library, or municipal rec centre realistically reaches the **15% CEITC**, not the 30% CTITC — unless the project is structured through a taxable entity. Federal program capital (e.g. NRCan's [Smart Renewables and Electrification Pathways](https://natural-resources.canada.ca/climate-change/sreps)) can stack on top.
 
 That matters because many of the most trusted community buildings are not conventional private-sector energy customers. Sanctuary's financing layer helps emergency planners see which sites are not only socially valuable, but also financially plausible.
 
@@ -83,9 +83,9 @@ For the hackathon, this should be presented as the **future operating model**, w
 
 ### How will municipalities or non-profits pay for the solar panels and batteries?
 
-The upfront capital costs can be reduced by federal clean-energy incentives. The Clean Electricity Investment Tax Credit (CEITC) can help tax-exempt organizations, such as municipal governments and community charities, access a 15% refundable tax credit for clean-electricity investments `[source needed]`.
+The upfront capital costs can be reduced by federal clean-energy incentives — but eligibility decides which one applies. The **Clean Electricity Investment Tax Credit (CEITC)** is the one that fits most community buildings: a **15% refundable** credit explicitly accessible to **tax-exempt** organizations like municipal governments, charities, and Indigenous-owned corporations ([CRA](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-electricity-investment-tax-credit.html)).
 
-The Clean Technology Investment Tax Credit (CTITC) can provide up to a 30% credit for eligible clean-energy equipment `[source needed]`.
+The **Clean Technology Investment Tax Credit (CTITC)** can provide up to **30%**, but only to **taxable Canadian corporations** — tax-exempt owners are excluded ([CRA](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-technology-itc.html)). A community-owned hub reaches the 30% rate only if the asset is structured through a taxable project entity.
 
 ### What is the hackathon version of Sanctuary?
 
