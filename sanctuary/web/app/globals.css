@@ -12,7 +12,7 @@
   --panel: #16222f;
   --ink: #eaf1f6;
   --ink-dim: #9fb3c2;
-  --ink-faint: #6c8294;
+  --ink-faint: #88a0b2;
   --ember: #e07533;
   --ember-hot: #d8392b;
   --cool: #5a8f8a;
@@ -971,6 +971,7 @@ h3 {
   font-size: 0.78rem;
   font-weight: 600;
   white-space: nowrap;
+  color: var(--text-muted);
 }
 .ranked-note {
   margin: 12px 6px 2px;

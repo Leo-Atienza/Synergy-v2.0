@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import type { Hub } from "@/lib/hubs";
 import { HVI_COLORS } from "@/lib/hubs";
-import type { FeatureCollectionLike } from "@/lib/map";
+import type { MapData } from "@/lib/map-constants";
 import { LazyMotion, domAnimation, useReducedMotion, STEP } from "@/lib/motion";
 import { STEPS } from "@/lib/content";
 import { useScrollSteps } from "@/hooks/useScrollSteps";
@@ -13,13 +13,11 @@ import { RankedList } from "@/components/RankedList";
 import { CandidateTable } from "@/components/CandidateTable";
 import { EVIDENCE_ICON } from "@/components/icons";
 
-type Base = FeatureCollectionLike & { features: { geometry: unknown }[] };
-
 // The one client island. Owns selectedRank + the scroll step.
 // `live` (desktop + motion-OK) turns on the sticky scrollytelling; otherwise the
 // same DOM reflows (CSS) into a stacked, fully-readable explore view — the
 // reduced-motion / no-JS / mobile fallback. The map never unmounts between them.
-export function ScrollStage({ base, hubs }: { base: Base; hubs: Hub[] }) {
+export function ScrollStage({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }) {
   const reduced = useReducedMotion() ?? false;
   const [live, setLive] = useState(false);
   const [selectedRank, setSelectedRank] = useState(1);
@@ -65,7 +63,9 @@ export function ScrollStage({ base, hubs }: { base: Base; hubs: Hub[] }) {
         <div className="scroll-map">
           <div className="map-wrap">
             <MapStage
-              base={base}
+              fsaPaths={mapData.fsaPaths}
+              points={mapData.points}
+              zoom={mapData.zoom}
               hubs={hubs}
               selectedRank={selectedRank}
               onSelect={setSelectedRank}

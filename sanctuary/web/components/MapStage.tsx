@@ -3,16 +3,17 @@
 import { useMemo } from "react";
 import type { Hub } from "@/lib/hubs";
 import { HVI_COLORS, HVI_LABEL } from "@/lib/hubs";
-import { W, H, makeProjection, makePath, catchmentRadius, zoomTo, ZOOM_IDENTITY, type FeatureCollectionLike } from "@/lib/map";
+import { W, H, ZOOM_IDENTITY, type MapPoint } from "@/lib/map-constants";
 import { m, STEP, EASE_POP, EASE_CALM, dealDelay } from "@/lib/motion";
 
-type Base = FeatureCollectionLike & { features: { geometry: unknown }[] };
-
-// The one signature map. `live` is true only during active, motion-OK
-// scrollytelling; otherwise the map renders the calm "explore everything" state,
-// which is also the reduced-motion / no-JS / mobile fallback.
+// The one signature map. Renders precomputed (build-time) path strings + projected
+// points — no d3-geo in the browser. `live` is true only during active, motion-OK
+// scrollytelling; otherwise it renders the calm "explore everything" state, which
+// is also the reduced-motion / no-JS / mobile fallback.
 export function MapStage({
-  base,
+  fsaPaths,
+  points,
+  zoom,
   hubs,
   selectedRank,
   onSelect,
@@ -20,7 +21,9 @@ export function MapStage({
   live,
   reduced,
 }: {
-  base: Base;
+  fsaPaths: string[];
+  points: MapPoint[];
+  zoom: { x: number; y: number; scale: number };
   hubs: Hub[];
   selectedRank: number;
   onSelect: (rank: number) => void;
@@ -28,10 +31,7 @@ export function MapStage({
   live: boolean;
   reduced: boolean;
 }) {
-  const proj = useMemo(() => makeProjection(base), [base]);
-  const pathGen = useMemo(() => makePath(proj), [proj]);
-  const top5 = hubs.slice(0, 5);
-  const malton = hubs.find((h) => h.rank === 1) ?? hubs[0];
+  const xy = useMemo(() => new Map(points.map((p) => [p.rank, p])), [points]);
 
   const explore = !live;
   const s = currentStep;
@@ -41,12 +41,10 @@ export function MapStage({
   const rings = explore ? 0.5 : s === STEP.CANDIDATES ? 0.85 : s >= STEP.DEAL ? 0.4 : 0;
   const dealt = !explore && s >= STEP.DEAL;
 
-  // Transform-only pan+zoom to Malton at the ZOOM step (live only).
-  const maltonPt = proj([malton.lon, malton.lat]);
-  const zoom = !explore && s === STEP.ZOOM && maltonPt ? zoomTo(maltonPt[0], maltonPt[1], 1.9) : ZOOM_IDENTITY;
+  const zoomT = !explore && s === STEP.ZOOM ? zoom : ZOOM_IDENTITY;
   const t0 = reduced ? { duration: 0 } : undefined;
 
-  // The two community-centre-libraries stand in as sparse "official" anchors.
+  const top5 = hubs.filter((h) => h.rank <= 5);
   const officialPins = hubs.filter((h) => h.typeLabel.toLowerCase().includes("library"));
 
   return (
@@ -63,10 +61,10 @@ export function MapStage({
         </radialGradient>
       </defs>
 
-      <m.g initial={false} animate={zoom} transition={reduced ? { duration: 0 } : { duration: 0.9, ease: EASE_CALM }}>
+      <m.g initial={false} animate={zoomT} transition={reduced ? { duration: 0 } : { duration: 0.9, ease: EASE_CALM }}>
         {/* Base geography */}
-        {base.features.map((f, i) => (
-          <path key={i} d={pathGen(f as never) ?? ""} className="fsa" />
+        {fsaPaths.map((d, i) => (
+          <path key={i} d={d} className="fsa" />
         ))}
 
         {/* Heat-risk glow over the top-quintile pockets */}
@@ -74,21 +72,21 @@ export function MapStage({
           {hubs
             .filter((h) => h.hvi >= 4)
             .map((h) => {
-              const pt = proj([h.lon, h.lat]);
-              if (!pt) return null;
-              return <circle key={`glow-${h.rank}`} cx={pt[0]} cy={pt[1]} r={h.hvi === 5 ? 46 : 30} fill="url(#heatGlow)" />;
+              const p = xy.get(h.rank);
+              if (!p) return null;
+              return <circle key={`glow-${h.rank}`} cx={p.x} cy={p.y} r={h.hvi === 5 ? 46 : 30} fill="url(#heatGlow)" />;
             })}
         </m.g>
 
         {/* Sparse official anchors — shown only in the GAP step */}
         <m.g initial={false} animate={{ opacity: official }} transition={t0 ?? { duration: 0.5, ease: EASE_CALM }} style={{ pointerEvents: "none" }}>
           {officialPins.map((h) => {
-            const pt = proj([h.lon, h.lat]);
-            if (!pt) return null;
+            const p = xy.get(h.rank);
+            if (!p) return null;
             return (
               <g key={`official-${h.rank}`}>
-                <circle cx={pt[0]} cy={pt[1]} r={18} className="official-ring" />
-                <circle cx={pt[0]} cy={pt[1]} r={6} className="official-dot" />
+                <circle cx={p.x} cy={p.y} r={18} className="official-ring" />
+                <circle cx={p.x} cy={p.y} r={6} className="official-dot" />
               </g>
             );
           })}
@@ -96,15 +94,15 @@ export function MapStage({
 
         {/* Modelled 500 m catchment rings (top five) */}
         {top5.map((h) => {
-          const pt = proj([h.lon, h.lat]);
-          if (!pt) return null;
+          const p = xy.get(h.rank);
+          if (!p) return null;
           const sel = h.rank === selectedRank;
           return (
             <m.circle
               key={`catchment-${h.rank}`}
-              cx={pt[0]}
-              cy={pt[1]}
-              r={catchmentRadius(proj, h.lon, h.lat)}
+              cx={p.x}
+              cy={p.y}
+              r={p.r}
               className={`catchment ${sel ? "catchment-sel" : ""}`}
               initial={false}
               animate={{ opacity: sel ? Math.max(rings, 0.7) : rings }}
@@ -115,8 +113,8 @@ export function MapStage({
 
         {/* Candidate pins */}
         {hubs.map((h) => {
-          const pt = proj([h.lon, h.lat]);
-          if (!pt) return null;
+          const p = xy.get(h.rank);
+          if (!p) return null;
           const sel = h.rank === selectedRank;
           const isTop5 = h.rank <= 5;
           const recede = dealt && !isTop5;
@@ -145,9 +143,9 @@ export function MapStage({
                   : { duration: 0.45, ease: dealt && isTop5 ? EASE_POP : EASE_CALM, delay: dealt ? dealDelay(Math.min(h.rank, 5)) : 0 }
               }
             >
-              <circle cx={pt[0]} cy={pt[1]} r={sel ? 13 : 9} fill={HVI_COLORS[h.hvi]} className="pin-dot" />
+              <circle cx={p.x} cy={p.y} r={sel ? 13 : 9} fill={HVI_COLORS[h.hvi]} className="pin-dot" />
               {isTop5 && (
-                <text x={pt[0]} y={pt[1]} className="pin-rank tnum" dy="0.35em">
+                <text x={p.x} y={p.y} className="pin-rank tnum" dy="0.35em">
                   {h.rank}
                 </text>
               )}

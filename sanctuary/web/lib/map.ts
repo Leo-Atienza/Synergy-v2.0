@@ -1,50 +1,37 @@
-// Pure map projection + geometry helpers (extracted verbatim in behaviour from
-// the original page.tsx). No React, no side effects — safe to share between the
-// client island and any build-time use.
+// Map projection — computed ONCE at build in the RSC shell (server only; this
+// module imports d3-geo). The client island receives plain serializable path
+// strings + projected points from lib/map-constants, so d3-geo never ships to
+// the browser and the projection never runs at hydration.
 
-import { geoMercator, geoPath, type GeoProjection, type GeoPath } from "d3-geo";
+import { geoMercator, geoPath } from "d3-geo";
+import type { Hub } from "./hubs";
+import { W, H, type MapData, type MapPoint } from "./map-constants";
 
-// SVG user-space dimensions. The viewBox is fixed at "0 0 W H"; pan/zoom happens
-// via a transform on the content group, so nothing animates width/top/left.
-export const W = 760;
-export const H = 720;
+const round = (n: number) => Math.round(n * 100) / 100;
 
-export type FeatureCollectionLike = {
-  type: "FeatureCollection";
-  features: unknown[];
-};
-
-// Fit the Mercator projection to the Peel base geometry so candidate lon/lat
-// land in the right place. 24px inset matches the original.
-export function makeProjection(base: FeatureCollectionLike): GeoProjection {
-  return geoMercator().fitExtent(
+export function projectMap(base: { features: unknown[] }, hubs: Hub[]): MapData {
+  const proj = geoMercator().fitExtent(
     [
       [24, 24],
       [W - 24, H - 24],
     ],
     base as never,
   );
-}
+  const path = geoPath(proj);
 
-export function makePath(proj: GeoProjection): GeoPath {
-  return geoPath(proj);
-}
+  const fsaPaths = base.features.map((f) => path(f as never) ?? "");
 
-// Pixel radius of a modelled 500 m catchment, from a ~0.0045° north offset.
-// Floored at 14px so it never collapses to a dot at this projection scale.
-export function catchmentRadius(proj: GeoProjection, lon: number, lat: number): number {
-  const center = proj([lon, lat]);
-  const north = proj([lon, lat + 0.0045]);
-  if (!center || !north) return 0;
-  return Math.max(14, Math.abs(center[1] - north[1]));
-}
+  // Each hub's projected centre + the pixel radius of a modelled 500 m catchment
+  // (a ~0.0045° north offset), floored at 14px.
+  const points: MapPoint[] = hubs.map((h) => {
+    const pt = proj([h.lon, h.lat]) ?? [0, 0];
+    const north = proj([h.lon, h.lat + 0.0045]) ?? pt;
+    return { rank: h.rank, x: round(pt[0]), y: round(pt[1]), r: round(Math.max(14, Math.abs(pt[1] - north[1]))) };
+  });
 
-// Transform that pans+zooms the content group so a point lands at the viewport
-// centre at scale `k`. With transform-origin 0,0 the composite is T(x,y)·S(k):
-// a point p maps to (x + k·px, y + k·py); solving for centre gives x,y below.
-// Returned as Motion-friendly { x, y, scale } so the zoom is transform-only.
-export function zoomTo(px: number, py: number, k: number): { x: number; y: number; scale: number } {
-  return { x: W / 2 - k * px, y: H / 2 - k * py, scale: k };
-}
+  const malton = points.find((p) => p.rank === 1) ?? points[0];
+  const k = 1.9;
+  const zoom = { x: round(W / 2 - k * malton.x), y: round(H / 2 - k * malton.y), scale: k };
 
-export const ZOOM_IDENTITY = { x: 0, y: 0, scale: 1 } as const;
+  return { fsaPaths, points, zoom };
+}

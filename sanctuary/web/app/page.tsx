@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { toHub, type Hub, type HubGeo } from "@/lib/hubs";
+import { projectMap } from "@/lib/map";
 import { Masthead } from "@/components/Masthead";
 import { Hero } from "@/components/Hero";
 import { ScrollStage } from "@/components/ScrollStage";
@@ -29,6 +30,8 @@ export default function Page() {
   const hubs: Hub[] = loadJson<HubGeo>("candidate-hubs.geojson")
     .features.map(toHub)
     .sort((a, z) => a.rank - z.rank);
+  // Project once, at build — the client island receives only path strings + points.
+  const mapData = projectMap(base, hubs);
 
   return (
     <main className="page">
@@ -45,7 +48,7 @@ export default function Page() {
             ending on Malton. Click any pin or row to interrogate the score.
           </p>
         </div>
-        <ScrollStage base={base} hubs={hubs} />
+        <ScrollStage mapData={mapData} hubs={hubs} />
       </section>
 
       <MethodSection />

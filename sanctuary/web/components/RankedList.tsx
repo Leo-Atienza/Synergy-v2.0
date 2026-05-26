@@ -1,7 +1,6 @@
 "use client";
 
 import type { Hub } from "@/lib/hubs";
-import { HVI_COLORS } from "@/lib/hubs";
 
 // The ranked top-five. Shares selectedRank with the map for cross-highlight.
 export function RankedList({
@@ -26,9 +25,7 @@ export function RankedList({
         >
           <span className="ranked-num tnum">{h.rank}</span>
           <span className="ranked-name">{h.name}</span>
-          <span className="ranked-hvi tnum" style={{ color: HVI_COLORS[h.hvi] }}>
-            HVI {h.hvi}
-          </span>
+          <span className="ranked-hvi tnum">HVI {h.hvi}</span>
         </button>
       ))}
       <p className="ranked-note">Rank is hand-verified. A building cannot enter the top five from a modelled estimate alone.</p>
