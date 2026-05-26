@@ -51,8 +51,8 @@ timeline:                               # RE-BASED 2026-05-25 to the confirmed M
   pitch_practiced_by: "2026-05-29T20:00:00-04:00"   # night before finale (only if finalist)
 
 deploy:
-  platform: ""                          # vercel | eas | netlify — set at /hackathon:scaffold
-  live_url: ""                          # captured after /hackathon:scaffold
+  platform: "vercel"                    # Vercel Hobby (free); project "sanctuary" under team leo-atienzas-projects-0eb755c3, root = sanctuary/web
+  live_url: "https://sanctuary-phi.vercel.app"   # showcase site (support backup for the ArcGIS StoryMap qualifier); deployed from feat/showcase-rebuild
   final_commit_sha: ""                  # frozen by /hackathon:demo
   github_url: "https://github.com/Leo-Atienza/Synergy-v2.0"  # private repo — teammates need a collaborator invite (see ONBOARDING.md)
 
