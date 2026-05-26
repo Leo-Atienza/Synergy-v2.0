@@ -56,7 +56,7 @@ deploy:
   final_commit_sha: ""                  # frozen by /hackathon:demo
   github_url: "https://github.com/Leo-Atienza/Synergy-v2.0"  # private repo — teammates need a collaborator invite (see ONBOARDING.md)
 
-stack_preset: ""                        # web-ai | saas | mobile | data-viz | agent (set at /hackathon:ideate)
+stack_preset: "data-viz"                # ArcGIS StoryMap + Web Map (primary deliverable) + supporting Next.js map in sanctuary/web; locked 2026-05-25 with Sanctuary
 
 # ---
 # Phase structure (informational, not consumed by /hackathon:* commands):

@@ -347,7 +347,7 @@ flowchart LR
 
 **Approach:**
 - Prepare short answers for: Are these already hubs? Are the solar/battery numbers measured? Why places of worship? Why not just cooling centres? Is this scalable beyond Peel?
-- Replace placeholder citations in `sanctuary/docs/sanctuary-command-center-introduction-faq.md` before using any of that copy in public materials.
+- Replace placeholder citations in `sanctuary/docs/sanctuary-future-vision.md` before using any of that copy in public materials.
 - Keep the pitch grounded in siting and prioritization, not claims of operational control.
 
 **Patterns to follow:**
@@ -396,7 +396,7 @@ flowchart LR
 - Origin document: `sanctuary/docs/developer-build-plan.md`
 - StoryMap guide: `sanctuary/docs/storymap-and-data-guide.md`
 - Simple FAQ: `sanctuary/docs/sanctuary-introduction-faq.md`
-- Command-center FAQ: `sanctuary/docs/sanctuary-command-center-introduction-faq.md`
+- Future-vision doc (formerly "command-center FAQ"): `sanctuary/docs/sanctuary-future-vision.md`
 - Current scope requiring amendment: `.hackathon/scope.md`
 - Theme source: `docs/themes.md`
 - Domain sources: `docs/energy-domain.md`

@@ -9,8 +9,8 @@ This folder is now the **active working packet** after the 2026-05-25 scope amen
 | File | What |
 |---|---|
 | [`docs/sanctuary-introduction-faq.md`](docs/sanctuary-introduction-faq.md) | Plain-English explanation and FAQ for teammates. |
-| [`docs/sanctuary-command-center-introduction-faq.md`](docs/sanctuary-command-center-introduction-faq.md) | Fuller command-center framing with hub network, energy logic, financing, and FAQ. |
-| [`docs/developer-build-plan.md`](docs/developer-build-plan.md) | Build plan if Sanctuary becomes the active project. |
+| [`docs/sanctuary-future-vision.md`](docs/sanctuary-future-vision.md) | The long-term "command-center" vision (hub network, VPP, financing). **Out of build scope** — for the pitch's "where it goes" + judge Q&A only. |
+| [`docs/developer-build-plan.md`](docs/developer-build-plan.md) | The build plan (StoryMap/Web Map, data spine, scoring). |
 | [`docs/storymap-and-data-guide.md`](docs/storymap-and-data-guide.md) | Practical ArcGIS StoryMap, data, and scoring guide. |
 | [`data/candidate-hubs.csv`](data/candidate-hubs.csv) | Seed list of 10 real candidate buildings with address + HVI verification; catchment estimates still pending. |
 | [`data/candidate-hubs.geojson`](data/candidate-hubs.geojson) | Point layer generated from the candidate CSV for ArcGIS import. |
@@ -23,7 +23,7 @@ This folder is now the **active working packet** after the 2026-05-25 scope amen
 ## Start Here
 
 - **Simple intro + FAQ:** [`docs/sanctuary-introduction-faq.md`](docs/sanctuary-introduction-faq.md)
-- **Expanded command-center intro:** [`docs/sanctuary-command-center-introduction-faq.md`](docs/sanctuary-command-center-introduction-faq.md)
+- **Long-term vision (out of build scope):** [`docs/sanctuary-future-vision.md`](docs/sanctuary-future-vision.md)
 - **Build plan:** [`docs/developer-build-plan.md`](docs/developer-build-plan.md)
 - **ArcGIS/data guide:** [`docs/storymap-and-data-guide.md`](docs/storymap-and-data-guide.md)
 - **Execution plan:** [`../docs/plans/2026-05-25-001-feat-sanctuary-activation-plan.md`](../docs/plans/2026-05-25-001-feat-sanctuary-activation-plan.md)

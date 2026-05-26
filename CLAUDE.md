@@ -7,10 +7,11 @@ It inherits from `~/.claude/CLAUDE.md` (global ATLAS rules) and `~/Documents/CLA
 | Field | Value |
 |---|---|
 | Event | Seneca Energy Hackathon 2026 |
-| Theme | energy / sustainability (refine at `/hackathon:init`) |
-| Stack preset | _unset — decided at `/hackathon:ideate`_ |
-| Demo moment | _unset — locked at `/hackathon:scope`_ |
-| State | `.hackathon/event.yaml` |
+| Theme | Theme 3 — Community Energy, Equity & Sustainability (Problem Statement 2) |
+| Project | **Sanctuary** — locked submission ([`sanctuary/`](sanctuary/)) |
+| Stack preset | ArcGIS StoryMap + Web Map (`data-viz`) + supporting Next.js map in `sanctuary/web/` |
+| Demo moment | HVI hot spot → named candidate hub (Malton CC & Library) → honesty-labelled panel → ranked top five |
+| State | `.hackathon/event.yaml` · locked scope `.hackathon/scope.md` |
 
 ---
 
@@ -169,7 +170,11 @@ Inherited from `~/Documents/CLAUDE.md`. Consult before non-trivial answers.
 
 ## Stack-specific rules
 
-_Will be appended once `/hackathon:ideate` picks a preset (web-ai / saas / mobile / data-viz / agent). See `~/.claude/skills/hackathon/references/stack-presets.md` for the per-preset rule packs._
+Locked stack (2026-05-25): **ArcGIS StoryMap + Web Map** is the primary deliverable — the 5-minute qualifier video demos this, not a deployed app. A supporting **Next.js** map lives in [`sanctuary/web/`](sanctuary/web/) (`npm install && npm run dev`).
+
+- The artifact judges see is the StoryMap/Web Map recording. Build that first; treat `sanctuary/web` as the interactive backup, not the deliverable.
+- Every on-screen number must be real (sourced) or labelled an estimate — "AI slop disqualifies" (rubric). See [`sanctuary/docs/methods-note.md`](sanctuary/docs/methods-note.md).
+- Data spine: [`sanctuary/data/`](sanctuary/data/) (CSV + GeoJSON), provenance in [`docs/peel-fsa-data-note.md`](docs/peel-fsa-data-note.md).
 
 ---
 

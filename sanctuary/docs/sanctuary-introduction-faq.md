@@ -94,7 +94,7 @@ Use labels like:
 
 ## 7. Minimum Lovable Version
 
-If Sanctuary becomes active under the short deadline, do not build a full platform.
+Under the short deadline, do not build a full platform.
 
 Build this:
 
@@ -115,13 +115,12 @@ No accounts. No database. No live app required. No pretending the model is a fin
 | OSM misses a major community building | Hand-verify the showcase buildings. |
 | Faith-building framing feels tokenistic | Use asset-based language: trusted community infrastructure, not "vulnerable people need churches." |
 | Too much GIS complexity | Use 500 m buffers instead of Network Analyst if time is tight. |
-| It competes with Valley | Keep this as backup unless scope is amended. |
 
 ## 9. FAQ
 
 ### Is Sanctuary replacing Valley?
 
-No. Not unless scope is amended.
+Yes. As of the 2026-05-25 scope amendment, Sanctuary is the locked submission and Valley is cut (archived to [`../../archive/valley/`](../../archive/valley/)). The two are not run in parallel.
 
 ### What is the user?
 

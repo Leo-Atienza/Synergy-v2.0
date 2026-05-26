@@ -14,6 +14,10 @@ Cut work, kept on purpose. Nothing in here is the active submission.
 - Is the engine real? [`valley/spike/VIABILITY.md`](valley/spike/VIABILITY.md) — proven on live IESO data, 7/7 tests passing
 - Run it: [`valley/docs/tide-dev-guide.md`](valley/docs/tide-dev-guide.md) (paths inside read `valley/...`; prepend `archive/` now that it lives here)
 
+## This is a frozen snapshot
+
+Links *inside* `valley/` still work (the whole folder moved together). Links that point *out* of `valley/` into the live repo (e.g. into `docs/` or `.hackathon/`) are **not maintained** — they reflect the repo as it was before the move and may 404. That's intentional: the archive is a record of the cut idea, not a live document that tracks Sanctuary.
+
 ## Why archive instead of delete
 
 The decision to swap Valley → Sanctuary is recorded in [`../.hackathon/scope-log.md`](../.hackathon/scope-log.md) and [`../sanctuary/README.md`](../sanctuary/README.md). The build artifacts (`node_modules/`, `.next/`) were removed to keep this lean — run `npm install` inside `valley/spike` or `valley/tide-web` to restore them.

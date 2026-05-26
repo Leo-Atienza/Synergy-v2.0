@@ -1,8 +1,8 @@
-# Sanctuary: The Digital Command Center for Community Resilience
+# Sanctuary — Future Vision (the "Command Center" north-star)
 
-> **Active status:** Sanctuary became the active scoped submission after the 2026-05-25 amendment. Valley is cut from the active build.
+> **⚠️ This is the long-term vision, NOT the hackathon build scope.** The command-center, Virtual Power Plant, dispatch, and financing layers below are **explicitly out of scope** for the submission — the locked build only *ranks candidate hubs* (see [`../../.hackathon/scope.md`](../../.hackathon/scope.md), "EXPLICITLY CUT"). For what we're actually building, read **[`sanctuary-introduction-faq.md`](sanctuary-introduction-faq.md)**. Keep this doc for the pitch's "where it goes" closing and judge Q&A on the operating model.
 >
-> **Citation note:** bracketed citations like `[1]` are placeholders from the working draft. Replace them with final source links before using this in a submitted README or video script.
+> **Citation note:** bracketed citations like `[1]` and `[source needed]` are placeholders from the working draft. Replace them with real source links before using any of this copy in public materials.
 
 ## Project Overview
 
