@@ -37,6 +37,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# lighthouse reports (perf testing artifacts)
+lh-*.json
+
 # coverage / test
 coverage/
 .nyc_output/
