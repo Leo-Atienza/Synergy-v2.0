@@ -53,7 +53,7 @@ timeline:                               # RE-BASED 2026-05-25 to the confirmed M
 deploy:
   platform: "vercel"                    # Vercel Hobby (free); project "sanctuary" under team leo-atienzas-projects-0eb755c3, root = sanctuary/web
   live_url: "https://sanctuary-phi.vercel.app"   # showcase site (support backup for the ArcGIS StoryMap qualifier); deployed from feat/showcase-rebuild
-  final_commit_sha: ""                  # frozen by /hackathon:demo
+  final_commit_sha: "de696c4"           # showcase-rebuild tip on feat/showcase-rebuild (Lighthouse: A11y 100 / SEO 100 / Perf 100 unthrottled)
   github_url: "https://github.com/Leo-Atienza/Synergy-v2.0"  # private repo — teammates need a collaborator invite (see ONBOARDING.md)
 
 stack_preset: "data-viz"                # ArcGIS StoryMap + Web Map (primary deliverable) + supporting Next.js map in sanctuary/web; locked 2026-05-25 with Sanctuary
