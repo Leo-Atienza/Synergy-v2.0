@@ -16,7 +16,7 @@ team:
   mode: team                            # solo | team
   size: 5
   members:                              # name every member on screen in the video (Collaboration axis = 20%)
-    - { name: "Cynthia Salazar", role: "Coder / Marketing" }
+    - { name: "Cynthia Salazar", role: "Programmer / Marketing" }
     - { name: "Jackson Li", role: "Project Manager / Engineer" }
     - { name: "Roger Lungsee", role: "Automation Engineer" }
     - { name: "Jhonatan", role: "Programmer" }
