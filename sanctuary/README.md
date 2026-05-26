@@ -1,6 +1,6 @@
 # Sanctuary
 
-Active scoped candidate for Seneca Energy Hackathon 2026, Theme 3. Sanctuary ranks trusted community buildings in Peel as candidate resilience hubs: places to equip with cooling, solar, and battery support before the next heat wave or outage.
+The locked submission for the Seneca Energy Hackathon 2026 — Theme 3, Problem Statement 2. Sanctuary ranks trusted community buildings in Peel as candidate resilience hubs: places to equip with cooling, solar, and battery support before the next heat wave or outage.
 
 This folder is now the **active working packet** after the 2026-05-25 scope amendment. Valley is cut from the active submission; do not run both projects in parallel.
 
@@ -35,8 +35,10 @@ This folder is now the **active working packet** after the 2026-05-25 scope amen
 
 Sanctuary is **not** a Valley feature. It replaced Valley through the 2026-05-25 scope amendment:
 
-- challenge: Theme 3, likely Problem Statement 2;
+- challenge: Theme 3, Problem Statement 2 (locked);
 - pattern-break: Public-Good Frame + Local-Detail;
 - demo moment: heat-vulnerable area -> named trusted building -> honesty-labelled panel -> ranked top five;
-- cut: Valley's ULO plug/map submission.
+- cut: Valley's ULO plug/map submission;
+- support site: built, deployed, verified — [project-sanctuary-seneca.vercel.app](https://project-sanctuary-seneca.vercel.app);
+- ArcGIS: Web Map built ([artifacts/arcgis-links.md](artifacts/arcgis-links.md)); StoryMap + video pending (team recording).
 

@@ -11,6 +11,7 @@ A **scroll-pinned Peel map that performs the decision**: risk (HVI heat-glow) �
 - **No Tailwind.** Hand-written CSS with semantic tokens in `globals.css`. No aceternity / Magic UI / heroui (require Tailwind + read as generated).
 - **Architecture:** RSC server shell (`page.tsx`, all `sections/*`) + ONE `"use client"` island (`ScrollStage`/`MapStage`). Load GeoJSON at build (fs/import), pass as props — no runtime fetch (offline-safe). ArcGIS iframe stays `loading="lazy"`, the only network item.
 - **Reuse verbatim:** `lib/hubs.ts` (`toHub`, `HVI_COLORS`, `HVI_LABEL`, the score `status` field = evidence-key source) + the map primitives (`geoMercator().fitExtent`, `geoPath`, `catchmentRadius`, `mapViewBox`).
+- **Planning-checklist route (`app/api/planning-checklist/route.ts`) = regeneration tool, NOT a live demo dependency** (decision 2026-05-26). The UI reads the static `public/planning-checklists.json` (offline-safe). The Gemini route exists only to *regenerate* that JSON (POST a candidate → review → commit). Do NOT wire it into the live demo path.
 
 ## Design system
 - **Type:** Fraunces (variable serif) for display + the "5"; quiet sans body; **mono for ALL data** (scores, HVI, weights, ranks, addresses, honesty tags). Self-host via `next/font/local` from `app/fonts/`. `font-variant-numeric: tabular-nums` on every aligned/changing number. **Never** change font-weight on hover.

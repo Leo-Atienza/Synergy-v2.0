@@ -34,6 +34,13 @@ Save screenshots in `sanctuary/artifacts/screenshots/`.
 - [ ] Real-vs-estimated section.
 - [ ] Future scalability section.
 
+## Submission Logistics (organizer FAQ — verified 2026-05-26)
+
+- **Where:** "the Hackathon Portal." The link + the FIRM deadline live in your **registration account / organizer email**, not on senecahackathon.com. Get the link before you wrap recording; if you can't find it, email hackathon@senecapolytechnic.ca.
+- **Video cap: hard 5:00.** Normal playback speed — **no speed-ups.** Anything past 5:00 is **not** evaluated. Cut to ≤5:00 (not 6:00).
+- **The video must cover:** team intros + each member's role · the problem + solution · the tech stack with a demo/walkthrough · feasibility + unique value proposition.
+- **Working deadline:** 2026-05-26 23:59 ET (kickoff deck). The website's "May 27–28" is the marketing page — build to the earlier date and confirm the portal's firm time.
+
 ## No-Overclaim Gate
 
 Do not submit if any public copy says or implies:

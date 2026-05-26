@@ -13,9 +13,14 @@ start_iso: "2026-05-24T00:00:00-04:00"  # virtual kickoff
 deadline_iso: "2026-05-26T23:59:00-04:00"  # qualifier video due — CONFIRMED at kickoff (Opening Day deck slide 9). Supersedes the pre-event "May 28 per website" guess. Build to the earlier deadline regardless — missing it = 0 score.
 
 team:
-  mode: team                            # solo | team — change at /hackathon:team
-  size: 0                               # TBD — fill via /hackathon:team
-  members: []                           # TBD — [{name, skills: [], availability_hours: 0}] — fill via /hackathon:team
+  mode: team                            # solo | team
+  size: 5
+  members:                              # name every member on screen in the video (Collaboration axis = 20%)
+    - { name: "Cynthia Salazar", role: "Coder / Marketing" }
+    - { name: "Jackson Li", role: "Project Manager / Engineer" }
+    - { name: "Roger Lungsee", role: "Automation Engineer" }
+    - { name: "Jhonatan", role: "Programmer" }
+    - { name: "Leo Atienza", role: "Claude Power User / Researcher" }
 
 judging:
   format: hybrid                        # qualifier video due May 26 -> finalists revealed May 28 -> in-person finale May 30
@@ -31,15 +36,20 @@ judging:
   required_tech: []                     # none mandated; real-data required - "AI slop in any form will disqualify" (deck)
 
 submission:
-  form_url: ""                          # TBC — likely Devpost or internal Seneca form
-  required_fields:
+  form_url: ""                          # NOT public. Organizer FAQ (verified 2026-05-26) calls it "the Hackathon Portal" — the link + the FIRM deadline live in the team's registration account / organizer email, NOT on senecahackathon.com. ACTION: pull the portal link before recording wraps; if missing, email hackathon@senecapolytechnic.ca
+  required_fields:                      # ASSUMED portal fields (portal not yet seen — confirm on the Hackathon Portal). The video is the primary artifact.
     - description
     - how_it_works
     - inspiration
     - tech_stack
     - video_url
     - screenshots
-  max_video_seconds: 300                # 5-min target; 360s (6 min) hard max - CONFIRMED at kickoff. Deliverable = YouTube video, not a deployed app.
+  max_video_seconds: 300                # HARD 5:00 cap. Organizer FAQ (verified 2026-05-26): "up to 5 minutes", NORMAL playback speed (no speed-ups), anything past 5:00 is NOT evaluated. The pre-event "360s/6-min" note was WRONG — cut to ≤5:00. Deliverable = video, not a deployed app.
+  required_video_content:               # per organizer FAQ (2026-05-26) — the video MUST cover:
+    - "team introductions + each member's role"   # Collaboration axis (20%) — names on screen
+    - "the problem + the proposed solution"
+    - "the tech stack, with a demo or walkthrough"
+    - "feasibility + unique value proposition"
 
 timeline:                               # RE-BASED 2026-05-25 to the confirmed May 26 23:59 qualifier deadline
   ideate_by: "2026-05-22"               # done; amended 2026-05-25 to Sanctuary, Theme 3 PS2
@@ -51,9 +61,12 @@ timeline:                               # RE-BASED 2026-05-25 to the confirmed M
   pitch_practiced_by: "2026-05-29T20:00:00-04:00"   # night before finale (only if finalist)
 
 deploy:
-  platform: "vercel"                    # Vercel Hobby (free); project "sanctuary" under team leo-atienzas-projects-0eb755c3, root = sanctuary/web
-  live_url: "https://sanctuary-phi.vercel.app"   # showcase site (support backup for the ArcGIS StoryMap qualifier); deployed from feat/showcase-rebuild
-  final_commit_sha: "de696c4"           # showcase-rebuild tip on feat/showcase-rebuild (Lighthouse: A11y 100 / SEO 100 / Perf 100 unthrottled)
+  platform: "vercel"                    # Vercel Hobby (free); project "sanctuary" under team leo-atienzas-projects-0eb755c3, root = sanctuary/web. Deploy is MANUAL (`vercel deploy --prod --yes` from sanctuary/web) — no Git auto-deploy; env-var changes need a redeploy.
+  live_url: "https://sanctuary-phi.vercel.app"        # support showcase + clickable recording backup (the judged artifact is the ArcGIS StoryMap video)
+  live_url_alias: "https://project-sanctuary-seneca.vercel.app"  # nicer alias for the Seneca submission; same prod deploy
+  deployed_from: "main (manual vercel deploy --prod)" # was feat/showcase-rebuild, now merged to main
+  prod_code_commit: "d880035"           # last CODE commit; live prod serves this. Commits since are docs-only and do NOT auto-deploy.
+  final_commit_sha: ""                  # FREEZE at submission: `git tag v1-submission <sha> && git push origin v1-submission`
   github_url: "https://github.com/Leo-Atienza/Synergy-v2.0"  # private repo — teammates need a collaborator invite (see ONBOARDING.md)
 
 stack_preset: "data-viz"                # ArcGIS StoryMap + Web Map (primary deliverable) + supporting Next.js map in sanctuary/web; locked 2026-05-25 with Sanctuary

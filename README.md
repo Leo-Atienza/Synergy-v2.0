@@ -9,19 +9,20 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 | | |
 |---|---|
 | **Repo** | [github.com/Leo-Atienza/Synergy-v2.0](https://github.com/Leo-Atienza/Synergy-v2.0) |
-| **Live URL** | _set at `/hackathon:scaffold`_ |
-| **Demo video** | _set at `/hackathon:demo`_ |
-| **Final commit** | _frozen at `/hackathon:demo`_ |
+| **Live URL** | [project-sanctuary-seneca.vercel.app](https://project-sanctuary-seneca.vercel.app) · [sanctuary-phi.vercel.app](https://sanctuary-phi.vercel.app) — support showcase + recording backup |
+| **ArcGIS Web Map** | [Build Web Map](https://senecatechnology.maps.arcgis.com/apps/mapviewer/index.html?webmap=17951a55fae44a83a330101433dda67a) (built) · StoryMap wrapper pending |
+| **Demo video** | _pending — team recording pass (≤5:00)_ |
+| **Final commit** | _freeze `v1-submission` tag at submission_ |
 | **Submission deadline** | 2026-05-26 23:59 ET |
 | **Pitch venue** | HELIX Main Stage, 1750 Finch Ave East, Toronto |
 
-## Status (as of 2026-05-25)
+## Status (as of 2026-05-26 — submission day)
 
 | Field | Value |
 |---|---|
 | Phase | Build / qualifier-video prep |
 | Active submission | Sanctuary |
-| Days to submission | **1** (deadline 2026-05-26 23:59 ET) |
+| Time to submission | **TODAY — deadline 2026-05-26 23:59 ET** (confirm the firm time on the Hackathon Portal) |
 | Mode | Team — split GIS/data, StoryMap/design, research/pitch |
 | Stack preset | ArcGIS StoryMap + Web Map/Dashboard |
 | Pattern-break archetype | Public-Good Frame + Local-Detail |
@@ -38,12 +39,12 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 - [x] Project-local scope template extending global with four Pattern-break sections — [`templates/scope.md.tmpl`](templates/scope.md.tmpl)
 - [x] Pre-mortem template scaffolded — [`.hackathon/pre-mortem.md`](.hackathon/pre-mortem.md)
 - [x] Vault scaffolded — 8 numbered folders + daily template + decision log + mentor questions seeded
-- [ ] Team locked — run `/hackathon:team` to fill `event.yaml` `team.size` + `team.members`
-- [ ] Stack pre-validated (Next.js + Vercel + Supabase + Mapbox/MapLibre throwaway deploys) — per `docs/build-readiness.md` §A
-- [ ] Seed data pre-fetched — per `docs/build-readiness.md` §B
+- [ ] Team locked — fill `event.yaml` `team.members` + name every member on screen (Collaboration = 20%)
+- [x] Stack locked + support site built, deployed, and verified — [`sanctuary/web/`](sanctuary/web/), live at the URLs above
+- [x] Seed data — 10 hand-verified candidate buildings — [`sanctuary/data/candidate-hubs.csv`](sanctuary/data/candidate-hubs.csv)
 - [x] Idea locked — Sanctuary, after 2026-05-25 scope amendment
 - [x] Pattern-break archetype locked + scope written — [`.hackathon/scope.md`](.hackathon/scope.md)
-- [ ] ArcGIS StoryMap/Web Map built — track in [`sanctuary/artifacts/arcgis-links.md`](sanctuary/artifacts/arcgis-links.md)
+- [~] ArcGIS **Web Map** built; **StoryMap** wrapper + screenshots + video pending (team recording) — [`sanctuary/artifacts/arcgis-links.md`](sanctuary/artifacts/arcgis-links.md)
 
 ## Where things live
 

@@ -72,15 +72,17 @@ The "describe it 2 hours later" test: *"the one that picks the five trusted Peel
 
 | # | Feature | Rubric axis | Pattern-break role | Est. hours | Status |
 |---|---|---|---|---|---|
-| 1 | **Candidate hub data spine** — 8 to 10 hand-verified Peel buildings with name, address, type, source URL, HVI bucket, 500 m catchment estimate, roof/hardening class, verification status, and `candidate hub` labels. | Technical / Impact | supports | 3 | [ ] |
-| 2 | **ArcGIS Web Map / StoryMap** — Peel HVI layer + candidate points + 500 m buffers + selected-building panel + ranked top-five view. ArcGIS first; screenshots if interaction is slow. | Technical / Design / Sponsor fit | supports | 4 | [ ] |
-| 3 | **Ranked decision reveal** — first click on a named hero building, honesty-labelled panel, then #1–#5 candidate hubs animate as "harden these first." | Presentation / Originality / Impact | is the break | 2 | [ ] |
-| 4 | **5-min qualifier video** — arc: heat risk → shelter gap → trusted building → ranking logic → honesty → Alectra/Esri fit. Includes one collaboration line. | Presentation / Collaboration | supports | 3 | [ ] |
-| 5 | **Methods + judge Q&A** — visible "real vs estimated" box, source list, scoring note, and answers for solar sizing / participation / faith-building framing. | Technical / Impact | supports | 1.5 | [ ] |
+| 1 | **Candidate hub data spine** — 8 to 10 hand-verified Peel buildings with name, address, type, source URL, HVI bucket, 500 m catchment estimate, roof/hardening class, verification status, and `candidate hub` labels. | Technical / Impact | supports | 3 | [x] done — 10 buildings in `sanctuary/data/candidate-hubs.csv` |
+| 2 | **ArcGIS Web Map / StoryMap** — Peel HVI layer + candidate points + 500 m buffers + selected-building panel + ranked top-five view. ArcGIS first; screenshots if interaction is slow. | Technical / Design / Sponsor fit | supports | 4 | [~] Web Map built · StoryMap + screenshots pending (recording) · support site live |
+| 3 | **Ranked decision reveal** — first click on a named hero building, honesty-labelled panel, then #1–#5 candidate hubs animate as "harden these first." | Presentation / Originality / Impact | is the break | 2 | [x] live in the support site · ArcGIS popups pending (recording) |
+| 4 | **5-min qualifier video** — arc: heat risk → shelter gap → trusted building → ranking logic → honesty → Alectra/Esri fit. Includes one collaboration line. | Presentation / Collaboration | supports | 3 | [ ] pending — team recording pass (≤5:00, names on screen) |
+| 5 | **Methods + judge Q&A** — visible "real vs estimated" box, source list, scoring note, and answers for solar sizing / participation / faith-building framing. | Technical / Impact | supports | 1.5 | [x] done — `methods-note.md` + `judge-qa.md` |
 
 Total estimated hours: **13.5** (single-track)
 Event duration: ~34h effective (now → May 26 23:59, minus sleep/setup)
 Buffer: workable if the build stays ArcGIS-first. If the map track slips by 30 minutes twice, use static screenshots and the ranked CSV instead of trying to fix ArcGIS live interaction.
+
+> **Status synced 2026-05-26 ~17:10 ET (status only — NOT a scope amendment; MUST-HAVES, demo moment, and archetype unchanged).** Done: data spine, methods, judge Q&A, and the support showcase site (live + verified, delivers the ranked-decision reveal). The ArcGIS **Web Map** is built (`senecatechnology.maps.arcgis.com` — see [`../sanctuary/artifacts/arcgis-links.md`](../sanctuary/artifacts/arcgis-links.md)). Remaining = the **StoryMap** wrapper, screenshots, and the **5-min video** — all owned by the team's recording pass.
 
 ---
 

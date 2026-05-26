@@ -21,7 +21,11 @@ Open items **#1 and #2 below are now DONE**:
   `GEMINI-ASSISTED` + `NOT ENGINEERING ADVICE` badges), button flips to "Checklist loaded from
   static review", **zero console errors**, offline/demo-safe. (Screenshot taken; not committed.)
 
-**Remaining for the next session: #3 (decide the unused live route) and #4 (ArcGIS video).**
+**Update 2026-05-26 (cleanup pass — "no loose ends"):**
+
+- **#3 ✅ RESOLVED — keep the live `/api/planning-checklist` route as a regeneration tool** (lowest-risk option). It stays unwired from the UI by design (the site uses the demo-safe static `public/planning-checklists.json`). To regenerate: POST a candidate to the route, review the JSON, commit it into `planning-checklists.json`. Do NOT wire it into the live demo path (network/quota/nondeterminism fights the offline-safe doctrine).
+- **#4 — owned by the team's recording pass.** The ArcGIS **Web Map IS built** (`senecatechnology.maps.arcgis.com/.../webmap=17951a55fae44a83a330101433dda67a`; layers: Peel HVI + Welcome Spaces + Municipal Boundary + candidate_hubs — see `sanctuary/artifacts/arcgis-links.md`). Pending: the **StoryMap** wrapper, screenshots, and the 5-min video. The support site is the clickable backup.
+- Submission logistics + the corrected **hard 5:00** video cap captured in `.hackathon/event.yaml` + `sanctuary/artifacts/submission-package.md`.
 
 ## What shipped this session
 
@@ -74,6 +78,7 @@ through**. To close it:
   `components/ScrollStage.tsx` (the loader at ~line 83 fetching `/planning-checklists.json`).
 
 ### 3. Decide what to do with the unused live route (`/api/planning-checklist`)
+**DECIDED 2026-05-26 → keep as a regeneration tool (option 1 below).** Unwired from the UI by design; demo-safe. The options below are kept for the record.
 It works but nothing calls it. Pick one:
 - **Keep as a regeneration tool** — document that it's how you regenerate
   `public/planning-checklists.json` (run it per candidate, review output, commit the JSON).
