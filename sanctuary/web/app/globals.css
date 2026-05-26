@@ -523,13 +523,90 @@ h3 {
   padding-block: var(--section-y);
   border-top: 1px solid var(--hairline);
 }
-.stage {
+/* Default (SSR / mobile / reduced-motion): single column, map then steps.
+   The decision card (ZOOM step) reorders to the top so the payoff reads first. */
+.decision-stage {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr);
-  gap: clamp(20px, 2.4vw, 32px);
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 32px);
   margin-top: clamp(24px, 3vw, 36px);
+}
+.scroll-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.scroll-step {
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  background: var(--surface-raised);
+  padding: clamp(18px, 2.5vw, 26px);
+}
+.scroll-step .eyebrow {
+  margin-bottom: 8px;
+}
+.scroll-step-title {
+  font-family: var(--font-serif);
+  font-weight: 540;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-wrap: balance;
+}
+.scroll-step-body {
+  margin: 12px 0 0;
+  max-width: 52ch;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.scroll-decision {
+  margin-top: 18px;
+  display: grid;
+  gap: 16px;
+}
+.decision-stage[data-live="false"] .scroll-step[data-step="4"] {
+  order: -1;
+  border-color: color-mix(in oklab, var(--signal) 32%, var(--hairline));
+}
+
+/* Live (desktop + motion): sticky map on the left, tall step panels on the right. */
+.decision-stage[data-live="true"] {
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+  gap: clamp(28px, 4vw, 64px);
   align-items: start;
 }
+.decision-stage[data-live="true"] .scroll-map {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+}
+.decision-stage[data-live="true"] .scroll-map .map-wrap {
+  width: 100%;
+  max-height: 86svh;
+}
+.decision-stage[data-live="true"] .scroll-step {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  opacity: 0.35;
+  transition: opacity 0.4s var(--ease-calm);
+}
+.decision-stage[data-live="true"] .scroll-step[data-active="true"] {
+  opacity: 1;
+}
+.decision-stage[data-live="true"] .scroll-step-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+}
+
 .map-wrap {
   position: relative;
   border: 1px solid var(--hairline);
@@ -664,12 +741,7 @@ h3 {
   color: var(--c-pending);
 }
 
-/* Rail: detail + ranked */
-.rail {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+/* Detail + ranked */
 .detail {
   background: var(--surface-raised);
   border: 1px solid var(--hairline);
@@ -909,7 +981,15 @@ h3 {
 
 /* candidate table */
 .explore-table {
-  margin-top: 22px;
+  margin-top: clamp(40px, 6vw, 72px);
+}
+.explore-head {
+  margin: 0 0 14px;
+  font-family: var(--font-data);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
 }
 .candidate-table {
   border: 1px solid var(--hairline);
@@ -1011,19 +1091,10 @@ button.candidate-row:hover {
   }
 }
 
-/* Offscreen perf for long editorial sections */
-.section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 600px;
-}
-
 /* ============================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 980px) {
-  .stage {
-    grid-template-columns: 1fr;
-  }
   .card-grid-2,
   .card-grid-3,
   .indicator-grid,

@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import type { Hub } from "@/lib/hubs";
 import { HVI_COLORS, HVI_LABEL } from "@/lib/hubs";
 import { W, H, makeProjection, makePath, catchmentRadius, zoomTo, ZOOM_IDENTITY, type FeatureCollectionLike } from "@/lib/map";
-import { m, STEP, type Step, EASE_POP, EASE_CALM, dealDelay } from "@/lib/motion";
+import { m, STEP, EASE_POP, EASE_CALM, dealDelay } from "@/lib/motion";
 
 type Base = FeatureCollectionLike & { features: { geometry: unknown }[] };
 
@@ -24,7 +24,7 @@ export function MapStage({
   hubs: Hub[];
   selectedRank: number;
   onSelect: (rank: number) => void;
-  currentStep: Step;
+  currentStep: number;
   live: boolean;
   reduced: boolean;
 }) {
