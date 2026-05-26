@@ -44,7 +44,7 @@ If any feature is >30 min over its estimate:
 ### Deploy from minute 1
 
 - Once `/hackathon:scaffold` runs, the live URL is sacred.
-- Vercel / EAS auto-deploy on push.
+- Deploy is **manual** — `cd sanctuary/web && vercel deploy --prod --yes`. There is **no Git auto-deploy**: `git push` does not update the live site, and Vercel env-var changes need a redeploy to take effect.
 - If a deploy breaks, **fix immediately before writing new features**. Red `main` = broken demo = 0 judging score.
 
 ### Seed mock data ≥ 20 rows
