@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { HviTract, LayerKey, LayerState } from "@/lib/map-constants";
 import { HVI_COLORS, HVI_LABEL } from "@/lib/hubs";
 import { MAP_LAYERS } from "@/lib/content";
@@ -34,6 +35,14 @@ export function MapControls({
   // Facilities toggle only appears once the facilities layer is actually loaded.
   const shown = MAP_LAYERS.filter((l) => l.key !== "facilities" || facilityCount > 0);
 
+  // Layer panel folds away so the map stays the focus. Default expanded on
+  // desktop, collapsed on mobile (set after mount — it's an absolutely
+  // positioned overlay, so collapsing causes no layout shift).
+  const [open, setOpen] = useState(true);
+  useEffect(() => {
+    if (window.matchMedia("(max-width: 768px)").matches) setOpen(false);
+  }, []);
+
   return (
     <>
       <div className="map-controls">
@@ -48,20 +57,36 @@ export function MapControls({
             <Crosshair size={15} />
           </button>
         </div>
-        <div className="mc-layers" role="group" aria-label="Toggle map layers">
-          {shown.map((l) => (
-            <button
-              key={l.key}
-              type="button"
-              className="mc-layer"
-              aria-pressed={layers[l.key]}
-              data-on={layers[l.key]}
-              onClick={() => onToggle(l.key)}
-            >
-              <span className={`mc-sw mc-sw-${l.key}`} aria-hidden="true" />
-              <span className="mc-layer-label">{l.label}</span>
-            </button>
-          ))}
+        <div className="mc-layers" data-open={open}>
+          <button
+            type="button"
+            className="mc-layers-head"
+            aria-expanded={open}
+            aria-controls="mc-layers-list"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className="mc-layers-title">Layers</span>
+            <svg className="mc-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div className="mc-layers-body" id="mc-layers-list">
+            <div className="mc-layers-inner" role="group" aria-label="Toggle map layers">
+              {shown.map((l) => (
+                <button
+                  key={l.key}
+                  type="button"
+                  className="mc-layer"
+                  aria-pressed={layers[l.key]}
+                  data-on={layers[l.key]}
+                  onClick={() => onToggle(l.key)}
+                >
+                  <span className={`mc-sw mc-sw-${l.key}`} aria-hidden="true" />
+                  <span className="mc-layer-label">{l.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

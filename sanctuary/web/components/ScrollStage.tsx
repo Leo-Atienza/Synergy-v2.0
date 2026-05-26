@@ -2,16 +2,15 @@
 
 import { useEffect, useState } from "react";
 import type { Hub } from "@/lib/hubs";
-import { HVI_COLORS } from "@/lib/hubs";
 import type { MapData } from "@/lib/map-constants";
 import { LazyMotion, domAnimation, useReducedMotion, STEP } from "@/lib/motion";
 import { STEPS } from "@/lib/content";
 import { useScrollSteps } from "@/hooks/useScrollSteps";
 import { MapStage } from "@/components/MapStage";
+import { MapLegend } from "@/components/MapLegend";
 import { DetailPanel } from "@/components/DetailPanel";
 import { RankedList } from "@/components/RankedList";
 import { CandidateTable } from "@/components/CandidateTable";
-import { EVIDENCE_ICON } from "@/components/icons";
 import type { CandidatePlanningContext, PlanningChecklist, PlanningChecklistFile } from "@/lib/planning-assistant";
 import { fallbackChecklistFor } from "@/lib/planning-assistant";
 
@@ -154,38 +153,5 @@ export function ScrollStage({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
         <CandidateTable hubs={hubs} selectedRank={selectedRank} onSelect={setSelectedRank} />
       </div>
     </LazyMotion>
-  );
-}
-
-// Map overlay: HVI ramp + the honesty evidence key (icon + text, never colour alone).
-function MapLegend() {
-  const Verified = EVIDENCE_ICON.verified;
-  const Modelled = EVIDENCE_ICON.modelled;
-  const Pending = EVIDENCE_ICON.pending;
-  return (
-    <div className="legend">
-      <span className="legend-head">Heat Vulnerability Index</span>
-      {[5, 4, 3, 2, 1].map((q) => (
-        <span className="legend-row" key={q}>
-          <span className="legend-sw" style={{ background: HVI_COLORS[q] }} />
-          <span className="tnum">{q}</span>
-        </span>
-      ))}
-      <span className="legend-row">
-        <span className="legend-ring" />
-        modelled 500 m
-      </span>
-      <div className="legend-key">
-        <span className="legend-row legend-row-v">
-          <Verified size={13} /> verified
-        </span>
-        <span className="legend-row legend-row-m">
-          <Modelled size={13} /> modelled
-        </span>
-        <span className="legend-row legend-row-p">
-          <Pending size={13} /> pending
-        </span>
-      </div>
-    </div>
   );
 }

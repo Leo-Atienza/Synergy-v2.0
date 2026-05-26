@@ -1,53 +1,27 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import Link from "next/link";
 
-import { toHub, type Hub, type HubGeo } from "@/lib/hubs";
-import { projectMap, type HviGeo, type FacilityGeo } from "@/lib/map";
-import { Masthead } from "@/components/Masthead";
+import { loadMapData } from "@/lib/load-map-data";
 import { Hero } from "@/components/Hero";
 import { ScrollStage } from "@/components/ScrollStage";
 import { ProblemSection } from "@/components/sections/ProblemSection";
-import { MethodSection } from "@/components/sections/MethodSection";
-import { HonestySection } from "@/components/sections/HonestySection";
-import { EvidenceSection } from "@/components/sections/EvidenceSection";
-import { FutureSection } from "@/components/sections/FutureSection";
-import { ArcgisSection } from "@/components/sections/ArcgisSection";
-import { SourcesSection } from "@/components/sections/SourcesSection";
-import { QaSection } from "@/components/sections/QaSection";
-import { Footer } from "@/components/Footer";
+import { ArrowUpRight } from "@/components/icons";
 
-type BaseGeo = { type: "FeatureCollection"; features: { geometry: unknown }[] };
-
-// Build-time data load. process.cwd() is sanctuary/web at build; the files stay
-// only in public/. This deletes the old runtime fetch/useEffect/loading branches
-// — the map is fully offline and the candidate data is inlined as props.
-function loadJson<T>(file: string): T {
-  return JSON.parse(readFileSync(join(process.cwd(), "public", file), "utf8")) as T;
-}
-// Optional layers (committed once their fetch script has run) load safely so the
-// build never breaks if a public/ file is absent — the map just omits that layer.
-function loadJsonSafe<T>(file: string, fallback: T): T {
-  try {
-    return loadJson<T>(file);
-  } catch {
-    return fallback;
-  }
-}
+// Overview (/) — the hook, not the whole site. Hero + the problem in three lines
+// + the condensed "deal the five" decision sequence, then cards into the Map,
+// Method, Vision, and Sources pages. The full interactive map lives at /map; the
+// proof/credibility sections moved to their own routes.
+const READ_ON: { href: string; label: string; title: string; body: string }[] = [
+  { href: "/map", label: "The map", title: "Explore Peel's heat", body: "The full-screen HVI map: pan, zoom, click a tract for its real sub-scores, and play the decision to Malton." },
+  { href: "/method", label: "Method", title: "How the score works", body: "The 35 / 25 / 20 / 10 / 10 model — and exactly which inputs are verified, modelled, or still pending." },
+  { href: "/vision", label: "Vision", title: "The honest roadmap", body: "From this ranking to site audits, a public app, and the method repeating across Alectra's territory." },
+  { href: "/sources", label: "Sources", title: "Trace every number", body: "The HVI service, the facility data, and every claim linked to a public source, with the honesty key." },
+];
 
 export default function Page() {
-  const base = loadJson<BaseGeo>("peel-fsa.geojson");
-  const hvi = loadJson<HviGeo>("peel-hvi.geojson");
-  const facilities = loadJsonSafe<FacilityGeo>("peel-facilities.geojson", { type: "FeatureCollection", features: [] });
-  const hubs: Hub[] = loadJson<HubGeo>("candidate-hubs.geojson")
-    .features.map(toHub)
-    .sort((a, z) => a.rank - z.rank);
-  // Project once, at build — the client island receives path strings + projected
-  // points + the real HVI choropleth + facilities (all server-side via d3-geo).
-  const mapData = projectMap(base, hubs, hvi, facilities);
+  const { mapData, hubs } = loadMapData();
 
   return (
     <main className="page">
-      <Masthead />
       <Hero />
       <ProblemSection />
 
@@ -61,16 +35,31 @@ export default function Page() {
           </p>
         </div>
         <ScrollStage mapData={mapData} hubs={hubs} />
+        <p className="decision-more">
+          <Link href="/map" className="inline-link">
+            Open the full interactive map <ArrowUpRight size={14} />
+          </Link>
+        </p>
       </section>
 
-      <MethodSection />
-      <HonestySection />
-      <EvidenceSection />
-      <FutureSection />
-      <ArcgisSection />
-      <SourcesSection />
-      <QaSection />
-      <Footer />
+      <section className="readon reveal" aria-labelledby="readon-title">
+        <div className="section-head">
+          <p className="eyebrow">Read on</p>
+          <h2 id="readon-title">The proof behind the ranking.</h2>
+        </div>
+        <div className="readon-grid">
+          {READ_ON.map((c) => (
+            <Link key={c.href} href={c.href} className="readon-card">
+              <span className="readon-card-label">{c.label}</span>
+              <span className="readon-card-title">{c.title}</span>
+              <span className="readon-card-body">{c.body}</span>
+              <span className="readon-card-go" aria-hidden="true">
+                <ArrowUpRight size={15} />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

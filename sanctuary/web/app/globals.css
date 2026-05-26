@@ -52,6 +52,7 @@
   --section-y: clamp(72px, 11vw, 124px);
   --page-max: 1180px;
   --gutter: clamp(20px, 5vw, 40px);
+  --nav-h: 60px;
 
   /* Motion. */
   --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -705,15 +706,66 @@ h3 {
   opacity: 0.4;
   cursor: default;
 }
+/* Layer panel — collapsible (header button folds the toggle list). */
 .mc-layers {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  padding: 7px;
+  overflow: hidden;
   border: 1px solid var(--hairline);
   border-radius: var(--r-2);
   background: color-mix(in oklab, var(--bg) 82%, transparent);
   backdrop-filter: blur(6px);
+}
+.mc-layers-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 8px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--text-faint);
+  font: inherit;
+  cursor: pointer;
+}
+.mc-layers-head:hover {
+  color: var(--text-muted);
+}
+.mc-layers-title {
+  font-family: var(--font-data);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mc-chevron {
+  flex: none;
+  transition: transform 0.25s var(--ease-calm);
+}
+.mc-layers[data-open="false"] .mc-chevron {
+  transform: rotate(-90deg);
+}
+.mc-layers-body {
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition: grid-template-rows 0.3s var(--ease-calm), opacity 0.22s ease;
+}
+.mc-layers[data-open="false"] .mc-layers-body {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+.mc-layers-inner {
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 0 7px 7px;
+  transition: padding-bottom 0.3s var(--ease-calm);
+}
+.mc-layers[data-open="false"] .mc-layers-inner {
+  padding-bottom: 0;
 }
 .mc-layer {
   display: flex;
@@ -866,15 +918,10 @@ h3 {
   border-top: 1px solid var(--hairline);
 }
 @media (max-width: 560px) {
+  /* Keep the readout top-left (narrower) so it never sits over the collapsed
+     legend at bottom-left; the legend stays reachable, just folded by default. */
   .tract-readout {
-    width: auto;
-    right: 14px;
-    left: 14px;
-    top: auto;
-    bottom: 14px;
-  }
-  .legend {
-    display: none;
+    width: min(220px, 58vw);
   }
 }
 .catchment {
@@ -930,26 +977,70 @@ h3 {
   fill: #fff;
 }
 
-/* Map legend + honesty key */
+/* Map legend + honesty key — collapsible overlay (header button folds the body). */
 .legend {
   position: absolute;
   left: 16px;
   bottom: 14px;
-  padding: 11px 13px;
+  padding: 8px 11px;
+  max-width: 210px;
   border: 1px solid var(--hairline);
   border-radius: var(--r-2);
   background: color-mix(in oklab, var(--bg) 82%, transparent);
   backdrop-filter: blur(6px);
   font-size: 0.78rem;
 }
+.legend-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-faint);
+  font: inherit;
+  cursor: pointer;
+}
+.legend-toggle:hover {
+  color: var(--text-muted);
+}
 .legend-head {
   display: block;
-  margin-bottom: 8px;
+  margin: 0;
   font-family: var(--font-data);
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: var(--text-faint);
+  color: inherit;
+}
+.legend-chevron {
+  flex: none;
+  transition: transform 0.25s var(--ease-calm);
+}
+.legend[data-open="false"] .legend-chevron {
+  transform: rotate(-90deg);
+}
+.legend-body {
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition: grid-template-rows 0.3s var(--ease-calm), opacity 0.22s ease;
+}
+.legend[data-open="false"] .legend-body {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+.legend-body-inner {
+  min-height: 0;
+  overflow: hidden;
+  padding-top: 8px;
+  transition: padding-top 0.3s var(--ease-calm);
+}
+/* Collapse the padding too, so the folded panel is just the header (no sliver). */
+.legend[data-open="false"] .legend-body-inner {
+  padding-top: 0;
 }
 .legend-row {
   display: flex;
@@ -1294,11 +1385,16 @@ button.candidate-row:hover {
   box-shadow: inset 2px 0 0 var(--signal);
 }
 
-/* ---- Footer ---- */
+/* ---- Footer (mounted globally in layout.tsx, so it centers itself) ---- */
 .foot {
-  margin-top: var(--section-y);
-  padding-top: 18px;
+  max-width: var(--page-max);
+  margin: var(--section-y) auto 0;
+  padding: 18px var(--gutter) 48px;
   border-top: 1px solid var(--hairline);
+}
+/* After the full-bleed map page, drop the big top gap. */
+.map-page + .foot {
+  margin-top: 0;
 }
 .foot p {
   margin: 0;
@@ -1320,13 +1416,14 @@ button.candidate-row:hover {
 /* ============================================================================
    Motion: CSS scroll reveals (progressive enhancement) + reduced-motion
    ========================================================================== */
+/* Slide-up only — never fade opacity. Fading text from 0 leaves it mid-reveal at
+   failing contrast (Lighthouse audits the dimmed frame; a paused reader sees it
+   too). Transform-only keeps every section at full contrast while it animates. */
 @keyframes revealUp {
   from {
-    opacity: 0;
     transform: translateY(16px);
   }
   to {
-    opacity: 1;
     transform: none;
   }
 }
@@ -1386,5 +1483,330 @@ button.candidate-row:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================================
+   Multi-page shell — top nav (Claude lane). The wordmark replaces the old
+   Masthead; the active route is marked with aria-current="page". Sticky bar,
+   hairline border, blurred translucent field. Mobile collapses to a drawer.
+   ========================================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  max-width: var(--page-max);
+  min-height: var(--nav-h);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.05;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-brand .brand-mark {
+  font-size: 0.98rem;
+  letter-spacing: 0.3em;
+}
+.nav-brand-sub {
+  margin-top: 3px;
+  font-family: var(--font-data);
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.nav-toggle {
+  display: none;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.6vw, 24px);
+}
+.nav-link {
+  position: relative;
+  padding: 6px 2px;
+  font-family: var(--font-data);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.16s ease;
+}
+.nav-link:hover {
+  color: var(--text);
+}
+.nav-link[aria-current="page"] {
+  color: var(--signal);
+}
+.nav-link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--signal);
+}
+@media (max-width: 720px) {
+  .nav-brand-sub {
+    display: none;
+  }
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-1);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .nav-links {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 6px var(--gutter) 16px;
+    background: color-mix(in oklab, var(--bg) 96%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav-links[data-open="true"] {
+    display: flex;
+  }
+  .nav-link {
+    padding: 13px 4px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav-link[aria-current="page"]::after {
+    display: none;
+  }
+  .nav-link[aria-current="page"] {
+    padding-left: 10px;
+    box-shadow: inset 2px 0 0 var(--signal);
+  }
+}
+
+/* Visually-hidden (kept in the a11y tree) — for skip-level section headings. */
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ============================================================================
+   /map — full-bleed, always-interactive map + side rail (Claude lane).
+   Stage fills the viewport minus the nav; the SVG (preserveAspectRatio=meet by
+   default) keeps the whole Peel map visible, centered in the field. Overlays
+   (controls, legend, tract readout) anchor to the stage. Rail scrolls on its own.
+   ========================================================================== */
+.map-page {
+  width: 100%;
+}
+.map-explorer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(330px, 30vw, 420px);
+  height: calc(100svh - var(--nav-h));
+  min-height: 560px;
+}
+.map-explorer-stage {
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid var(--hairline);
+  background: radial-gradient(120% 90% at 55% 0%, var(--bg-2) 0%, var(--bg) 70%);
+}
+.map-explorer-stage .map-svg {
+  width: 100%;
+  height: 100%;
+}
+.map-explorer-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  padding: clamp(16px, 2vw, 24px);
+  background: var(--surface);
+}
+.rail-title {
+  font-family: var(--font-serif);
+  font-weight: 540;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-wrap: balance;
+}
+.rail-sub {
+  margin: 10px 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.rail-tour {
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  background: var(--surface-raised);
+  padding: 16px;
+}
+.rail-tour-play {
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+}
+.rail-tour-cap {
+  margin: 12px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-faint);
+}
+.rail-tour-now {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.rail-tour-now .eyebrow {
+  margin: 0;
+}
+.rail-tour-exit {
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-data);
+  font-size: 0.74rem;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+.rail-tour-exit:hover {
+  color: var(--text);
+  border-color: var(--text-faint);
+}
+.rail-tour-title {
+  margin: 10px 0 0;
+  font-family: var(--font-serif);
+  font-weight: 540;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  color: var(--text);
+  text-wrap: balance;
+}
+@media (max-width: 900px) {
+  .map-explorer {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+  .map-explorer-stage {
+    height: 56svh;
+    min-height: 360px;
+    border-right: 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .map-explorer-rail {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+/* ============================================================================
+   Overview — link to the full map + the "read on" nav cards (Claude lane)
+   ========================================================================== */
+.decision-more {
+  margin: clamp(20px, 3vw, 30px) 0 0;
+}
+.readon {
+  padding-block: var(--section-y);
+  border-top: 1px solid var(--hairline);
+}
+.readon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: clamp(28px, 4vw, 44px);
+}
+.readon-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: clamp(18px, 2vw, 24px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  background: var(--surface-raised);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.18s var(--ease-calm), border-color 0.18s ease;
+}
+.readon-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--hairline-strong);
+}
+.readon-card-label {
+  font-family: var(--font-data);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.readon-card-title {
+  font-family: var(--font-serif);
+  font-weight: 560;
+  font-size: 1.2rem;
+  line-height: 1.15;
+  color: var(--text);
+}
+.readon-card-body {
+  max-width: 42ch;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.readon-card-go {
+  position: absolute;
+  top: clamp(18px, 2vw, 24px);
+  right: clamp(18px, 2vw, 24px);
+  color: var(--text-faint);
+  transition: color 0.18s ease, transform 0.18s var(--ease-pop);
+}
+.readon-card:hover .readon-card-go {
+  color: var(--signal);
+  transform: translate(2px, -2px);
+}
+@media (max-width: 700px) {
+  .readon-grid {
+    grid-template-columns: 1fr;
   }
 }

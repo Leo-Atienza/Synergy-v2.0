@@ -39,6 +39,7 @@ export function MapStage({
   currentStep,
   live,
   reduced,
+  resetSignal,
 }: {
   fsaPaths: BaseLayer;
   points: MapPoint[];
@@ -49,6 +50,9 @@ export function MapStage({
   currentStep: number;
   live: boolean;
   reduced: boolean;
+  // Optional: a parent bumps this to snap pan/zoom + layers + tract back to
+  // defaults (the /map "Play the decision" tour resets to a clean frame).
+  resetSignal?: number;
 }) {
   const xy = useMemo(() => new Map(points.map((p) => [p.rank, p])), [points]);
 
@@ -139,6 +143,21 @@ export function MapStage({
     svg.addEventListener("wheel", onWheel, { passive: false });
     return () => svg.removeEventListener("wheel", onWheel);
   }, [live]);
+
+  // Imperative reset from a parent: when resetSignal changes (after mount), snap
+  // the user pan/zoom, layer toggles, and tract selection back to defaults so a
+  // driven sequence (the /map tour) starts from a clean frame.
+  const skipFirstReset = useRef(true);
+  useEffect(() => {
+    if (resetSignal === undefined) return;
+    if (skipFirstReset.current) {
+      skipFirstReset.current = false;
+      return;
+    }
+    setView(VIEW_IDENTITY);
+    setLayers({ heat: true, facilities: true, candidates: true, rings: true });
+    setTract(null);
+  }, [resetSignal]);
 
   const toggle = (k: LayerKey) => setLayers((p) => ({ ...p, [k]: !p[k] }));
   const doZoom = (factor: number) => setView((v) => zoomAt(v, factor, W / 2, H / 2));
