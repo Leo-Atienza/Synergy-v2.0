@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ArcgisSection } from "@/components/sections/ArcgisSection";
 import { PhotoSection } from "@/components/sections/PhotoSection";
 import { QaSection } from "@/components/sections/QaSection";
 import { SourcesSection } from "@/components/sections/SourcesSection";
@@ -21,6 +22,7 @@ export default function SourcesPage() {
         </p>
       </section>
       <SourcesSection />
+      <ArcgisSection />
       <PhotoSection />
       <QaSection />
     </main>

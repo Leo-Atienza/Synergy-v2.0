@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { EvidenceSection } from "@/components/sections/EvidenceSection";
 import { HonestySection } from "@/components/sections/HonestySection";
 import { MethodSection } from "@/components/sections/MethodSection";
 
@@ -21,6 +22,7 @@ export default function MethodPage() {
       </section>
       <MethodSection />
       <HonestySection />
+      <EvidenceSection />
     </main>
   );
 }
