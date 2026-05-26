@@ -190,3 +190,11 @@ export const EVIDENCE_KEY: { tag: "verified" | "modelled" | "pending"; text: str
   { tag: "modelled", text: "modelled — a planning estimate" },
   { tag: "pending", text: "pending — needs a site audit" },
 ];
+
+// Map layer toggles for the interactive Peel map (keys match LayerState in MapStage).
+export const MAP_LAYERS: { key: "heat" | "facilities" | "candidates" | "rings"; label: string }[] = [
+  { key: "heat", label: "Heat vulnerability" },
+  { key: "facilities", label: "Public facilities" },
+  { key: "candidates", label: "Candidate hubs" },
+  { key: "rings", label: "Modelled 500 m reach" },
+];

@@ -5,11 +5,35 @@
 
 import { geoMercator, geoPath } from "d3-geo";
 import type { Hub } from "./hubs";
-import { W, H, type MapData, type MapPoint } from "./map-constants";
+import { W, H, type MapData, type MapPoint, type BaseLayer, type HviTract, type Facility } from "./map-constants";
 
 const round = (n: number) => Math.round(n * 100) / 100;
+// Round every coordinate in an SVG path to 1 decimal px — visually lossless at this
+// scale, and it roughly halves the path-string payload serialized to the client.
+const roundPath = (d: string) => d.replace(/-?\d+\.\d+/g, (m) => String(Math.round(parseFloat(m) * 10) / 10));
 
-export function projectMap(base: { features: unknown[] }, hubs: Hub[]): MapData {
+type HviProps = {
+  CTUID: string;
+  Index_Qnt: number | null;
+  Exposure_Qnt: number | null;
+  Sensitivity_Qnt: number | null;
+  Adaptivity_Qnt: number | null;
+  PHDZ: string | null;
+  Municipality: string | null;
+};
+export type HviGeo = { type?: string; features: { type?: string; properties: HviProps; geometry: unknown }[] };
+type FacilityProps = { name?: string; kind?: string; type?: string };
+export type FacilityGeo = {
+  type?: string;
+  features: { type?: string; properties: FacilityProps; geometry: { coordinates: [number, number] } }[];
+};
+
+export function projectMap(
+  base: { features: unknown[] },
+  hubs: Hub[],
+  hvi?: HviGeo,
+  facilities?: FacilityGeo,
+): MapData {
   const proj = geoMercator().fitExtent(
     [
       [24, 24],
@@ -19,7 +43,37 @@ export function projectMap(base: { features: unknown[] }, hubs: Hub[]): MapData 
   );
   const path = geoPath(proj);
 
-  const fsaPaths = base.features.map((f) => path(f as never) ?? "");
+  const outline = base.features.map((f) => roundPath(path(f as never) ?? ""));
+
+  // Real HVI choropleth: each census tract projected to a path + its true quintiles.
+  const tracts: HviTract[] = (hvi?.features ?? [])
+    .map((f) => ({
+      d: roundPath(path(f as never) ?? ""),
+      q: f.properties.Index_Qnt,
+      exposure: f.properties.Exposure_Qnt,
+      sensitivity: f.properties.Sensitivity_Qnt,
+      adaptivity: f.properties.Adaptivity_Qnt,
+      phdz: f.properties.PHDZ,
+      municipality: f.properties.Municipality,
+      ctuid: f.properties.CTUID,
+    }))
+    .filter((t) => t.d.length > 0);
+
+  // Official/public facilities (shelter-gap layer), projected to in-frame points.
+  const projFacilities: Facility[] = (facilities?.features ?? [])
+    .map((f) => {
+      const [lon, lat] = f.geometry.coordinates;
+      const pt = proj([lon, lat]) ?? [0, 0];
+      return {
+        x: round(pt[0]),
+        y: round(pt[1]),
+        name: f.properties.name ?? "",
+        kind: f.properties.kind ?? f.properties.type ?? "facility",
+      };
+    })
+    .filter((p) => p.x > 0 && p.y > 0 && p.x < W && p.y < H);
+
+  const fsaPaths: BaseLayer = { outline, tracts, facilities: projFacilities };
 
   // Each hub's projected centre + the pixel radius of a modelled 500 m catchment
   // (a ~0.0045° north offset), floored at 14px.
