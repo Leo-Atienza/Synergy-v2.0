@@ -1,0 +1,24 @@
+{
+  "name": "sanctuary-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sanctuary — interactive map ranking trusted community buildings in Peel as candidate resilience hubs (Next.js).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "next": "^16.2.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.2"
+  }
+}
