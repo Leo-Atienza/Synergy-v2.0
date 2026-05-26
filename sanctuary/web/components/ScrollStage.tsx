@@ -12,6 +12,32 @@ import { DetailPanel } from "@/components/DetailPanel";
 import { RankedList } from "@/components/RankedList";
 import { CandidateTable } from "@/components/CandidateTable";
 import { EVIDENCE_ICON } from "@/components/icons";
+import type { CandidatePlanningContext, PlanningChecklist, PlanningChecklistFile } from "@/lib/planning-assistant";
+import { fallbackChecklistFor } from "@/lib/planning-assistant";
+
+type ChecklistState = {
+  status: "idle" | "loading" | "ready" | "error";
+  checklist?: PlanningChecklist;
+};
+
+function planningContextFromHub(hub: Hub): CandidatePlanningContext {
+  return {
+    rank: hub.rank,
+    name: hub.name,
+    address: hub.address,
+    typeLabel: hub.typeLabel,
+    municipality: hub.municipality,
+    hvi: hub.hvi,
+    exposure: hub.exposure,
+    sensitivity: hub.sensitivity,
+    adaptiveCapacity: hub.adaptiveCapacity,
+    roofClass: hub.roofClass,
+    facility: hub.facility,
+    trustLabel: hub.trustLabel,
+    reachablePopulation: hub.reachablePopulation,
+    sourceUrl: hub.sourceUrl,
+  };
+}
 
 // The one client island. Owns selectedRank + the scroll step.
 // `live` (desktop + motion-OK) turns on the sticky scrollytelling; otherwise the
@@ -21,10 +47,12 @@ export function ScrollStage({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
   const reduced = useReducedMotion() ?? false;
   const [live, setLive] = useState(false);
   const [selectedRank, setSelectedRank] = useState(1);
+  const [checklists, setChecklists] = useState<Record<number, ChecklistState>>({});
   const { containerRef, step } = useScrollSteps(live);
 
   const top5 = hubs.slice(0, 5);
   const selected = hubs.find((h) => h.rank === selectedRank) ?? hubs[0];
+  const selectedChecklist = checklists[selected.rank] ?? { status: "idle" };
   const mapStep = live ? step : STEP.ZOOM;
 
   // Upgrade to the pinned experience only on a wide viewport with motion allowed.
@@ -43,6 +71,26 @@ export function ScrollStage({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
       const next = ((i === -1 ? 0 : i) + dir + top5.length) % top5.length;
       return top5[next].rank;
     });
+  };
+
+  const loadChecklist = async (hub: Hub) => {
+    const cached = checklists[hub.rank];
+    if (cached?.status === "loading" || cached?.status === "ready") return;
+
+    setChecklists((current) => ({ ...current, [hub.rank]: { status: "loading" } }));
+
+    try {
+      const response = await fetch("/planning-checklists.json", { cache: "force-cache" });
+      if (!response.ok) throw new Error("Static checklist not available.");
+      const data = (await response.json()) as PlanningChecklistFile;
+      const checklist = data.checklists[String(hub.rank)] ?? fallbackChecklistFor(planningContextFromHub(hub));
+      setChecklists((current) => ({ ...current, [hub.rank]: { status: "ready", checklist } }));
+    } catch {
+      setChecklists((current) => ({
+        ...current,
+        [hub.rank]: { status: "error", checklist: fallbackChecklistFor(planningContextFromHub(hub)) },
+      }));
+    }
   };
 
   return (
@@ -85,7 +133,14 @@ export function ScrollStage({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
               <p className="scroll-step-body">{s.body}</p>
               {i === STEP.ZOOM && (
                 <div className="scroll-decision">
-                  <DetailPanel key={selected.rank} hub={selected} reduced={reduced} />
+                  <DetailPanel
+                    key={selected.rank}
+                    hub={selected}
+                    reduced={reduced}
+                    planningChecklist={selectedChecklist.checklist}
+                    planningStatus={selectedChecklist.status}
+                    onRequestChecklist={() => loadChecklist(selected)}
+                  />
                   <RankedList hubs={top5} selectedRank={selectedRank} onSelect={setSelectedRank} />
                 </div>
               )}

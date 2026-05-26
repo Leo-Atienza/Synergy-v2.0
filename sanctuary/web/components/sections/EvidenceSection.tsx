@@ -5,9 +5,9 @@ import { ArrowUpRight } from "@/components/icons";
 export function EvidenceSection() {
   return (
     <Section
-      eyebrow="Prior art"
-      title="The pieces already exist — Sanctuary connects them."
-      lead="A refuge network, a hub framework, faith buildings on solar, and a tax credit built for tax-exempt owners. None invented here; each is sourced."
+      eyebrow="Evidence"
+      title="Public buildings already become emergency infrastructure."
+      lead="Peel has a local shelter-access gap; Ontario storms show recreation centres and community buildings becoming charging, shower, warmth, and information points. Sanctuary does not claim they are ready today — it ranks what to verify first."
     >
       <div className="card-grid card-grid-2">
         {EVIDENCE.map((e) => (

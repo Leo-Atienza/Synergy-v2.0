@@ -117,6 +117,16 @@ export const HVI_INDICATORS: { label: string; body: string }[] = [
 // Evidence / prior-art — each precedent with a real source. Corrected per C1–C3.
 export const EVIDENCE: { label: string; body: string; source: Source }[] = [
   {
+    label: "Peel-local gap",
+    body: "Local reporting says Peel and Mississauga do not operate designated seasonal warming centres; instead, public facilities remain available during regular hours. Caledon has opened recreation/community facilities as warming and charging stations during outage/cold-weather conditions. Sanctuary's cautious claim: pre-rank which trusted buildings to verify first.",
+    source: { name: "Mississauga.com — warming centres in Peel", url: "https://www.mississauga.com/news/warming-centre-peel/article_73fba170-1f04-5763-aba1-621e6632390c.html" },
+  },
+  {
+    label: "Ontario outage precedent",
+    body: "After the May 2022 derecho, Ottawa opened community and recreation facilities as reception points for charging, respite, showers, and information. If Sanctuary had existed before the event, planners could have pre-ranked which trusted buildings to prepare, communicate, and verify first.",
+    source: { name: "Ottawa Citizen — May 2022 storm recovery", url: "https://ottawacitizen.com/news/local-news/ottawa-communities-assess-storm-damage-few-short-years-after-tornados" },
+  },
+  {
     label: "Brampton Lighthouse Project",
     body: "A federal case study names 79 registered places of worship citywide and 39 with signed partner agreements — an emergency-refuge network for heat, storms, and floods. It is a trust network, not a solar program; Sanctuary's contribution is adding solar and battery so a refuge keeps power.",
     source: { name: "Canada in a Changing Climate", url: "https://changingclimate.ca/map/brampton-lighthouse-project/" },
@@ -160,6 +170,8 @@ export const SOURCE_LINKS: { label: string; url: string }[] = [
   { label: "Peel Heat Vulnerability Index", url: HVI_SOURCE_ITEM },
   { label: "Sanctuary ArcGIS web map", url: ARCGIS_WEB_MAP },
   { label: "Peel climate-and-health context", url: "https://peelregion.ca/about/climate-change/climate-change-health" },
+  { label: "Mississauga civic facility locations", url: "https://www.mississauga.ca/recreation-and-sports/locations-and-rentals/locations/" },
+  { label: "StatCan ODRSF facility database", url: "https://www.statcan.gc.ca/en/lode/databases/odrsf" },
   { label: "Brampton Lighthouse Project", url: "https://changingclimate.ca/map/brampton-lighthouse-project/" },
   { label: "Clean Electricity ITC (CRA)", url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-electricity-investment-tax-credit.html" },
 ];
