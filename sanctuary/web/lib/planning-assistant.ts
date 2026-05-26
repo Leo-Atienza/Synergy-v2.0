@@ -111,7 +111,11 @@ export function buildPlanningPrompt(candidate: CandidatePlanningContext): string
   return [
     "You are drafting a municipal planning checklist for Sanctuary, a hackathon prototype.",
     "Use PUBLIC FACTS ONLY. Do not infer equipment, costs, energy capacity, funding certainty, or rank changes.",
-    "Return JSON only with: summary, recommended_checks exactly 5 strings, unknowns, source_basis.",
+    "Return JSON only, with exactly these keys and no others:",
+    "- summary: a single string.",
+    "- recommended_checks: an array of EXACTLY 5 strings.",
+    "- unknowns: an array of at least 1 string.",
+    `- source_basis: an array of 1 or more tags, each copied VERBATIM from this list and nothing else: ${FIXED_SOURCE_BASIS.join(", ")}.`,
     `Fixed disclaimer to preserve in the response: ${PLANNING_ASSISTANT_DISCLAIMER}`,
     `Fixed label to preserve in the response: ${PLANNING_ASSISTANT_LABEL}`,
     "",
