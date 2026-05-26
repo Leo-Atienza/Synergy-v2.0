@@ -7,6 +7,7 @@
 // reach the 15% Clean Electricity ITC, never the 30% Clean Technology ITC.
 
 export type Source = { name: string; url: string };
+export type EvidenceStatus = "verified" | "modelled" | "pending";
 
 export const ARCGIS_WEB_MAP =
   "https://senecatechnology.maps.arcgis.com/apps/mapviewer/index.html?webmap=17951a55fae44a83a330101433dda67a";
@@ -91,12 +92,37 @@ export const PROBLEM_POINTS: { label: string; body: string }[] = [
 ];
 
 // Method section — the scoring weights (mirror sanctuary/docs/methods-note.md).
-export const METHOD_ROWS: { label: string; weight: string; desc: string }[] = [
-  { label: "Heat vulnerability nearby", weight: "35%", desc: "How high the HVI quintile is at the building's census tract." },
-  { label: "Vulnerable population in catchment", weight: "25%", desc: "Modelled from a 500 m catchment until a real walkshed is run — labelled pending." },
-  { label: "Trust / community role", weight: "20%", desc: "Whether people already know, reach, and rely on the place." },
-  { label: "Rooftop hardening potential", weight: "10%", desc: "A rough small / medium / large class from footprint — a modelled estimate." },
-  { label: "Facility suitability", weight: "10%", desc: "Whether it is a public-facing building with a real community role." },
+export const METHOD_ROWS: { label: string; weight: string; status: EvidenceStatus; desc: string }[] = [
+  {
+    label: "Heat vulnerability nearby",
+    weight: "35%",
+    status: "verified",
+    desc: "HVI quintile at the building's census tract, checked against Peel's public feature service.",
+  },
+  {
+    label: "Vulnerable population in catchment",
+    weight: "25%",
+    status: "modelled",
+    desc: "A modelled 500 m catchment until a real walkshed is run; population count remains pending.",
+  },
+  {
+    label: "Trust / community role",
+    weight: "20%",
+    status: "verified",
+    desc: "Public-facing civic or faith/community role, backed by the candidate source URL.",
+  },
+  {
+    label: "Rooftop hardening potential",
+    weight: "10%",
+    status: "modelled",
+    desc: "Small / medium / large planning class from visible footprint. Not a solar design.",
+  },
+  {
+    label: "Facility suitability",
+    weight: "10%",
+    status: "modelled",
+    desc: "First-pass fit for a public-serving heat/outage site; final readiness requires audit.",
+  },
 ];
 
 // Real-vs-estimated honesty grid.
@@ -148,12 +174,28 @@ export const EVIDENCE: { label: string; body: string; source: Source }[] = [
   },
 ];
 
-// Future pipeline phases.
+// Future pipeline phases. These are roadmap stages, not built features.
 export const FUTURE_PHASES: { num: string; label: string; body: string }[] = [
-  { num: "1", label: "Pick places", body: "Rank the first candidate hubs from heat risk, trust, modelled reach, and building usefulness — the step this prototype performs." },
-  { num: "2", label: "Check readiness", body: "Confirm owners, accessibility, cooling, roof condition, and electrical readiness with a site audit." },
-  { num: "3", label: "Find funding", body: "Compare grants, the 15% Clean Electricity ITC, and rough upgrade costs per site." },
-  { num: "4", label: "Run the network", body: "Track status, supplies, staffing, and outage readiness — and only later, live energy data." },
+  {
+    num: "1",
+    label: "Better walksheds",
+    body: "Roadmap: replace 500 m circles with real walksheds that account for sidewalks, transit, and barriers.",
+  },
+  {
+    num: "2",
+    label: "Site audits",
+    body: "Roadmap: verify owners, cooling, accessibility, roof condition, backup power, and electrical readiness.",
+  },
+  {
+    num: "3",
+    label: "Public app, later",
+    body: "Roadmap: only after verification, residents could see open, equipped, trusted places during heat or outages.",
+  },
+  {
+    num: "4",
+    label: "Alectra-wide scale",
+    body: "Roadmap: repeat the same honest scoring across more of Alectra's service territory and other hazards.",
+  },
 ];
 
 // Alectra / scale framing — GridExchange is a transferable GGH template, never a Peel deployment.
@@ -166,14 +208,134 @@ export const SCALE_NOTE = {
 };
 
 // Source links shown in the Sources section.
-export const SOURCE_LINKS: { label: string; url: string }[] = [
-  { label: "Peel Heat Vulnerability Index", url: HVI_SOURCE_ITEM },
-  { label: "Sanctuary ArcGIS web map", url: ARCGIS_WEB_MAP },
-  { label: "Peel climate-and-health context", url: "https://peelregion.ca/about/climate-change/climate-change-health" },
-  { label: "Mississauga civic facility locations", url: "https://www.mississauga.ca/recreation-and-sports/locations-and-rentals/locations/" },
-  { label: "StatCan ODRSF facility database", url: "https://www.statcan.gc.ca/en/lode/databases/odrsf" },
-  { label: "Brampton Lighthouse Project", url: "https://changingclimate.ca/map/brampton-lighthouse-project/" },
-  { label: "Clean Electricity ITC (CRA)", url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-electricity-investment-tax-credit.html" },
+export const SOURCE_LINKS: { label: string; status: EvidenceStatus; note: string; url: string }[] = [
+  {
+    label: "Peel Heat Vulnerability Index",
+    status: "verified",
+    note: "HVI item used for public-health heat-risk context and source metadata.",
+    url: HVI_SOURCE_ITEM,
+  },
+  {
+    label: "Peel HVI Web Map",
+    status: "verified",
+    note: "Official web map that styles the same HVI feature service by quintile.",
+    url: "https://www.arcgis.com/home/item.html?id=d1adca8a3b1e403483e608040734c07a",
+  },
+  {
+    label: "Peel HVI Feature Service",
+    status: "verified",
+    note: "Point-queried for candidate HVI, exposure, sensitivity, adaptive-capacity, CTUID, and PHDZ fields.",
+    url: "https://services6.arcgis.com/ONZht79c8QWuX759/arcgis/rest/services/Extreme_Heat_Vulnerability_Index/FeatureServer/0",
+  },
+  {
+    label: "Peel climate-and-health context",
+    status: "verified",
+    note: "Regional context for climate and health risk; not used for per-building claims.",
+    url: "https://peelregion.ca/about/climate-change/climate-change-health",
+  },
+  {
+    label: "Mississauga civic facility pages",
+    status: "verified",
+    note: "Used to check Malton Community Centre and Library name, address, and public facility role.",
+    url: "https://www.mississauga.ca/recreation-and-sports/locations-and-rentals/locations/",
+  },
+  {
+    label: "Mississauga building footprints",
+    status: "modelled",
+    note: "Supports rough roof/footprint class only; it is not a solar-capacity measurement.",
+    url: "https://data.mississauga.ca/datasets/building-footprints-1",
+  },
+  {
+    label: "Brampton building footprints",
+    status: "modelled",
+    note: "Supports rough roof/footprint class for Brampton candidates only.",
+    url: "https://geohub.brampton.ca/datasets/building-footprints",
+  },
+  {
+    label: "Ontario ODRSF facility database",
+    status: "verified",
+    note: "Facility-reference dataset for public/community service context.",
+    url: "https://www.statcan.gc.ca/en/lode/databases/odrsf",
+  },
+  {
+    label: "NRCan photovoltaic potential",
+    status: "modelled",
+    note: "Regional solar context only; no named building is claimed solar-ready.",
+    url: "https://natural-resources.canada.ca/energy-sources/renewable-energy/photovoltaic-potential-solar-resource-maps-canada",
+  },
+  {
+    label: "Brampton Lighthouse Project",
+    status: "verified",
+    note: "Precedent for trusted refuge networks; not a claim about solar or Peel deployment.",
+    url: "https://changingclimate.ca/map/brampton-lighthouse-project/",
+  },
+  {
+    label: "Clean Electricity ITC",
+    status: "verified",
+    note: "Funding context: tax-exempt community buildings can reach the 15% CEITC, not guaranteed funding.",
+    url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-electricity-investment-tax-credit.html",
+  },
+  {
+    label: "Sanctuary ArcGIS web map",
+    status: "verified",
+    note: "The judged map artifact that carries the candidate points and ranked view.",
+    url: ARCGIS_WEB_MAP,
+  },
+];
+
+export const CANDIDATE_SOURCE_LINKS: { label: string; status: EvidenceStatus; url: string }[] = [
+  { label: "Malton Community Centre and Library", status: "verified", url: "https://www.mississauga.ca/recreation-and-sports/locations/malton-community-centre/" },
+  { label: "Sri Guru Singh Sabha Malton", status: "verified", url: "https://www.srigurusinghsabhamalton.com/" },
+  { label: "Susan Fennell Sportsplex", status: "verified", url: "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/pages/susan-fennell-sportsplex.aspx" },
+  { label: "Anjuman-E-Anwarul Islam of Malton", status: "verified", url: "https://maltonmasjid.ad-din.site/" },
+  { label: "Bharat Mata Mandir", status: "verified", url: "https://miracletechnologies.ca/bharatmatamandir/" },
+  { label: "Chinguacousy Wellness Centre", status: "verified", url: "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/pages/chinguacousy-wellness.aspx" },
+  { label: "Hindu Sabha Temple", status: "verified", url: "https://hindusabhatemple.com/contacts" },
+  { label: "Gore Meadows Community Centre and Library", status: "verified", url: "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/Pages/Gore-Meadows.aspx" },
+  { label: "Guru Nanak Darbar Gurdwara", status: "verified", url: "https://nanakdarbar.com/" },
+  { label: "Cassie Campbell Community Centre", status: "verified", url: "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/pages/cassie-campbell.aspx" },
+];
+
+export const PHOTO_ASSETS: {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+  credit: string;
+  license: string;
+  source: Source;
+}[] = [
+  {
+    src: "/photos/malton-cc-library.jpg",
+    width: 1280,
+    height: 960,
+    alt: "Exterior of Malton Community Centre and Library in Mississauga.",
+    caption: "Malton Community Centre and Library, the hero candidate at 3540 Morning Star Drive.",
+    credit: "Matt Pascal",
+    license: "CC BY-SA 4.0",
+    source: { name: "Wikimedia Commons — Malton CC and Library", url: "https://commons.wikimedia.org/wiki/File:Malton_CC_and_Library.jpg" },
+  },
+  {
+    src: "/photos/malton-westwood-square.jpg",
+    width: 3264,
+    height: 2448,
+    alt: "Westwood Square Mall storefront in Malton, Ontario.",
+    caption: "A real Malton place image near the Goreway corridor; not stock and not a generic solar visual.",
+    credit: "Aaron504195",
+    license: "CC BY-SA 4.0",
+    source: { name: "Wikimedia Commons — Westwood Square Mall", url: "https://commons.wikimedia.org/wiki/File:Shoppers_Drug_Mart_(Malton,_Ontario).jpg" },
+  },
+  {
+    src: "/photos/peel-1937-map.jpg",
+    width: 1301,
+    height: 1516,
+    alt: "Archival map of the County of Peel, Ontario, Canada.",
+    caption: "Archival Peel map, included as local context rather than decoration.",
+    credit: "The Perkins Bull Foundation",
+    license: "Public domain in Canada",
+    source: { name: "Wikimedia Commons — County of Peel map", url: "https://commons.wikimedia.org/wiki/File:County_of_Peel,_Ontario,_Canada_map_(1937).jpg" },
+  },
 ];
 
 // Technical stack (shown beside sources).

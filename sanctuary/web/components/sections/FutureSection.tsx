@@ -5,9 +5,9 @@ import { ArrowUpRight } from "@/components/icons";
 export function FutureSection() {
   return (
     <Section
-      eyebrow="After the first decision"
-      title="One ranked list becomes a repeatable pipeline."
-      lead="Live energy data and operations dashboards are later layers. They only make sense once sites are checked and partners agree to take part."
+      eyebrow="Roadmap, not built"
+      title="After the demo, the honest version grows in stages."
+      lead="The current prototype ranks candidate hubs. Walksheds, site audits, public navigation, and utility-scale rollout only come after verification."
     >
       <ol className="phase-track">
         {FUTURE_PHASES.map((p) => (

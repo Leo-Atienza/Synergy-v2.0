@@ -517,6 +517,163 @@ h3 {
   line-height: 1.45;
 }
 
+/* --- method/vision/sources/photos --- */
+.content-page {
+  padding-top: clamp(42px, 7vw, 78px);
+}
+.content-hero {
+  max-width: 760px;
+  padding: clamp(42px, 8vw, 86px) 0 clamp(20px, 4vw, 38px);
+}
+.content-hero h1 {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--font-serif);
+  font-size: var(--h1);
+  font-weight: 540;
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.content-hero p:not(.eyebrow) {
+  margin: 20px 0 0;
+  max-width: 62ch;
+  color: var(--text-muted);
+  font-size: var(--lead);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+.method-row {
+  grid-template-columns: minmax(150px, 1.05fr) 70px minmax(112px, 0.7fr) minmax(220px, 1.55fr);
+}
+.source-list {
+  display: grid;
+  gap: 0;
+}
+.source-row {
+  padding: 14px 0;
+  border-top: 1px solid var(--hairline);
+}
+.source-row > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.source-row .tag {
+  flex: 0 0 auto;
+}
+.source-list .source-row a {
+  display: inline-flex;
+  gap: 5px;
+  padding: 0;
+  border-top: 0;
+  color: var(--text);
+  font-weight: 600;
+}
+.source-row p {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.48;
+}
+.candidate-source-list {
+  margin-top: 16px;
+  padding: 20px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  background: var(--surface-raised);
+}
+.candidate-source-list h3 {
+  margin: 0;
+  font-size: var(--h3);
+  font-weight: 600;
+}
+.candidate-source-list p {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+.candidate-source-list > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px 18px;
+  margin-top: 12px;
+}
+.candidate-source-list a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid var(--hairline);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+.candidate-source-list a:hover {
+  color: var(--signal);
+}
+.candidate-source-list .tag {
+  flex: 0 0 auto;
+}
+.candidate-source-list a span:not(.tag) {
+  flex: 1 1 auto;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(0, 0.85fr));
+  gap: 16px;
+  margin-top: clamp(28px, 4vw, 44px);
+}
+.photo-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  background: var(--surface-raised);
+}
+.photo-card:first-child {
+  grid-row: span 2;
+}
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.03);
+}
+.photo-card:first-child img {
+  max-height: 560px;
+}
+.photo-card figcaption {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px 16px;
+  border-top: 1px solid var(--hairline);
+}
+.photo-card figcaption strong {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+.photo-card figcaption span {
+  color: var(--text-muted);
+  font-family: var(--font-data);
+  font-size: 0.73rem;
+  line-height: 1.45;
+}
+.photo-card figcaption a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--signal);
+  text-decoration: none;
+}
+.photo-card figcaption a:hover {
+  text-decoration: underline;
+}
+
 /* ============================================================================
    The decision — stage (map + rail)
    ========================================================================== */
@@ -1447,8 +1604,13 @@ button.candidate-row:hover {
   .indicator-grid,
   .phase-track,
   .qa-grid,
-  .source-stack-grid {
+  .source-stack-grid,
+  .candidate-source-list > div,
+  .photo-grid {
     grid-template-columns: 1fr;
+  }
+  .photo-card:first-child {
+    grid-row: auto;
   }
   .indicator-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1472,6 +1634,12 @@ button.candidate-row:hover {
 @media (max-width: 560px) {
   .indicator-grid {
     grid-template-columns: 1fr;
+  }
+  .content-hero h1 {
+    max-width: 16ch;
+  }
+  .candidate-source-list a {
+    align-items: flex-start;
   }
 }
 
