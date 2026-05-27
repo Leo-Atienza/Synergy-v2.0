@@ -617,6 +617,7 @@ export const TECH_STACK: { label: string; body: string }[] = [
   { label: "Next.js 16 + React 19", body: "This showcase: a server-rendered shell with one interactive map island and no backend." },
   { label: "d3-geo SVG", body: "Projects Peel geography and the candidate points. No basemap token, fully offline." },
   { label: "Static GeoJSON", body: "Candidate data is bundled at build, so it stays auditable and demo-safe with no runtime fetch." },
+  { label: "Gemini 2.5 Flash", body: "Drafts each candidate's planning checklist offline, behind a no-overclaim gate that rejects invented power, dollar, or sizing figures. The reviewed text ships as static JSON, so the live site calls no model at runtime." },
 ];
 
 // Judge Q&A (mirror sanctuary/docs/judge-qa.md, tightened).
