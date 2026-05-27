@@ -20,7 +20,7 @@
 | T7 planning-checklist route | ✅ resolved | keep — already documented as a build-time regeneration tool in `sanctuary/web/CLAUDE.md`. No action. |
 | T8 StoryMap screenshots | ⏭️ skipped | recording-track / out of scope per user. Available on request. |
 
-**New decision opened by T5:** whether to integrate the recovered WIP (branch `claude/gracious-sammet-03aaf4` @ `099599b`) into `main`. It touches the *sacred* MapStage + is out of `scope.md`, so it needs an explicit go-ahead before merging into the audited submission site.
+**New decision opened by T5 — RESOLVED 2026-05-27:** of the recovered WIP, the **MapStage fly-to fix** (scope-legal bug fix) was integrated to `main` (`2b80114`), deployed, and verified (Chrome `/map` "Play the decision" lands Malton at ~viewport centre, not the corner; build green; prod 200). The **footer + BackToTop + sticky-map CSS + scrollRestoration** stay **deferred** on branch `claude/gracious-sammet-03aaf4` @ `099599b` (out of `scope.md` — a new feature, suited to retro/post-submission). Worktree retained so that work isn't lost.
 
 ---
 
