@@ -1,5 +1,7 @@
 # Sanctuary
 
+**Live showcase: [project-sanctuary-seneca.vercel.app](https://project-sanctuary-seneca.vercel.app)**
+
 *The Synergy team's entry for the Seneca Energy Hackathon 2026. Theme 3, Community Energy, Equity & Sustainability (Problem Statement 2: climate resilience, vulnerable populations, and shelter access).*
 
 **Before the next heat wave, which five buildings should Peel harden first?**
