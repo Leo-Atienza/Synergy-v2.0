@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { Logo } from "@/components/Logo";
+
 // Top navigation for the multi-page showcase. The wordmark replaces the old
 // Masthead (its "which five?" line now lives only in the Overview hero). Active
 // route is marked with aria-current="page"; the mobile drawer is keyboard- and
@@ -41,8 +43,11 @@ export function Nav() {
     <header className="nav">
       <div className="nav-inner">
         <Link href="/" className="nav-brand" aria-label="Sanctuary home">
-          <span className="brand-mark">SANCTUARY</span>
-          <span className="nav-brand-sub">Peel heat-resilience hubs</span>
+          <Logo className="nav-logo" />
+          <span className="nav-brand-text">
+            <span className="brand-mark">SANCTUARY</span>
+            <span className="nav-brand-sub">Peel heat-resilience hubs</span>
+          </span>
         </Link>
 
         <button

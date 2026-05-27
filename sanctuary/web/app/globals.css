@@ -2221,11 +2221,20 @@ button.candidate-row:hover {
 }
 .nav-brand {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-brand-text {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 1.05;
-  text-decoration: none;
-  white-space: nowrap;
+}
+.nav-logo {
+  flex: none;
 }
 .nav-brand .brand-mark {
   font-size: 0.98rem;
