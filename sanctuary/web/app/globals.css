@@ -554,11 +554,11 @@ h3 {
   font-size: 0.95rem;
   line-height: 1.55;
 }
-.prov-note-sub {
-  margin-top: 14px !important;
+.prov-note p.prov-note-sub {
+  margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid var(--hairline);
-  font-size: 0.9rem !important;
+  font-size: 0.9rem;
 }
 
 /* Honesty cards — colour rides WITH the icon+text tag, never alone. */
