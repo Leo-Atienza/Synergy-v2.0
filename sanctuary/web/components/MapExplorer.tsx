@@ -69,13 +69,17 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
     setStep(STEP.ZOOM);
   };
 
-  // Advance the tour through the five beats. Reduced-motion: jump straight to the
-  // final Malton state (no autoplay). Cleared if the tour is exited mid-run.
+  // Advance the tour through the five beats, then hand control back: the map only
+  // gates off pan/zoom/click while `touring`, so the tour MUST release it on finish
+  // or the map stays frozen on Malton (the reported bug). Reduced-motion: jump
+  // straight to the final Malton state and release immediately (no autoplay to watch).
+  // Cleared if the tour is exited mid-run.
   useEffect(() => {
     if (!touring) return;
     if (reduced) {
       setStep(STEP.ZOOM);
       setSelectedRank(1);
+      setTouring(false);
       return;
     }
     const beats: { step: number; at: number }[] = [
@@ -91,6 +95,9 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
         if (b.step === STEP.ZOOM) setSelectedRank(1);
       }, b.at),
     );
+    // After the fly-to lands on Malton (~7.9s) and holds, end the tour so the user
+    // can pan/zoom again. The map eases back to the full interactive frame.
+    timers.push(setTimeout(() => setTouring(false), 9000));
     return () => timers.forEach(clearTimeout);
   }, [touring, reduced]);
 
