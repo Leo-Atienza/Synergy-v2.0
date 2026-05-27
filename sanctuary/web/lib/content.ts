@@ -21,7 +21,21 @@ export const MALTON = {
   name: "Malton Community Centre and Library",
   address: "3540 Morning Star Drive, Mississauga",
   hvi: 5,
+  phdz: "M-04",
+  ctuid: "5350530.01",
 } as const;
+
+// Malton evidence ledger — the hero strip + local proof, every fact tagged.
+// Address / HVI / zone / tract are verified against the Peel EHVI service;
+// prototype status + next step stay honestly pending (no equipment claimed).
+export const LOCAL_PLACE_FACTS: { label: string; value: string; status: EvidenceStatus }[] = [
+  { label: "Address", value: MALTON.address, status: "verified" },
+  { label: "Peel HVI", value: `quintile ${MALTON.hvi}`, status: "verified" },
+  { label: "Public-health zone", value: MALTON.phdz, status: "verified" },
+  { label: "Census tract", value: MALTON.ctuid, status: "verified" },
+  { label: "Prototype status", value: "candidate hub, not equipped", status: "pending" },
+  { label: "Next step", value: "site audit required", status: "pending" },
+];
 
 // Embodied numbers for the hero + problem section. Each is sourced.
 export const EMBODIED = {
