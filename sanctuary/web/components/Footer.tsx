@@ -36,7 +36,7 @@ export function Footer() {
           <EvidenceTag tag="pending" />
         </div>
         <p>
-          Siting and Heat Vulnerability Index quintiles are <strong>verified</strong> against the public Peel HVI feature
+          Siting and Heat Vulnerability Index quintiles are <strong>verified</strong>{" "}against the public Peel HVI feature
           service and each building&rsquo;s official page. Reachable population, rooftop, and solar figures are{" "}
           <strong>modelled or pending</strong> — labelled as such, never presented as measured.
         </p>
