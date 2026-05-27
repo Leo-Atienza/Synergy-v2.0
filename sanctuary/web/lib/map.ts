@@ -85,7 +85,11 @@ export function projectMap(
 
   const malton = points.find((p) => p.rank === 1) ?? points[0];
   const k = 1.9;
-  const zoom = { x: round(W / 2 - k * malton.x), y: round(H / 2 - k * malton.y), scale: k };
+  // The fly-to <g> in MapStage scales about the SVG view-box CENTRE: Motion forces
+  // transform-origin to 50% 50%, and `transform-box: view-box` pins that to (W/2,H/2).
+  // The translate that lands Malton at centre is therefore k·(centre − malton), not
+  // (centre − k·malton) — the latter assumes a (0,0) pivot and drops Malton in the corner.
+  const zoom = { x: round(k * (W / 2 - malton.x)), y: round(k * (H / 2 - malton.y)), scale: k };
 
   return { fsaPaths, points, zoom };
 }

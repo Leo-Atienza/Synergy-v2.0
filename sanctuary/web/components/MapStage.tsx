@@ -199,11 +199,17 @@ export function MapStage({
       >
         {/* outer USER pan/zoom group (hand-rolled, default identity) */}
         <g transform={`translate(${view.x} ${view.y}) scale(${view.scale})`}>
-          {/* inner SCROLLYTELLING fly-to group (behaviour unchanged) */}
+          {/* inner SCROLLYTELLING fly-to group. Motion forces SVG transforms to pivot
+              at the box CENTRE; the default box is the content bbox (fill-box), whose
+              centre is content-dependent — so the fly-to mis-frames and Malton lands in
+              the top-left corner. Pinning the box to the view-box makes the pivot the
+              deterministic viewBox centre (W/2,H/2); lib/map.ts computes the zoom
+              translate as k·(centre − malton) to match it. */}
           <m.g
             initial={false}
             animate={zoomT}
             transition={reduced ? { duration: 0 } : { duration: 0.9, ease: EASE_CALM }}
+            style={{ transformBox: "view-box" }}
           >
             {/* faint Peel outline (context boundary) */}
             {base.outline.map((d, i) => (

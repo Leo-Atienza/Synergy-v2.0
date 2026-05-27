@@ -53,6 +53,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${mono.variable}`}>
       <body>
+        {/* Land at the top of the page on a hard refresh instead of the browser
+            restoring the previous scroll offset. Runs before paint (first node in
+            <body>) so there is no scroll-jump flash; hash links (#id) still work. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "if('scrollRestoration' in history){history.scrollRestoration='manual';}",
+          }}
+        />
         <Nav />
         {children}
         <Footer />
