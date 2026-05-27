@@ -12,12 +12,12 @@ Sanctuary ranks trusted community buildings in Peel Region, libraries, recreatio
 
 | | |
 |---|---|
+| **Submission video** | [Watch on YouTube](https://www.youtube.com/shorts/uKURph_Dm10) |
 | **Live showcase** | [project-sanctuary-seneca.vercel.app](https://project-sanctuary-seneca.vercel.app) |
 | **ArcGIS web map** | [Peel HVI, public facilities, and candidate hubs](https://senecatechnology.maps.arcgis.com/apps/mapviewer/index.html?webmap=17951a55fae44a83a330101433dda67a) |
 | **Methods and judge Q&A** | [methods-note.md](sanctuary/docs/methods-note.md) · [judge-qa.md](sanctuary/docs/judge-qa.md) |
 
-The primary submission is a 5-minute walkthrough video built on an Esri ArcGIS StoryMap and web map, submitted through the Hackathon Portal. The live showcase above performs the same decision and doubles as a clickable backup.
-<!-- Team: if the walkthrough is uploaded to an unlisted YouTube link, paste it here for judges browsing the repo. -->
+The submission video is the team's walkthrough of Sanctuary. The live showcase above performs the same decision on the map and doubles as a clickable backup.
 
 ## The decision Sanctuary makes
 
