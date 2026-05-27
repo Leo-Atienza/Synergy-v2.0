@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -47,6 +47,12 @@ export const metadata: Metadata = {
     title: "Sanctuary: harden these five Peel buildings first",
     description: DESCRIPTION,
   },
+};
+
+// Navy browser chrome on mobile (the address bar / status bar) instead of the
+// default white, so the site reads as one dark surface on phones.
+export const viewport: Viewport = {
+  themeColor: "#0d1620",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
