@@ -16,13 +16,14 @@ Team entry for the **[Seneca Energy Hackathon 2026](https://www.senecahackathon.
 | **Submission deadline** | 2026-05-26 23:59 ET |
 | **Pitch venue** | HELIX Main Stage, 1750 Finch Ave East, Toronto |
 
-## Status (as of 2026-05-26 — submission day)
+## Status (as of 2026-05-27)
 
 | Field | Value |
 |---|---|
 | Phase | Build / qualifier-video prep |
 | Active submission | Sanctuary |
-| Time to submission | **TODAY — deadline 2026-05-26 23:59 ET** (confirm the firm time on the Hackathon Portal) |
+| Qualifier deadline | 2026-05-26 23:59 ET (recorded) — confirm current submission status on the Hackathon Portal |
+| Support site | complete + audited 2026-05-27 (data-accuracy GO, build green); live at the canonical URL above |
 | Mode | Team — split GIS/data, StoryMap/design, research/pitch |
 | Stack preset | ArcGIS StoryMap + Web Map/Dashboard |
 | Pattern-break archetype | Public-Good Frame + Local-Detail |
