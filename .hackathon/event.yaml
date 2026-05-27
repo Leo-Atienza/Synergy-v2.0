@@ -65,7 +65,7 @@ deploy:
   live_url: "https://project-sanctuary-seneca.vercel.app"  # canonical support-showcase URL (judged artifact is the ArcGIS StoryMap video, not this site)
   live_url_alias: "https://sanctuary-phi.vercel.app"        # older alias; 307-redirects to the canonical live_url above; same prod deploy
   deployed_from: "main (manual vercel deploy --prod)" # was feat/showcase-rebuild, now merged to main
-  prod_code_commit: "5afd333"           # last CODE commit live prod serves (verified 2026-05-27 on project-sanctuary-seneca.vercel.app, HTTP 200 + foot-honesty markup): merge of the "website map, scroll & footer fixes" session — editorial 3-tier footer + back-to-top + scroll-restoration + sticky-map-below-nav fix; main's fly-to transform-origin fix preserved. Docs-only commits since do NOT auto-deploy.
+  prod_code_commit: "99e0f45"           # last CODE commit live prod serves (verified 2026-05-27 on project-sanctuary-seneca.vercel.app, HTTP 200): "website map, scroll & footer fixes" merge (5afd333: editorial 3-tier footer + back-to-top + scroll-restoration + sticky-map-below-nav fix; main's fly-to fix preserved) + footer credibility-line space fix (99e0f45: "verified against"). Docs-only commits since do NOT auto-deploy.
   final_commit_sha: ""                  # FREEZE at submission: `git tag v1-submission <sha> && git push origin v1-submission`
   github_url: "https://github.com/Leo-Atienza/Synergy-v2.0"  # private repo — teammates need a collaborator invite (see ONBOARDING.md)
 
