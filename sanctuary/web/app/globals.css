@@ -1063,14 +1063,16 @@ h3 {
 }
 .decision-stage[data-live="true"] .scroll-map {
   position: sticky;
-  top: 0;
-  height: 100svh;
+  /* Pin BELOW the sticky nav (top:0, --nav-h tall) so the map is never tucked
+     under it, and centre the map in the viewport space that's actually visible. */
+  top: var(--nav-h);
+  height: calc(100svh - var(--nav-h));
   display: flex;
   align-items: center;
 }
 .decision-stage[data-live="true"] .scroll-map .map-wrap {
   width: 100%;
-  max-height: 86svh;
+  max-height: calc(100svh - var(--nav-h) - 24px);
 }
 .decision-stage[data-live="true"] .scroll-step {
   min-height: 100svh;
@@ -1965,32 +1967,130 @@ button.candidate-row:hover {
   box-shadow: inset 3px 0 0 var(--signal), 0 0 0 1px color-mix(in oklab, var(--signal) 18%, transparent);
 }
 
-/* ---- Footer (mounted globally in layout.tsx, so it centers itself) ---- */
+/* ---- Footer (mounted globally in layout.tsx, so it centers itself) ----
+   Editorial three-tier footer: wordmark + wayfinding nav, the verified/modelled/
+   pending evidence key + credibility statement, then credits + back-to-top.
+   Hairline dividers, mono data, semantic tokens — no boxes, no gradients. */
 .foot {
   max-width: var(--page-max);
   margin: var(--section-y) auto 0;
-  padding: 18px var(--gutter) 48px;
+  padding: 0 var(--gutter) clamp(40px, 6vw, 64px);
   border-top: 1px solid var(--hairline);
 }
 /* After the full-bleed map page, drop the big top gap. */
 .map-page + .foot {
   margin-top: 0;
 }
-.foot p {
-  margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.6;
-  color: var(--text-faint);
-  max-width: 90ch;
+
+/* Tier 1 — wordmark + footer nav. */
+.foot-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px 32px;
+  padding-top: clamp(32px, 4.5vw, 52px);
 }
-.foot strong {
+.foot-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-decoration: none;
+}
+.foot-mark {
+  font-family: var(--font-data);
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
+  color: var(--text);
+}
+.foot-brand-sub {
+  font-family: var(--font-data);
+  font-size: 0.64rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.foot-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px clamp(16px, 2vw, 28px);
+}
+.foot-nav a {
+  font-family: var(--font-data);
+  font-size: 0.82rem;
   color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.16s ease;
+}
+.foot-nav a:hover {
+  color: var(--text);
+}
+
+/* Tier 2 — the evidence key + credibility statement (the honesty signature). */
+.foot-honesty {
+  margin-top: clamp(26px, 3.5vw, 38px);
+  padding-top: clamp(24px, 3vw, 32px);
+  border-top: 1px solid var(--hairline);
+}
+.foot-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.foot-honesty p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 92ch;
+}
+.foot-honesty strong {
+  color: var(--text);
   font-weight: 600;
 }
+
+/* Tier 3 — credits + back-to-top. */
+.foot-bottom {
+  margin-top: clamp(26px, 3.5vw, 38px);
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
 .foot-meta {
-  margin-top: 10px !important;
+  margin: 0;
   font-family: var(--font-data);
-  font-size: 0.74rem !important;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--text-faint);
+}
+.foot-top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 4px 7px 12px;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.16s ease;
+}
+.foot-top-link:hover {
+  color: var(--signal);
+}
+.foot-top-link svg {
+  transition: transform 0.18s var(--ease-calm);
+}
+.foot-top-link:hover svg {
+  transform: translateY(-2px);
 }
 
 /* ============================================================================
