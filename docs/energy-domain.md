@@ -431,3 +431,61 @@ Modelled at verified ULO rates (on-peak 39.1¢, off-peak/weekend 9.8¢, overnigh
 - **WEAKENED / NEEDS RE-WORDING:** the claim that ULO was "**designed for the affluent**" is NOT what the OEB says. Its framing is "supports EV integration / for overnight-heavy users (incl. shift workers)," which is neutral, not wealth-targeted. The affluent-capture story is a defensible *inference* from EV economics, not an OEB statement. A skeptical judge who has read the OEB page can puncture "designed for the affluent." **Safer pitch line:** *"ULO was built around overnight EV charging, a load that skews toward homeowners who can charge at home. And the renters most likely to be sub-metered can't even choose the plan: their landlord picks the rate for the whole building."*
 - **SURPRISE a judge could use against us (flag it):** on ULO, **most households pay MORE than on standard TOU** unless they genuinely move load overnight (ULO on-peak 39.1¢ ≫ TOU on-peak ~20.3¢). So "opening 3.9¢ to a renter with a $40 window AC" only nets out if Tide *actually* shifts enough load overnight to beat the punishing 4-9pm ULO on-peak. Otherwise enrolling a renter in ULO could *raise* their bill. Tide's automation is exactly what makes ULO safe for an inflexible household, which is the right framing, but don't imply ULO is free money. Sources: <https://solar-x.ca/blog/ontario-electricity-rates-explained>, OEB rates <https://www.oeb.ca/consumer-information-and-protection/electricity-rates>.
 - **Enrollment number to use:** **12,073 on ULO as of March 31, 2024** (≈ <0.3% of RPP households). Frame it as "a rate almost nobody is on two years in," which supports the "captured by a niche" narrative. Do not claim a newer or larger figure; none is public.
+
+---
+
+## Funding & financing programs — added 2026-05-27
+
+> Gathered by `energy-domain-researcher` for the Sanctuary `/funding` page (capital + operating model for solar-and-battery community resilience hubs). The page rule is "every rate sourced, no modelled dollar totals." Each program below carries the eligibility line that matters for **tax-exempt** owners (municipalities, libraries, faith bodies, Indigenous communities). Three honesty flags at the end: two closed programs and one missing public number. Cite every line.
+
+### The one nuance that drives the whole stack
+A community building is usually **tax-exempt**, and tax-exempts are excluded from most clean-economy ITCs. The exception is the **Clean Electricity ITC**, written to include them. So a library / gurdwara / mosque / mandir / municipal centre realistically reaches **15% CEITC, not 30% CTITC** — unless the asset is structured through a taxable project company (e.g. a taxable SPV or third-party-owned PPA). This is the load-bearing fact for the Sanctuary financing story and it matches the repo's existing data-truth rule.
+
+#### Clean Electricity Investment Tax Credit (CEITC) — CONFIRMED
+- **What it funds:** capital cost of eligible clean-electricity property (solar, wind, storage, and supporting equipment).
+- **Tax-exempt eligibility:** the one ITC tax-exempts can claim, via a corporate vehicle — taxable Canadian corps, provincial/territorial Crown corps, corps ≥90% owned by Canadian municipalities, corps owned by Indigenous governing bodies, and pension investment corps. A bare municipality/charity/faith body claims through a municipally- or Indigenous-owned corporation.
+- **Rate:** 15%, refundable.
+- **Enacted:** s.127.491 ITA via **Bill C-15 (Budget 2025 Implementation Act No. 1), Royal Assent 2026-03-26.** Co-administered CRA + NRCan. Qualifying expenditures **2024-04-16 → 2034-12-31** (projects that did not begin construction before 2023-03-28).
+- **Intake:** not an intake; claimed on the T2/T3 return.
+- **URL:** <https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-electricity-investment-tax-credit.html> (note: canada.ca returns 403 to automated fetch; content corroborated via Torys <https://www.torys.com/our-latest-thinking/torys-quarterly/q2-2026/clean-economy-investment-tax-credits> and TAF <https://taf.ca/federal-tax-credits-open-new-doors-for-municipal-and-indigenous-clean-energy-projects/>).
+
+#### Clean Technology Investment Tax Credit (CTITC) — CONFIRMED (the contrast)
+- **What it funds:** capital cost of new clean-tech property (solar PV, storage, ground-source heat pumps).
+- **Eligibility:** **taxable Canadian corporations or REIT mutual-fund trusts only. Tax-exempts excluded.**
+- **Rate:** up to 30% (available-for-use 2023-03-28 → 2033-12-31, dropping to 15% in 2034; minus 10 points if labour requirements unmet).
+- **URL:** <https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-technology-itc/about-ct-itc.html>
+
+#### FCM Green Municipal Fund — Community Buildings Retrofit (CBR) — OPEN
+- **What it funds:** energy/GHG retrofits of public community buildings (feasibility, recommissioning, capital). Federally funded, FCM-delivered.
+- **Eligibility:** Canadian municipal governments; funds buildings owned by the **municipality OR a not-for-profit** (a faith body needs a municipal partner/applicant).
+- **Amount:** GHG-impact capital project max $5M/project, up to 25% as grant + remainder as loan, **combined grant+loan up to 80% of eligible costs**; requires **≥30% GHG reduction** vs baseline. Separate grants for studies/recommissioning.
+- **Intake:** **accepted year-round**, closes when funding is allocated.
+- **URL:** <https://greenmunicipalfund.ca/community-buildings-retrofit-initiative>
+
+#### IESO Save on Energy — Retrofit Program — OPEN
+- **What it funds:** energy-efficiency + behind-the-meter generation retrofits under the **2025–2027 eDSM framework** ($1.8B; target 900 MW / 4.6 TWh by end-2027).
+- **Eligibility:** owners/lessees of commercial, industrial, **municipal, university, college, school, hospital**, multi-residential, agricultural buildings. A municipally-owned rec centre/library qualifies directly; a standalone place of worship is **not explicitly listed** — would qualify as a commercial/institutional owner or via a partner.
+- **Amount:** up to **50% of eligible project cost**. Solar PV: $1,000/kW-DC micro (≤10 kW), **$860/kW-AC** for 10 kW–1 MW. Custom non-lighting: $1,800/kW or $0.20/kWh (rates up 2025-06-30). **Battery storage is NOT a named Retrofit measure** — do not claim a storage incentive here.
+- **URL:** <https://saveonenergy.ca/en/For-Business-and-Industry/Programs-and-incentives/Retrofit-Program>
+
+#### NRCan SREPs — HONESTY FLAG: main streams closed
+- **What it funds:** renewable generation, grid modernization, storage, capacity-building, Indigenous-led projects. $4.5B, runs to 2036-03-31.
+- **Intake:** **Utility Support Stream is NOT accepting new proposals** (all evaluated; due diligence underway); **Indigenous-Led Clean Energy stream not currently accepting proposals.** Future EOIs via the program page. Treat as "money exists, no open door now."
+- **URL:** <https://natural-resources.canada.ca/climate-change/sreps>
+
+#### Infrastructure Canada DMAF — HONESTY FLAG: closed/fully allocated
+- **What it funds:** structural + natural disaster-resilience infrastructure.
+- **Intake:** **"The application period for the DMAF intake is now closed"** and **"DMAF's funding envelope is currently fully allocated."** No 2026 intake. Monitor page / dmaf-faac@infc.gc.ca.
+- **URL:** <https://housing-infrastructure.canada.ca/dmaf-faac/index-eng.html>
+
+### Capital-cost benchmarks (kept for provenance; NOT surfaced on the site per the "no $" decision)
+- **NREL (primary anchor):** utility-scale 4-hour BESS ≈ **$334/kWh** (2025 update) <https://docs.nrel.gov/docs/fy25osti/93281.pdf>; PV system cost benchmarks, Spring 2025 Solar Industry Update <https://docs.nrel.gov/docs/fy25osti/95135.pdf>.
+- **Canadian battery range (FCM/GMF):** **$1,200–$8,000/kW** for battery systems by size/demand/integration <https://greenmunicipalfund.ca/resources/battery-back-ups-and-battery-powered-generators-community-facility-resilience>.
+- **Commercial rooftop solar $/W (LABEL AS ESTIMATE if ever used):** roughly **$1.30–$2.80/W** (installer-blog figures, not a primary dataset; prefer NREL).
+- **HONESTY FLAG (no clean public number):** no single published **Canadian faith-building or community resilience-hub solar+battery project with both kW and total installed $** survives a "source?" challenge. Faith & Common Good's case-study PDF was unreadable on fetch; GMF gives a per-kW range, not a project total; named Canadian examples (Wikwemikong rec complex 2023; a Vancouver MURB 80 kW hybrid 2019) carry no dollar figure. So any hub total must be modelled from the unit costs above and labelled "planning estimate, requires site audit."
+
+### Faith-building solar precedent — CONFIRMED
+- The repo's "**137 Ontario faith institutions on solar**" is correct; **120 of the 137 are Faith & Common Good (Greening Sacred Spaces) network members.** The grant vehicle they use is the **Faith Building Energy Benchmarking Program** (Ontario Trillium Foundation grant) plus United Church partner grants; GSS is the convening network, not a capital funder. <https://www.faithcommongood.org/resources/solar-in-faith-communities/>
+
+### Operating-model market mechanism (qualitative, for the future operating model)
+- Aggregated hub solar+battery can act as **distributed energy resources** in Ontario demand-response / capacity markets (DR cleared ~$171,319/MW-yr, Dec 2025 auction — already in this doc's "Recent news" §11). **Alectra GridExchange** transactive-energy pilot ran in Vaughan/Markham/Barrie/Richmond Hill/Hamilton, **not Peel** — frame as a transferable Greater Golden Horseshoe template only. <https://www.newswire.ca/news-releases/alectra-launches-gridexchange-an-innovative-transactive-energy-platform-836252722.html>

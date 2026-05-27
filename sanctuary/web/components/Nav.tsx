@@ -15,6 +15,7 @@ const LINKS: { href: string; label: string }[] = [
   { href: "/map", label: "Map" },
   { href: "/method", label: "Method" },
   { href: "/vision", label: "Vision" },
+  { href: "/funding", label: "Funding" },
   { href: "/sources", label: "Sources" },
 ];
 

@@ -751,6 +751,78 @@ h3 {
   font-size: 0.95rem;
   line-height: 1.6;
 }
+.future-upgrade-grid {
+  margin-top: 18px;
+}
+.future-upgrade-intro {
+  margin-top: 18px;
+  max-width: 72ch;
+}
+.future-upgrade-intro p:not(.eyebrow) {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+.future-upgrade-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.future-upgrade-head h3 {
+  min-width: 0;
+}
+
+/* Funding cards (the /funding page): big mono rate, small status label, then
+   the program. Stacked so a wide rate like "up to 80%" never collides with the
+   status. Ember on the rate only (signal use); status carries meaning as text. */
+.fund-rate {
+  display: block;
+  font-family: var(--font-data);
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--signal);
+}
+.fund-meta {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-data);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.fund-card h3 {
+  margin-top: 14px;
+}
+.fund-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+.fund-card-foot .card-src {
+  margin-top: 0;
+}
+.fund-note-srcs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 10px 0 0;
+}
+.fund-note-srcs .card-src {
+  margin-top: 0;
+}
+/* The full-width Funding card in the Overview "Read on" grid (5th card). */
+.readon-card-wide {
+  grid-column: 1 / -1;
+}
 
 /* Q&A */
 .qa-grid {

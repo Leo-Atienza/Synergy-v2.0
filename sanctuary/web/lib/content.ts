@@ -240,23 +240,55 @@ export const COUNTERFACTUAL: Counterfactual[] = [
 export const FUTURE_PHASES: { num: string; label: string; body: string }[] = [
   {
     num: "1",
-    label: "Better walksheds",
+    label: "Real access modelling",
     body: "Replace the 500 m circles with real walksheds, the area actually reachable on foot once sidewalks, transit, and barriers are counted.",
   },
   {
     num: "2",
-    label: "Site audits",
-    body: "Verify owners, cooling, accessibility, roof condition, backup power, and electrical readiness, one building at a time.",
+    label: "Audit and verify",
+    body: "Verify owners, cooling, accessibility, roof condition, backup power, and electrical readiness, one building at a time, then rerank with audited data.",
   },
   {
     num: "3",
-    label: "Public app, later",
-    body: "Only after verification, residents could see which open, equipped, trusted places to head for during heat or an outage.",
+    label: "Resident guidance, later",
+    body: "Only after verification, residents could see which open, equipped, trusted places to head for during heat or an outage, with live status and routing.",
   },
   {
     num: "4",
-    label: "Alectra-wide scale",
-    body: "Repeat the same honest scoring across more of Alectra's service territory, and for other hazards.",
+    label: "Scale across hazards",
+    body: "Repeat the same honest scoring across more of Alectra's service territory, and add other hazards such as winter cold risk alongside heat.",
+  },
+];
+
+export const FUTURE_UPGRADE_TRACKS: {
+  label: string;
+  status: EvidenceStatus;
+  body: string;
+}[] = [
+  {
+    label: "Winter cold-risk index",
+    status: "modelled",
+    body: "Add a cold-vulnerability layer alongside the heat lens so planners can prioritize warming resilience with the same transparent scoring logic.",
+  },
+  {
+    label: "Walkshed precision",
+    status: "modelled",
+    body: "Upgrade from radius buffers to multimodal walksheds that reflect sidewalks, crossings, slope, and transit access.",
+  },
+  {
+    label: "Readiness verification pipeline",
+    status: "pending",
+    body: "Standardize site audits into a readiness score covering power, cooling, accessibility, ownership alignment, and operations.",
+  },
+  {
+    label: "Public readiness view",
+    status: "pending",
+    body: "Publish a resident-facing map only for verified hubs, showing which sites are open, equipped, and reachable during an event.",
+  },
+  {
+    label: "Regional scaling template",
+    status: "modelled",
+    body: "Package the scoring method as a reusable municipal template for additional service territories and hazard scenarios.",
   },
 ];
 
@@ -268,6 +300,102 @@ export const SCALE_NOTE = {
     url: "https://www.newswire.ca/news-releases/alectra-launches-gridexchange-an-innovative-transactive-energy-platform-836252722.html",
   } satisfies Source,
 };
+
+// ---- Funding & operating model (the /funding page) ----
+// Each rate below is a published, current program parameter, verified against
+// the source linked on its card. Per the data-truth rule we surface RATES
+// (percentages), never modelled dollar totals: solar and battery sizing stays
+// pending until a site audit. Community / tax-exempt owners reach the 15% Clean
+// Electricity ITC, NOT the 30% Clean Technology ITC (taxable corporations only).
+export const FUNDING_PROGRAMS: {
+  program: string;
+  rate: string;
+  status: string;
+  body: string;
+  tag: EvidenceStatus;
+  source: Source;
+}[] = [
+  {
+    program: "Clean Electricity Investment Tax Credit",
+    rate: "15%",
+    status: "In force since March 2026",
+    body: "The anchor, and the only federal clean-energy tax credit a public owner can actually reach. A municipally or Indigenous-owned corporation claims 15 percent of eligible solar, storage, and grid equipment back as a refundable credit. Enacted through Bill C-15, Royal Assent March 26, 2026.",
+    tag: "verified",
+    source: {
+      name: "Canada Revenue Agency · Clean Electricity ITC",
+      url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-electricity-investment-tax-credit.html",
+    },
+  },
+  {
+    program: "Clean Technology Investment Tax Credit",
+    rate: "30%",
+    status: "Taxable corporations only",
+    body: "Worth up to 30 percent, but claimable only by taxable Canadian corporations. A library, gurdwara, mosque, or municipal centre is tax-exempt, so it reaches this rate only if the system is owned through a taxable project company. That gap is why the 15 percent credit, not this one, is the lever for a community hub.",
+    tag: "verified",
+    source: {
+      name: "Canada Revenue Agency · Clean Technology ITC",
+      url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-technology-itc/about-ct-itc.html",
+    },
+  },
+  {
+    program: "Green Municipal Fund, Community Buildings Retrofit",
+    rate: "up to 80%",
+    status: "Open, accepted year-round",
+    body: "A federal grant and loan package, delivered by the Federation of Canadian Municipalities, for energy retrofits of public community buildings. A municipality applies, and it can fund buildings the municipality or a non-profit owns. Capital projects need a measured emissions reduction to qualify.",
+    tag: "verified",
+    source: {
+      name: "FCM Green Municipal Fund · Community Buildings Retrofit",
+      url: "https://greenmunicipalfund.ca/community-buildings-retrofit-initiative",
+    },
+  },
+  {
+    program: "IESO Save on Energy, Retrofit Program",
+    rate: "up to 50%",
+    status: "Open, 2025 to 2027",
+    body: "Ontario's energy-efficiency program covers up to half of an eligible retrofit, including behind-the-meter solar. Municipal and institutional building owners qualify directly. A faith building qualifies as a commercial or institutional owner, or through a partner.",
+    tag: "verified",
+    source: {
+      name: "IESO Save on Energy · Retrofit Program",
+      url: "https://saveonenergy.ca/en/For-Business-and-Industry/Programs-and-incentives/Retrofit-Program",
+    },
+  },
+];
+
+// The honesty caveat: two real federal programs that are NOT open doors right
+// now. Named for credibility, never counted in the stack (same ethos as the
+// verified / modelled / pending labels elsewhere on the site).
+export const FUNDING_NOTE: { body: string; sources: Source[] } = {
+  body: "Two adjacent programs are named here for honesty, not counted in the stack. Natural Resources Canada's Smart Renewables and Electrification Pathways still holds capital, but its main streams are not taking new proposals right now. The federal Disaster Mitigation and Adaptation Fund is fully allocated, with no open intake. An honest plan tracks both for the next funding round instead of assuming today's door is open.",
+  sources: [
+    {
+      name: "NRCan · Smart Renewables and Electrification Pathways",
+      url: "https://natural-resources.canada.ca/climate-change/sreps",
+    },
+    {
+      name: "Infrastructure Canada · Disaster Mitigation and Adaptation Fund",
+      url: "https://housing-infrastructure.canada.ca/dmaf-faac/index-eng.html",
+    },
+  ],
+};
+
+// The future operating model. Explicitly future: the prototype ranks candidate
+// hubs, it does not run a microgrid. Card three reuses the GridExchange GGH
+// framing, so it carries no per-building or Peel-deployment claim.
+export const OPERATING_MODEL: { label: string; body: string; source?: Source }[] = [
+  {
+    label: "Blue-sky days",
+    body: "On normal days the rooftop solar and battery are not idle. Aggregated across many hubs they can shave peak demand and take part in Ontario's demand-response and capacity markets as distributed energy resources, earning operating revenue that helps sustain the building.",
+  },
+  {
+    label: "Outage days",
+    body: "When the grid fails, the same battery disconnects and runs the building on stored power, holding the loads that keep people safe: cooling, medical refrigeration, device charging, and a place to get information. The refuge keeps power instead of going dark.",
+  },
+  {
+    label: "Who builds it, who runs it",
+    body: "The funding stack covers the hardening. A municipal or utility partner operates the network, and blue-sky revenue offsets running costs. Alectra's GridExchange transactive-energy pilot, run elsewhere in the Greater Golden Horseshoe, is the kind of template Peel could adopt rather than a Peel deployment.",
+    source: SCALE_NOTE.source,
+  },
+];
 
 // Data provenance — the four map layers, where each came from, and how many
 // records it carries. This answers "where did the data come from" literally,
@@ -397,6 +525,30 @@ export const SOURCE_LINKS: { label: string; status: EvidenceStatus; note: string
     url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-electricity-investment-tax-credit.html",
   },
   {
+    label: "Clean Technology Investment Tax Credit (CTITC)",
+    status: "verified",
+    note: "Funding contrast: the 30% credit is for taxable corporations only, so a tax-exempt community owner cannot claim it directly.",
+    url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/business-tax-credits/clean-economy-itc/clean-technology-itc/about-ct-itc.html",
+  },
+  {
+    label: "FCM Green Municipal Fund (Community Buildings Retrofit)",
+    status: "verified",
+    note: "Open municipal grant-and-loan program for community-building energy retrofits, cited on the Funding page.",
+    url: "https://greenmunicipalfund.ca/community-buildings-retrofit-initiative",
+  },
+  {
+    label: "IESO Save on Energy (Retrofit Program)",
+    status: "verified",
+    note: "Ontario efficiency program covering up to half of an eligible retrofit, including behind-the-meter solar.",
+    url: "https://saveonenergy.ca/en/For-Business-and-Industry/Programs-and-incentives/Retrofit-Program",
+  },
+  {
+    label: "NRCan Smart Renewables and Electrification Pathways (SREPs)",
+    status: "verified",
+    note: "Federal clean-energy capital program named on the Funding page; main streams are not accepting proposals as of 2026.",
+    url: "https://natural-resources.canada.ca/climate-change/sreps",
+  },
+  {
     label: "Sanctuary ArcGIS web map",
     status: "verified",
     note: "The judged map artifact that carries the candidate points and ranked view.",
@@ -477,6 +629,7 @@ export const QA: { q: string; a: string }[] = [
   { q: "Is this tokenizing faith communities?", a: "No. The list mixes civic and faith buildings and frames every site as an asset, not as a group that needs rescuing." },
   { q: "Why not just build more official cooling centres?", a: "That may be part of the answer. Sanctuary helps decide where new or upgraded safe spaces protect vulnerable residents first." },
   { q: "Can Alectra actually use this?", a: "Yes, as a planning concept: a way to find community-energy and resilience-hub candidates before deeper engineering and partner engagement." },
+  { q: "Who pays for the solar and batteries?", a: "For a public owner the anchor is the 15% refundable Clean Electricity Investment Tax Credit, the one federal credit tax-exempt owners can reach. It stacks with the FCM Green Municipal Fund retrofit package and Ontario's Save on Energy program. The 30% Clean Technology credit is for taxable corporations only, so it is not the lever for a library or place of worship. See the Funding page." },
   { q: "What happens after the hackathon?", a: "Verify the top five with owners, replace buffers with real walksheds, run site audits, compare funding paths, then repeat across the territory." },
 ];
 
