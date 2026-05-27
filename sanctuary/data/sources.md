@@ -2,6 +2,19 @@
 
 Use this as the fast provenance sheet for the StoryMap, video, and judge Q&A.
 
+## Live vs. static — how the showcase loads this data
+
+**Short answer: every map layer is a frozen static snapshot, not a live query.** The four GeoJSON files in `sanctuary/web/public/` are committed to the repo and read once at build time by `sanctuary/web/lib/load-map-data.ts` (`readFileSync` in the RSC shell). The site makes **no data API call at runtime** — deliberate, so a dropped connection or an expired ArcGIS token can't break the demo. The only live network element is the embedded ArcGIS web map (a lazy-loaded iframe).
+
+| Shipped file (`public/`) | Records | Origin | Live or static |
+|---|---|---|---|
+| `peel-hvi.geojson` | 282 census tracts | Export of the public Peel EHVI feature service (quintile + 3 sub-scores) | Static snapshot, re-verified live 2026-05-26 |
+| `peel-fsa.geojson` | 35 FSAs | Statistics Canada 2021 Census FSA boundary file (92-179-X), reprojected to WGS84 | Static |
+| `peel-facilities.geojson` | 87 points | Open recreation-facility data (arenas / community centres / pools) across Mississauga, Brampton, Caledon | Static |
+| `candidate-hubs.geojson` | 10 buildings | Names/addresses from official municipal + faith-org pages; geocoded then point-queried against the Peel HVI service | Static, HVI re-verified live 2026-05-26 |
+
+Nothing is invented: each value traces to the public source below, and the extracts are reproducible from the documented scripts (HVI/candidate verification in this file; FSA build in [`../../docs/peel-fsa-data-note.md`](../../docs/peel-fsa-data-note.md)). **Hand-assigned, not fetched:** the planning buckets (roof class, facility suitability, modelled 500 m catchment) and the five scoring weights — labelled `modelled`/`pending` everywhere they appear, never shown as measured.
+
 ## Core Layers
 
 - **Peel Heat Vulnerability Index:** public ArcGIS dashboard/item, verified in `Synergy-v2.0 — Hackathon Brain/20-ideas/seed-g-sanctuary.md`. Start URL: `https://www.arcgis.com/home/item.html?id=83b829a8b497476b87c3d954869c02d2`.

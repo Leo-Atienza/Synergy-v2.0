@@ -479,6 +479,88 @@ h3 {
   line-height: 1.45;
 }
 
+/* Data provenance table (sources page) — same DNA as .method-table. */
+.prov-table {
+  margin-top: 22px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  background: var(--surface-raised);
+}
+.prov-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 1.05fr) minmax(108px, 0.6fr) minmax(240px, 2fr) auto;
+  gap: 16px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--hairline);
+  align-items: baseline;
+}
+.prov-row:last-child {
+  border-bottom: 0;
+}
+.prov-head {
+  background: var(--surface-sunken);
+  font-family: var(--font-data);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.prov-layer {
+  color: var(--text);
+  font-weight: 600;
+}
+.prov-layer code {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-data);
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.prov-count {
+  font-family: var(--font-data);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.prov-origin {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.48;
+}
+
+/* The "static, not live" answer — a quiet panel, eyebrow carries the only signal. */
+.prov-note {
+  margin-top: 16px;
+  padding: 22px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  background: var(--surface-raised);
+}
+.prov-note-eyebrow {
+  margin: 0 0 10px;
+  font-family: var(--font-data);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.prov-note p:not(.prov-note-eyebrow) {
+  margin: 0;
+  max-width: 72ch;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.prov-note-sub {
+  margin-top: 14px !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  font-size: 0.9rem !important;
+}
+
 /* Honesty cards — colour rides WITH the icon+text tag, never alone. */
 .honesty-card {
   border-left: 2px solid var(--hairline-strong);
@@ -494,6 +576,148 @@ h3 {
 }
 .honesty-card h3 {
   margin-top: 14px;
+}
+
+/* ============================================================================
+   Counterfactual — editorial dossier of precedent events. Vertical stack (NOT a
+   card grid) so each entry reads as a numbered case study. Hairline-bracketed
+   header/body/footer; serif title; mono for date + index + honesty line;
+   "modelled" tag banner makes the planning-counterfactual frame explicit.
+   ========================================================================== */
+.counterfactual-disclaimer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 14px;
+  margin: clamp(28px, 4vw, 44px) 0 0;
+  padding: 14px 18px;
+  border-left: 2px solid var(--c-modelled);
+  border-radius: 0 var(--r-2) var(--r-2) 0;
+  background: var(--surface-raised);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.counterfactual-disclaimer .tag {
+  flex: 0 0 auto;
+  align-self: center;
+}
+.counterfactual-disclaimer span:last-child {
+  flex: 1 1 32ch;
+  min-width: 0;
+}
+.counterfactual-list {
+  list-style: none;
+  margin: clamp(22px, 3vw, 32px) 0 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(16px, 2.4vw, 28px);
+}
+.counterfactual-entry {
+  display: grid;
+  gap: 18px;
+  padding: clamp(20px, 2.6vw, 28px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  background: var(--surface-raised);
+}
+.counterfactual-head {
+  display: grid;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+.counterfactual-index {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.counterfactual-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 540;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-wrap: balance;
+  max-width: 28ch;
+}
+.counterfactual-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  margin: 4px 0 0;
+}
+.counterfactual-meta > div {
+  display: grid;
+  gap: 3px;
+}
+.counterfactual-meta dt {
+  font-family: var(--font-data);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.counterfactual-meta dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.counterfactual-body {
+  display: grid;
+  gap: 14px;
+  max-width: 70ch;
+}
+.counterfactual-body p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.counterfactual-lede {
+  font-family: var(--font-data);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-right: 4px;
+}
+.counterfactual-lede-signal {
+  color: var(--signal);
+}
+.counterfactual-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+}
+.counterfactual-honesty {
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  color: var(--text-faint);
+}
+.counterfactual-src {
+  margin-top: 0;
+}
+@media (max-width: 720px) {
+  .counterfactual-disclaimer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .counterfactual-foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* Future phases */
@@ -1832,6 +2056,10 @@ button.candidate-row:hover {
     display: none;
   }
   .method-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .prov-row {
     grid-template-columns: 1fr;
     gap: 4px;
   }

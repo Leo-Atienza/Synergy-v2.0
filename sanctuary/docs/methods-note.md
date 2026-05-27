@@ -7,6 +7,7 @@
 - Candidate addresses were geocoded and point-queried against the public Peel HVI feature service.
 - Candidate list is intentionally small: 8 to 10 hand-verified buildings for a hackathon demo.
 - Ranking inputs and source URLs live in `sanctuary/data/candidate-hubs.csv`.
+- All map layers ship as **static GeoJSON** pulled from the public sources above and loaded at build time — a frozen snapshot, not a live query, so the demo can't break on a dropped connection. Full provenance + the live-vs-static breakdown: `sanctuary/data/sources.md`.
 
 ## What Is Estimated
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { CounterfactualSection } from "@/components/sections/CounterfactualSection";
 import { EvidenceSection } from "@/components/sections/EvidenceSection";
 import { HonestySection } from "@/components/sections/HonestySection";
 import { MethodSection } from "@/components/sections/MethodSection";
@@ -22,6 +23,7 @@ export default function MethodPage() {
       </section>
       <MethodSection />
       <HonestySection />
+      <CounterfactualSection />
       <EvidenceSection />
     </main>
   );

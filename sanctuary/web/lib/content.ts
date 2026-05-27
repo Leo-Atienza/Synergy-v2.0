@@ -188,6 +188,54 @@ export const EVIDENCE: { label: string; body: string; source: Source }[] = [
   },
 ];
 
+// Counterfactual precedent dossier — two real, sourced events that show the
+// planning gap Sanctuary aims to close. Framed as "planning counterfactual,
+// not measured impact": the event facts (date, place, what happened) are
+// verified; the *if-Sanctuary-had-existed* clause is a thought experiment, not
+// a claim about lives saved or outcomes achieved. Geography is labelled
+// honestly — Pearson is ~5 km from Malton; Ottawa is ~400 km east of Peel.
+export type Counterfactual = {
+  index: string;
+  title: string;
+  when: string;
+  where: string;
+  whatHappened: string;
+  sanctuaryFrame: string;
+  source: Source;
+  honestyNote: string;
+};
+
+export const COUNTERFACTUAL_INTRO = {
+  body: "These are real events with public sources. The 'if Sanctuary had existed' framing is a planning thought experiment — not a claim about lives saved, costs avoided, or outcomes achieved. The honest contribution is the pre-verify list: knowing which trusted buildings to investigate first, before the next heat day or outage.",
+} as const;
+
+export const COUNTERFACTUAL: Counterfactual[] = [
+  {
+    index: "01",
+    title: "A 35.8 °C day at Pearson, about 5 km from Malton.",
+    when: EMBODIED.pearsonHeat.when,
+    where: EMBODIED.pearsonHeat.where,
+    whatHappened:
+      "Environment Canada issued a heat warning across the Greater Toronto Area. Pearson reached 35.8 °C; humidex pushed higher. Cooling and respite fell to whichever public building was already open — Peel does not operate designated seasonal cooling centres, so public facilities serve as informal cooling during regular hours.",
+    sanctuaryFrame:
+      "If Sanctuary had been in place before that morning, planners would already have a five-building pre-verify list — Malton Community Centre and Library at rank #1 — flagging which trusted buildings inside the hottest HVI pocket to confirm hours, comms, and refuge readiness for first. Not new buildings: the same buildings, harder.",
+    source: EMBODIED.pearsonHeat.source,
+    honestyNote: "Temperature, date, place verified · Sanctuary effect is hypothetical",
+  },
+  {
+    index: "02",
+    title: "The May 2022 derecho — Ottawa, not Peel.",
+    when: "May 21, 2022",
+    where: "Ottawa, Ontario (~400 km east of Peel)",
+    whatHappened:
+      "A derecho cut power to much of eastern Ontario. Ottawa opened community and recreation facilities as reception points for charging, respite, showers, and information. The event happened elsewhere; the pattern — public buildings becoming emergency infrastructure on short notice — is the one Peel would inherit during the next storm or grid stress.",
+    sanctuaryFrame:
+      "If Sanctuary's ranking had existed across Alectra's territory before May 2022, the question 'which civic buildings should we prepare and communicate about first?' would already have had a defensible answer. The artifact is the ranked list, not the event response.",
+    source: EVIDENCE[1].source,
+    honestyNote: "Event verified · Ottawa geography, not Peel · Sanctuary effect is hypothetical",
+  },
+];
+
 // Future pipeline phases. These are roadmap stages, not built features.
 export const FUTURE_PHASES: { num: string; label: string; body: string }[] = [
   {
@@ -221,6 +269,59 @@ export const SCALE_NOTE = {
   } satisfies Source,
 };
 
+// Data provenance — the four map layers, where each came from, and how many
+// records it carries. This answers "where did the data come from" literally,
+// per shipped file. Counts match the GeoJSON in public/ (loaded at build by
+// lib/load-map-data.ts). Pair with DATA_LOADING below for the static-vs-live answer.
+export const DATA_LAYERS: {
+  layer: string;
+  file: string;
+  count: string;
+  origin: string;
+  status: EvidenceStatus;
+}[] = [
+  {
+    layer: "Heat vulnerability choropleth",
+    file: "peel-hvi.geojson",
+    count: "282 census tracts",
+    origin:
+      "Static export of Peel's public Extreme Heat Vulnerability Index feature service — overall quintile plus exposure, sensitivity, and adaptive-capacity sub-scores. Re-verified against the live service on 2026-05-26.",
+    status: "verified",
+  },
+  {
+    layer: "Peel outline",
+    file: "peel-fsa.geojson",
+    count: "35 forward sortation areas",
+    origin:
+      "Statistics Canada 2021 Census FSA cartographic boundary file (catalogue 92-179-X), reprojected to WGS84. Statistics Canada Open Licence.",
+    status: "verified",
+  },
+  {
+    layer: "Public facilities (shelter gap)",
+    file: "peel-facilities.geojson",
+    count: "87 facility points",
+    origin:
+      "Open recreation-facility data — arenas, community centres, and pools across Peel's three municipalities (Mississauga, Brampton, Caledon).",
+    status: "verified",
+  },
+  {
+    layer: "Candidate hubs",
+    file: "candidate-hubs.geojson",
+    count: "10 hand-verified buildings",
+    origin:
+      "Names and addresses from official municipal, library, and faith-organization pages; geocoded with the ArcGIS World Geocoder, then point-queried against the Peel HVI service for each building's quintiles, CTUID, and PHDZ.",
+    status: "verified",
+  },
+];
+
+// The honest "is it live or hardcoded?" answer, stated plainly for judges.
+export const DATA_LOADING = {
+  heading: "Static snapshot, not a live query",
+  body: "Every layer above is a frozen GeoJSON file committed to this repository and read once at build time — there is no database and no runtime API call while you browse. That is deliberate: a dropped connection or an expired map token cannot break the demo. The only live element on the page is the embedded ArcGIS web map (an iframe). Nothing is invented — each value traces to the public source beside it, the extract is reproducible from a documented script, and the candidate scores were re-checked against the live Peel service on 2026-05-26.",
+  estimatesNote:
+    "What is hand-assigned rather than fetched: the planning buckets — roof class, facility suitability, and the modelled 500 m catchment — plus the five scoring weights. Those are our judgement calls. They are labelled modelled or pending everywhere they appear, and never shown as measured values.",
+} as const;
+
 // Source links shown in the Sources section.
 export const SOURCE_LINKS: { label: string; status: EvidenceStatus; note: string; url: string }[] = [
   {
@@ -240,6 +341,12 @@ export const SOURCE_LINKS: { label: string; status: EvidenceStatus; note: string
     status: "verified",
     note: "Point-queried for candidate HVI, exposure, sensitivity, adaptive-capacity, CTUID, and PHDZ fields.",
     url: "https://services6.arcgis.com/ONZht79c8QWuX759/arcgis/rest/services/Extreme_Heat_Vulnerability_Index/FeatureServer/0",
+  },
+  {
+    label: "Statistics Canada — 2021 Census FSA boundaries",
+    status: "verified",
+    note: "Forward-sortation-area cartographic boundary file (catalogue 92-179-X) that draws the Peel outline on the map. Statistics Canada Open Licence.",
+    url: "https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21",
   },
   {
     label: "Peel climate-and-health context",
@@ -365,6 +472,7 @@ export const QA: { q: string; a: string }[] = [
   { q: "Are these buildings resilience hubs today?", a: "No. They are candidate hubs. Sanctuary ranks where hardening should be investigated first." },
   { q: "Are the solar and battery numbers measured?", a: "No. They are planning estimates from rough roof class and regional solar context. The real output is the siting and prioritization layer." },
   { q: "Are the reachable-population numbers exact?", a: "Not yet. The prototype uses a modelled 500 m catchment and labels it as such until a real walkshed is run." },
+  { q: "Is the data live or hardcoded?", a: "It's a frozen snapshot, on purpose. Each map layer is a GeoJSON file pulled from a public source — Peel's HVI service, Statistics Canada boundaries, municipal facility data — committed to the repo and loaded at build time, so the demo can't break from a dropped connection. The values aren't invented: they trace to the sources on this page and were re-verified against the live Peel service on 2026-05-26." },
   { q: "Why include places of worship?", a: "Because resilience runs on trust, volunteers, and local knowledge. Gurdwaras, mosques, mandirs, and churches are community infrastructure." },
   { q: "Is this tokenizing faith communities?", a: "No. The list mixes civic and faith buildings and frames every site as an asset, not as a group that needs rescuing." },
   { q: "Why not just build more official cooling centres?", a: "That may be part of the answer. Sanctuary helps decide where new or upgraded safe spaces protect vulnerable residents first." },
