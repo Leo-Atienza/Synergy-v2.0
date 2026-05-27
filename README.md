@@ -88,6 +88,7 @@ Sanctuary ranks **candidate hubs** for investigation. It does not certify that a
 - **Next.js 16 and React 19** power the live showcase: a server-rendered shell with one interactive map island and no backend.
 - **d3-geo SVG** projects Peel geography and the candidate points, with no basemap token and no WebGL, so it runs fully offline.
 - **Static GeoJSON** bundled at build keeps the data auditable and the demo safe.
+- **Gemini 2.5 Flash** drafts each candidate's planning checklist offline, behind a no-overclaim gate that rejects invented power, dollar, or sizing figures. The reviewed text ships as static JSON, so nothing calls a model while you browse.
 
 The planning layer speaks directly to Alectra's GRE&T Centre focus on community resilience, distributed-energy hardening, and candidate-hub planning across the Greater Golden Horseshoe.
 
