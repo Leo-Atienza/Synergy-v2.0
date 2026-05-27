@@ -1,44 +1,30 @@
-# Sanctuary
+# Sanctuary: the data and methods packet
 
-The locked submission for the Seneca Energy Hackathon 2026 — Theme 3, Problem Statement 2. Sanctuary ranks trusted community buildings in Peel as candidate resilience hubs: places to equip with cooling, solar, and battery support before the next heat wave or outage.
+This folder holds the evidence behind the Sanctuary map: the candidate-building data, the ranking model, the source list, and the answers to the questions a judge is most likely to ask. For the project overview and the demo, start at the [repository README](../README.md) or the [live showcase](https://project-sanctuary-seneca.vercel.app).
 
-This folder is now the **active working packet** after the 2026-05-25 scope amendment. Valley is cut from the active submission; do not run both projects in parallel.
+Sanctuary ranks trusted community buildings in Peel Region (libraries, recreation centres, gurdwaras, mosques, mandirs, and churches) as candidate resilience hubs to harden with cooling, solar, and battery backup before the next heat wave or outage. It ranks **candidate hubs** for investigation. It does not claim any building is already equipped, willing, or funded.
 
-## What's Here
+## Inspect the evidence
 
-| File | What |
+| File | What it holds |
 |---|---|
-| [`docs/sanctuary-introduction-faq.md`](docs/sanctuary-introduction-faq.md) | Plain-English explanation and FAQ for teammates. |
-| [`docs/sanctuary-future-vision.md`](docs/sanctuary-future-vision.md) | The long-term "command-center" vision (hub network, VPP, financing). **Out of build scope** — for the pitch's "where it goes" + judge Q&A only. |
-| [`docs/developer-build-plan.md`](docs/developer-build-plan.md) | The build plan (StoryMap/Web Map, data spine, scoring). |
-| [`docs/storymap-and-data-guide.md`](docs/storymap-and-data-guide.md) | Practical ArcGIS StoryMap, data, and scoring guide. |
-| [`data/candidate-hubs.csv`](data/candidate-hubs.csv) | Seed list of 10 real candidate buildings with address + HVI verification; catchment estimates still pending. |
-| [`data/candidate-hubs.geojson`](data/candidate-hubs.geojson) | Point layer generated from the candidate CSV for ArcGIS import. |
-| [`data/scoring-notes.md`](data/scoring-notes.md) | Transparent ranking model and scoring discipline. |
-| [`docs/storymap-script.md`](docs/storymap-script.md) | Section-by-section StoryMap script. |
-| [`docs/video-script.md`](docs/video-script.md) | Sanctuary-local video script. |
-| [`docs/methods-note.md`](docs/methods-note.md) | Real vs estimated fields and scoring summary. |
-| [`docs/judge-qa.md`](docs/judge-qa.md) | Short answers for likely judge questions. |
+| [`data/candidate-hubs.csv`](data/candidate-hubs.csv) | The 10 hand-verified candidate buildings: name, address, type, HVI quintile, community role, source link, and verification status. |
+| [`data/candidate-hubs.geojson`](data/candidate-hubs.geojson) | The same buildings as a point layer for ArcGIS import. |
+| [`data/scoring-notes.md`](data/scoring-notes.md) | The transparent ranking model, and the discipline that keeps an unverifiable estimate from carrying a building into the top five. |
+| [`data/sources.md`](data/sources.md) | Full provenance for every map layer, with the live-versus-static breakdown. |
+| [`docs/methods-note.md`](docs/methods-note.md) | What is real, what is estimated, and what Sanctuary actually claims. |
+| [`docs/judge-qa.md`](docs/judge-qa.md) | Short answers to the likely judge questions: solar sizing, faith buildings, reachable population, and whether Alectra can use this. |
+| [`docs/storymap-and-data-guide.md`](docs/storymap-and-data-guide.md) | How the ArcGIS StoryMap and web map are assembled from the data spine. |
+| [`docs/sanctuary-future-vision.md`](docs/sanctuary-future-vision.md) | Where it goes after the prototype (hub network, financing). Out of build scope, kept for the "what's next" question. |
+| [`artifacts/arcgis-links.md`](artifacts/arcgis-links.md) | The ArcGIS web map, the Peel HVI feature service, and the candidate layers. |
+| [`web/`](web/) | Source for the live showcase (Next.js). Run `npm install && npm run dev` inside the folder. |
 
-## Start Here
+## The honesty key
 
-- **Simple intro + FAQ:** [`docs/sanctuary-introduction-faq.md`](docs/sanctuary-introduction-faq.md)
-- **Long-term vision (out of build scope):** [`docs/sanctuary-future-vision.md`](docs/sanctuary-future-vision.md)
-- **Build plan:** [`docs/developer-build-plan.md`](docs/developer-build-plan.md)
-- **ArcGIS/data guide:** [`docs/storymap-and-data-guide.md`](docs/storymap-and-data-guide.md)
-- **Execution plan:** [`../docs/plans/2026-05-25-001-feat-sanctuary-activation-plan.md`](../docs/plans/2026-05-25-001-feat-sanctuary-activation-plan.md)
-- **Candidate data:** [`data/candidate-hubs.csv`](data/candidate-hubs.csv)
-- **ArcGIS import layer:** [`data/candidate-hubs.geojson`](data/candidate-hubs.geojson)
-- **Original seed card:** [`seed-g-sanctuary.md`](../Synergy-v2.0%20%E2%80%94%20Hackathon%20Brain/20-ideas/seed-g-sanctuary.md)
+Every number on the map and in the showcase carries one of three tags, at the point you read it:
 
-## Scope Status
+- **verified**, checked against a public source (the Peel Heat Vulnerability Index, official building pages, Statistics Canada boundaries).
+- **modelled**, a labelled planning estimate (the 500 m reach, the roof class, the first-pass score).
+- **pending**, not yet known and flagged for a site audit (backup power, cooling capacity, owner agreement, solar or battery sizing).
 
-Sanctuary is **not** a Valley feature. It replaced Valley through the 2026-05-25 scope amendment:
-
-- challenge: Theme 3, Problem Statement 2 (locked);
-- pattern-break: Public-Good Frame + Local-Detail;
-- demo moment: heat-vulnerable area -> named trusted building -> honesty-labelled panel -> ranked top five;
-- cut: Valley's ULO plug/map submission;
-- support site: built, deployed, verified — [project-sanctuary-seneca.vercel.app](https://project-sanctuary-seneca.vercel.app);
-- ArcGIS: Web Map built ([artifacts/arcgis-links.md](artifacts/arcgis-links.md)); StoryMap + video pending (team recording).
-
+Malton Community Centre and Library, the building Sanctuary ranks first, geocodes into Peel HVI quintile 5 of 5, re-verified against the public feature service on 2026-05-26.
