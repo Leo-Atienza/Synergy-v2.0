@@ -255,8 +255,10 @@ export function MapStage({
               const sel = h.rank === selectedRank;
               const isTop5 = h.rank <= 5;
               const recede = dealt && !isTop5;
-              const opacity = !pinsOn ? 0 : recede ? 0.2 : 1;
-              const scale = recede ? 0.82 : dealt && isTop5 ? 1.12 : 1;
+              const opacity = !pinsOn ? 0 : recede ? 0.16 : 1;
+              // Wider win/lose contrast so the "deal" reads as a ranking: the five
+              // assert (pop via EASE_POP overshoot), the other five visibly recede.
+              const scale = recede ? 0.72 : dealt && isTop5 ? 1.16 : 1;
               return (
                 <m.g
                   key={h.rank}

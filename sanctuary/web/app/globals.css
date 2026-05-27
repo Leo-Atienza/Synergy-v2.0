@@ -764,6 +764,14 @@ h3 {
 .decision-stage[data-live="true"] .scroll-step-title {
   font-size: clamp(1.6rem, 2.6vw, 2.3rem);
 }
+/* During the pinned story the map is auto-driven by scroll — the zoom + layer
+   controls are dead chrome sitting over the geography right as the five deal out
+   and the view flies to Malton. Hide them here so the signature move is
+   unobstructed. The HVI ramp + honesty key (.legend) stays — it's the credibility
+   context — and the full manual controls live on the /map page (explore mode). */
+.decision-stage[data-live="true"] .map-controls {
+  display: none;
+}
 
 .map-wrap {
   position: relative;
@@ -1114,6 +1122,10 @@ h3 {
 .pin-sel .pin-dot {
   stroke: #fff;
   stroke-width: 2.5;
+  /* Ember halo so the selected hub reads as THE answer on the map itself — the
+     eye lands on Malton at the end of the deal, mirroring the detail panel.
+     Static (no loop), ember = signal-only, grows naturally as the view flies in. */
+  filter: drop-shadow(0 0 5px color-mix(in oklab, var(--signal) 78%, transparent));
 }
 .pin:focus-visible {
   outline: none;
