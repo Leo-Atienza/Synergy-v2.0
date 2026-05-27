@@ -65,7 +65,7 @@ deploy:
   live_url: "https://sanctuary-phi.vercel.app"        # support showcase + clickable recording backup (the judged artifact is the ArcGIS StoryMap video)
   live_url_alias: "https://project-sanctuary-seneca.vercel.app"  # nicer alias for the Seneca submission; same prod deploy
   deployed_from: "main (manual vercel deploy --prod)" # was feat/showcase-rebuild, now merged to main
-  prod_code_commit: "d880035"           # last CODE commit; live prod serves this. Commits since are docs-only and do NOT auto-deploy.
+  prod_code_commit: "ec6c104"           # last CODE commit live prod serves (verified 2026-05-27): data-provenance section + StatCan citation + nit fixes. Docs-only commits since do NOT auto-deploy.
   final_commit_sha: ""                  # FREEZE at submission: `git tag v1-submission <sha> && git push origin v1-submission`
   github_url: "https://github.com/Leo-Atienza/Synergy-v2.0"  # private repo — teammates need a collaborator invite (see ONBOARDING.md)
 
