@@ -199,11 +199,17 @@ export function MapStage({
       >
         {/* outer USER pan/zoom group (hand-rolled, default identity) */}
         <g transform={`translate(${view.x} ${view.y}) scale(${view.scale})`}>
-          {/* inner SCROLLYTELLING fly-to group (behaviour unchanged) */}
+          {/* inner SCROLLYTELLING fly-to group. The zoom translate in lib/map.ts is
+              computed against the SVG user space (origin 0,0), so the scale MUST pivot
+              there too. Motion defaults SVG elements to transform-box: fill-box +
+              a centre origin, which pivots around the content's bbox centre and throws
+              the fly-to off — Malton lands in the top-left corner. Pin the box to the
+              view-box and the origin to (0,0) so translate+scale match the math. */}
           <m.g
             initial={false}
             animate={zoomT}
             transition={reduced ? { duration: 0 } : { duration: 0.9, ease: EASE_CALM }}
+            style={{ transformBox: "view-box", transformOrigin: "0px 0px" }}
           >
             {/* faint Peel outline (context boundary) */}
             {base.outline.map((d, i) => (
