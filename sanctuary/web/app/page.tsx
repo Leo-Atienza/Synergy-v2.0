@@ -12,7 +12,7 @@ import { ArrowUpRight } from "@/components/icons";
 // proof/credibility sections moved to their own routes.
 const READ_ON: { href: string; label: string; title: string; body: string }[] = [
   { href: "/map", label: "The map", title: "Explore Peel's heat", body: "The full-screen HVI map: pan, zoom, click a tract for its real sub-scores, and play the decision to Malton." },
-  { href: "/method", label: "Method", title: "How the score works", body: "The 35 / 25 / 20 / 10 / 10 model — and exactly which inputs are verified, modelled, or still pending." },
+  { href: "/method", label: "Method", title: "How the score works", body: "The 35 / 25 / 20 / 10 / 10 model, and exactly which inputs are verified, modelled, or still pending." },
   { href: "/vision", label: "Vision", title: "The honest roadmap", body: "From this ranking to site audits, a public app, and the method repeating across Alectra's territory." },
   { href: "/sources", label: "Sources", title: "Trace every number", body: "The HVI service, the facility data, and every claim linked to a public source, with the honesty key." },
 ];
@@ -30,8 +30,8 @@ export default function Page() {
           <p className="eyebrow">The decision</p>
           <h2 id="decision-title">From a heat map to five named buildings.</h2>
           <p className="section-lead">
-            Scroll the map: heat risk, the shelter gap, ten trusted candidates, then the five Peel should harden first —
-            ending on Malton. Click any pin or row to interrogate the score.
+            Scroll the map: heat risk, the shelter gap, ten trusted candidates, then the five Peel should harden first,
+            ending on Malton. Click any pin or row to inspect the score behind it.
           </p>
         </div>
         <ScrollStage mapData={mapData} hubs={hubs} />

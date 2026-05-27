@@ -7,7 +7,7 @@ import { QaSection } from "@/components/sections/QaSection";
 import { SourcesSection } from "@/components/sections/SourcesSection";
 
 export const metadata: Metadata = {
-  title: "Sources — Sanctuary",
+  title: "Sources · Sanctuary",
   description: "Sanctuary data receipts, candidate-source links, photo attribution, and judge Q&A.",
 };
 

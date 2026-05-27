@@ -101,22 +101,22 @@ export function MapControls({
           </span>
           <div className="tract-hvi">
             <span className="tract-q tnum" style={{ background: tract.q ? HVI_COLORS[tract.q] : "#243140" }}>
-              {tract.q ?? "—"}
+              {tract.q ?? "·"}
             </span>
             <span className="tract-hvi-label">{tract.q ? `HVI ${tract.q} · ${HVI_LABEL[tract.q]}` : "HVI · no data"}</span>
           </div>
           <dl className="tract-subs">
             <div>
               <dt>Exposure</dt>
-              <dd className="tnum">{tract.exposure ?? "—"}</dd>
+              <dd className="tnum">{tract.exposure ?? "n/a"}</dd>
             </div>
             <div>
               <dt>Sensitivity</dt>
-              <dd className="tnum">{tract.sensitivity ?? "—"}</dd>
+              <dd className="tnum">{tract.sensitivity ?? "n/a"}</dd>
             </div>
             <div>
               <dt>Adaptive capacity</dt>
-              <dd className="tnum">{tract.adaptivity ?? "—"}</dd>
+              <dd className="tnum">{tract.adaptivity ?? "n/a"}</dd>
             </div>
           </dl>
           <div className="tract-foot">

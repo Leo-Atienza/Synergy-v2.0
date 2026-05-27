@@ -7,7 +7,7 @@ export function HonestySection() {
     <Section
       eyebrow="Real vs estimated"
       title="The labels are part of the product."
-      lead="A judge can trust this because it never hides what it does not know. Every value on screen is verified, modelled, or pending — and says which."
+      lead="A judge can trust this because it never hides what it does not know. Every value on screen is verified, modelled, or pending, and says which."
     >
       <div className="card-grid card-grid-3">
         {REAL_VS_ESTIMATED.map((r) => (

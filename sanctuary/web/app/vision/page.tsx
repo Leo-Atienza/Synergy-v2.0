@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FutureSection } from "@/components/sections/FutureSection";
 
 export const metadata: Metadata = {
-  title: "Vision — Sanctuary",
+  title: "Vision · Sanctuary",
   description: "The Sanctuary roadmap: walksheds, site audits, a future public app, and Alectra-wide scaling after verification.",
 };
 

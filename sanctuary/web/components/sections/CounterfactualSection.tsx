@@ -14,10 +14,10 @@ export function CounterfactualSection() {
     <Section
       eyebrow="If Sanctuary had existed"
       title="Two real events. One pre-verify list."
-      lead="A heat warning at Pearson last June, five kilometres from Malton. An Ottawa derecho three years earlier. Both are real, both are sourced. What Sanctuary would have changed is the planning artifact — a ranked five-building list that already existed before the morning of the event — not the event response itself."
+      lead="A heat warning at Pearson last June, five kilometres from Malton. An Ottawa derecho three years earlier. Both are real, both are sourced. What Sanctuary would have changed is the planning artifact, a ranked five-building list that already existed before the morning of the event, not the event response itself."
     >
       <p className="counterfactual-disclaimer">
-        <EvidenceTag tag="modelled">Planning counterfactual — not measured impact</EvidenceTag>
+        <EvidenceTag tag="modelled">Planning counterfactual, not measured impact</EvidenceTag>
         <span>{COUNTERFACTUAL_INTRO.body}</span>
       </p>
 

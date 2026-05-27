@@ -75,7 +75,7 @@ export const HVI_COLORS: Record<number, string> = {
 
 export const HVI_LABEL: Record<number, string> = {
   1: "low",
-  2: "low–moderate",
+  2: "low-moderate",
   3: "moderate",
   4: "high",
   5: "top quintile",
@@ -122,7 +122,7 @@ function scoreHub(p: RawProps): { score: number; breakdown: ScoreRow[] } {
   const facilityFrac = FACILITY_WEIGHTVAL[p.facility_suitability] ?? 0.5;
 
   const breakdown: ScoreRow[] = [
-    { label: "Heat vulnerability nearby", weightPct: 35, bucket: HVI_LABEL[hvi] ?? "—", fraction: heatFrac, status: "verified" },
+    { label: "Heat vulnerability nearby", weightPct: 35, bucket: HVI_LABEL[hvi] ?? "n/a", fraction: heatFrac, status: "verified" },
     { label: "Vulnerable population in catchment", weightPct: 25, bucket: "modelled (catchment pending)", fraction: popFrac, status: "pending" },
     { label: "Trust / community role", weightPct: 20, bucket: TRUST_LABEL[p.trust_role] ?? p.trust_role, fraction: trustFrac, status: "verified" },
     { label: "Rooftop hardening potential", weightPct: 10, bucket: p.roof_area_class, fraction: roofFrac, status: "modelled" },

@@ -7,7 +7,7 @@ export function EvidenceSection() {
     <Section
       eyebrow="Evidence"
       title="Public buildings already become emergency infrastructure."
-      lead="Peel has a local shelter-access gap; Ontario storms show recreation centres and community buildings becoming charging, shower, warmth, and information points. Sanctuary does not claim they are ready today — it ranks what to verify first."
+      lead="Peel has a local shelter-access gap. Ontario storms show recreation centres and community buildings becoming charging, shower, warmth, and information points. Sanctuary does not claim they are ready today. It ranks what to verify first."
     >
       <div className="card-grid card-grid-2">
         {EVIDENCE.map((e) => (

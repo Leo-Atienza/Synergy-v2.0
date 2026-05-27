@@ -27,24 +27,24 @@ const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : "http://localhost:3000";
 
 const DESCRIPTION =
-  "Sanctuary ranks trusted Peel buildings as candidate emergency resilience hubs — then shows what is verified, what is modelled, and what still needs a site audit. Hero: Malton Community Centre and Library.";
+  "Sanctuary ranks trusted Peel buildings as candidate emergency resilience hubs, then shows what is verified, what is modelled, and what still needs a site audit. The hero is Malton Community Centre and Library.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Sanctuary — harden these five Peel buildings first",
+  title: "Sanctuary: harden these five Peel buildings first",
   description: DESCRIPTION,
   applicationName: "Sanctuary",
   authors: [{ name: "Leo Atienza" }],
   openGraph: {
     type: "website",
-    title: "Sanctuary — harden these five Peel buildings first",
+    title: "Sanctuary: harden these five Peel buildings first",
     description: DESCRIPTION,
     siteName: "Sanctuary",
     locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sanctuary — harden these five Peel buildings first",
+    title: "Sanctuary: harden these five Peel buildings first",
     description: DESCRIPTION,
   },
 };

@@ -16,7 +16,7 @@ export function Footer() {
   return (
     <footer className="foot">
       <div className="foot-top">
-        <Link href="/" className="foot-brand" aria-label="Sanctuary — home">
+        <Link href="/" className="foot-brand" aria-label="Sanctuary home">
           <span className="foot-mark">SANCTUARY</span>
           <span className="foot-brand-sub">Peel heat-resilience hubs</span>
         </Link>
@@ -36,9 +36,9 @@ export function Footer() {
           <EvidenceTag tag="pending" />
         </div>
         <p>
-          Siting and Heat Vulnerability Index quintiles are <strong>verified</strong>{" "}against the public Peel HVI feature
-          service and each building&rsquo;s official page. Reachable population, rooftop, and solar figures are{" "}
-          <strong>modelled or pending</strong> — labelled as such, never presented as measured.
+          Siting and Heat Vulnerability Index (HVI) quintiles are <strong>verified</strong>{" "}against the public Peel HVI
+          feature service and each building&rsquo;s official page. Reachable population, rooftop, and solar figures are{" "}
+          <strong>modelled or pending</strong>, labelled as such and never presented as measured.
         </p>
       </div>
 

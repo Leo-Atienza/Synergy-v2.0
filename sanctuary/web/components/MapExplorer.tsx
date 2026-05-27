@@ -170,7 +170,7 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
             <h1 className="rail-title">Peel&rsquo;s heat, building by building.</h1>
             <p className="rail-sub">
               Pan and zoom the map. Click a census tract for its real exposure, sensitivity, and adaptive-capacity
-              quintiles — or a pin for a candidate hub&rsquo;s honest first-pass score.
+              quintiles, or click a pin for a candidate hub&rsquo;s honest first-pass score.
             </p>
           </div>
 

@@ -40,7 +40,7 @@ export function Nav() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <Link href="/" className="nav-brand" aria-label="Sanctuary — home">
+        <Link href="/" className="nav-brand" aria-label="Sanctuary home">
           <span className="brand-mark">SANCTUARY</span>
           <span className="nav-brand-sub">Peel heat-resilience hubs</span>
         </Link>

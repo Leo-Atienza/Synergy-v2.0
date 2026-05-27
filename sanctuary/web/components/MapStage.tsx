@@ -189,7 +189,7 @@ export function MapStage({
         viewBox={`0 0 ${W} ${H}`}
         className="map-svg"
         role="group"
-        aria-label="Map of Peel Region: a heat-vulnerability choropleth by census tract, with ten candidate resilience hubs ranked by heat vulnerability — Malton Community Centre and Library ranks first."
+        aria-label="Map of Peel Region: a heat-vulnerability choropleth by census tract, with ten candidate resilience hubs ranked by heat vulnerability. Malton Community Centre and Library ranks first."
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerEnd}
@@ -199,17 +199,17 @@ export function MapStage({
       >
         {/* outer USER pan/zoom group (hand-rolled, default identity) */}
         <g transform={`translate(${view.x} ${view.y}) scale(${view.scale})`}>
-          {/* inner SCROLLYTELLING fly-to group. The zoom translate in lib/map.ts is
-              computed against the SVG user space (origin 0,0), so the scale MUST pivot
-              there too. Motion defaults SVG elements to transform-box: fill-box +
-              a centre origin, which pivots around the content's bbox centre and throws
-              the fly-to off — Malton lands in the top-left corner. Pin the box to the
-              view-box and the origin to (0,0) so translate+scale match the math. */}
+          {/* inner SCROLLYTELLING fly-to group. Motion animates this <g>'s scale and
+              writes its OWN transform-origin (50% 50%) — a transformOrigin set in style
+              here is silently ignored. So pin transform-box to the view-box, which makes
+              that 50% 50% a stable (W/2, H/2) centre pivot, and let lib/map.ts compute
+              the fly-to translate for that centre pivot. Malton then lands dead centre;
+              the previous 0,0-origin math left it stranded in the top-left corner. */}
           <m.g
             initial={false}
             animate={zoomT}
             transition={reduced ? { duration: 0 } : { duration: 0.9, ease: EASE_CALM }}
-            style={{ transformBox: "view-box", transformOrigin: "0px 0px" }}
+            style={{ transformBox: "view-box" }}
           >
             {/* faint Peel outline (context boundary) */}
             {base.outline.map((d, i) => (
@@ -230,7 +230,7 @@ export function MapStage({
             >
               {base.facilities.map((f, i) => (
                 <circle key={`fac-${i}`} cx={f.x} cy={f.y} r={5} className="facility-dot">
-                  <title>{f.kind ? `${f.name} — ${f.kind}` : f.name}</title>
+                  <title>{f.kind ? `${f.name} · ${f.kind}` : f.name}</title>
                 </circle>
               ))}
             </m.g>
@@ -302,7 +302,7 @@ export function MapStage({
                     </text>
                   )}
                   {/* single string child — React 19 drops multi-child <title> in SSR (hydration mismatch) */}
-                  <title>{`${h.name} — HVI ${h.hvi} (${HVI_LABEL[h.hvi]})`}</title>
+                  <title>{`${h.name} · HVI ${h.hvi} (${HVI_LABEL[h.hvi]})`}</title>
                 </m.g>
               );
             })}

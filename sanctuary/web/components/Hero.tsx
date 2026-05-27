@@ -27,7 +27,7 @@ export function Hero() {
         </h1>
 
         <p className="hero-lead">
-          Pearson hit <span className="hero-num tnum">{pearsonHeat.value}</span> on {pearsonHeat.when} — about 5 km from{" "}
+          Pearson hit <span className="hero-num tnum">{pearsonHeat.value}</span> on {pearsonHeat.when}, about 5 km from{" "}
           <strong>{MALTON.name}</strong>, the building Sanctuary ranks first.{" "}
           <a className="hero-src" href={pearsonHeat.source.url} target="_blank" rel="noreferrer">
             {pearsonHeat.source.name} <ArrowUpRight size={12} />

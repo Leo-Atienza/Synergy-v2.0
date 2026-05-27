@@ -85,7 +85,13 @@ export function projectMap(
 
   const malton = points.find((p) => p.rank === 1) ?? points[0];
   const k = 1.9;
-  const zoom = { x: round(W / 2 - k * malton.x), y: round(H / 2 - k * malton.y), scale: k };
+  // Fly-to transform that lands Malton at the viewBox centre. Motion animates the
+  // <g> scale and writes its OWN transform-origin (50% 50%); on a view-box
+  // transform-box that resolves to (W/2, H/2) — the centre, not the (0,0) origin.
+  // So the translate is computed for a CENTRE pivot: t = k·(centre − malton).
+  // (Computing it for a 0,0 pivot instead leaves Malton in the top-left corner.)
+  // See the fly-to group in MapStage.tsx.
+  const zoom = { x: round(k * (W / 2 - malton.x)), y: round(k * (H / 2 - malton.y)), scale: k };
 
   return { fsaPaths, points, zoom };
 }

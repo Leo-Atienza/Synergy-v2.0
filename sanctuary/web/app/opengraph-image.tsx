@@ -5,7 +5,7 @@ import { join } from "node:path";
 // Static share card (the "5" + Malton). Satori can't parse woff2, so the OG route
 // reads static TTF subsets (app/fonts/*-og.ttf) at build — separate from the
 // next/font woff2 the site itself uses.
-export const alt = "Sanctuary — harden these five Peel buildings first";
+export const alt = "Sanctuary: harden these five Peel buildings first";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
