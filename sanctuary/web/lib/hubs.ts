@@ -28,6 +28,7 @@ type RawProps = {
   verification_status: string;
   notes: string;
   backup_power_status: string;
+  flood_status: string;
 };
 
 export type Hub = {
@@ -51,6 +52,8 @@ export type Hub = {
   catchmentMethod: string;
   solarPotential: string;
   backupPower: string; // "pending" for all — no candidate has confirmed backup power
+  flood: string; // honest relationship to the TRCA regulatory floodplain (computed offline)
+  floodEvidence: Verification; // tag derived from the flood status string
   notes: string;
   // Transparent score, 0..100. Provisional while catchment population is pending.
   score: number;
@@ -109,6 +112,16 @@ function n(v: string): number {
   return Number.isFinite(x) ? x : 0;
 }
 
+// Map the honest flood_status string (set offline in the data files) to its
+// evidence tag. Prefixes are controlled: computed against TRCA Layer 6 (the
+// regulatory floodline) + the CVC Credit River Watershed boundary, 2026-05-28.
+function floodTag(s: string): Verification {
+  if (s.startsWith("within")) return "verified"; // inside a TRCA flood polygon
+  if (s.startsWith("~")) return "modelled"; // computed proximity to the nearest floodline
+  if (s.startsWith("outside")) return "verified"; // verified outside every TRCA polygon
+  return "pending"; // "not mapped by TRCA ..." — Credit watershed, CVC's jurisdiction
+}
+
 // Five-factor model from scoring-notes.md. Population (25%) is still pending real
 // catchment work, so we proxy it with exposure × sensitivity quintiles and mark the
 // row "modelled" — the panel renders that honestly rather than hiding it.
@@ -163,6 +176,8 @@ export function toHub(feature: {
     catchmentMethod: p.catchment_method,
     solarPotential: p.solar_potential_est,
     backupPower: p.backup_power_status,
+    flood: p.flood_status,
+    floodEvidence: floodTag(p.flood_status),
     notes: p.notes,
     score,
     breakdown,

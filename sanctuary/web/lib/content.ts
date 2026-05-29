@@ -699,9 +699,14 @@ export const EVIDENCE_KEY: { tag: "verified" | "modelled" | "pending"; text: str
   { tag: "pending", text: "pending, needs a site audit" },
 ];
 
+// One-line honest scope note for the flood layer (riverine, not pluvial; TRCA only).
+export const FLOOD_CAVEAT =
+  "The flood layer is TRCA's riverine regulatory floodplain, the greater of the Hurricane Hazel Regional Storm or the 100-year flood, not urban or storm-sewer flooding. West Peel's Credit River watershed is mapped separately by Credit Valley Conservation.";
+
 // Map layer toggles for the interactive Peel map (keys match LayerState in MapStage).
-export const MAP_LAYERS: { key: "heat" | "facilities" | "candidates" | "rings"; label: string }[] = [
+export const MAP_LAYERS: { key: "heat" | "facilities" | "candidates" | "rings" | "flood"; label: string }[] = [
   { key: "heat", label: "Heat vulnerability" },
+  { key: "flood", label: "Flood risk (regulated areas)" },
   { key: "facilities", label: "Public facilities" },
   { key: "candidates", label: "Candidate hubs" },
   { key: "rings", label: "Modelled 500 m reach" },

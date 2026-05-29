@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { Hub } from "@/lib/hubs";
 import type { MapData } from "@/lib/map-constants";
 import { LazyMotion, domAnimation, useReducedMotion, STEP } from "@/lib/motion";
-import { STEPS } from "@/lib/content";
+import { STEPS, FLOOD_CAVEAT } from "@/lib/content";
 import { MapStage } from "@/components/MapStage";
 import { MapLegend } from "@/components/MapLegend";
 import { DetailPanel } from "@/components/DetailPanel";
@@ -172,6 +172,7 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
               Pan and zoom the map. Click a census tract for its real exposure, sensitivity, and adaptive-capacity
               quintiles, or click a pin for a candidate hub&rsquo;s honest first-pass score.
             </p>
+            <p className="rail-tour-cap">{FLOOD_CAVEAT}</p>
           </div>
 
           <div className="rail-tour" data-touring={touring}>

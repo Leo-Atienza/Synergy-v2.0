@@ -27,12 +27,15 @@ export type FacilityGeo = {
   type?: string;
   features: { type?: string; properties: FacilityProps; geometry: { coordinates: [number, number] } }[];
 };
+// TRCA regulatory floodplain polygons (build-time only; projected to path strings).
+export type FloodGeo = { type?: string; features: { type?: string; properties?: unknown; geometry: unknown }[] };
 
 export function projectMap(
   base: { features: unknown[] },
   hubs: Hub[],
   hvi?: HviGeo,
   facilities?: FacilityGeo,
+  flood?: FloodGeo,
 ): MapData {
   const proj = geoMercator().fitExtent(
     [
@@ -73,7 +76,13 @@ export function projectMap(
     })
     .filter((p) => p.x > 0 && p.y > 0 && p.x < W && p.y < H);
 
-  const fsaPaths: BaseLayer = { outline, tracts, facilities: projFacilities };
+  // TRCA regulatory floodplain polygons projected to rounded path strings (a
+  // build-time overlay; the 295-polygon source GeoJSON never reaches the client).
+  const floodPaths: string[] = (flood?.features ?? [])
+    .map((f) => roundPath(path(f as never) ?? ""))
+    .filter((d) => d.length > 0);
+
+  const fsaPaths: BaseLayer = { outline, tracts, facilities: projFacilities, flood: floodPaths };
 
   // Each hub's projected centre + the pixel radius of a modelled 500 m catchment
   // (a ~0.0045° north offset), floored at 14px.

@@ -58,7 +58,7 @@ export function MapStage({
 
   // Map-local interaction state — never touches ScrollStage (the parallel agent's file).
   const [view, setView] = useState<ViewTransform>(VIEW_IDENTITY);
-  const [layers, setLayers] = useState<LayerState>({ heat: true, facilities: true, candidates: true, rings: true });
+  const [layers, setLayers] = useState<LayerState>({ heat: true, facilities: true, candidates: true, rings: true, flood: true });
   const [tract, setTract] = useState<HviTract | null>(null);
 
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -73,6 +73,9 @@ export function MapStage({
   // by its toggle (× boolean) so a user can switch any layer off in explore mode.
   const heat = (layers.heat ? 1 : 0) * (explore ? 0.62 : s === STEP.RISK ? 1 : s === STEP.GAP ? 0.5 : 0.28);
   const facOpacity = (layers.facilities ? 1 : 0) * (explore ? 0.9 : s === STEP.GAP ? 1 : 0);
+  // Flood is a context overlay outside the heat-focused scroll story: shown only in
+  // explore mode (and only when toggled on), never during the deal-the-five sequence.
+  const floodOp = (layers.flood ? 1 : 0) * (explore ? 0.55 : 0);
   const pinsOn = layers.candidates && (explore ? true : s >= STEP.CANDIDATES);
   const ringsOp = (layers.rings ? 1 : 0) * (explore ? 0.5 : s === STEP.CANDIDATES ? 0.85 : s >= STEP.DEAL ? 0.4 : 0);
   const dealt = !explore && s >= STEP.DEAL;
@@ -155,7 +158,7 @@ export function MapStage({
       return;
     }
     setView(VIEW_IDENTITY);
-    setLayers({ heat: true, facilities: true, candidates: true, rings: true });
+    setLayers({ heat: true, facilities: true, candidates: true, rings: true, flood: true });
     setTract(null);
   }, [resetSignal]);
 
@@ -219,6 +222,19 @@ export function MapStage({
             {/* REAL HVI heat choropleth — replaces the fake radial glow */}
             <m.g initial={false} animate={{ opacity: heat }} transition={t0 ?? { duration: 0.7, ease: EASE_CALM }}>
               {choropleth}
+            </m.g>
+
+            {/* TRCA regulatory floodplain (riverine, Humber / Etobicoke / Mimico) — a
+                non-interactive context overlay, so the heat tracts under it stay clickable */}
+            <m.g
+              initial={false}
+              animate={{ opacity: floodOp }}
+              transition={t0 ?? { duration: 0.6, ease: EASE_CALM }}
+              style={{ pointerEvents: "none" }}
+            >
+              {base.flood.map((d, i) => (
+                <path key={`flood-${i}`} d={d} className="flood-poly" />
+              ))}
             </m.g>
 
             {/* Official / public facilities — the shelter-gap "current network" */}

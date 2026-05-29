@@ -31,6 +31,7 @@ export type BaseLayer = {
   outline: string[]; // faint Peel context boundary (FSA polygons)
   tracts: HviTract[]; // the real HVI heat choropleth
   facilities: Facility[]; // official/public facilities
+  flood: string[]; // TRCA regulatory floodplain polygons (projected path strings)
 };
 
 export type MapData = {
@@ -43,7 +44,7 @@ export type MapData = {
 export const ZOOM_IDENTITY = { x: 0, y: 0, scale: 1 } as const;
 
 // Toggleable map layers (keys mirror lib/content.ts MAP_LAYERS).
-export type LayerKey = "heat" | "facilities" | "candidates" | "rings";
+export type LayerKey = "heat" | "facilities" | "candidates" | "rings" | "flood";
 export type LayerState = Record<LayerKey, boolean>;
 
 // ---------------------------------------------------------------------------

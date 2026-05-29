@@ -1219,6 +1219,15 @@ h3 {
   stroke-width: 1.5;
 }
 
+/* TRCA regulatory floodplain overlay — muted water-blue, non-interactive. One of the
+   two allowed new map hues, distinct from the HVI red-orange ramp and the ember signal. */
+.flood-poly {
+  fill: color-mix(in oklab, #4a9ee0 60%, transparent);
+  stroke: color-mix(in oklab, #4a9ee0 78%, transparent);
+  stroke-width: 0.4;
+  vector-effect: non-scaling-stroke;
+}
+
 /* Official / public facilities — the shelter-gap "current network". Hollow + cool,
    deliberately distinct from the HVI-filled candidate pins. */
 .facility-dot {
@@ -1392,6 +1401,9 @@ h3 {
   border-radius: 999px;
   background: transparent;
   border: 1.5px dashed color-mix(in oklab, var(--cool) 70%, transparent);
+}
+.mc-sw-flood {
+  background: color-mix(in oklab, #4a9ee0 78%, transparent);
 }
 
 /* Tract-click readout (top-left): real HVI sub-quintiles for one census tract. */

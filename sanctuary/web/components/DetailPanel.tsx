@@ -96,6 +96,13 @@ export function DetailPanel({
           </span>
         </div>
         <div className="fact">
+          <span className="fact-k">Flood</span>
+          <span className="fact-v">
+            <span>{hub.flood}</span>
+            <EvidenceTag tag={hub.floodEvidence} />
+          </span>
+        </div>
+        <div className="fact">
           <span className="fact-k">Backup power</span>
           <span className="fact-v">
             <span>{hub.backupPower === "pending" ? "not confirmed" : hub.backupPower}</span>
