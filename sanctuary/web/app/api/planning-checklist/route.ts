@@ -38,12 +38,22 @@ export async function POST(request: Request) {
 
   const { candidate } = parsed.data;
   const apiKey = process.env.GEMINI_API_KEY;
+  // This route is a LOCAL regeneration tool only (POST a candidate -> review ->
+  // commit the static planning-checklists.json the UI actually reads). It is never
+  // on the live demo path. To stop it from being an open, billable Gemini endpoint
+  // in production, the live model call is gated behind an explicit server-only
+  // opt-in flag. Without PLANNING_CHECKLIST_REGEN=1 (or with no key) it returns the
+  // same free static fallback, so a key that ends up in the prod env can never be
+  // abused to burn quota. Local regen: set GEMINI_API_KEY + PLANNING_CHECKLIST_REGEN=1.
+  const regenEnabled = process.env.PLANNING_CHECKLIST_REGEN === "1";
 
-  if (!apiKey) {
+  if (!apiKey || !regenEnabled) {
     return NextResponse.json({
       checklist: fallbackChecklistFor(candidate),
       mode: "static-fallback",
-      reason: "GEMINI_API_KEY is not configured.",
+      reason: !apiKey
+        ? "GEMINI_API_KEY is not configured."
+        : "Live regeneration disabled. Set PLANNING_CHECKLIST_REGEN=1 to enable the Gemini draft.",
     });
   }
 

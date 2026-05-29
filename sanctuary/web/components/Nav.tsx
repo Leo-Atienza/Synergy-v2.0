@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 
 import { Logo } from "@/components/Logo";
 
-// Top navigation for the multi-page showcase. The wordmark replaces the old
-// Masthead (its "which five?" line now lives only in the Overview hero). Active
-// route is marked with aria-current="page"; the mobile drawer is keyboard- and
-// screen-reader-accessible (button toggles a labelled region, Escape closes it).
+// Top navigation for the multi-page showcase. The wordmark + route links; the
+// "which five?" framing lives only in the Overview hero. Active route is marked
+// with aria-current="page"; the mobile drawer is keyboard- and screen-reader-
+// accessible (button toggles a labelled region, Escape closes it).
 const LINKS: { href: string; label: string }[] = [
   { href: "/", label: "Overview" },
   { href: "/map", label: "Map" },

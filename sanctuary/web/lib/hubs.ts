@@ -162,7 +162,7 @@ function scoreHub(p: RawProps): { score: number; breakdown: ScoreRow[] } {
 
   const breakdown: ScoreRow[] = [
     { label: "Heat vulnerability nearby", weightPct: 35, bucket: HVI_LABEL[hvi] ?? "n/a", fraction: heatFrac, status: "verified" },
-    { label: "Vulnerable population in catchment", weightPct: 25, bucket: "modelled (catchment pending)", fraction: popFrac, status: "pending" },
+    { label: "Vulnerable population in catchment", weightPct: 25, bucket: "500 m proxy, count pending", fraction: popFrac, status: "modelled" },
     { label: "Trust / community role", weightPct: 20, bucket: TRUST_LABEL[p.trust_role] ?? p.trust_role, fraction: trustFrac, status: "verified" },
     { label: "Rooftop hardening potential", weightPct: 10, bucket: p.roof_area_class, fraction: roofFrac, status: "modelled" },
     { label: "Facility suitability", weightPct: 10, bucket: p.facility_suitability, fraction: facilityFrac, status: "modelled" },

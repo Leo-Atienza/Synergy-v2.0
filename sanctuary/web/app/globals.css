@@ -141,16 +141,7 @@ h3 {
   text-wrap: pretty;
 }
 
-/* ---- Masthead ---- */
-.masthead {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--hairline);
-  flex-wrap: wrap;
-}
+/* ---- Wordmark (top nav) ---- */
 .brand-mark {
   display: block;
   font-family: var(--font-data);
@@ -158,25 +149,6 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.34em;
   color: var(--text);
-}
-.brand-sub {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  color: var(--text-faint);
-  text-transform: uppercase;
-}
-.masthead-q {
-  margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.5;
-  color: var(--text-muted);
-  text-align: right;
-}
-.masthead-q strong {
-  color: var(--text);
-  font-weight: 600;
 }
 
 /* ---- Hero ---- */
@@ -1226,11 +1198,23 @@ h3 {
   background: transparent;
   border-radius: 0;
   padding: 0;
-  opacity: 0.35;
-  transition: opacity 0.4s var(--ease-calm);
 }
-.decision-stage[data-live="true"] .scroll-step[data-active="true"] {
-  opacity: 1;
+/* Resting steps recede via COLOUR, never a low opacity. A 0.35 opacity ghost
+   dropped the ember eyebrow to ~1.7:1 and the body to ~2.1:1 — WCAG-AA fails
+   (axe flagged 71 nodes). Each caption role now lands on an AA-safe muted token
+   (>=6.7:1 on the navy field) and the active step pops back to full white, so the
+   focus effect still reads while every step stays legible (homepage a11y -> 100). */
+.decision-stage[data-live="true"] .scroll-step > .eyebrow,
+.decision-stage[data-live="true"] .scroll-step > .scroll-step-title,
+.decision-stage[data-live="true"] .scroll-step > .scroll-step-body {
+  transition: color 0.4s var(--ease-calm);
+}
+.decision-stage[data-live="true"] .scroll-step:not([data-active="true"]) > .eyebrow,
+.decision-stage[data-live="true"] .scroll-step:not([data-active="true"]) > .scroll-step-title {
+  color: var(--text-muted);
+}
+.decision-stage[data-live="true"] .scroll-step:not([data-active="true"]) > .scroll-step-body {
+  color: var(--text-faint);
 }
 .decision-stage[data-live="true"] .scroll-step-title {
   font-size: clamp(1.6rem, 2.6vw, 2.3rem);
@@ -2451,9 +2435,9 @@ main:not(.map-page) > :last-child {
 }
 
 /* ============================================================================
-   Multi-page shell — top nav (Claude lane). The wordmark replaces the old
-   Masthead; the active route is marked with aria-current="page". Sticky bar,
-   hairline border, blurred translucent field. Mobile collapses to a drawer.
+   Multi-page shell — top nav. The wordmark + route links; the active route is
+   marked with aria-current="page". Sticky bar, hairline border, blurred
+   translucent field. Mobile collapses to a drawer.
    ========================================================================== */
 .nav {
   position: sticky;

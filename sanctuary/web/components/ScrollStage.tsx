@@ -121,6 +121,7 @@ export function ScrollStage({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
               currentStep={mapStep}
               live={live}
               reduced={reduced}
+              hazardLayers={false}
             />
             <MapLegend />
           </div>

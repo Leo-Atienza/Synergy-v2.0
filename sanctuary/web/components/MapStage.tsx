@@ -42,6 +42,7 @@ export function MapStage({
   resetSignal,
   layers: layersProp,
   onToggleLayer,
+  hazardLayers = true,
 }: {
   fsaPaths: BaseLayer;
   points: MapPoint[];
@@ -59,6 +60,10 @@ export function MapStage({
   // can react to the active layers; the home scroll story passes none (uncontrolled).
   layers?: LayerState;
   onToggleLayer?: (k: LayerKey) => void;
+  // When false (the homepage scroll embed, where they are never visible or
+  // toggleable), skip rendering the winter + flood layers entirely — ~577 fewer
+  // SVG nodes to hydrate. /map leaves it default true so both stay toggleable.
+  hazardLayers?: boolean;
 }) {
   const xy = useMemo(() => new Map(points.map((p) => [p.rank, p])), [points]);
 
@@ -206,12 +211,16 @@ export function MapStage({
   // Winter / energy-burden choropleth — the SAME tract paths recoloured by the ON-Marg
   // Material Resources quintile. Non-interactive (the heat tracts beneath stay clickable),
   // so no new polygon set ships and the tract readout still works.
+  // Built only when hazardLayers is on (the /map explorer). The homepage embed
+  // never shows winter, so it skips the 282-path build + render entirely.
   const winterChoropleth = useMemo(
     () =>
-      base.tracts.map((t) => (
-        <path key={`w-${t.ctuid}`} d={t.d} fill={t.winterQ ? WINTER_COLORS[t.winterQ] : "#1a2937"} className="winter-tract" />
-      )),
-    [base.tracts],
+      hazardLayers
+        ? base.tracts.map((t) => (
+            <path key={`w-${t.ctuid}`} d={t.d} fill={t.winterQ ? WINTER_COLORS[t.winterQ] : "#1a2937"} className="winter-tract" />
+          ))
+        : null,
+    [base.tracts, hazardLayers],
   );
 
   return (
@@ -254,29 +263,35 @@ export function MapStage({
             </m.g>
 
             {/* TRCA regulatory floodplain (riverine, Humber / Etobicoke / Mimico) — a
-                non-interactive context overlay, so the heat tracts under it stay clickable */}
-            <m.g
-              initial={false}
-              animate={{ opacity: floodOp }}
-              transition={t0 ?? { duration: 0.6, ease: EASE_CALM }}
-              style={{ pointerEvents: "none" }}
-            >
-              {base.flood.map((d, i) => (
-                <path key={`flood-${i}`} d={d} className="flood-poly" />
-              ))}
-            </m.g>
+                non-interactive context overlay, so the heat tracts under it stay clickable.
+                Skipped on the homepage embed (hazardLayers=false): never toggleable there. */}
+            {hazardLayers && (
+              <m.g
+                initial={false}
+                animate={{ opacity: floodOp }}
+                transition={t0 ?? { duration: 0.6, ease: EASE_CALM }}
+                style={{ pointerEvents: "none" }}
+              >
+                {base.flood.map((d, i) => (
+                  <path key={`flood-${i}`} d={d} className="flood-poly" />
+                ))}
+              </m.g>
+            )}
 
             {/* Winter / energy-burden choropleth (ON-Marg Material Resources) — the
                 alternative lens, recolouring the same tracts; non-interactive so the
-                heat tracts beneath keep handling tract-click readouts. */}
-            <m.g
-              initial={false}
-              animate={{ opacity: winterOp }}
-              transition={t0 ?? { duration: 0.6, ease: EASE_CALM }}
-              style={{ pointerEvents: "none" }}
-            >
-              {winterChoropleth}
-            </m.g>
+                heat tracts beneath keep handling tract-click readouts. Skipped on the
+                homepage embed (hazardLayers=false): never toggleable there. */}
+            {hazardLayers && (
+              <m.g
+                initial={false}
+                animate={{ opacity: winterOp }}
+                transition={t0 ?? { duration: 0.6, ease: EASE_CALM }}
+                style={{ pointerEvents: "none" }}
+              >
+                {winterChoropleth}
+              </m.g>
+            )}
 
             {/* Official / public facilities — the shelter-gap "current network" */}
             <m.g

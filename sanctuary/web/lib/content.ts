@@ -409,7 +409,7 @@ export const FUNDING_PROGRAMS: {
     tag: "verified",
     source: {
       name: "FCM Green Municipal Fund · Community Buildings Retrofit",
-      url: "https://greenmunicipalfund.ca/community-buildings-retrofit-initiative",
+      url: "https://greenmunicipalfund.ca/funding",
     },
   },
   {
@@ -664,7 +664,7 @@ export const SOURCE_LINKS: { label: string; status: EvidenceStatus; note: string
     label: "FCM Green Municipal Fund (Community Buildings Retrofit)",
     status: "verified",
     note: "Open municipal grant-and-loan program for community-building energy retrofits, cited on the Funding page.",
-    url: "https://greenmunicipalfund.ca/community-buildings-retrofit-initiative",
+    url: "https://greenmunicipalfund.ca/funding",
   },
   {
     label: "IESO Save on Energy (Retrofit Program)",
@@ -693,7 +693,7 @@ export const CANDIDATE_SOURCE_LINKS: { label: string; status: EvidenceStatus; ur
   { label: "Anjuman-E-Anwarul Islam of Malton", status: "verified", url: "https://maltonmasjid.ad-din.site/" },
   { label: "Bharat Mata Mandir", status: "verified", url: "https://miracletechnologies.ca/bharatmatamandir/" },
   { label: "Chinguacousy Wellness Centre", status: "verified", url: "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/pages/chinguacousy-wellness.aspx" },
-  { label: "Hindu Sabha Temple", status: "verified", url: "https://hindusabhatemple.com/contacts" },
+  { label: "Hindu Sabha Temple", status: "verified", url: "https://hindusabhatemple.com/contact-us/" },
   { label: "Gore Meadows Community Centre and Library", status: "verified", url: "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/Pages/Gore-Meadows.aspx" },
   { label: "Guru Nanak Darbar Gurdwara", status: "verified", url: "https://nanakdarbar.com/" },
   { label: "Cassie Campbell Community Centre", status: "verified", url: "https://www.brampton.ca/EN/residents/Recreation/Community-Centres/pages/cassie-campbell.aspx" },
