@@ -120,7 +120,7 @@ The Synergy team, Seneca Polytechnic:
 | Jackson Li | Project Manager / Engineer |
 | Roger Lungsee | Automation Engineer |
 | Jhonatan | Programmer |
-| Leo Atienza | Research / Data |
+| Leo Atienza | Research / Claude Power User |
 
 ---
 
