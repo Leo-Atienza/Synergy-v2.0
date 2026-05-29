@@ -19,7 +19,7 @@ export default function VisionPage() {
         <p className="eyebrow">Vision</p>
         <h1 id="vision-title">The future version only works if the prototype stays honest.</h1>
         <p>
-          The hackathon build ranks candidate hubs across three honest hazard lenses: heat, flood, and winter energy
+          The current build ranks candidate hubs across three honest hazard lenses: heat, flood, and winter energy
           burden. This page shows the practical upgrades next: stronger access modelling, real site audits, a resident
           view only after verification, and repeatable scoring across Alectra territory.
         </p>

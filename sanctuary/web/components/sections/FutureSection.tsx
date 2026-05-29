@@ -7,7 +7,7 @@ export function FutureSection() {
   return (
     <Section
       eyebrow="Roadmap, not built"
-      title="After the demo, this becomes a deployable municipal playbook."
+      title="Next, this becomes a deployable municipal playbook."
       lead="The current prototype ranks candidate hubs. The next phases focus on decision quality, verified readiness, and a scale path sponsors and municipal partners can fund with confidence."
     >
       <ol className="phase-track">
@@ -23,7 +23,7 @@ export function FutureSection() {
       <div className="future-upgrade-intro">
         <p className="eyebrow">What improves next</p>
         <p>
-          These are the highest-value upgrades after judging: better hazard coverage, stronger verification, and a
+          These are the highest-value upgrades from here: better hazard coverage, stronger verification, and a
           repeatable model that can expand across municipalities without overclaiming readiness.
         </p>
       </div>

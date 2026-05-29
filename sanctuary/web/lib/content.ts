@@ -755,13 +755,13 @@ export const QA: { q: string; a: string }[] = [
   { q: "Are these buildings resilience hubs today?", a: "No. They are candidate hubs. Sanctuary ranks where hardening should be investigated first." },
   { q: "Are the solar and battery numbers measured?", a: "No. They are planning estimates from rough roof class and regional solar context. The real output is the siting and prioritization layer." },
   { q: "Are the reachable-population numbers exact?", a: "Not yet. The prototype uses a modelled 500 m catchment and labels it as such until a real walkshed is run." },
-  { q: "Is the data live or hardcoded?", a: "It's a frozen snapshot, on purpose. Each map layer is a GeoJSON file pulled from a public source (Peel's HVI service, Statistics Canada boundaries, municipal facility data), committed to the repo and loaded at build time, so the demo can't break from a dropped connection. The values aren't invented. They trace to the sources on this page and were re-verified against the live Peel service on 2026-05-26." },
+  { q: "Is the data live or hardcoded?", a: "It's a frozen snapshot, on purpose. Each map layer is a GeoJSON file pulled from a public source (Peel's HVI service, Statistics Canada boundaries, municipal facility data), committed to the repo and loaded at build time, so it can't break from a dropped connection. The values aren't invented. They trace to the sources on this page and were re-verified against the live Peel service on 2026-05-26." },
   { q: "Why include places of worship?", a: "Because resilience runs on trust, volunteers, and local knowledge. Gurdwaras, mosques, mandirs, and churches are community infrastructure." },
   { q: "Is this tokenizing faith communities?", a: "No. The list mixes civic and faith buildings and frames every site as an asset, not as a group that needs rescuing." },
   { q: "Why not just build more official cooling centres?", a: "That may be part of the answer. Sanctuary helps decide where new or upgraded safe spaces protect vulnerable residents first." },
   { q: "Can Alectra actually use this?", a: "Yes, as a planning concept: a way to find community-energy and resilience-hub candidates before deeper engineering and partner engagement." },
   { q: "Who pays for the solar and batteries?", a: "For a public owner the anchor is the 15% refundable Clean Electricity Investment Tax Credit, the one federal credit tax-exempt owners can reach. It stacks with the FCM Green Municipal Fund retrofit package and Ontario's Save on Energy program. The 30% Clean Technology credit is for taxable corporations only, so it is not the lever for a library or place of worship. See the Funding page." },
-  { q: "What happens after the hackathon?", a: "Verify the top five with owners, replace buffers with real walksheds, run site audits, compare funding paths, then repeat across the territory." },
+  { q: "What are the next steps?", a: "Verify the top five with owners, replace buffers with real walksheds, run site audits, compare funding paths, then repeat across the territory." },
 ];
 
 // Honesty key — the evidence vocabulary, used in the legend and the detail panel.
