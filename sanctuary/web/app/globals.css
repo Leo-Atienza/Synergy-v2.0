@@ -31,6 +31,7 @@
   --text-muted: var(--ink-dim);
   --text-faint: var(--ink-faint);
   --signal: var(--ember);
+  --signal-strong: var(--ember); /* display ember for LARGE text; = signal in dark, brighter in light */
   --signal-hot: var(--ember-hot);
 
   /* Map (theme-aware): no-data geography fill, selection/focus stroke, and the
@@ -84,7 +85,8 @@
   --ink: #16222e;         /* deep navy ink — keeps the brand DNA, ~13:1 on paper */
   --ink-dim: #48596a;     /* muted text */
   --ink-faint: #516374;   /* faint text (table heads on sunken) — AA on every paper ground */
-  --ember: #a24b15;       /* deep burnt-ember signal — AA as text incl. on sunken rows */
+  --ember: #a24b15;       /* deep burnt-ember signal — AA 4.5:1 as SMALL text incl. on sunken rows */
+  --signal-strong: #d96a28; /* bright display ember for LARGE text (the "5"/harden/score) — >=3:1 on paper */
   --ember-hot: #c62f20;
   --cool: #3f726c;        /* deepened teal */
   --c-verified: #1c7049;  /* honesty key: deep green — AA on every paper ground */
@@ -224,13 +226,13 @@ h3 {
   font-weight: 600;
   font-size: var(--display);
   line-height: 0.74;
-  color: var(--signal);
+  color: var(--signal-strong);
   vertical-align: -0.14em;
   margin: 0 0.04em;
 }
 .hero-verb {
   font-style: normal;
-  color: var(--signal);
+  color: var(--signal-strong);
 }
 .hero-lead {
   margin: clamp(20px, 3vw, 34px) 0 0;
@@ -848,7 +850,7 @@ h3 {
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.01em;
-  color: var(--signal);
+  color: var(--signal-strong);
 }
 .fund-meta {
   display: block;
@@ -1894,7 +1896,7 @@ h3 {
   font-size: 3rem;
   font-weight: 600;
   line-height: 1;
-  color: var(--signal);
+  color: var(--signal-strong);
 }
 .detail-score-suffix {
   font-family: var(--font-data);
