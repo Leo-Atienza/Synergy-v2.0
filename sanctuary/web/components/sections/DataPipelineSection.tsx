@@ -10,7 +10,7 @@ export function DataPipelineSection() {
     <Section
       eyebrow="Where the data comes from"
       title="Real public data, frozen into the page."
-      lead="Four map layers, each a snapshot of a named public source. Nothing here is generated or guessed, and nothing is fetched live while you browse."
+      lead="Six map layers, each a snapshot of a named public source. Nothing here is generated or guessed, and nothing is fetched live while you browse."
     >
       <div className="prov-table" role="table" aria-label="Map layers and their sources">
         <div className="prov-row prov-head" role="row">

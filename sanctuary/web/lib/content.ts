@@ -481,6 +481,22 @@ export const DATA_LAYERS: {
     status: "verified",
   },
   {
+    layer: "Flood risk (TRCA regulated floodplain)",
+    file: "peel-flood.geojson",
+    count: "295 polygons",
+    origin:
+      "TRCA's 'Flood and Heat Vulnerable Areas in Peel' service, layer 6 (Floodline TRCA Polygon): the riverine regulatory floodplain, the greater of the Hurricane Hazel Regional Storm or the 100-year flood, for the Humber, Etobicoke Creek, and Mimico Creek watersheds. Not urban or storm-sewer flooding. Per-building flood proximity was point-queried against this layer and cross-checked with a local point-in-polygon pass.",
+    status: "verified",
+  },
+  {
+    layer: "Winter / energy-burden vulnerability",
+    file: "peel-winter-vuln.geojson",
+    count: "282 census tracts",
+    origin:
+      "The 2021 Ontario Marginalization Index (ON-Marg) Material Resources quintile per census tract, joined by tract to the same Peel geography as the heat map. A marginalization and affordability proxy for winter resilience need, deliberately not a fabricated cold-temperature index. St. Michael's Hospital and Public Health Ontario, from the StatCan 2021 Census.",
+    status: "modelled",
+  },
+  {
     layer: "Peel outline",
     file: "peel-fsa.geojson",
     count: "35 forward sortation areas",
@@ -533,6 +549,30 @@ export const SOURCE_LINKS: { label: string; status: EvidenceStatus; note: string
     status: "verified",
     note: "Point-queried for candidate HVI, exposure, sensitivity, adaptive-capacity, CTUID, and PHDZ fields.",
     url: "https://services6.arcgis.com/ONZht79c8QWuX759/arcgis/rest/services/Extreme_Heat_Vulnerability_Index/FeatureServer/0",
+  },
+  {
+    label: "TRCA Flood and Heat Vulnerable Areas in Peel",
+    status: "verified",
+    note: "Layer 6, Floodline TRCA Polygon: the riverine regulatory floodplain for the Humber, Etobicoke Creek, and Mimico Creek watersheds. Each candidate's flood proximity was point-queried against it and cross-checked with a local point-in-polygon pass.",
+    url: "https://maps.trca.ca/hostingserver/rest/services/Hosted/Flood_and_Heat_Vulnerable_Areas_in_Peel_WFL1/FeatureServer/6",
+  },
+  {
+    label: "Credit Valley Conservation, Credit River Watershed",
+    status: "verified",
+    note: "The Credit watershed boundary, used to flag candidates that TRCA does not map, so they read 'not mapped by TRCA' rather than a false 'outside the floodplain'.",
+    url: "https://cvc-camaps.opendata.arcgis.com/",
+  },
+  {
+    label: "Ontario Marginalization Index (ON-Marg) 2021",
+    status: "modelled",
+    note: "Material Resources quintile per census tract: the affordability and marginalization proxy behind the winter / energy-burden lens. St. Michael's Hospital (Unity Health Toronto) and Public Health Ontario, from the StatCan 2021 Census.",
+    url: "https://www.publichealthontario.ca/en/data-and-analysis/health-equity/ontario-marginalization-index",
+  },
+  {
+    label: "Statistics Canada 2021 Census, dissemination-area population",
+    status: "modelled",
+    note: "Real dissemination-area populations and StatCan representative points, summed into Malton's modelled 500 m catchment estimate. Populations cross-checked against ON-Marg's dissemination-area file.",
+    url: "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/index-eng.cfm",
   },
   {
     label: "Statistics Canada 2021 Census FSA boundaries",

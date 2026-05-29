@@ -9,9 +9,13 @@ Use this as the fast provenance sheet for the StoryMap, video, and judge Q&A.
 | Shipped file (`public/`) | Records | Origin | Live or static |
 |---|---|---|---|
 | `peel-hvi.geojson` | 282 census tracts | Export of the public Peel EHVI feature service (quintile + 3 sub-scores) | Static snapshot, re-verified live 2026-05-26 |
+| `peel-flood.geojson` | 295 polygons | TRCA "Flood and Heat Vulnerable Areas in Peel" layer 6 (Floodline TRCA Polygon): riverine regulatory floodplain (Hurricane Hazel / 100-yr), Humber + Etobicoke + Mimico watersheds | Static, fetched 2026-05-28 |
+| `peel-winter-vuln.geojson` | 282 census tracts | ON-Marg 2021 Material Resources quintile per tract (St. Michael's Hospital + Public Health Ontario; StatCan 2021 Census), joined to the HVI tract geography | Static, built 2026-05-28 |
 | `peel-fsa.geojson` | 35 FSAs | Statistics Canada 2021 Census FSA boundary file (92-179-X), reprojected to WGS84 | Static |
 | `peel-facilities.geojson` | 87 points | Open recreation-facility data (arenas / community centres / pools) across Mississauga, Brampton, Caledon | Static |
-| `candidate-hubs.geojson` | 10 buildings | Names/addresses from official municipal + faith-org pages; geocoded then point-queried against the Peel HVI service | Static, HVI re-verified live 2026-05-26 |
+| `candidate-hubs.geojson` | 10 buildings | Names/addresses from official municipal + faith-org pages; geocoded then point-queried against the Peel HVI service; flood + winter + catchment computed offline 2026-05-28 | Static, HVI re-verified live 2026-05-26 |
+
+**Multi-hazard upgrade (2026-05-28), with data notes:** flood = [`../../docs/peel-flood-data-note.md`](../../docs/peel-flood-data-note.md) · winter / energy burden = [`../../docs/peel-winter-vuln-data-note.md`](../../docs/peel-winter-vuln-data-note.md) · Malton catchment = [`../../docs/malton-catchment-data-note.md`](../../docs/malton-catchment-data-note.md). New `candidate-hubs.csv` columns: `backup_power_status` (pending, all), `flood_status` (TRCA proximity, dual-method verified), `winter_vuln` (ON-Marg Material Resources quintile), `ct_population` (verified 2021 tract population, Malton only).
 
 Nothing is invented: each value traces to the public source below, and the extracts are reproducible from the documented scripts (HVI/candidate verification in this file; FSA build in [`../../docs/peel-fsa-data-note.md`](../../docs/peel-fsa-data-note.md)). **Hand-assigned, not fetched:** the planning buckets (roof class, facility suitability, modelled 500 m catchment) and the five scoring weights — labelled `modelled`/`pending` everywhere they appear, never shown as measured.
 
@@ -21,7 +25,10 @@ Nothing is invented: each value traces to the public source below, and the extra
 - **Peel HVI Web Map:** `https://www.arcgis.com/home/item.html?id=d1adca8a3b1e403483e608040734c07a`.
 - **Peel HVI Feature Service:** `https://services6.arcgis.com/ONZht79c8QWuX759/arcgis/rest/services/Extreme_Heat_Vulnerability_Index/FeatureServer/0`.
 - **Peel climate and health context:** `https://peelregion.ca/about/climate-change/climate-change-health`.
-- **Ontario Marginalization Index:** optional overlay if it drops in quickly. URL: `https://www.publichealthontario.ca/en/data-and-analysis/health-equity/ontario-marginalization-index`.
+- **TRCA Flood and Heat Vulnerable Areas in Peel (layer 6, Floodline TRCA Polygon):** the flood layer. `https://maps.trca.ca/hostingserver/rest/services/Hosted/Flood_and_Heat_Vulnerable_Areas_in_Peel_WFL1/FeatureServer/6`. TRCA itself publishes a combined flood-and-heat service for Peel, validating the multi-hazard overlap.
+- **Credit Valley Conservation, Credit River Watershed:** used to flag Credit-watershed candidates TRCA does not map. `https://cvc-camaps.opendata.arcgis.com/`.
+- **Ontario Marginalization Index (ON-Marg) 2021:** NOW USED as the winter / energy-burden lens (Material Resources quintile per tract). St. Michael's Hospital + Public Health Ontario; StatCan 2021 Census. `https://www.publichealthontario.ca/en/data-and-analysis/health-equity/ontario-marginalization-index`.
+- **Statistics Canada 2021 Census dissemination-area population:** Malton's modelled 500 m catchment. Boundaries via Esri Canada "Canadian DA Boundaries 2021"; population + representative points via "Census 2021 Population by Dissemination Area"; cross-checked against ON-Marg DA file.
 - **Brampton building footprints:** `https://geohub.brampton.ca/datasets/building-footprints`.
 - **Mississauga building footprints:** `https://data.mississauga.ca/datasets/building-footprints-1`.
 - **OSM places of worship ArcGIS item:** `https://www.arcgis.com/home/item.html?id=2b8b3326960c4cb7833b7546db6d0502`.

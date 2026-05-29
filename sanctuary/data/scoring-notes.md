@@ -45,3 +45,12 @@ Current top-five seed, pending catchment estimate:
 3. Susan Fennell Sportsplex — HVI 5, large civic facility.
 4. Anjuman-E-Anwarul Islam of Malton — HVI 4, adaptive-capacity quintile 5.
 5. Bharat Mata Mandir — HVI 3, exposure quintile 5.
+
+## Multi-hazard context columns (2026-05-28) — NOT scoring weights
+
+The 35 / 25 / 20 / 10 / 10 model above is **frozen**. The multi-hazard upgrade added per-building **context facts**, shown in the detail panel with their own evidence tags but **never folded into the score** (adding weighted factors would break both the model and the "where the weights came from" story):
+
+- `flood_status` — relationship to the TRCA regulatory floodplain (dual-method verified). See [`../../docs/peel-flood-data-note.md`](../../docs/peel-flood-data-note.md).
+- `winter_vuln` — ON-Marg 2021 Material Resources quintile of the building's tract (the winter / energy-burden lens), `modelled`. A "year-round resilience case" is flagged only where a building is high on BOTH heat (HVI >= 4) and this (>= 4). See [`../../docs/peel-winter-vuln-data-note.md`](../../docs/peel-winter-vuln-data-note.md).
+- `backup_power_status` — `pending` for all ten; no candidate has confirmed backup power.
+- `ct_population` / `reachable_population_est` — Malton now carries a real, modelled 500 m catchment estimate (~5,900) plus its verified 2021 tract population (5,217). See [`../../docs/malton-catchment-data-note.md`](../../docs/malton-catchment-data-note.md). Other candidates' reachable population stays `pending`.
