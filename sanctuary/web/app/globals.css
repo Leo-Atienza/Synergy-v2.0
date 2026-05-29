@@ -1825,7 +1825,8 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin: 16px 0 6px;
+  /* Top margin moved to .breakdown-label, which now sits above the bars. */
+  margin: 10px 0 6px;
 }
 .bd-top,
 .bd-bottom {
@@ -1879,6 +1880,15 @@ h3 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-faint);
+}
+/* Same divider, used ABOVE the score bars. Compound selector (.facts-label
+   .breakdown-label) so it beats the base .facts-label margin regardless of
+   source order. Hairline + padding mirror .facts, so the two groups read as a
+   matched pair: "inside the score" (bars) and "beyond" it (facts). */
+.facts-label.breakdown-label {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
 }
 .fact {
   display: flex;
@@ -2109,6 +2119,17 @@ button.candidate-row:hover {
 .candidate-selected {
   background: var(--surface-sunken);
   box-shadow: inset 3px 0 0 var(--signal), 0 0 0 1px color-mix(in oklab, var(--signal) 18%, transparent);
+}
+
+/* Last content block pays reduced bottom rhythm before the footer. A full
+   section's --section-y (~124px) bottom padding otherwise stacks with main's
+   padding-bottom + the footer's top padding into a ~230px dead band — most
+   visible on the home page, whose .readon card grid is the last block. Pages
+   ending in a .decision-more "next chapter" link are already tight; this just
+   normalises them to the same gap. /map excluded: its sticky map stage manages
+   its own footer spacing (already tight at ~50px). */
+main:not(.map-page) > :last-child {
+  padding-bottom: clamp(20px, 3vw, 40px);
 }
 
 /* ---- Footer (mounted globally in layout.tsx, so it centers itself) ----

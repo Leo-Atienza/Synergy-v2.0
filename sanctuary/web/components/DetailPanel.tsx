@@ -47,6 +47,11 @@ export function DetailPanel({
         <EvidenceTag tag="pending">site audit required</EvidenceTag>
       </div>
 
+      {/* Mirror of the "Beyond the first-pass score" divider below: labels the
+          five weighted factors as what the score IS, so the panel reads as two
+          named groups (inside the score / beyond it) instead of bars floating
+          under the honesty strip. */}
+      <p className="facts-label breakdown-label">Inside the first-pass score</p>
       <div className="breakdown">
         {hub.breakdown.map((r) => (
           <div className="bd-row" key={r.label}>
