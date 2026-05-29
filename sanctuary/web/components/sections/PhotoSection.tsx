@@ -8,7 +8,7 @@ export function PhotoSection() {
   return (
     <Section
       eyebrow="Malton field notes"
-      title="Real places, not stock resilience imagery."
+      title="Local and archival images, never stock."
       lead="The photographs are local or archival Commons files. They are here to ground the page in Malton and Peel, not to imply any building is already equipped."
     >
       <div className="photo-grid">

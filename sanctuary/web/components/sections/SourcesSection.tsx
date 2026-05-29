@@ -7,7 +7,7 @@ export function SourcesSection() {
   return (
     <Section
       eyebrow="Sources and stack"
-      title="The receipts page is part of the argument."
+      title="The receipts behind every number."
       lead="Every public claim is tied to a source and marked verified, modelled, or pending. The page is deliberately plain so anyone can trace the work."
     >
       <div className="source-stack-grid">

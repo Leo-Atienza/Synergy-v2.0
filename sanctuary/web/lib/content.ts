@@ -487,7 +487,7 @@ export const HOW_IT_WORKS: { num: string; label: string; body: string }[] = [
   },
 ];
 
-// Data provenance — the four map layers, where each came from, and how many
+// Data provenance — the six map layers, where each came from, and how many
 // records it carries. This answers "where did the data come from" literally,
 // per shipped file. Counts match the GeoJSON in public/ (loaded at build by
 // lib/load-map-data.ts). Pair with DATA_LOADING below for the static-vs-live answer.
