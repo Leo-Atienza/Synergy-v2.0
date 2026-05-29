@@ -111,13 +111,15 @@ export function DetailPanel({
             <EvidenceTag tag={hub.floodEvidence} />
           </span>
         </div>
-        <div className="fact">
-          <span className="fact-k">Winter / energy burden</span>
-          <span className="fact-v">
-            <span className="tnum">quintile {hub.winterVuln} of 5</span>
-            <EvidenceTag tag="modelled" />
-          </span>
-        </div>
+        {hub.winterVuln >= 1 && (
+          <div className="fact">
+            <span className="fact-k">Winter / energy burden</span>
+            <span className="fact-v">
+              <span className="tnum">quintile {hub.winterVuln} of 5</span>
+              <EvidenceTag tag="modelled" />
+            </span>
+          </div>
+        )}
         <div className="fact">
           <span className="fact-k">Backup power</span>
           <span className="fact-v">
