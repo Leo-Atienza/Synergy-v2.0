@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { FundingSection } from "@/components/sections/FundingSection";
+import { ArrowUpRight } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Funding · Sanctuary",
@@ -21,6 +23,11 @@ export default function FundingPage() {
         </p>
       </section>
       <FundingSection />
+      <p className="decision-more">
+        <Link href="/sources" className="inline-link">
+          Trace every number <ArrowUpRight size={14} />
+        </Link>
+      </p>
     </main>
   );
 }

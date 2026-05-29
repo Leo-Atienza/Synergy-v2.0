@@ -819,9 +819,33 @@ h3 {
 .fund-note-srcs .card-src {
   margin-top: 0;
 }
-/* The full-width Funding card in the Overview "Read on" grid (5th card). */
-.readon-card-wide {
+/* The full-width Funding card in the Overview "Read on" grid (5th card). Laid out
+   as a featured two-column card — label + title on the left, body on the right —
+   so the text uses the full width. Its default 42ch body cap left the copy hugging
+   the left third of a ~1100px card with a large dead zone. */
+/* Compound selector (.readon-card.readon-card-wide) so display:grid beats the base
+   .readon-card { display:flex }, which is defined later in the file. */
+.readon-card.readon-card-wide {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 26ch) minmax(0, 1fr);
+  column-gap: clamp(24px, 4vw, 56px);
+  row-gap: 6px;
+  align-items: start;
+}
+.readon-card-wide .readon-card-label {
+  grid-column: 1;
+  grid-row: 1;
+}
+.readon-card-wide .readon-card-title {
+  grid-column: 1;
+  grid-row: 2;
+}
+.readon-card-wide .readon-card-body {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  max-width: 64ch;
 }
 
 /* Q&A */
@@ -1845,6 +1869,17 @@ h3 {
   flex-direction: column;
   gap: 10px;
 }
+/* Quiet divider header for the "what the score doesn't cover" facts. Mono +
+   faint (not ember) so it reads as a section break without diluting the signal. */
+.facts-label {
+  margin: 0 0 2px;
+  font-family: var(--font-data);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
 .fact {
   display: flex;
   justify-content: space-between;
@@ -2082,13 +2117,13 @@ button.candidate-row:hover {
    Hairline dividers, mono data, semantic tokens — no boxes, no gradients. */
 .foot {
   max-width: var(--page-max);
-  margin: var(--section-y) auto 0;
+  /* No top margin: the last section's own padding-block bottom (var(--section-y))
+     plus main's padding-bottom plus the footer's internal .foot-top padding already
+     separate the footer. The extra var(--section-y) margin stacked into a ~350px
+     dead band on short pages. */
+  margin: 0 auto;
   padding: 0 var(--gutter) clamp(40px, 6vw, 64px);
   border-top: 1px solid var(--hairline);
-}
-/* After the full-bleed map page, drop the big top gap. */
-.map-page + .foot {
-  margin-top: 0;
 }
 
 /* Tier 1 — wordmark + footer nav. */
@@ -2636,5 +2671,14 @@ button.candidate-row:hover {
 @media (max-width: 700px) {
   .readon-grid {
     grid-template-columns: 1fr;
+  }
+  /* On phones the featured card stacks like every other card (flex column from
+     .readon-card); the desktop two-column grid placement is ignored. Compound
+     selector to match the desktop rule's specificity so this override wins. */
+  .readon-card.readon-card-wide {
+    display: flex;
+  }
+  .readon-card-wide .readon-card-body {
+    max-width: none;
   }
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import type { Hub } from "@/lib/hubs";
-import { HVI_LABEL } from "@/lib/hubs";
 import { m } from "@/lib/motion";
 import { EvidenceTag } from "@/components/EvidenceTag";
 import { CountUp } from "@/components/CountUp";
@@ -66,14 +65,12 @@ export function DetailPanel({
         ))}
       </div>
 
+      {/* Beyond the five weighted factors above: the hazards and readiness signals
+          the first-pass score does NOT yet cover. Kept honest, not folded into the
+          score. The duplicates of the breakdown rows (heat, population, roof) were
+          removed so the panel reads as one story, not the same facts twice. */}
       <div className="facts">
-        <div className="fact">
-          <span className="fact-k">Reachable population</span>
-          <span className="fact-v">
-            <span className="tnum">{hub.reachablePopulation === "pending" ? "catchment pending" : hub.reachablePopulation}</span>
-            <EvidenceTag tag={hub.reachablePopulation === "pending" ? "pending" : "modelled"} />
-          </span>
-        </div>
+        <p className="facts-label">Beyond the first-pass score</p>
         {hub.ctPopulation && (
           <div className="fact">
             <span className="fact-k">Census tract population</span>
@@ -83,27 +80,6 @@ export function DetailPanel({
             </span>
           </div>
         )}
-        <div className="fact">
-          <span className="fact-k">Roof / upgrade class</span>
-          <span className="fact-v">
-            <span>{hub.roofClass}</span>
-            <EvidenceTag tag="modelled" />
-          </span>
-        </div>
-        <div className="fact">
-          <span className="fact-k">Adaptive capacity</span>
-          <span className="fact-v">
-            <span className="tnum">quintile {hub.adaptiveCapacity}</span>
-            <EvidenceTag tag="verified" />
-          </span>
-        </div>
-        <div className="fact">
-          <span className="fact-k">Heat vulnerability</span>
-          <span className="fact-v">
-            <span className="tnum">HVI {hub.hvi} · {HVI_LABEL[hub.hvi]}</span>
-            <EvidenceTag tag="verified" />
-          </span>
-        </div>
         <div className="fact">
           <span className="fact-k">Flood</span>
           <span className="fact-v">

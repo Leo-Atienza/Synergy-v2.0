@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { ArcgisSection } from "@/components/sections/ArcgisSection";
 import { DataPipelineSection } from "@/components/sections/DataPipelineSection";
 import { PhotoSection } from "@/components/sections/PhotoSection";
 import { QaSection } from "@/components/sections/QaSection";
 import { SourcesSection } from "@/components/sections/SourcesSection";
+import { ArrowUpRight } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Sources · Sanctuary",
@@ -27,6 +29,11 @@ export default function SourcesPage() {
       <ArcgisSection />
       <PhotoSection />
       <QaSection />
+      <p className="decision-more">
+        <Link href="/" className="inline-link">
+          Back to the overview <ArrowUpRight size={14} />
+        </Link>
+      </p>
     </main>
   );
 }

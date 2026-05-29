@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { CounterfactualSection } from "@/components/sections/CounterfactualSection";
 import { EvidenceSection } from "@/components/sections/EvidenceSection";
 import { HonestySection } from "@/components/sections/HonestySection";
 import { MethodSection } from "@/components/sections/MethodSection";
+import { ArrowUpRight } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Method · Sanctuary",
@@ -25,6 +27,11 @@ export default function MethodPage() {
       <HonestySection />
       <CounterfactualSection />
       <EvidenceSection />
+      <p className="decision-more">
+        <Link href="/vision" className="inline-link">
+          See the honest roadmap <ArrowUpRight size={14} />
+        </Link>
+      </p>
     </main>
   );
 }
