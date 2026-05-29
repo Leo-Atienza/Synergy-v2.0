@@ -8,7 +8,7 @@ export function SourcesSection() {
     <Section
       eyebrow="Sources and stack"
       title="The receipts page is part of the argument."
-      lead="Every public claim is tied to a source and marked verified, modelled, or pending. The page is deliberately plain so a judge can trace the work."
+      lead="Every public claim is tied to a source and marked verified, modelled, or pending. The page is deliberately plain so anyone can trace the work."
     >
       <div className="source-stack-grid">
         <div className="source-list">

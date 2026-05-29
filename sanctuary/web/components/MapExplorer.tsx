@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { Hub } from "@/lib/hubs";
-import type { MapData } from "@/lib/map-constants";
+import type { LayerKey, LayerState, MapData } from "@/lib/map-constants";
 import { LazyMotion, domAnimation, useReducedMotion, STEP } from "@/lib/motion";
 import { STEPS, FLOOD_CAVEAT } from "@/lib/content";
 import { MapStage } from "@/components/MapStage";
@@ -28,6 +28,8 @@ function planningContextFromHub(hub: Hub): CandidatePlanningContext {
     exposure: hub.exposure,
     sensitivity: hub.sensitivity,
     adaptiveCapacity: hub.adaptiveCapacity,
+    flood: hub.flood,
+    winterVuln: hub.winterVuln,
     roofClass: hub.roofClass,
     facility: hub.facility,
     trustLabel: hub.trustLabel,
@@ -49,6 +51,11 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
   const [touring, setTouring] = useState(false);
   const [resetSignal, setResetSignal] = useState(0);
   const [checklists, setChecklists] = useState<Record<number, ChecklistState>>({});
+  // Layer state is owned here (not inside MapStage) so the legend can stack a key per
+  // active layer. Flood + winter start OFF: heat is the lead, verified hazard.
+  const [layers, setLayers] = useState<LayerState>({ heat: true, facilities: true, candidates: true, rings: true, flood: false, winter: false });
+  const toggleLayer = (k: LayerKey) => setLayers((p) => ({ ...p, [k]: !p[k] }));
+  const resetLayers = () => setLayers({ heat: true, facilities: true, candidates: true, rings: true, flood: false, winter: false });
 
   const top5 = hubs.slice(0, 5);
   const selected = hubs.find((h) => h.rank === selectedRank) ?? hubs[0];
@@ -59,7 +66,8 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
   const live = touring;
 
   const startTour = () => {
-    setResetSignal((n) => n + 1); // snap pan/zoom + layers + tract to a clean frame
+    setResetSignal((n) => n + 1); // snap pan/zoom + tract to a clean frame
+    resetLayers(); // parent owns layers now; snap them back to the heat-led default
     setSelectedRank(1);
     setStep(STEP.RISK);
     setTouring(true);
@@ -122,7 +130,7 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
 
     setChecklists((current) => ({ ...current, [hub.rank]: { status: "loading" } }));
     try {
-      const response = await fetch("/planning-checklists.json", { cache: "force-cache" });
+      const response = await fetch("/planning-checklists.json", { cache: "no-cache" });
       if (!response.ok) throw new Error("Static checklist not available.");
       const data = (await response.json()) as PlanningChecklistFile;
       const checklist = data.checklists[String(hub.rank)] ?? fallbackChecklistFor(planningContextFromHub(hub));
@@ -161,8 +169,10 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
             live={live}
             reduced={reduced}
             resetSignal={resetSignal}
+            layers={layers}
+            onToggleLayer={toggleLayer}
           />
-          <MapLegend />
+          <MapLegend layers={layers} />
         </div>
 
         <aside className="map-explorer-rail" aria-label="Map guide and the ranked decision">
@@ -171,6 +181,10 @@ export function MapExplorer({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
             <p className="rail-sub">
               Pan and zoom the map. Click a census tract for its real exposure, sensitivity, and adaptive-capacity
               quintiles, or click a pin for a candidate hub&rsquo;s honest first-pass score.
+            </p>
+            <p className="rail-tour-cap">
+              The five are ranked on a heat-led, five-factor score. Flood and winter / energy burden are shown as
+              extra lenses, not folded into that score yet.
             </p>
             <p className="rail-tour-cap">{FLOOD_CAVEAT}</p>
           </div>

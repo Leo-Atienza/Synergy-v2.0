@@ -46,6 +46,8 @@ export const candidatePlanningContextSchema = z.object({
   exposure: z.number().int().min(1).max(5),
   sensitivity: z.number().int().min(1).max(5),
   adaptiveCapacity: z.number().int().min(1).max(5),
+  flood: z.string().min(1),
+  winterVuln: z.number().int().min(0).max(5),
   roofClass: z.string().min(1),
   facility: z.string().min(1),
   trustLabel: z.string().min(1),
@@ -83,19 +85,25 @@ export function validatePlanningChecklist(value: unknown): PlanningChecklist {
 }
 
 export function fallbackChecklistFor(candidate: CandidatePlanningContext): PlanningChecklist {
+  const winterPhrase =
+    candidate.winterVuln >= 1
+      ? `a Material Resources quintile ${candidate.winterVuln} of 5 (modelled affordability proxy)`
+      : "an unmatched winter / energy-burden tract";
   return {
     candidate_rank: candidate.rank,
     candidate_name: candidate.name,
-    summary: `${candidate.name} is a candidate hub only; use this checklist to decide what a site audit must verify before any hardening claim.`,
+    summary: `${candidate.name} is a candidate hub only; use this checklist to decide what a site audit must verify across heat, flood, and winter / energy burden before any hardening claim.`,
     recommended_checks: [
       "Confirm cooling, ventilation, washroom access, and accessibility under heat or outage conditions. (readiness-pending)",
       "Verify backup-power and electrical readiness with the owner or operator before making any equipment claim. (readiness-pending)",
       "Replace the modelled 500 m catchment with a real walkshed and outreach plan. (catchment-modelled)",
       "Confirm operating hours, staffing, communications, and emergency-use agreement. (candidate-facts)",
-      "Check roof and site constraints as planning feasibility only, with no capacity or cost estimate. (no-overclaim-gate)",
+      `Treat flood exposure (${candidate.flood}) and winter / heating readiness given ${winterPhrase} as multi-hazard planning questions, alongside roof feasibility, with no capacity or cost estimate. (no-overclaim-gate)`,
     ],
     unknowns: [
       "Backup-power status",
+      "Flood resilience and a dry backup-power location",
+      "Winter heating and warming-space readiness",
       "Cooling capacity",
       "Electrical readiness",
       "Owner/operator agreement",
@@ -111,6 +119,7 @@ export function buildPlanningPrompt(candidate: CandidatePlanningContext): string
   return [
     "You are drafting a municipal planning checklist for Sanctuary, a hackathon prototype.",
     "Use PUBLIC FACTS ONLY. Do not infer equipment, costs, energy capacity, funding certainty, or rank changes.",
+    "The site carries three honest hazard lenses: heat (verified, the lead), flood proximity (the TRCA regulatory floodplain), and winter / energy burden (a modelled affordability proxy). At least one recommended check must address flood resilience or winter / heating readiness, labelled honestly, not heat alone.",
     "Return JSON only, with exactly these keys and no others:",
     "- summary: a single string.",
     "- recommended_checks: an array of EXACTLY 5 strings.",
@@ -126,6 +135,8 @@ export function buildPlanningPrompt(candidate: CandidatePlanningContext): string
     `- Type: ${candidate.typeLabel}`,
     `- Municipality: ${candidate.municipality}`,
     `- HVI: ${candidate.hvi}; exposure: ${candidate.exposure}; sensitivity: ${candidate.sensitivity}; adaptive capacity: ${candidate.adaptiveCapacity}`,
+    `- Flood relationship to the TRCA regulatory floodplain (riverine, not storm-sewer): ${candidate.flood}`,
+    `- Winter / energy-burden context: Ontario Marginalization Index Material Resources quintile ${candidate.winterVuln} of 5 for the building's census tract, a modelled affordability proxy, not a temperature reading`,
     `- Reachable population: ${candidate.reachablePopulation} via modelled 500 m catchment`,
     `- Roof class: ${candidate.roofClass} planning estimate`,
     `- Facility suitability: ${candidate.facility}`,

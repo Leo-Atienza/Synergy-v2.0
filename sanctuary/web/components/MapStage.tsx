@@ -40,6 +40,8 @@ export function MapStage({
   live,
   reduced,
   resetSignal,
+  layers: layersProp,
+  onToggleLayer,
 }: {
   fsaPaths: BaseLayer;
   points: MapPoint[];
@@ -53,12 +55,21 @@ export function MapStage({
   // Optional: a parent bumps this to snap pan/zoom + layers + tract back to
   // defaults (the /map "Play the decision" tour resets to a clean frame).
   resetSignal?: number;
+  // Optional controlled layer state. The /map explorer lifts these up so the legend
+  // can react to the active layers; the home scroll story passes none (uncontrolled).
+  layers?: LayerState;
+  onToggleLayer?: (k: LayerKey) => void;
 }) {
   const xy = useMemo(() => new Map(points.map((p) => [p.rank, p])), [points]);
 
   // Map-local interaction state — never touches ScrollStage (the parallel agent's file).
   const [view, setView] = useState<ViewTransform>(VIEW_IDENTITY);
-  const [layers, setLayers] = useState<LayerState>({ heat: true, facilities: true, candidates: true, rings: true, flood: true, winter: false });
+  // Layers are controlled by a parent (the /map explorer, so the legend can react) or
+  // owned here (the home scroll story passes none). Flood + winter start OFF: heat is
+  // the lead, verified hazard; the other two are opt-in comparison lenses.
+  const [internalLayers, setInternalLayers] = useState<LayerState>({ heat: true, facilities: true, candidates: true, rings: true, flood: false, winter: false });
+  const layersControlled = layersProp !== undefined;
+  const layers = layersControlled ? layersProp : internalLayers;
   const [tract, setTract] = useState<HviTract | null>(null);
 
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -161,11 +172,15 @@ export function MapStage({
       return;
     }
     setView(VIEW_IDENTITY);
-    setLayers({ heat: true, facilities: true, candidates: true, rings: true, flood: true, winter: false });
+    // When the parent controls layers it owns their reset too; only reset our own.
+    if (!layersControlled) {
+      setInternalLayers({ heat: true, facilities: true, candidates: true, rings: true, flood: false, winter: false });
+    }
     setTract(null);
-  }, [resetSignal]);
+  }, [resetSignal, layersControlled]);
 
-  const toggle = (k: LayerKey) => setLayers((p) => ({ ...p, [k]: !p[k] }));
+  const toggle = (k: LayerKey) =>
+    layersControlled ? onToggleLayer?.(k) : setInternalLayers((p) => ({ ...p, [k]: !p[k] }));
   const doZoom = (factor: number) => setView((v) => zoomAt(v, factor, W / 2, H / 2));
   const adjusted = view.scale !== 1 || view.x !== 0 || view.y !== 0;
 

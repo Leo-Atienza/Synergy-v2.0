@@ -8,7 +8,7 @@ export function ArcgisSection() {
   return (
     <Section
       eyebrow="Primary artifact"
-      title="The judged deliverable is the ArcGIS web map."
+      title="The primary deliverable is the ArcGIS web map."
       lead="It carries the live Peel HVI layer, the candidate points, and the ranked view. This site explains it and stands in if the live map is slow to load."
     >
       <a className="inline-link" href={ARCGIS_WEB_MAP} target="_blank" rel="noreferrer">

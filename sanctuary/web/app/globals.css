@@ -751,6 +751,53 @@ h3 {
   font-size: 0.95rem;
   line-height: 1.6;
 }
+
+/* "How it works" numbered step flow (Funding page). Mono numerals in a quiet hairline
+   ring, hairline cards, concentric radii; no ember (signal-only) and no new hues. */
+.howto {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.howto-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 18px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-3);
+  background: var(--surface-raised);
+}
+.howto-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline-strong);
+  color: var(--text-muted);
+  font-family: var(--font-data);
+  font-size: 0.92rem;
+}
+.howto-text h3 {
+  margin: 0 0 4px;
+  font-size: 1.02rem;
+}
+.howto-text p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+@media (min-width: 760px) {
+  .howto {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .future-upgrade-grid {
   margin-top: 18px;
 }
@@ -1626,7 +1673,7 @@ h3 {
   left: 16px;
   bottom: 14px;
   padding: 8px 11px;
-  max-width: 210px;
+  max-width: 240px;
   border: 1px solid var(--hairline);
   border-radius: var(--r-2);
   background: color-mix(in oklab, var(--bg) 82%, transparent);
@@ -1722,6 +1769,48 @@ h3 {
 }
 .legend-row-p {
   color: var(--c-pending);
+}
+
+/* Dynamic /map legend: a compact key per active layer (heat / winter / flood). Stacks only
+   when MapLegend gets a `layers` prop; the home scroll legend keeps its discrete HVI rows. */
+.legend-layer {
+  margin-top: 8px;
+}
+.legend-layer:first-child {
+  margin-top: 0;
+}
+.legend-layer-label {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-data);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+}
+.legend-ramp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-ramp-end {
+  color: var(--text-faint);
+  font-size: 0.7rem;
+}
+.legend-ramp-strip {
+  flex: 1;
+  min-width: 92px;
+  height: 9px;
+  border-radius: 3px;
+}
+.legend-ramp-heat {
+  background: linear-gradient(90deg, #3f6f8f 0 20%, #5a8f8a 20% 40%, #d8a23a 40% 60%, #e07533 60% 80%, #d8392b 80% 100%);
+}
+.legend-ramp-winter {
+  background: linear-gradient(90deg, #3d3a6e 0 20%, #574f9c 20% 40%, #7a63c0 40% 60%, #9a7ad8 60% 80%, #bb9bf2 80% 100%);
+}
+.legend-sw-flood {
+  background: color-mix(in oklab, #4a9ee0 78%, transparent);
 }
 
 /* Detail + ranked */

@@ -30,6 +30,8 @@ function planningContextFromHub(hub: Hub): CandidatePlanningContext {
     exposure: hub.exposure,
     sensitivity: hub.sensitivity,
     adaptiveCapacity: hub.adaptiveCapacity,
+    flood: hub.flood,
+    winterVuln: hub.winterVuln,
     roofClass: hub.roofClass,
     facility: hub.facility,
     trustLabel: hub.trustLabel,
@@ -79,7 +81,7 @@ export function ScrollStage({ mapData, hubs }: { mapData: MapData; hubs: Hub[] }
     setChecklists((current) => ({ ...current, [hub.rank]: { status: "loading" } }));
 
     try {
-      const response = await fetch("/planning-checklists.json", { cache: "force-cache" });
+      const response = await fetch("/planning-checklists.json", { cache: "no-cache" });
       if (!response.ok) throw new Error("Static checklist not available.");
       const data = (await response.json()) as PlanningChecklistFile;
       const checklist = data.checklists[String(hub.rank)] ?? fallbackChecklistFor(planningContextFromHub(hub));

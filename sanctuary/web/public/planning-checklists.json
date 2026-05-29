@@ -1,16 +1,16 @@
 {
-  "version": "2026-05-26-static-gemini-reviewed",
+  "version": "2026-05-30-static-multihazard-reviewed",
   "checklists": {
     "1": {
       "candidate_rank": 1,
       "candidate_name": "Malton Community Centre and Library",
-      "summary": "Malton is the hero candidate because it combines verified HVI top-quintile context with a civic anchor, but every readiness claim still needs a site audit.",
+      "summary": "Malton is the hero candidate because it combines verified HVI top-quintile context with a civic anchor, but every readiness claim still needs a site audit. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm whether the community centre and library can operate as a heat/outage gathering point beyond regular public hours. (candidate-facts, mississauga-locations)",
         "Verify cooling, ventilation, washroom access, accessibility, and communications support before describing any emergency function. (readiness-pending)",
         "Check backup-power and electrical readiness with the City/operator before any solar or storage planning proceeds. (readiness-pending, no-overclaim-gate)",
         "Replace the modelled 500 m catchment with a real walkshed and outreach plan for nearby HVI top-quintile residents. (hvi-verified, catchment-modelled)",
-        "Review roof and site constraints as feasibility questions only; do not publish capacity, cost, or equipment claims from the prototype. (no-overclaim-gate)"
+        "Treat the site's flood status, ~50 m from the floodplain, and winter / heating readiness given energy-burden quintile 5 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "after-hours emergency operating model",
@@ -26,13 +26,13 @@
     "2": {
       "candidate_rank": 2,
       "candidate_name": "Sri Guru Singh Sabha Malton",
-      "summary": "Sri Guru Singh Sabha Malton is a top-quintile faith/community anchor candidate; the next step is partner verification, not an equipment claim.",
+      "summary": "Sri Guru Singh Sabha Malton is a top-quintile faith/community anchor candidate; the next step is partner verification, not an equipment claim. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm the owner/operator's willingness, governance contact, and conditions for emergency public access. (candidate-facts)",
         "Verify whether the site can safely support warming/cooling respite, charging, washrooms, and communications during an outage. (readiness-pending, emergency-precedent)",
         "Check accessibility, language/community outreach needs, and volunteer/staffing assumptions with site leadership. (candidate-facts)",
         "Replace the modelled 500 m catchment with a real walkshed and outreach plan for the Malton residents nearest the site. (hvi-verified, catchment-modelled)",
-        "Treat roof and storage feasibility as site-audit questions only; do not state capacity, costs, or funding certainty. (no-overclaim-gate)"
+        "Treat the site's flood status, ~30 m from the floodplain, and winter / heating readiness given energy-burden quintile 5 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "emergency access agreement",
@@ -48,13 +48,13 @@
     "3": {
       "candidate_rank": 3,
       "candidate_name": "Susan Fennell Sportsplex",
-      "summary": "Susan Fennell Sportsplex is a verified HVI top-quintile civic facility candidate with high facility suitability, pending a readiness check.",
+      "summary": "Susan Fennell Sportsplex is a verified HVI top-quintile civic facility candidate with high facility suitability, pending a readiness check. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm current public access points, operating hours, and who can authorize emergency use. (candidate-facts)",
         "Verify showers, washrooms, cooling areas, communications, and safe indoor gathering zones before using outage-precedent language. (readiness-pending, emergency-precedent)",
         "Check backup-power and electrical readiness with Brampton facility staff before any hardening claim. (readiness-pending)",
         "Replace the modelled 500 m catchment with a real walkshed and access analysis for nearby vulnerable residents. (hvi-verified, catchment-modelled)",
-        "Review roof and site constraints as planning feasibility only, without publishing capacity, cost, or funding claims. (no-overclaim-gate)"
+        "Treat the site's flood status, not mapped by TRCA (Credit watershed), and winter / heating readiness given energy-burden quintile 4 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "emergency-use approval path",
@@ -70,13 +70,13 @@
     "4": {
       "candidate_rank": 4,
       "candidate_name": "Anjuman-E-Anwarul Islam of Malton",
-      "summary": "Anjuman-E-Anwarul Islam of Malton is a Malton faith/community candidate with verified high HVI context and many readiness unknowns.",
+      "summary": "Anjuman-E-Anwarul Islam of Malton is a Malton faith/community candidate with verified high HVI context and many readiness unknowns. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm the site leadership contact, public-access boundaries, and emergency-use conditions. (candidate-facts)",
         "Verify whether the building can support safe indoor respite, washrooms, charging, and communications during heat or outage conditions. (readiness-pending, emergency-precedent)",
         "Check accessibility, culturally appropriate outreach, and staffing assumptions with community leadership. (candidate-facts)",
         "Replace the modelled 500 m catchment with a real walkshed and communication plan for surrounding Malton residents. (hvi-verified, catchment-modelled)",
-        "Keep roof, solar, and storage discussion at feasibility level until a site audit confirms constraints. (no-overclaim-gate)"
+        "Treat the site's flood status, ~40 m from the floodplain, and winter / heating readiness given energy-burden quintile 4 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "owner/operator agreement",
@@ -92,13 +92,13 @@
     "5": {
       "candidate_rank": 5,
       "candidate_name": "Bharat Mata Mandir",
-      "summary": "Bharat Mata Mandir remains a candidate because of exposure and community role, but the prototype should not over-rank it without catchment evidence.",
+      "summary": "Bharat Mata Mandir remains a candidate because of exposure and community role, but the prototype should not over-rank it without catchment evidence. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm owner/operator willingness and emergency public-access conditions before any planning commitment. (candidate-facts)",
         "Verify indoor respite, washroom access, communications, and charging suitability under heat or outage conditions. (readiness-pending, emergency-precedent)",
         "Check backup-power and electrical readiness through a site visit rather than assuming equipment. (readiness-pending)",
         "Replace the modelled 500 m catchment with a real walkshed before comparing it against higher-HVI candidates. (hvi-verified, catchment-modelled)",
-        "Treat roof and storage feasibility as unanswered planning questions, with no capacity, cost, or funding certainty. (no-overclaim-gate)"
+        "Treat the site's flood status, ~280 m from the floodplain, and winter / heating readiness given energy-burden quintile 4 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "emergency-use agreement",
@@ -114,13 +114,13 @@
     "6": {
       "candidate_rank": 6,
       "candidate_name": "Chinguacousy Wellness Centre",
-      "summary": "Chinguacousy Wellness Centre is a large civic candidate with exposure risk, but its readiness and access claims are still pending.",
+      "summary": "Chinguacousy Wellness Centre is a large civic candidate with exposure risk, but its readiness and access claims are still pending. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm the operating authority, hours, and emergency-use decision path. (candidate-facts)",
         "Verify cooling areas, washrooms, communications, and charging support before describing emergency service potential. (readiness-pending, emergency-precedent)",
         "Check backup-power and electrical readiness with facility staff. (readiness-pending)",
         "Replace the modelled 500 m catchment with a real walkshed and transit/access review. (catchment-modelled)",
-        "Keep roof and storage discussion as feasibility screening only, with no capacity or cost claim. (no-overclaim-gate)"
+        "Treat the site's flood status, outside the mapped floodplain, and winter / heating readiness given energy-burden quintile 4 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "emergency-use approval path",
@@ -136,13 +136,13 @@
     "7": {
       "candidate_rank": 7,
       "candidate_name": "Hindu Sabha Temple",
-      "summary": "Hindu Sabha Temple is a faith/community candidate in the Gore Road cluster, but lower verified HVI keeps it behind the top-five demo focus.",
+      "summary": "Hindu Sabha Temple is a faith/community candidate in the Gore Road cluster, but lower verified HVI keeps it behind the top-five demo focus. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm site leadership, public-access boundaries, and emergency-use willingness. (candidate-facts)",
         "Verify whether indoor areas, washrooms, communications, and charging could support temporary respite. (readiness-pending, emergency-precedent)",
         "Check accessibility, parking/transit access, and outreach assumptions with the operator. (candidate-facts)",
         "Replace the modelled 500 m catchment with a real walkshed before changing prioritization. (catchment-modelled, no-overclaim-gate)",
-        "Treat roof and storage feasibility as site-audit questions only. (no-overclaim-gate)"
+        "Treat the site's flood status, ~190 m from the floodplain, and winter / heating readiness given energy-burden quintile 4 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "operator agreement",
@@ -158,13 +158,13 @@
     "8": {
       "candidate_rank": 8,
       "candidate_name": "Gore Meadows Community Centre and Library",
-      "summary": "Gore Meadows is a real civic facility candidate, but verified HVI context keeps it below Malton until access and catchment evidence improves.",
+      "summary": "Gore Meadows is a real civic facility candidate, but verified HVI context keeps it below Malton until access and catchment evidence improves. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm public-hours assumptions, library/community-centre operating roles, and emergency-use authorization. (candidate-facts)",
         "Verify cooling, washroom, communications, and charging support before using resilience-hub language. (readiness-pending, emergency-precedent)",
         "Check backup-power and electrical readiness with Brampton facility staff. (readiness-pending)",
         "Replace the modelled 500 m catchment with a real walkshed and access analysis before reconsidering rank. (catchment-modelled, no-overclaim-gate)",
-        "Review roof and site constraints as feasibility only, with no capacity or cost claim. (no-overclaim-gate)"
+        "Treat the site's flood status, ~70 m from the floodplain, and winter / heating readiness given energy-burden quintile 3 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "emergency-use approval path",
@@ -180,13 +180,13 @@
     "9": {
       "candidate_rank": 9,
       "candidate_name": "Guru Nanak Darbar Gurdwara",
-      "summary": "Guru Nanak Darbar Gurdwara is a community candidate near the Gore Meadows corridor, with lower verified HVI and pending readiness facts.",
+      "summary": "Guru Nanak Darbar Gurdwara is a community candidate near the Gore Meadows corridor, with lower verified HVI and pending readiness facts. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm the owner/operator contact and emergency public-access conditions. (candidate-facts)",
         "Verify indoor respite, washroom, communications, and charging suitability through a site visit. (readiness-pending, emergency-precedent)",
         "Check accessibility, outreach, and staffing assumptions with community leadership. (candidate-facts)",
         "Replace the modelled 500 m catchment with a real walkshed before comparing it to higher-HVI sites. (catchment-modelled, no-overclaim-gate)",
-        "Keep roof and storage feasibility as pending, with no capacity, cost, or funding certainty. (no-overclaim-gate)"
+        "Treat the site's flood status, ~50 m from the floodplain, and winter / heating readiness given energy-burden quintile 4 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "operator agreement",
@@ -202,13 +202,13 @@
     "10": {
       "candidate_rank": 10,
       "candidate_name": "Cassie Campbell Community Centre",
-      "summary": "Cassie Campbell is a large civic contrast candidate with exposure risk, but verified HVI keeps it outside the first hardening set.",
+      "summary": "Cassie Campbell is a large civic contrast candidate with exposure risk, but verified HVI keeps it outside the first hardening set. Beyond heat, the audit also weighs the building's flood proximity and winter / energy-burden context, each labelled honestly.",
       "recommended_checks": [
         "Confirm public hours, operating authority, and emergency-use approval path. (candidate-facts)",
         "Verify cooling, showers or washrooms, communications, and charging support before describing any emergency function. (readiness-pending, emergency-precedent)",
         "Check backup-power and electrical readiness with facility staff. (readiness-pending)",
         "Replace the modelled 500 m catchment with a real walkshed before changing its priority. (catchment-modelled, no-overclaim-gate)",
-        "Treat roof and storage feasibility as site-audit questions only, without capacity, cost, or funding claims. (no-overclaim-gate)"
+        "Treat the site's flood status, not mapped by TRCA (Credit watershed), and winter / heating readiness given energy-burden quintile 3 of 5, as multi-hazard audit questions, alongside roof and storage feasibility, with no capacity, cost, or equipment claim. (no-overclaim-gate)"
       ],
       "unknowns": [
         "emergency-use approval path",

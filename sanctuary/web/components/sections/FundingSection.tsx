@@ -1,5 +1,5 @@
 import { Section } from "@/components/Section";
-import { FUNDING_PROGRAMS, FUNDING_NOTE, OPERATING_MODEL } from "@/lib/content";
+import { FUNDING_PROGRAMS, FUNDING_NOTE, HOW_IT_WORKS, OPERATING_MODEL } from "@/lib/content";
 import { EvidenceTag } from "@/components/EvidenceTag";
 import { ArrowUpRight } from "@/components/icons";
 
@@ -41,6 +41,22 @@ export function FundingSection() {
             </a>
           ))}
         </p>
+      </Section>
+
+      <Section eyebrow="How it works" title="From candidate to hardened hub.">
+        <ol className="howto">
+          {HOW_IT_WORKS.map((s) => (
+            <li className="howto-step" key={s.num}>
+              <span className="howto-num tnum" aria-hidden="true">
+                {s.num}
+              </span>
+              <div className="howto-text">
+                <h3>{s.label}</h3>
+                <p>{s.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </Section>
 
       <Section

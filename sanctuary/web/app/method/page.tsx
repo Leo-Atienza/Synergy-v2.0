@@ -17,10 +17,12 @@ export default function MethodPage() {
     <main className="page content-page">
       <section className="content-hero" aria-labelledby="method-title">
         <p className="eyebrow">Method</p>
-        <h1 id="method-title">A score a judge can audit in under 20 seconds.</h1>
+        <h1 id="method-title">A score you can audit in under 20 seconds.</h1>
         <p>
-          Sanctuary starts with the Peel HVI, then weighs modelled reach, trust, roof class, and facility fit. It ranks
-          where to investigate first. It does not certify that any named building is ready or equipped.
+          Sanctuary starts with the Peel HVI, then weighs modelled reach, trust, roof class, and facility fit. The
+          five-factor score is heat-led: flood and winter / energy burden are shown alongside each building as extra
+          lenses, not folded into the rank yet. It ranks where to investigate first, and does not certify that any named
+          building is ready or equipped.
         </p>
       </section>
       <MethodSection />

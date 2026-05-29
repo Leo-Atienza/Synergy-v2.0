@@ -10,7 +10,7 @@ import { ArrowUpRight } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Sources · Sanctuary",
-  description: "Sanctuary data receipts, candidate-source links, photo attribution, and judge Q&A.",
+  description: "Sanctuary data sources, candidate-source links, photo attribution, and answers to common questions.",
 };
 
 export default function SourcesPage() {
@@ -20,8 +20,8 @@ export default function SourcesPage() {
         <p className="eyebrow">Sources</p>
         <h1 id="sources-title">No hidden numbers, no stock imagery, no unlabelled estimates.</h1>
         <p>
-          This page is the anti-slop appendix: source links for every data layer, candidate-building receipts, Commons
-          photo attribution, and short answers to likely judge questions.
+          Every data layer, candidate building, and photo is linked to its public source, with short, plain answers to
+          the obvious hard questions.
         </p>
       </section>
       <DataPipelineSection />

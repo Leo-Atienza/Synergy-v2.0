@@ -163,7 +163,7 @@ export const GRID_RESILIENCE_NOTE =
 // value honesty argument in the multi-hazard upgrade. Pre-empts the sharpest data
 // question and signals method literacy. (See docs/peel-winter-vuln-data-note.md.)
 export const WINTER_METHOD_NOTE =
-  "Heat vulnerability varies block by block because of the urban heat island, so the HVI resolves it tract by tract. Winter cold has no equivalent gradient, there is no winter heat-island, so a per-tract cold-temperature index would invent an exposure axis that is not real, and we deliberately do not fake one. Winter resilience need is driven instead by energy affordability and marginalization: who can least afford to heat a home, and who is most isolated in a cold snap. That is real per-area data, so we map the 2021 Ontario Marginalization Index Material Resources dimension, label it modelled, and keep heat as the lead, verified hazard.";
+  "The winter layer on the map is real, but it deliberately maps energy burden, not temperature. Here is why. Heat vulnerability varies block by block because of the urban heat island, so the HVI resolves it tract by tract. Winter cold has no equivalent gradient, there is no winter heat-island, so a per-tract cold-temperature index would invent an exposure axis that is not real. Winter resilience need is driven instead by energy affordability and marginalization: who can least afford to heat a home, and who is most isolated in a cold snap. That is real per-area data, so the winter layer maps the 2021 Ontario Marginalization Index Material Resources dimension, labelled modelled, and keeps heat as the lead, verified hazard.";
 
 // Real-vs-estimated honesty grid.
 export const REAL_VS_ESTIMATED: { tag: "verified" | "modelled" | "pending"; label: string; body: string }[] = [
@@ -461,6 +461,32 @@ export const OPERATING_MODEL: { label: string; body: string; source?: Source }[]
   },
 ];
 
+// "How it works" — the plain-language mechanism behind a hardened hub (the /funding page).
+// Honest: the prototype only ranks candidates; nothing here is built or equipped, and there
+// are no kW / dollar / sizing claims (data-truth rule). Rates are published program parameters.
+export const HOW_IT_WORKS: { num: string; label: string; body: string }[] = [
+  {
+    num: "1",
+    label: "Rank the candidates",
+    body: "Sanctuary scores trusted buildings already inside the heat risk and ranks the five to investigate first. That is what this prototype does today.",
+  },
+  {
+    num: "2",
+    label: "Audit each site",
+    body: "Before any hardening, a site audit checks roof condition, electrical readiness, cooling, accessibility, and the owner's agreement. The score is a planning screen, not a green light.",
+  },
+  {
+    num: "3",
+    label: "Fund and install",
+    body: "The capital stack above pays to add rooftop solar and a battery. A public owner anchors it with the 15 percent Clean Electricity credit, topped up by the Green Municipal Fund and Save on Energy.",
+  },
+  {
+    num: "4",
+    label: "Operate as a hub",
+    body: "On a normal day the solar and battery support the local grid. In an outage the battery islands the building, keeping cooling, charging, and communications running when the grid goes dark.",
+  },
+];
+
 // Data provenance — the four map layers, where each came from, and how many
 // records it carries. This answers "where did the data come from" literally,
 // per shipped file. Counts match the GeoJSON in public/ (loaded at build by
@@ -655,7 +681,7 @@ export const SOURCE_LINKS: { label: string; status: EvidenceStatus; note: string
   {
     label: "Sanctuary ArcGIS web map",
     status: "verified",
-    note: "The judged map artifact that carries the candidate points and ranked view.",
+    note: "The primary map artifact that carries the candidate points and ranked view.",
     url: ARCGIS_WEB_MAP,
   },
 ];
@@ -717,7 +743,7 @@ export const PHOTO_ASSETS: {
 
 // Technical stack (shown beside sources).
 export const TECH_STACK: { label: string; body: string }[] = [
-  { label: "ArcGIS web map", body: "The primary judged artifact. It carries the HVI layer, the candidate points, and the ranked view." },
+  { label: "ArcGIS web map", body: "The primary deliverable. It carries the HVI layer, the candidate points, and the ranked view." },
   { label: "Next.js 16 + React 19", body: "This showcase: a server-rendered shell with one interactive map island and no backend." },
   { label: "d3-geo SVG", body: "Projects Peel geography and the candidate points. No basemap token, fully offline." },
   { label: "Static GeoJSON", body: "Candidate data is bundled at build, so it stays auditable and demo-safe with no runtime fetch." },

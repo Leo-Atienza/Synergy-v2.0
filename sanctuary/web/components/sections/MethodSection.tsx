@@ -60,7 +60,7 @@ export function MethodSection() {
       <p className="scale-note">{GRID_RESILIENCE_NOTE}</p>
 
       <div className="future-upgrade-intro">
-        <p className="eyebrow">Why no cold-temperature map</p>
+        <p className="eyebrow">Why winter maps energy burden, not temperature</p>
         <p>{WINTER_METHOD_NOTE}</p>
       </div>
     </Section>

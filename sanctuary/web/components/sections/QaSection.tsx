@@ -3,7 +3,7 @@ import { QA } from "@/lib/content";
 
 export function QaSection() {
   return (
-    <Section eyebrow="Judge Q&A" title="Short answers to the obvious hard questions.">
+    <Section eyebrow="Common questions" title="Short answers to the obvious hard questions.">
       <div className="qa-grid">
         {QA.map((item) => (
           <article className="card qa-card" key={item.q}>
