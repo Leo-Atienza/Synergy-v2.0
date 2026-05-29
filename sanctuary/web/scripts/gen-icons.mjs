@@ -9,14 +9,21 @@ const NAVY = "#0d1620";
 const CREAM = "#eaf1f6";
 const EMBER = "#e07533";
 
-// Same roof + ember core + catchment arc as app/icon.svg (32-unit grid),
-// scaled and centred on a 512 canvas.
+// Same roof-over-people mark as app/icon.svg (32-unit grid), scaled and centred
+// on a 512 canvas. Full-bleed navy (platforms mask the square); the glyph sits
+// inside the maskable safe zone.
 const svg = `<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <rect width="512" height="512" fill="${NAVY}"/>
-  <g transform="translate(64,64.6) scale(12)" fill="none">
-    <path d="M9.2 24.1 Q16 26.8 22.8 24.1" stroke="${EMBER}" stroke-opacity="0.42" stroke-width="1.3" stroke-linecap="round"/>
-    <path d="M16 5.8 L27.2 16.7 L23.2 16.7 L16 9.6 L8.8 16.7 L4.8 16.7 Z" fill="${CREAM}" stroke="${CREAM}" stroke-width="1.3" stroke-linejoin="round"/>
-    <circle cx="16" cy="20.4" r="3.5" fill="${EMBER}"/>
+  <g transform="translate(64,64.6) scale(12)">
+    <path d="M16 5.2 L27.8 16.9 L23.3 16.9 L16 9 L8.7 16.9 L4.2 16.9 Z" fill="${CREAM}"/>
+    <g fill="${EMBER}">
+      <circle cx="16" cy="18.2" r="2"/>
+      <path d="M13.2 25.8 L13.2 21.7 Q13.2 20.2 14.7 20.2 L17.3 20.2 Q18.8 20.2 18.8 21.7 L18.8 25.8 Z"/>
+      <circle cx="9.9" cy="19.6" r="1.6"/>
+      <path d="M7.7 25.8 L7.7 22.3 Q7.7 21 9 21 L10.8 21 Q12.1 21 12.1 22.3 L12.1 25.8 Z"/>
+      <circle cx="22.1" cy="19.6" r="1.6"/>
+      <path d="M19.9 25.8 L19.9 22.3 Q19.9 21 21.2 21 L23 21 Q24.3 21 24.3 22.3 L24.3 25.8 Z"/>
+    </g>
   </g>
 </svg>`;
 
