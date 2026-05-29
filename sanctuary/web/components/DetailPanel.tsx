@@ -95,6 +95,13 @@ export function DetailPanel({
             <EvidenceTag tag="verified" />
           </span>
         </div>
+        <div className="fact">
+          <span className="fact-k">Backup power</span>
+          <span className="fact-v">
+            <span>{hub.backupPower === "pending" ? "not confirmed" : hub.backupPower}</span>
+            <EvidenceTag tag={hub.backupPower === "pending" ? "pending" : "verified"} />
+          </span>
+        </div>
       </div>
 
       <p className="detail-why">{hub.notes}</p>

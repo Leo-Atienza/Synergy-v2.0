@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { FutureSection } from "@/components/sections/FutureSection";
+import { Section } from "@/components/Section";
+import { STAKEHOLDERS } from "@/lib/content";
 import { ArrowUpRight } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -22,6 +24,26 @@ export default function VisionPage() {
           repeatable scoring across Alectra territory.
         </p>
       </section>
+
+      <Section
+        eyebrow="Who uses this"
+        title="Three desks open this on a Monday morning."
+        lead="Sanctuary is built for the people who already decide which Peel buildings to prepare, open, and harden, not a new audience that has to be convinced the problem exists."
+      >
+        <div className="card-grid card-grid-3">
+          {STAKEHOLDERS.map((s) => (
+            <article className="card" key={s.name}>
+              <h3>{s.name}</h3>
+              <p className="detail-meta">{s.org}</p>
+              <p>{s.role}</p>
+              <a className="card-src" href={s.source.url} target="_blank" rel="noreferrer">
+                {s.source.name} <ArrowUpRight size={12} />
+              </a>
+            </article>
+          ))}
+        </div>
+      </Section>
+
       <FutureSection />
       <p className="decision-more">
         <Link href="/funding" className="inline-link">

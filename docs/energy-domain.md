@@ -489,3 +489,56 @@ A community building is usually **tax-exempt**, and tax-exempts are excluded fro
 
 ### Operating-model market mechanism (qualitative, for the future operating model)
 - Aggregated hub solar+battery can act as **distributed energy resources** in Ontario demand-response / capacity markets (DR cleared ~$171,319/MW-yr, Dec 2025 auction — already in this doc's "Recent news" §11). **Alectra GridExchange** transactive-energy pilot ran in Vaughan/Markham/Barrie/Richmond Hill/Hamilton, **not Peel** — frame as a transferable Greater Golden Horseshoe template only. <https://www.newswire.ca/news-releases/alectra-launches-gridexchange-an-innovative-transactive-energy-platform-836252722.html>
+
+---
+
+## Named institutions verification — added 2026-05-28
+
+> On-screen-credibility check for Sanctuary: the real institutions who would use a Peel resilience-hub ranking tool, plus the school-board scaling pathway. Each line verified against a primary or near-primary source on the date above. Where the exact wording could only be reached via a search-engine summary (the source page 403'd to direct fetch), that is flagged so it is NOT put on screen as a quote.
+
+### Region of Peel — Office of Climate Change and Energy Management — CONFIRMED
+- **URL:** <https://peelregion.ca/about/climate-change/reduce-greenhouse-gas-emissions> (also <https://peelregion.ca/about/climate-change/energy-management>)
+- **Type:** regulator/government-division page
+- **Shape:** Exact current name is **"Office of Climate Change and Energy Management"** — verbatim from peelregion.ca: *"The Office of Climate Change and Energy Management enables all Peel Region departments, divisions, and strategic community partners to deeply embed decarbonization measures and innovative energy management practices into services and operations."* Contact mailbox `zzgoccem@peelregion.ca` (the `occem` initials corroborate the name).
+- **Access:** free HTML.
+- **Hackathon use:** the Region-of-Peel office that would actually own a decarbonization/energy decision-support tool — name it as the institutional user, not "the city."
+- **DO NOT put on screen:** any director name. Christine Tu was NOT confirmed on any current peelregion.ca page in this pass; no director is named on the office pages. Do not assert the person.
+
+### Region of Peel — Regional Emergency Management — CONFIRMED (name); HVI-as-EM-tool PARTIALLY CONFIRMED
+- **URL:** <https://peelregion.ca/about/people-peel/regional-emergency-management> · Emergency Management Program Committee <https://peelregion.ca/about/council/committees-boards/emergency-management-program-committee>
+- **Type:** government program page + council committee page
+- **Shape:** The program is referred to as **"Regional Emergency Management"** (a division/team); its governance body is the **"Emergency Management Program Committee,"** which reviews the **"Regional Emergency Management Program and Region of Peel Emergency Plan."** There is no single page titled "Office of Emergency Management" — use "Region of Peel's Regional Emergency Management program."
+- **HVI-as-emergency-tool flag:** The Heat Vulnerability Index is real and authored by **Peel Public Health** (confirmed on <https://peelregion.ca/about/climate-change/climate-change-health> and the PHO Rounds listing <https://www.publichealthontario.ca/en/Education-and-Events/Events-and-Presentations/2025/11/Peel-Regions-Heat-Vulnerability-Index>). The specific sentence that the HVI is *"a useful tool for emergency management"* used *"alongside Peel Public Health's emergency response plan … to support areas at higher-risk of heat-related illness during extreme heat"* is surfaced by web search from the Peel council eScribe document **"Mapping Heat Vulnerability in Peel"** (`pub-peelregion.escribemeetings.com/filestream.ashx?DocumentId=39999`). That eScribe doc **403's to direct fetch**, and the PHO abstract (read verbatim) does **NOT** contain the "emergency management" phrasing — its language is health-equity ("tailored interventions and resource allocation").
+- **Access:** free HTML for the program/committee pages; eScribe council doc blocks automated fetch.
+- **Hackathon use:** name "Peel Public Health" + "Region of Peel Regional Emergency Management" as the two bodies whose extreme-heat workflow the HVI feeds.
+- **DO NOT put on screen as a direct quote:** the "useful tool for emergency management" sentence, unless you open the eScribe doc in a browser and confirm it yourself. SAFE on-screen claim (fully sourced): *"Peel Public Health built the HVI to identify neighbourhoods most vulnerable to extreme heat, to guide tailored interventions and resource allocation"* (PHO + peelregion.ca).
+
+### Alectra Utilities — CONFIRMED
+- **URL:** <https://alectrautilities.com/InvestmentPlan> · 2027-2031 plan release <https://www.globenewswire.com/news-release/2025/11/10/3184667/0/en/Alectra-Utilities-submits-2027-2031-investment-plan-to-Ontario-Energy-Board.html>
+- **Type:** utility corporate page + OEB rate-application release
+- **Shape:** The regulated **local distribution company (LDC)** is **"Alectra Utilities Corporation"** (brand "Alectra Utilities"); its parent holding company is **"Alectra Inc."** (legally "Alectra Incorporated"). For the on-screen institutional user, **"Alectra Utilities"** is correct. It is the local electricity distributor for **17 Greater Golden Horseshoe communities including Brampton and Mississauga**, ~1M+ customers, 1,924 km² territory, and it files distribution-system plans with the OEB (the **2027-2031 Distribution System Plan**: renew/replace infrastructure, meet demand growth, enable resiliency + modernization).
+- **Access:** free HTML.
+- **Hackathon use:** the DER/distribution-planning utility that would consume a hub-siting layer for Peel — say "Alectra Utilities," the distributor, not "Alectra Inc.," the holdco.
+
+### Peel District School Board (PDSB) — CONFIRMED
+- **URL:** <https://www.peelschools.org/community-use-of-schools> · count corroboration <https://en.wikipedia.org/wiki/Peel_District_School_Board>
+- **Type:** school-board program page
+- **Shape:** Exact name **"Peel District School Board"** (PDSB). Serves the Region of Peel (Mississauga, Brampton, Caledon); **~259-262 schools, ~148,000-153,000 K-12 students** (figures vary slightly by source/year — say *"more than 250 schools"* on screen to be safe). Runs **"Community Use of Schools (CUS)"**, described as *"an initiative of the Ministry of Education that supports access to school space outside of school hours for community groups."* Available Sep-June, weekday evenings + weekends.
+- **Access:** free; note `peelschools.org` returned **403 to direct WebFetch** (search snippet + Wikipedia used to corroborate; the CUS program page exists and is the correct URL).
+- **Hackathon use:** the larger of the two Peel boards and the after-hours facility-access pathway for a future hub-scaling roadmap line.
+- **ON-SCREEN SAFE COUNT:** "more than 250 schools." Avoid a single hard number (sources disagree between ~259 and 262).
+
+### Dufferin-Peel Catholic District School Board (DPCDSB) — CONFIRMED
+- **URL:** <https://www.dpcdsb.org/schools/community-use-of-schools> · count corroboration <https://en.wikipedia.org/wiki/Dufferin-Peel_Catholic_District_School_Board>
+- **Type:** school-board program page
+- **Shape:** Exact name **"Dufferin-Peel Catholic District School Board"** (DPCDSB). **~152 schools** (reported as 126 elementary + 26 secondary, plus Adult/Continuing Education sites) — the "152 schools" figure verifies. Runs **"Community Use of Schools (CUS)"**, verbatim from dpcdsb.org: *"Community Use of Schools (CUS) is an initiative of the Ministry of Education that supports access to school space outside of school hours for community groups."* Online eBASE rental booking + permits, $2M liability-insurance requirement.
+- **Access:** free HTML (direct fetch succeeded).
+- **Hackathon use:** the Catholic-board half of the Peel school-rental pathway; pair with PDSB for full Peel school coverage on a scaling slide.
+- **ON-SCREEN SAFE COUNT:** "about 150 schools" or "152 schools" (the 152 figure is consistently reported).
+
+### Community Use of Schools — CONFIRMED (Ontario Ministry of Education program)
+- **URL:** <https://www.ontario.ca/page/community-use-schools>
+- **Type:** Ontario government program page (primary)
+- **Shape:** Real **Ontario Ministry of Education** initiative. Ontario.ca: *"We give school boards funding so they can make school space affordable for use outside school hours,"* and community organizations *"can ask the local school board to use indoor and/or outdoor school space outside of school hours."* Both PDSB and DPCDSB administer it locally under this provincial program.
+- **Access:** free HTML (direct fetch succeeded).
+- **Hackathon use:** the real provincial mechanism that already opens school facilities to community groups after hours — the policy hook for "schools as candidate resilience hubs" without inventing a program.

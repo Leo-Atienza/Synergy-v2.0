@@ -27,6 +27,7 @@ type RawProps = {
   trust_role: string;
   verification_status: string;
   notes: string;
+  backup_power_status: string;
 };
 
 export type Hub = {
@@ -49,6 +50,7 @@ export type Hub = {
   reachablePopulation: string; // "pending" today — kept honest
   catchmentMethod: string;
   solarPotential: string;
+  backupPower: string; // "pending" for all — no candidate has confirmed backup power
   notes: string;
   // Transparent score, 0..100. Provisional while catchment population is pending.
   score: number;
@@ -160,6 +162,7 @@ export function toHub(feature: {
     reachablePopulation: p.reachable_population_est,
     catchmentMethod: p.catchment_method,
     solarPotential: p.solar_potential_est,
+    backupPower: p.backup_power_status,
     notes: p.notes,
     score,
     breakdown,

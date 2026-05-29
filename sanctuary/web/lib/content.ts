@@ -139,6 +139,26 @@ export const METHOD_ROWS: { label: string; weight: string; status: EvidenceStatu
   },
 ];
 
+// Where the weights come from. Honest provenance: our judgment, structured on two
+// sources already cited in EVIDENCE (Peel's HVI sub-scores + USDN hub functions).
+// No claim of an external scoring framework.
+export const WEIGHTING_NOTE =
+  "The five weights are our judgment, not a published formula. We structured them on two sources already cited here: Peel's own Heat Vulnerability Index, which splits heat risk into exposure, sensitivity, and adaptive capacity, and the USDN resilience-hub functions. Heat leads at 35 percent because it is the only axis that is fully verified and resolved tract by tract. The other four are planning proxies that a site audit later replaces.";
+
+// What "site audit required" concretely means. Mirrors fallbackChecklistFor() in
+// lib/planning-assistant.ts, surfaced statically so a judge sees it without a model call.
+export const SITE_AUDIT_CHECKS: string[] = [
+  "Roof structural load and condition, before any rooftop equipment.",
+  "Backup power and electrical readiness, confirmed with the operator.",
+  "Accessibility and step-free access, into and through the building.",
+  "Operating hours and staffing during an actual activation.",
+];
+
+// The energy / grid anchor (reuses the OPERATING_MODEL framing). Forward-looking:
+// no building here is claimed to run this today.
+export const GRID_RESILIENCE_NOTE =
+  "Backup power is the energy anchor. A hub with solar and a battery is a distributed energy resource: on a normal day it can support the local grid, and during an outage it islands to keep cooling, charging, and information running. That is the kind of resilience Alectra Utilities plans for in its distribution-system plan, not a claim that any of these buildings runs it today.";
+
 // Real-vs-estimated honesty grid.
 export const REAL_VS_ESTIMATED: { tag: "verified" | "modelled" | "pending"; label: string; body: string }[] = [
   { tag: "verified", label: "Verified", body: "The HVI layer, building names, addresses, source links, and every HVI quintile, all checked against the public Peel feature service." },
@@ -236,6 +256,39 @@ export const COUNTERFACTUAL: Counterfactual[] = [
   },
 ];
 
+// Who acts on the ranking. Three real Peel-facing roles, each named and sourced;
+// one verb each. No individual is named (office and program names verified
+// 2026-05-28 against peelregion.ca and alectrautilities.com; see docs/energy-domain.md).
+export const STAKEHOLDERS: { name: string; org: string; role: string; source: Source }[] = [
+  {
+    name: "Office of Climate Change and Energy Management",
+    org: "Region of Peel",
+    role: "Prioritizes which trusted buildings to harden first, inside the neighbourhoods the HVI flags as most heat-vulnerable.",
+    source: {
+      name: "Region of Peel · climate change and energy",
+      url: "https://peelregion.ca/about/climate-change/reduce-greenhouse-gas-emissions",
+    },
+  },
+  {
+    name: "Regional Emergency Management",
+    org: "Region of Peel",
+    role: "Prepares and opens public buildings during an extreme-heat day or an outage. Peel Public Health built the HVI to find where that need is highest.",
+    source: {
+      name: "Region of Peel · Regional Emergency Management",
+      url: "https://peelregion.ca/about/people-peel/regional-emergency-management",
+    },
+  },
+  {
+    name: "Alectra Utilities",
+    org: "Distribution planning",
+    role: "Plans where hardened, solar-and-battery sites strengthen the local grid as distributed energy resources, the resilience work in its distribution-system plan.",
+    source: {
+      name: "Alectra Utilities · investment and system plan",
+      url: "https://alectrautilities.com/InvestmentPlan",
+    },
+  },
+];
+
 // Future pipeline phases. These are roadmap stages, not built features.
 export const FUTURE_PHASES: { num: string; label: string; body: string }[] = [
   {
@@ -286,9 +339,14 @@ export const FUTURE_UPGRADE_TRACKS: {
     body: "Publish a resident-facing map only for verified hubs, showing which sites are open, equipped, and reachable during an event.",
   },
   {
-    label: "Regional scaling template",
+    label: "Schools as phase-2 hubs",
+    status: "pending",
+    body: "Peel District School Board (more than 250 schools) and the Dufferin-Peel Catholic District School Board (152 schools) are strong candidates, reachable through Ontario's Community Use of Schools program that opens school space after hours. Each needs a board-level access agreement first, so it is a phase-2 layer, not a building we score today.",
+  },
+  {
+    label: "Replication across Alectra territory",
     status: "modelled",
-    body: "Package the scoring method as a reusable municipal template for additional service territories and hazard scenarios.",
+    body: "The same honest scoring repeats across Alectra Utilities' Greater Golden Horseshoe service area. New geography, the same method and the same verified, modelled, and pending labels, so it reads as a template a utility or region can run, not a one-off Peel map.",
   },
 ];
 

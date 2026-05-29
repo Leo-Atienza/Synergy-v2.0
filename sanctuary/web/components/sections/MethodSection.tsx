@@ -1,5 +1,5 @@
 import { Section } from "@/components/Section";
-import { HVI_INDICATORS, METHOD_ROWS } from "@/lib/content";
+import { GRID_RESILIENCE_NOTE, HVI_INDICATORS, METHOD_ROWS, SITE_AUDIT_CHECKS, WEIGHTING_NOTE } from "@/lib/content";
 import { EvidenceTag } from "@/components/EvidenceTag";
 
 export function MethodSection() {
@@ -42,6 +42,22 @@ export function MethodSection() {
           </div>
         ))}
       </div>
+
+      <div className="future-upgrade-intro">
+        <p className="eyebrow">Where the weights come from</p>
+        <p>{WEIGHTING_NOTE}</p>
+      </div>
+
+      <div className="future-upgrade-intro">
+        <p className="eyebrow">What a site audit verifies</p>
+        <ol className="planning-checks">
+          {SITE_AUDIT_CHECKS.map((c) => (
+            <li key={c}>{c}</li>
+          ))}
+        </ol>
+      </div>
+
+      <p className="scale-note">{GRID_RESILIENCE_NOTE}</p>
     </Section>
   );
 }
