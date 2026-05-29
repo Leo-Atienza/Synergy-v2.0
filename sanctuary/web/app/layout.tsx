@@ -57,14 +57,20 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${mono.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${mono.variable}`} suppressHydrationWarning>
       <body>
-        {/* Land at the top of the page on a hard refresh instead of the browser
-            restoring the previous scroll offset. Runs before paint (first node in
-            <body>) so there is no scroll-jump flash; hash links (#id) still work. */}
+        {/* Two before-paint jobs, run as the first node in <body> (no flash):
+            1. Land at the top on a hard refresh instead of restoring scroll offset.
+            2. White mode — dark is the default, so apply data-theme="light" ONLY when
+               the visitor previously chose it (localStorage 'theme'). No system-pref
+               fallback: first visit is always dark. The meta theme-color (rendered in
+               <head> by the viewport export) is synced to the paper ground for mobile
+               browser chrome. suppressHydrationWarning on <html> covers the attribute. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: "if('scrollRestoration' in history){history.scrollRestoration='manual';}",
+            __html:
+              "if('scrollRestoration' in history){history.scrollRestoration='manual';}" +
+              "try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');var m=document.querySelector('meta[name=\"theme-color\"]');if(m){m.setAttribute('content','#f7f3ec');}}}catch(e){}",
           }}
         />
         <Nav />

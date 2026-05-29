@@ -198,7 +198,7 @@ export function MapStage({
           key={t.ctuid}
           d={t.d}
           className={`hvi-tract${tract?.ctuid === t.ctuid ? " hvi-tract-sel" : ""}`}
-          fill={t.q ? HVI_COLORS[t.q] : "#1a2937"}
+          style={{ fill: t.q ? HVI_COLORS[t.q] : "var(--map-empty)" }}
           onClick={() => {
             if (drag.current?.moved) return;
             setTract(t);
@@ -217,7 +217,7 @@ export function MapStage({
     () =>
       hazardLayers
         ? base.tracts.map((t) => (
-            <path key={`w-${t.ctuid}`} d={t.d} fill={t.winterQ ? WINTER_COLORS[t.winterQ] : "#1a2937"} className="winter-tract" />
+            <path key={`w-${t.ctuid}`} d={t.d} style={{ fill: t.winterQ ? WINTER_COLORS[t.winterQ] : "var(--map-empty)" }} className="winter-tract" />
           ))
         : null,
     [base.tracts, hazardLayers],

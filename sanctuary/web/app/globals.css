@@ -33,6 +33,13 @@
   --signal: var(--ember);
   --signal-hot: var(--ember-hot);
 
+  /* Map (theme-aware): no-data geography fill, selection/focus stroke, and the
+     inter-tract separator. Light values live in the :root[data-theme="light"]
+     block; these dark defaults equal the prior hardcoded values (no dark change). */
+  --map-empty: #1a2937;
+  --map-sel-stroke: #ffffff;
+  --map-tract-stroke: color-mix(in oklab, var(--bg) 55%, transparent);
+
   /* Fonts (next/font sets --font-fraunces / --font-mono on <html>). */
   --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-data: var(--font-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -58,6 +65,44 @@
   --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-calm: cubic-bezier(0.22, 0.61, 0.36, 1);
   --dur: 0.5s;
+}
+
+/* ============================================================================
+   White mode — warm editorial paper. Opt-in via data-theme="light" on <html>
+   (set before paint by the no-flash script in layout.tsx; toggled from the nav).
+   Dark stays the default. Only PRIMITIVES + the two literal-hex surfaces are
+   restated here — the semantic tokens (--surface/--text/--signal) and every
+   color-mix() hairline/scrim derive from these via var() and flip automatically.
+   The HVI/Winter quintile ramps (lib/hubs.ts) are intentionally NOT themed: the
+   colours encode data and must read the same in both modes. Every value below is
+   AA on the paper ground (text >=4.5:1, graphic/large >=3:1).
+   ========================================================================== */
+:root[data-theme="light"] {
+  --bg: #f7f3ec;          /* warm paper ground */
+  --bg-2: #efe9df;        /* deeper paper — the map radial gradient */
+  --panel: #fffdfa;
+  --ink: #16222e;         /* deep navy ink — keeps the brand DNA, ~13:1 on paper */
+  --ink-dim: #48596a;     /* muted text */
+  --ink-faint: #516374;   /* faint text (table heads on sunken) — AA on every paper ground */
+  --ember: #a24b15;       /* deep burnt-ember signal — AA as text incl. on sunken rows */
+  --ember-hot: #c62f20;
+  --cool: #3f726c;        /* deepened teal */
+  --c-verified: #1c7049;  /* honesty key: deep green — AA on every paper ground */
+  --c-modelled: #825c10;  /* honesty key: deep bronze (gold fails on white) — AA on every paper ground */
+  --c-pending: #546575;   /* honesty key: deep slate */
+
+  /* Literal-hex semantics (not var()-derived) — must be restated. */
+  --surface-raised: #fffdfa; /* cards lift off the cream */
+  --surface-sunken: #ece5d9; /* recessed wells / table heads / score-bar track */
+
+  /* Hairlines: 12% ink reads too faint on paper — lift the alpha for definition. */
+  --hairline: color-mix(in oklab, var(--ink) 15%, transparent);
+  --hairline-strong: color-mix(in oklab, var(--ink) 26%, transparent);
+
+  /* Map (theme-aware) — light counterparts to the dark defaults above. */
+  --map-empty: #e7e0d4;
+  --map-sel-stroke: #16222e;
+  --map-tract-stroke: color-mix(in oklab, var(--ink) 22%, transparent);
 }
 
 * {
@@ -1249,7 +1294,7 @@ h3 {
 /* Faint Peel context outline — now sits UNDER the real HVI choropleth and shows
    only where there are no census tracts (rural Caledon). Non-interactive. */
 .fsa {
-  fill: #16222e;
+  fill: var(--map-empty);
   stroke: color-mix(in oklab, var(--ink) 14%, transparent);
   stroke-width: 0.6;
   vector-effect: non-scaling-stroke;
@@ -1259,7 +1304,7 @@ h3 {
 /* Real HVI choropleth (replaces the old fake glow). Fill is the HVI_COLORS quintile
    set, applied inline per tract; CSS owns the hairline + hover / selected affordance. */
 .hvi-tract {
-  stroke: color-mix(in oklab, var(--bg) 55%, transparent);
+  stroke: var(--map-tract-stroke);
   stroke-width: 0.4;
   vector-effect: non-scaling-stroke;
   cursor: pointer;
@@ -1270,7 +1315,7 @@ h3 {
   stroke-width: 1;
 }
 .hvi-tract-sel {
-  stroke: #fff;
+  stroke: var(--map-sel-stroke);
   stroke-width: 1.5;
 }
 
@@ -1285,7 +1330,7 @@ h3 {
 /* Winter / energy-burden choropleth tract (fill set inline from WINTER_COLORS).
    Non-interactive: the heat tracts beneath own the click readout. */
 .winter-tract {
-  stroke: color-mix(in oklab, var(--bg) 55%, transparent);
+  stroke: var(--map-tract-stroke);
   stroke-width: 0.4;
   vector-effect: non-scaling-stroke;
 }
@@ -1602,12 +1647,12 @@ h3 {
   cursor: pointer;
 }
 .pin-dot {
-  stroke: #0d1620;
+  stroke: var(--bg);
   stroke-width: 2;
   vector-effect: non-scaling-stroke;
 }
 .pin-sel .pin-dot {
-  stroke: #fff;
+  stroke: var(--map-sel-stroke);
   stroke-width: 2.5;
   /* Ember halo so the selected hub reads as THE answer on the map itself — the
      eye lands on Malton at the end of the deal, mirroring the detail panel.
@@ -1636,7 +1681,7 @@ h3 {
   outline: none;
 }
 .pin:focus-visible .pin-dot {
-  stroke: #fff;
+  stroke: var(--map-sel-stroke);
   stroke-width: 3;
 }
 .pin-rank {
@@ -2462,6 +2507,8 @@ main:not(.map-page) > :last-child {
   flex-direction: row;
   align-items: center;
   gap: 11px;
+  /* Absorb the free space so the theme toggle + links/hamburger pack to the right. */
+  margin-right: auto;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -2488,6 +2535,26 @@ main:not(.map-page) > :last-child {
 }
 .nav-toggle {
   display: none;
+}
+/* Theme toggle — hairline icon button matching the nav chrome. Always visible
+   (desktop + mobile, outside the drawer); sits left of the mobile hamburger. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-1);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--hairline-strong);
 }
 .nav-links {
   display: flex;

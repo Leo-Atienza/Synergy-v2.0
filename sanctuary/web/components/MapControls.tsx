@@ -100,7 +100,7 @@ export function MapControls({
             {tract.phdz ? ` · zone ${tract.phdz}` : ""}
           </span>
           <div className="tract-hvi">
-            <span className="tract-q tnum" style={{ background: tract.q ? HVI_COLORS[tract.q] : "#243140" }}>
+            <span className="tract-q tnum" style={{ background: tract.q ? HVI_COLORS[tract.q] : "var(--map-empty)" }}>
               {tract.q ?? "·"}
             </span>
             <span className="tract-hvi-label">{tract.q ? `HVI ${tract.q} · ${HVI_LABEL[tract.q]}` : "HVI · no data"}</span>

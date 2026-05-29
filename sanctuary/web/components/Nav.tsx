@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Logo } from "@/components/Logo";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 // Top navigation for the multi-page showcase. The wordmark + route links; the
 // "which five?" framing lives only in the Overview hero. Active route is marked
@@ -50,6 +51,8 @@ export function Nav() {
             <span className="nav-brand-sub">Peel heat-resilience hubs</span>
           </span>
         </Link>
+
+        <ThemeToggle />
 
         <button
           type="button"
