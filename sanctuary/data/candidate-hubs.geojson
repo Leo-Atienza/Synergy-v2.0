@@ -25,7 +25,7 @@
         "ctuid": "5350530.01",
         "phdz": "M-04",
         "catchment_method": "modelled_500m",
-        "reachable_population_est": "pending",
+        "reachable_population_est": "~5,900",
         "roof_area_class": "large",
         "solar_potential_est": "planning_estimate",
         "facility_suitability": "high",
@@ -34,7 +34,8 @@
         "notes": "Evidence-backed hero candidate; HVI 5 and connected to Malton Library.",
         "backup_power_status": "pending",
         "flood_status": "~50 m from the floodplain",
-        "winter_vuln": "5"
+        "winter_vuln": "5",
+        "ct_population": "5,217"
       }
     },
     {
@@ -69,7 +70,8 @@
         "notes": "Top-quintile faith/community candidate in Malton.",
         "backup_power_status": "pending",
         "flood_status": "~30 m from the floodplain",
-        "winter_vuln": "5"
+        "winter_vuln": "5",
+        "ct_population": ""
       }
     },
     {
@@ -104,7 +106,8 @@
         "notes": "HVI 5 civic facility; formerly South Fletcher's Sportsplex.",
         "backup_power_status": "pending",
         "flood_status": "not mapped by TRCA (Credit watershed)",
-        "winter_vuln": "4"
+        "winter_vuln": "4",
+        "ct_population": ""
       }
     },
     {
@@ -139,7 +142,8 @@
         "notes": "Malton Masjid candidate; HVI 4 with adaptive-capacity quintile 5.",
         "backup_power_status": "pending",
         "flood_status": "~40 m from the floodplain",
-        "winter_vuln": "4"
+        "winter_vuln": "4",
+        "ct_population": ""
       }
     },
     {
@@ -174,7 +178,8 @@
         "notes": "Exposure quintile 5; keep as candidate but do not over-rank without catchment.",
         "backup_power_status": "pending",
         "flood_status": "~280 m from the floodplain",
-        "winter_vuln": "4"
+        "winter_vuln": "4",
+        "ct_population": ""
       }
     },
     {
@@ -209,7 +214,8 @@
         "notes": "Large civic facility; exposure quintile 5.",
         "backup_power_status": "pending",
         "flood_status": "outside the mapped floodplain",
-        "winter_vuln": "4"
+        "winter_vuln": "4",
+        "ct_population": ""
       }
     },
     {
@@ -244,7 +250,8 @@
         "notes": "The Gore Road faith/community cluster candidate; HVI 2 so not hero.",
         "backup_power_status": "pending",
         "flood_status": "~190 m from the floodplain",
-        "winter_vuln": "4"
+        "winter_vuln": "4",
+        "ct_population": ""
       }
     },
     {
@@ -279,7 +286,8 @@
         "notes": "Real facility but HVI 2; demoted from provisional hero.",
         "backup_power_status": "pending",
         "flood_status": "~70 m from the floodplain",
-        "winter_vuln": "3"
+        "winter_vuln": "3",
+        "ct_population": ""
       }
     },
     {
@@ -314,7 +322,8 @@
         "notes": "Near Gore Meadows corridor; HVI 1 so not top-five unless catchment adds a reason.",
         "backup_power_status": "pending",
         "flood_status": "~50 m from the floodplain",
-        "winter_vuln": "4"
+        "winter_vuln": "4",
+        "ct_population": ""
       }
     },
     {
@@ -349,7 +358,8 @@
         "notes": "Large civic facility but HVI 1; keep as contrast candidate.",
         "backup_power_status": "pending",
         "flood_status": "not mapped by TRCA (Credit watershed)",
-        "winter_vuln": "3"
+        "winter_vuln": "3",
+        "ct_population": ""
       }
     }
   ]

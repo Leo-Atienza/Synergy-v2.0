@@ -30,6 +30,7 @@ type RawProps = {
   backup_power_status: string;
   flood_status: string;
   winter_vuln: string;
+  ct_population: string;
 };
 
 export type Hub = {
@@ -57,6 +58,7 @@ export type Hub = {
   floodEvidence: Verification; // tag derived from the flood status string
   winterVuln: number; // ON-Marg 2021 Material Resources quintile of the building's CT (1..5, 5 = most marginalized)
   yearRound: boolean; // genuinely high on BOTH heat (HVI >= 4) and winter / energy burden (>= 4)
+  ctPopulation: string; // verified 2021 census-tract population (context); set for Malton only today
   notes: string;
   // Transparent score, 0..100. Provisional while catchment population is pending.
   score: number;
@@ -202,6 +204,7 @@ export function toHub(feature: {
     floodEvidence: floodTag(p.flood_status),
     winterVuln: n(p.winter_vuln),
     yearRound: n(p.hvi_quintile) >= 4 && n(p.winter_vuln) >= 4,
+    ctPopulation: p.ct_population ?? "",
     notes: p.notes,
     score,
     breakdown,

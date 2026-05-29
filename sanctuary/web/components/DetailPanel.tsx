@@ -74,6 +74,15 @@ export function DetailPanel({
             <EvidenceTag tag={hub.reachablePopulation === "pending" ? "pending" : "modelled"} />
           </span>
         </div>
+        {hub.ctPopulation && (
+          <div className="fact">
+            <span className="fact-k">Census tract population</span>
+            <span className="fact-v">
+              <span className="tnum">{hub.ctPopulation}</span>
+              <EvidenceTag tag="verified" />
+            </span>
+          </div>
+        )}
         <div className="fact">
           <span className="fact-k">Roof / upgrade class</span>
           <span className="fact-v">
