@@ -32,6 +32,7 @@
 
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { geoArea } from "d3-geo";
 
 const SERVICE =
   "https://maps.trca.ca/hostingserver/rest/services/Hosted/Flood_and_Heat_Vulnerable_Areas_in_Peel_WFL1/FeatureServer/6";
@@ -40,6 +41,22 @@ const OUT_FIELDS = ["floodplain", "watershed"];
 const MAX_OFFSET = 0.0007; // ~78 m, in degrees (outSR 4326) — matches the HVI layer (~1px at map scale, visually lossless)
 const PRECISION = 5; // ~1 m coordinate precision
 const PAGE = 2000; // service maxRecordCount; Peel flood = 295 polygons -> one page
+
+// Normalize polygon winding for d3-geo. ArcGIS f=geojson emits RFC-7946 right-hand-rule
+// (CCW exterior); d3-geo reads winding SPHERICALLY (the opposite convention), so it treats
+// each of these polygons as "the whole sphere MINUS this sliver" -> the flood overlay paints
+// the entire map blue. Fix: flip each polygon component (its exterior + holes together, which
+// preserves their relative winding) whenever d3's OWN geoArea says it encloses more than a
+// hemisphere. geoArea is the exact oracle the renderer uses — a planar/approximate shoelace
+// sign misclassifies a handful of large or near-degenerate rings and leaves them inverted.
+const TWO_PI = 2 * Math.PI;
+const rewindPolygon = (rings) => {
+  if (geoArea({ type: "Polygon", coordinates: rings }) > TWO_PI) rings.forEach((r) => r.reverse());
+};
+const rewindGeometry = (g) => {
+  if (g.type === "Polygon") rewindPolygon(g.coordinates);
+  else if (g.type === "MultiPolygon") g.coordinates.forEach(rewindPolygon);
+};
 
 async function fetchPage(offset) {
   const params = new URLSearchParams({
@@ -81,6 +98,10 @@ async function main() {
       },
       geometry: f.geometry,
     }));
+
+  // Rewind to d3-geo-friendly winding (see rewindGeometry) so the overlay draws
+  // riverine corridors, not a full-frame wash.
+  for (const f of cleaned) rewindGeometry(f.geometry);
 
   const fc = { type: "FeatureCollection", name: "peel_flood_trca", features: cleaned };
   const out = join(process.cwd(), "public", "peel-flood.geojson");
