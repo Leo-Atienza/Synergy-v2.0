@@ -103,6 +103,13 @@ export function DetailPanel({
           </span>
         </div>
         <div className="fact">
+          <span className="fact-k">Winter / energy burden</span>
+          <span className="fact-v">
+            <span className="tnum">quintile {hub.winterVuln} of 5</span>
+            <EvidenceTag tag="modelled" />
+          </span>
+        </div>
+        <div className="fact">
           <span className="fact-k">Backup power</span>
           <span className="fact-v">
             <span>{hub.backupPower === "pending" ? "not confirmed" : hub.backupPower}</span>
@@ -111,6 +118,11 @@ export function DetailPanel({
         </div>
       </div>
 
+      {hub.yearRound && (
+        <p className="detail-meta detail-yearround">
+          Year-round resilience case: high on both heat (HVI {hub.hvi}) and winter energy burden (quintile {hub.winterVuln} of 5).
+        </p>
+      )}
       <p className="detail-why">{hub.notes}</p>
       <div className="planning-block">
         <button

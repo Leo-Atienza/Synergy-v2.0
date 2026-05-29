@@ -17,6 +17,9 @@ export type HviTract = {
   phdz: string | null;
   municipality: string | null;
   ctuid: string;
+  // ON-Marg 2021 Material Resources quintile for this same census tract (the winter /
+  // energy-burden lens). Joined by CTUID at build; null if the tract is unmatched.
+  winterQ: number | null;
 };
 
 // A projected official/public facility (the "current network" / shelter-gap layer).
@@ -44,7 +47,7 @@ export type MapData = {
 export const ZOOM_IDENTITY = { x: 0, y: 0, scale: 1 } as const;
 
 // Toggleable map layers (keys mirror lib/content.ts MAP_LAYERS).
-export type LayerKey = "heat" | "facilities" | "candidates" | "rings" | "flood";
+export type LayerKey = "heat" | "facilities" | "candidates" | "rings" | "flood" | "winter";
 export type LayerState = Record<LayerKey, boolean>;
 
 // ---------------------------------------------------------------------------

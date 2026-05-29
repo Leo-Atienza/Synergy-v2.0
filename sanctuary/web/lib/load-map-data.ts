@@ -8,7 +8,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { toHub, type Hub, type HubGeo } from "@/lib/hubs";
-import { projectMap, type HviGeo, type FacilityGeo, type FloodGeo } from "@/lib/map";
+import { projectMap, type HviGeo, type FacilityGeo, type FloodGeo, type WinterGeo } from "@/lib/map";
 import type { MapData } from "@/lib/map-constants";
 
 type BaseGeo = { type: "FeatureCollection"; features: { geometry: unknown }[] };
@@ -32,9 +32,10 @@ export function loadMapData(): { mapData: MapData; hubs: Hub[] } {
   const hvi = loadJson<HviGeo>("peel-hvi.geojson");
   const facilities = loadJsonSafe<FacilityGeo>("peel-facilities.geojson", { type: "FeatureCollection", features: [] });
   const flood = loadJsonSafe<FloodGeo>("peel-flood.geojson", { type: "FeatureCollection", features: [] });
+  const winter = loadJsonSafe<WinterGeo>("peel-winter-vuln.geojson", { type: "FeatureCollection", features: [] });
   const hubs: Hub[] = loadJson<HubGeo>("candidate-hubs.geojson")
     .features.map(toHub)
     .sort((a, z) => a.rank - z.rank);
-  const mapData = projectMap(base, hubs, hvi, facilities, flood);
+  const mapData = projectMap(base, hubs, hvi, facilities, flood, winter);
   return { mapData, hubs };
 }

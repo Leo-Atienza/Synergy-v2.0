@@ -1,5 +1,5 @@
 import { Section } from "@/components/Section";
-import { GRID_RESILIENCE_NOTE, HVI_INDICATORS, METHOD_ROWS, SITE_AUDIT_CHECKS, WEIGHTING_NOTE } from "@/lib/content";
+import { GRID_RESILIENCE_NOTE, HVI_INDICATORS, METHOD_ROWS, SITE_AUDIT_CHECKS, WEIGHTING_NOTE, WINTER_METHOD_NOTE } from "@/lib/content";
 import { EvidenceTag } from "@/components/EvidenceTag";
 
 export function MethodSection() {
@@ -58,6 +58,11 @@ export function MethodSection() {
       </div>
 
       <p className="scale-note">{GRID_RESILIENCE_NOTE}</p>
+
+      <div className="future-upgrade-intro">
+        <p className="eyebrow">Why no cold-temperature map</p>
+        <p>{WINTER_METHOD_NOTE}</p>
+      </div>
     </Section>
   );
 }

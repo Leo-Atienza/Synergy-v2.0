@@ -159,6 +159,12 @@ export const SITE_AUDIT_CHECKS: string[] = [
 export const GRID_RESILIENCE_NOTE =
   "Backup power is the energy anchor. A hub with solar and a battery is a distributed energy resource: on a normal day it can support the local grid, and during an outage it islands to keep cooling, charging, and information running. That is the kind of resilience Alectra Utilities plans for in its distribution-system plan, not a claim that any of these buildings runs it today.";
 
+// The methodological flex: WHY there is no cold-temperature choropleth. The highest-
+// value honesty argument in the multi-hazard upgrade. Pre-empts the sharpest data
+// question and signals method literacy. (See docs/peel-winter-vuln-data-note.md.)
+export const WINTER_METHOD_NOTE =
+  "Heat vulnerability varies block by block because of the urban heat island, so the HVI resolves it tract by tract. Winter cold has no equivalent gradient, there is no winter heat-island, so a per-tract cold-temperature index would invent an exposure axis that is not real, and we deliberately do not fake one. Winter resilience need is driven instead by energy affordability and marginalization: who can least afford to heat a home, and who is most isolated in a cold snap. That is real per-area data, so we map the 2021 Ontario Marginalization Index Material Resources dimension, label it modelled, and keep heat as the lead, verified hazard.";
+
 // Real-vs-estimated honesty grid.
 export const REAL_VS_ESTIMATED: { tag: "verified" | "modelled" | "pending"; label: string; body: string }[] = [
   { tag: "verified", label: "Verified", body: "The HVI layer, building names, addresses, source links, and every HVI quintile, all checked against the public Peel feature service." },
@@ -309,7 +315,7 @@ export const FUTURE_PHASES: { num: string; label: string; body: string }[] = [
   {
     num: "4",
     label: "Scale across hazards",
-    body: "Repeat the same honest scoring across more of Alectra's service territory, and add other hazards such as winter cold risk alongside heat.",
+    body: "The map now layers heat, flood, and winter energy burden, each labelled honestly. Next is repeating the same scoring across more of Alectra's service territory and deepening each hazard with verified, building-level data.",
   },
 ];
 
@@ -319,9 +325,9 @@ export const FUTURE_UPGRADE_TRACKS: {
   body: string;
 }[] = [
   {
-    label: "Winter cold-risk index",
+    label: "Deeper winter / energy-burden data",
     status: "modelled",
-    body: "Add a cold-vulnerability layer alongside the heat lens so planners can prioritize warming resilience with the same transparent scoring logic.",
+    body: "The winter lens already ships: the 2021 Ontario Marginalization Index Material Resources dimension stands in as the affordability driver, not a fabricated cold-temperature map. Next is adding energy-cost-burden data per area, for example CUSP's energy-poverty explorer, and verifying heating and warming-space readiness building by building.",
   },
   {
     label: "Walkshed precision",
@@ -704,8 +710,9 @@ export const FLOOD_CAVEAT =
   "The flood layer is TRCA's riverine regulatory floodplain, the greater of the Hurricane Hazel Regional Storm or the 100-year flood, not urban or storm-sewer flooding. West Peel's Credit River watershed is mapped separately by Credit Valley Conservation.";
 
 // Map layer toggles for the interactive Peel map (keys match LayerState in MapStage).
-export const MAP_LAYERS: { key: "heat" | "facilities" | "candidates" | "rings" | "flood"; label: string }[] = [
+export const MAP_LAYERS: { key: "heat" | "facilities" | "candidates" | "rings" | "flood" | "winter"; label: string }[] = [
   { key: "heat", label: "Heat vulnerability" },
+  { key: "winter", label: "Winter / energy-burden vulnerability" },
   { key: "flood", label: "Flood risk (regulated areas)" },
   { key: "facilities", label: "Public facilities" },
   { key: "candidates", label: "Candidate hubs" },

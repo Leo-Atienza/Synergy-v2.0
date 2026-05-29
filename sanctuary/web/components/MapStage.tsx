@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import type { Hub } from "@/lib/hubs";
-import { HVI_COLORS, HVI_LABEL } from "@/lib/hubs";
+import { HVI_COLORS, HVI_LABEL, WINTER_COLORS } from "@/lib/hubs";
 import {
   W,
   H,
@@ -58,7 +58,7 @@ export function MapStage({
 
   // Map-local interaction state — never touches ScrollStage (the parallel agent's file).
   const [view, setView] = useState<ViewTransform>(VIEW_IDENTITY);
-  const [layers, setLayers] = useState<LayerState>({ heat: true, facilities: true, candidates: true, rings: true, flood: true });
+  const [layers, setLayers] = useState<LayerState>({ heat: true, facilities: true, candidates: true, rings: true, flood: true, winter: false });
   const [tract, setTract] = useState<HviTract | null>(null);
 
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -76,6 +76,9 @@ export function MapStage({
   // Flood is a context overlay outside the heat-focused scroll story: shown only in
   // explore mode (and only when toggled on), never during the deal-the-five sequence.
   const floodOp = (layers.flood ? 1 : 0) * (explore ? 0.55 : 0);
+  // Winter / energy-burden choropleth: the alternative lens, OFF by default (heat is
+  // the lead, verified hazard). Explore-only; toggle on to compare against heat.
+  const winterOp = (layers.winter ? 1 : 0) * (explore ? 0.82 : 0);
   const pinsOn = layers.candidates && (explore ? true : s >= STEP.CANDIDATES);
   const ringsOp = (layers.rings ? 1 : 0) * (explore ? 0.5 : s === STEP.CANDIDATES ? 0.85 : s >= STEP.DEAL ? 0.4 : 0);
   const dealt = !explore && s >= STEP.DEAL;
@@ -158,7 +161,7 @@ export function MapStage({
       return;
     }
     setView(VIEW_IDENTITY);
-    setLayers({ heat: true, facilities: true, candidates: true, rings: true, flood: true });
+    setLayers({ heat: true, facilities: true, candidates: true, rings: true, flood: true, winter: false });
     setTract(null);
   }, [resetSignal]);
 
@@ -183,6 +186,17 @@ export function MapStage({
         />
       )),
     [base.tracts, tract?.ctuid],
+  );
+
+  // Winter / energy-burden choropleth — the SAME tract paths recoloured by the ON-Marg
+  // Material Resources quintile. Non-interactive (the heat tracts beneath stay clickable),
+  // so no new polygon set ships and the tract readout still works.
+  const winterChoropleth = useMemo(
+    () =>
+      base.tracts.map((t) => (
+        <path key={`w-${t.ctuid}`} d={t.d} fill={t.winterQ ? WINTER_COLORS[t.winterQ] : "#1a2937"} className="winter-tract" />
+      )),
+    [base.tracts],
   );
 
   return (
@@ -235,6 +249,18 @@ export function MapStage({
               {base.flood.map((d, i) => (
                 <path key={`flood-${i}`} d={d} className="flood-poly" />
               ))}
+            </m.g>
+
+            {/* Winter / energy-burden choropleth (ON-Marg Material Resources) — the
+                alternative lens, recolouring the same tracts; non-interactive so the
+                heat tracts beneath keep handling tract-click readouts. */}
+            <m.g
+              initial={false}
+              animate={{ opacity: winterOp }}
+              transition={t0 ?? { duration: 0.6, ease: EASE_CALM }}
+              style={{ pointerEvents: "none" }}
+            >
+              {winterChoropleth}
             </m.g>
 
             {/* Official / public facilities — the shelter-gap "current network" */}

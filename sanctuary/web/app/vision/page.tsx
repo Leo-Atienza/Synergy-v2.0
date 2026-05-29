@@ -9,7 +9,7 @@ import { ArrowUpRight } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Vision · Sanctuary",
   description:
-    "The Sanctuary upgrade path: winter and heat risk indexing, verified site audits, resident guidance after validation, and regional scaling across Alectra territory.",
+    "The Sanctuary upgrade path: multi-hazard scoring across heat, flood, and winter energy burden, verified site audits, resident guidance after validation, and regional scaling across Alectra territory.",
 };
 
 export default function VisionPage() {
@@ -19,9 +19,9 @@ export default function VisionPage() {
         <p className="eyebrow">Vision</p>
         <h1 id="vision-title">The future version only works if the prototype stays honest.</h1>
         <p>
-          The hackathon build ranks candidate hubs. This page shows the practical upgrades next: stronger access
-          modelling, real site audits, a winter cold-risk index, a resident view only after verification, and
-          repeatable scoring across Alectra territory.
+          The hackathon build ranks candidate hubs across three honest hazard lenses: heat, flood, and winter energy
+          burden. This page shows the practical upgrades next: stronger access modelling, real site audits, a resident
+          view only after verification, and repeatable scoring across Alectra territory.
         </p>
       </section>
 

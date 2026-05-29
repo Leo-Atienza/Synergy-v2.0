@@ -29,6 +29,10 @@ export type FacilityGeo = {
 };
 // TRCA regulatory floodplain polygons (build-time only; projected to path strings).
 export type FloodGeo = { type?: string; features: { type?: string; properties?: unknown; geometry: unknown }[] };
+// Winter / energy-burden choropleth: ON-Marg 2021 Material Resources quintile per CT.
+// Same tract geometry as the HVI layer, so we only consume its CTUID -> MR_q mapping
+// and recolour the existing tract paths (no second polygon set ships to the client).
+export type WinterGeo = { type?: string; features: { properties: { CTUID: string; MR_q: number | null } }[] };
 
 export function projectMap(
   base: { features: unknown[] },
@@ -36,6 +40,7 @@ export function projectMap(
   hvi?: HviGeo,
   facilities?: FacilityGeo,
   flood?: FloodGeo,
+  winter?: WinterGeo,
 ): MapData {
   const proj = geoMercator().fitExtent(
     [
@@ -48,6 +53,13 @@ export function projectMap(
 
   const outline = base.features.map((f) => roundPath(path(f as never) ?? ""));
 
+  // Winter / energy-burden quintile per census tract, keyed by CTUID (the winter
+  // GeoJSON shares the HVI tract geometry, so we reuse the HVI paths and only carry
+  // its quintile through). CTUIDs are byte-identical (both derive from peel-hvi).
+  const winterByCtuid = new Map<string, number | null>(
+    (winter?.features ?? []).map((f) => [f.properties.CTUID, f.properties.MR_q]),
+  );
+
   // Real HVI choropleth: each census tract projected to a path + its true quintiles.
   const tracts: HviTract[] = (hvi?.features ?? [])
     .map((f) => ({
@@ -59,6 +71,7 @@ export function projectMap(
       phdz: f.properties.PHDZ,
       municipality: f.properties.Municipality,
       ctuid: f.properties.CTUID,
+      winterQ: winterByCtuid.get(f.properties.CTUID) ?? null,
     }))
     .filter((t) => t.d.length > 0);
 

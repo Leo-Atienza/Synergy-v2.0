@@ -1227,6 +1227,13 @@ h3 {
   stroke-width: 0.4;
   vector-effect: non-scaling-stroke;
 }
+/* Winter / energy-burden choropleth tract (fill set inline from WINTER_COLORS).
+   Non-interactive: the heat tracts beneath own the click readout. */
+.winter-tract {
+  stroke: color-mix(in oklab, var(--bg) 55%, transparent);
+  stroke-width: 0.4;
+  vector-effect: non-scaling-stroke;
+}
 
 /* Official / public facilities — the shelter-gap "current network". Hollow + cool,
    deliberately distinct from the HVI-filled candidate pins. */
@@ -1404,6 +1411,16 @@ h3 {
 }
 .mc-sw-flood {
   background: color-mix(in oklab, #4a9ee0 78%, transparent);
+}
+.mc-sw-winter {
+  background: linear-gradient(
+    90deg,
+    #3d3a6e 0 20%,
+    #574f9c 20% 40%,
+    #7a63c0 40% 60%,
+    #9a7ad8 60% 80%,
+    #bb9bf2 80% 100%
+  );
 }
 
 /* Tract-click readout (top-left): real HVI sub-quintiles for one census tract. */
@@ -1708,6 +1725,14 @@ h3 {
 .detail-meta {
   font-size: 0.88rem;
   color: var(--text-muted);
+}
+/* The year-round-resilience finding: a restrained neutral-hairline accent (existing
+   tokens only) so a building high on BOTH heat and winter reads as a notable result. */
+.detail-yearround {
+  margin-top: 12px;
+  padding-left: 10px;
+  border-left: 2px solid var(--hairline-strong);
+  color: var(--text);
 }
 .detail-addr {
   font-family: var(--font-data);

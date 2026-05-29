@@ -29,6 +29,7 @@ type RawProps = {
   notes: string;
   backup_power_status: string;
   flood_status: string;
+  winter_vuln: string;
 };
 
 export type Hub = {
@@ -54,6 +55,8 @@ export type Hub = {
   backupPower: string; // "pending" for all — no candidate has confirmed backup power
   flood: string; // honest relationship to the TRCA regulatory floodplain (computed offline)
   floodEvidence: Verification; // tag derived from the flood status string
+  winterVuln: number; // ON-Marg 2021 Material Resources quintile of the building's CT (1..5, 5 = most marginalized)
+  yearRound: boolean; // genuinely high on BOTH heat (HVI >= 4) and winter / energy burden (>= 4)
   notes: string;
   // Transparent score, 0..100. Provisional while catchment population is pending.
   score: number;
@@ -84,6 +87,25 @@ export const HVI_LABEL: Record<number, string> = {
   3: "moderate",
   4: "high",
   5: "top quintile",
+};
+
+// Winter / energy-burden ramp: a cool indigo-to-violet sequential scale, deliberately
+// distinct from the HVI red-orange ramp and the flood water-blue. Encodes the ON-Marg
+// 2021 Material Resources quintile (1 = low marginalization, 5 = high).
+export const WINTER_COLORS: Record<number, string> = {
+  1: "#3d3a6e",
+  2: "#574f9c",
+  3: "#7a63c0",
+  4: "#9a7ad8",
+  5: "#bb9bf2",
+};
+
+export const WINTER_LABEL: Record<number, string> = {
+  1: "low",
+  2: "low-moderate",
+  3: "moderate",
+  4: "high",
+  5: "highest",
 };
 
 const TYPE_LABEL: Record<string, string> = {
@@ -178,6 +200,8 @@ export function toHub(feature: {
     backupPower: p.backup_power_status,
     flood: p.flood_status,
     floodEvidence: floodTag(p.flood_status),
+    winterVuln: n(p.winter_vuln),
+    yearRound: n(p.hvi_quintile) >= 4 && n(p.winter_vuln) >= 4,
     notes: p.notes,
     score,
     breakdown,
