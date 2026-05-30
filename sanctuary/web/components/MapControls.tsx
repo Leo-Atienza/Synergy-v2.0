@@ -42,6 +42,12 @@ export function MapControls({
   useEffect(() => {
     if (window.matchMedia("(max-width: 768px)").matches) setOpen(false);
   }, []);
+  // On a narrow stage the tract readout (top-left) and the expanded layers panel
+  // (top-right) would overlap, so keep them mutually exclusive: selecting a tract
+  // folds the layers panel. Desktop has room for both, so this is mobile-only.
+  useEffect(() => {
+    if (tract && window.matchMedia("(max-width: 768px)").matches) setOpen(false);
+  }, [tract]);
 
   return (
     <>
@@ -63,7 +69,15 @@ export function MapControls({
             className="mc-layers-head"
             aria-expanded={open}
             aria-controls="mc-layers-list"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() =>
+              setOpen((v) => {
+                const next = !v;
+                // Opening the panel on a narrow stage dismisses the tract readout so the
+                // two top overlays never overlap (mutual exclusivity; desktop keeps both).
+                if (next && window.matchMedia("(max-width: 768px)").matches) onCloseTract();
+                return next;
+              })
+            }
           >
             <span className="mc-layers-title">Layers</span>
             <svg className="mc-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

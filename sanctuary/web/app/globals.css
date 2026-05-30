@@ -1437,8 +1437,15 @@ h3 {
   opacity: 1;
   transition: grid-template-rows 0.3s var(--ease-calm), opacity 0.22s ease;
 }
+/* Collapse the WIDTH too, not just the height: the body's hidden layer rows
+   otherwise keep the panel at its full open width (~257px) even when folded, so
+   on a phone the collapsed "Layers" button bleeds left under the tract-readout
+   (top-left) and the two overlays visibly overlap. width:0 shrinks the folded
+   panel to just its header, packing it tight in the top-right like the zoom column.
+   (Explicit width beats the flex-column align-items:stretch default, so it holds.) */
 .mc-layers[data-open="false"] .mc-layers-body {
   grid-template-rows: 0fr;
+  width: 0;
   opacity: 0;
 }
 .mc-layers-inner {
